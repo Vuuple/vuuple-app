@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+}
+@font-face {
+  font-family: Cubano-Regular;
+  src: local("Cubano-Regular"), url(assets/fonts/Cubano-Regular.otf) format("opentype");
+}
+
+
+body {
+  background: url('./assets/img/background.jpg');
+}
+
+* {
+  font-family: Cubano-Regular;
+  font-size: 14px;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card {
+  border-bottom: 5px solid #0e76bc;
+  border-right: 5px solid #0e76bc;
+  border-left: 5px solid #0e76bc;
+  min-height: 600px;
+  border-radius: 0px 0px 10px 10px;
+}

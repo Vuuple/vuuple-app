@@ -1,0 +1,90 @@
+
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 100%;
+ width: 100%;
+  width: 70%;
+  position: absolute;
+  z-index: 0;
+  left:  3.5%;
+  margin-left: 1%;
+    /* top: 60px; */
+  background-color: transparent;
+  /* overflow-x: hidden; */
+  padding-top:2.5%;
+}
+.nav{
+ padding-left: 15px;
+}
+/* Style sidebar links */
+.dashboaed {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+   background-color: #29ABE2;
+  transition: 0.3s;
+  padding: 15px;
+  margin-bottom: 1%;
+  width: 70%;
+  height: 115px;
+  display: block;
+border-radius:  0 10% 10% 0;
+  font-weight:bolder;
+   font-family: Cubano-Regular;
+  color: white;
+text-align: center;
+
+line-height: 80px;
+
+}
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+   background-color: #0e76bc;
+  transition: 0.3s;
+  padding: 15px;
+  margin-bottom: 1%;
+  width: 70%;
+  height: 105px;
+  display: block;
+border-radius:  0 10% 10% 0;
+  font-weight:bolder;
+   font-family: Cubano-Regular;
+  color: white;
+text-align: center;
+
+line-height: 80px;
+
+}
+.nav{
+  padding-top: 45%;
+}
+spn-txt{
+  font-weight:bolder;
+   font-family: Cubano-Regular;
+  color: white;
+text-align: center;
+vertical-align: middle;
+line-height: 100px;
+}
+.item{
+  left: -50px;
+}
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color:white ;
+    padding: 6px 8px 6px 16px;
+
+  background-color: #29ABE2;
+  width: 80%
+}
+
+/* Style the main content */
+
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

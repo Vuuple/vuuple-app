@@ -1,0 +1,40 @@
+
+.table-container{
+  padding-top:5%
+}
+table {
+  width: 100%;
+ border-collapse: collapse;
+}
+
+
+/* Zebra striping */
+
+/*tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}*/
+
+td,
+th {
+  padding: 6px;
+  text-align: center;
+}
+
+@media all and (max-width:500px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  tr { margin-bottom: 10px}
+}

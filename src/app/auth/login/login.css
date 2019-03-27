@@ -1,0 +1,40 @@
+.header {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 40px;
+}
+
+h1 {
+	color: white;
+}
+
+.row {
+	margin-top: 10px;
+	color: white;
+	margin: 0 auto;
+	float: none;
+}
+
+button {
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border-color: white;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	color: white;
+}
+
+.error {
+	color: red;
+}
+
+
+.login-body {
+	/* background: url('../../../assets/img/Lender.jpg') ; */
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	-ms-background-size: cover;
+	background-size: cover;
+}
