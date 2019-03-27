@@ -6,11 +6,10 @@
 /out-tsc
 /app-builds
 /release
-main.js
 src/**/*.js
 !src/karma.conf.js
 *.js.map
-
+.angulardoc.json
 # dependencies
 /node_modules
 
