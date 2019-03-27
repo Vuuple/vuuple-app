@@ -42,8 +42,8 @@ const getWindowState = () => {
       y,
       width,
       height,
-      minWidth: 320,
-      minHeight: 720,
+      minWidth: 420,
+      minHeight: 820,
       show: false,
       center: true,
       darkTheme: true,
@@ -84,7 +84,7 @@ const getWindowState = () => {
       if (is.macos && !global.isQuitting && !global.isUpdating) {
         event.preventDefault();
         window.hide();
-        win = null;
+        window = null;
       }
     });
 

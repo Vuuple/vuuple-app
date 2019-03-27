@@ -2,6 +2,7 @@
 const electron = require('electron');
 const windowState = require('electron-window-state');
 const { is } = require('electron-util');
+require('./server.js')
 
 const { productName: title } = require('./package');
 const { getApplicationMenu } = require('./ng-electron/menu');
@@ -42,8 +43,8 @@ const getWindowState = () => {
       y,
       width,
       height,
-      minWidth: 320,
-      minHeight: 720,
+      minWidth: 420,
+      minHeight: 820,
       show: false,
       center: true,
       darkTheme: true,
@@ -56,11 +57,12 @@ const getWindowState = () => {
         disableBlinkFeatures: 'Auxclick'
       }
     });
+
     if (serve) {
       require('electron-reload')(__dirname, {
         electron: require(`${__dirname}/node_modules/electron`)
       });
-      window.loadURL('http://localhost:4200');
+      window.loadURL('http://localhost:3000');
     } else {
       window.loadURL(
         url.format({
