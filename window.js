@@ -2,7 +2,7 @@
 const electron = require('electron');
 const windowState = require('electron-window-state');
 const { is } = require('electron-util');
-require('./server.js')
+// require('./server.js')
 
 const { productName: title } = require('./package');
 const { getApplicationMenu } = require('./ng-electron/menu');
@@ -62,7 +62,7 @@ const getWindowState = () => {
       require('electron-reload')(__dirname, {
         electron: require(`${__dirname}/node_modules/electron`)
       });
-      window.loadURL('http://localhost:3000');
+      window.loadURL('http://localhost:4200');
     } else {
       window.loadURL(
         url.format({
