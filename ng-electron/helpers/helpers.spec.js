@@ -103,7 +103,7 @@ describe('Joining the Network', async () => {
   });
 
   it('altering raft-start script', async () => {
-    await alter.alter_script('8');
+    await alter.alter_script(id);
   });
 
   it('sending script by email', async () => {
@@ -114,7 +114,7 @@ describe('Joining the Network', async () => {
       [
         {
           filename: 'raft-start.sh',
-          path: path.join(__dirname, './resources','/single-node','/examples', '/7nodes', '/raft-start.sh')
+          path: path.join(__dirname, '..', '/resources','/single-node','/examples', '/7nodes', '/raft-start.sh')
         }
       ]
     );
