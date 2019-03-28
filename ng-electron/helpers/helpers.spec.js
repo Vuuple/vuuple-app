@@ -1,7 +1,9 @@
-const node8 = require('./node');
-const mail = require('./mail');
+const node8 = require('./docker');
+const mailer = require('./mail');
+const requests = require('./requests');
+const alter = require('./alter');
 const path = require('path');
-const template = require('./resources/mail-templates');
+const template = require('../resources/mail-templates');
 require('chai');
 
 let id;
@@ -87,37 +89,32 @@ describe('LENDER Network', async () => {
 
 describe('Joining the Network', async () => {
   it('adding raft peer', async () => {
-    const endPoint = 'http://3.18.34.201:22004';
-    const enode =
-      '"enode://c0d5636df2ffb3aa0c16816d3542807700cea39334a016e06479921240f64a30d3a6325c3f0e63e79b905dfb5e2929adef2c289a1c9b2a596935c86b99eae7bf@18.188.186.139:22008?discport=0&raftport=50400"'; // from db
-    const resObj = await node8.raft_add_peer(enode, endPoint);
-    if (resObj.result == undefined) {
+    const endpoint = 'http://3.18.34.201:22004';
+    const enode = "enode://c0d5636df2ffb3aa0c16816d3542807700cea39334a016e06479921240f64a30d3a6325c3f0e63e79b905dfb5e2929adef2c289a1c9b2a596935c86b99eae7bf@3.16.255.131:22008?discport=0&raftport=50400"; // from db
+    const resObj = await requests.raft_add_peer(endpoint, enode);
+    if (resObj.data.result == undefined) {
       id = null;
-      console.log(resObj);
+      console.log(resObj.data);
     }
     else {
-      id = resObj.result;
+      id = resObj.data.result;
       console.log(id);
     }
   });
 
   it('altering raft-start script', async () => {
-    const fileName = 'raft-start.sh';
-
-    let inputPath = path.join(__dirname, '/resources/');
-    let outputPath = path.join(__dirname, '/resources','/single-node','/examples','/7nodes/');
-    await node8.alter_script(id, inputPath, outputPath, fileName);
+    await alter.alter_script(id);
   });
 
   it('sending script by email', async () => {
-    await mail.send_email(
+    await mailer.send_email(
       'mohamed.elghamry97@gmail.com',
       template.networkConfirmation.subject,
       template.networkConfirmation.body.join('<br/>'),
       [
         {
           filename: 'raft-start.sh',
-          path: path.join(__dirname, './resources','/single-node','/examples', '/7nodes', '/raft-start.sh')
+          path: path.join(__dirname, '..', '/resources','/single-node','/examples', '/7nodes', '/raft-start.sh')
         }
       ]
     );
