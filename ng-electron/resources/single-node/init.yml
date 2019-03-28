@@ -1,0 +1,41 @@
+# The following environment variables are substituted if present
+# * QUORUM_CONSENSUS: default to istanbul
+# * QUORUM_DOCKER_IMAGE: default to quorumengineering/quorum:2.1.1
+# * QUORUM_TX_MANAGER_DOCKER_IMAGE: default to quorumengineering/tessera:0.7.3
+# To use Constellation, set QUORUM_TX_MANAGER_DOCKER_IMAGE to Constellation docker image,
+# e.g.: QUORUM_TX_MANAGER_DOCKER_IMAGE=quorumengineering/constellation:0.3.2 docker-compose up -d
+version: '3.7'
+x-quorum-def: &quorum-def
+  restart: 'on-failure'
+  image: '${QUORUM_DOCKER_IMAGE:-quorumengineering/quorum:2.1.1}'
+  entrypoint:
+    - /bin/sh
+    - -c
+    - |
+    
+ 
+      #generating node key
+      bootnode -genkey /examples/raft/nodekey$${NODE_ID}
+      #getting the pub key hash - which is part of the enode url
+      bootnode -nodekey /examples/raft/nodekey$${NODE_ID} -writeaddress > /examples/raft/pubkeyhash
+      echo generated node key
+      cat /examples/raft/nodekey$${NODE_ID}
+      echo for now use node1s account - you can choose to generate a new one
+     
+services:
+
+  node8:
+    <<: *quorum-def
+    hostname: node8
+    container_name: geth-node
+
+    volumes:
+
+      - ./examples/7nodes:/examples:rw
+
+    environment:
+
+      - NODE_ID=8
+
+  
+
