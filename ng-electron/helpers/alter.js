@@ -6,8 +6,8 @@ module.exports.alter_script = id => {
     return null;
   }
   else {
-    let frp = path.join(__dirname, '/examples', '/7nodes', '/raft-start-template.sh');
-    let fwp = path.join(__dirname, '/examples', '/7nodes', '/raft-start.sh');
+    let frp = path.join(__dirname, '..', 'resources', '/raft-start-template.sh');
+    let fwp = path.join(__dirname, '..', 'resources', 'single-node', '/examples', '/7nodes', '/raft-start.sh');
     fs.readFile(path.join(frp), (err, data) => {
       if (err) throw err;
       else {
