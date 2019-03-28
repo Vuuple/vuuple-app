@@ -1,6 +1,7 @@
 const node8 = require('./docker');
-const mail = require('./mail');
+const mailer = require('./mail');
 const requests = require('./requests');
+const alter = require('./alter');
 const path = require('path');
 const template = require('../resources/mail-templates');
 require('chai');
@@ -102,11 +103,11 @@ describe('Joining the Network', async () => {
   });
 
   it('altering raft-start script', async () => {
-    await node8.alter_script(id);
+    await alter.alter_script('8');
   });
 
   it('sending script by email', async () => {
-    await mail.send_email(
+    await mailer.send_email(
       'mohamed.elghamry97@gmail.com',
       template.networkConfirmation.subject,
       template.networkConfirmation.body.join('<br/>'),
