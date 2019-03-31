@@ -4,13 +4,14 @@
   <nav class="navbar  sidebar" role="navigation">
     <div class="container-fluid nav">
 
-<div class="row" >
-          <a routerLink="/pages/admin/main" style="background-color: #29ABE2 !important; height: 145px;">DASHBOARD</a>
+<!-- <div class="row" >
+          <a routerLink="/" style="background-color: #29ABE2 !important; height: 145px;">DASHBOARD</a>
 
-</div>
+</div> -->
 <div class="row item"*ngFor="let item of items" >
          <!--for trying-->
-          <a routerLink="/pages/admin/setting" class="">{{item}}</a>
+          <a [routerLink]="[item.link]" [ngClass]="{'dashboard': item.name=='Dashboard'}"  class="">
+                        {{item.name}}</a>
 
 </div>
 
