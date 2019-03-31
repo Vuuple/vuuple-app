@@ -1,31 +1,58 @@
 
+.main{
+  padding: 25% 5% 5% 5%;
+}
+.action{
+  background-image: url(../../../../assets/img/Deletecloud.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    -webkit-appearance: button-bevel;
+    line-height: initial;
+    width: 80%;
+    height: 30px;
+    color: white;
+    padding: 6px;
+    font-size: 15px;
+}
 .table-container{
-  padding-top:5%
+  /*padding-top:5%;*/
+  padding-bottom: 5%;
+}
+h2{
+  color:#0077b5;
+  margin-bottom: 2%;
+}
+p{
+  text-align: center;
+  color:#29ABE2;
+  margin-bottom: 3%;
 }
 table {
   width: 100%;
  border-collapse: collapse;
+ min-height: 300px;
+ padding: 5px;
 }
-
-
-/* Zebra striping */
-
-/*tr:nth-of-type(odd) {
-  background: #eee;
+thead >tr{
+  border-bottom: 1px solid #29ABE2;
 }
-
-th {
-  background: #333;
-  color: white;
-  font-weight: bold;
-}*/
-
 td,
 th {
   padding: 6px;
   text-align: center;
 }
-
+.table>tbody>tr>td{
+  line-height: 1.42857143;
+  vertical-align: middle;
+ border-right: 1px solid #29ABE2;
+ border-top:none;
+}
+.table>thead>tr>th {
+  vertical-align: bottom;
+   border-bottom: none;
+}
 @media all and (max-width:500px) {
   table,
   thead,
@@ -37,4 +64,8 @@ th {
   }
 
   tr { margin-bottom: 10px}
+}
+.row.table-container{
+  margin-right: 0;
+  margin-left: 0;
 }

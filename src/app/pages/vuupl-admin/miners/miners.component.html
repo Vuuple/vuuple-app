@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-md-11 ">
+      <div class="row main">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Miners</h2>
+          </div>
+          <div class="col-md-6">
+              <form class="navbar-form navbar-right">
+                  <input type="text" class="form-control" style="margin-right:15px;width: 250px;" placeholder="Search...">
+               </form>
+          </div>
+        </div>
+        <div class="row" style="padding-top:3%">
+            <div class="row table-container">
+                <table class="table" >
+                    <thead>
+                      <tr style="color:#29ABE2 !important;font-size: 25px;">
+                        <th  style=" border-right: 1px solid #29ABE2;  padding: 15px;">Name</th>
+                        <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Transaction completed</th>
+                        <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Date Of Payment</th>
+                        <th  style=" padding: 15px;">Tokens Paid</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of Transaction; let i = index;">
+                        <td>{{item?.Name}}</td>
+                        <td>{{item?.transactionCompleted}}</td>
+                        <td>{{item?.DateOfPayment}}</td>
+                        <td style="border-right:none">{{item?.tokensPaid}}</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row" style="padding-top:1%">
+            <div class="row table-container">
+                <table class="table" >
+                    <thead>
+                      <tr style="color:#29ABE2 !important;font-size: 25px;">
+                        <th  style=" border-right: 1px solid #29ABE2;  padding: 15px;">Name</th>
+                        <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Date Of Redemption</th>
+                        <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Tokens Redeemed</th>
+                        <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Tokens in Enviroment</th>
+                        <th  style=" padding: 15px;">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of TokensRedeemed; let i = index;">
+                        <td>{{item?.Name}}</td>
+                        <td>{{item?.DateOfRedemption}}</td>
+                        <td>{{item?.TokensRedeemed}}</td>
+                        <td>{{item?.TokensinEnviroment}}</td>
+                        <td style="border-right:none">{{item?.Action}}</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-11 ">
+      <div class="row main">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h2>Credentials</h2>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row ">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form [formGroup]="EditForm">
+                <div class="form-group row">
+                    <label for="Name" class="col-md-2">Name:</label>
+                    <div class="col-md-8">
+                        <input type="text" id="Name"  class="form-control" formControlName="name">
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="emails" class="col-md-2">EMail:</label>
+                    <div class="col-md-8">
+                        <input type="email" id="email" class="form-control" formControlName="email">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password" class="col-md-2">Password:</label>
+                    <div class="col-md-8">
+                        <input type="password" id="password"class="form-control" formControlName="password">
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <button  class="Editbutton" type="submit" class="btn btn-primary" (click)="EditFunction()">
+                        Edit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

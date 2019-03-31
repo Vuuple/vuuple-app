@@ -7,10 +7,17 @@ import { RequestListComponent } from './request-list/request-list.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
+import { TokensComponent } from './tokens/tokens.component';
+import { IndividualRenterComponent } from './individual-renter/individual-renter.component';
+import { CompanyRenterComponent } from './company-renter/company-renter.component';
+import { LenderComponent } from './lender/lender.component';
+import { MinersComponent } from './miners/miners.component';
+import { SettingComponent } from './setting/setting.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild([
+    CommonModule,FormsModule, ReactiveFormsModule,SharedModule, RouterModule.forChild([
 
       {
         path: '',
@@ -27,6 +34,23 @@ import { SharedModule } from '../shared/shared.module';
      }
     ])
   ],
-  declarations: [DashboardComponent, NodeListComponent, ManageRequestComponent, RequestListComponent]
+  exports:[DashboardComponent,
+           RequestListComponent,
+           IndividualRenterComponent,
+           MinersComponent,
+           SettingComponent
+          ],
+  declarations: [
+     DashboardComponent, 
+     NodeListComponent, 
+     ManageRequestComponent,
+     RequestListComponent,
+    TokensComponent,
+    IndividualRenterComponent,
+    CompanyRenterComponent,
+    LenderComponent,
+    MinersComponent,
+    SettingComponent
+  ]
 })
 export class VuuplAdminModule { }

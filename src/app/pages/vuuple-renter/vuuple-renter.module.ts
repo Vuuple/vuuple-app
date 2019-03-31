@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,11 @@ import { SharedModule } from '../shared/shared.module';
             path: 'main',
             component: DashboardComponent,
           }
+          ,
+          {
+            path: 'wallet',
+            component: WalletComponent,
+          }
           , {
             path: '**',
             component: NotFoundComponent,
@@ -24,6 +30,7 @@ import { SharedModule } from '../shared/shared.module';
       }
     ])
   ],
-  declarations: [DashboardComponent]
+  exports:[WalletComponent],
+  declarations: [DashboardComponent,WalletComponent]
 })
 export class VuupleRenterModule { }

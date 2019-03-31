@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
 
   constructor() {
-    this.items = this.LenderItem;
+    this.items = this.adminItem;
    }
 renterItems = ['WALLET','PURCHASE','REDEEM','ACCOUNT', 'SETTING' ];
 LenderItem = ['WALLET','ALLOCATE','REDEEM','ACCOUNT', 'SETTING' ];
-adminItem = ['WALLET','PURCHASE','REDEEM','ACCOUNT', 'SETTING' ];
+adminItem = ['Requests','individual Renters','company Renters','Lenders','miners', 'SETTING' ];
 items=[];
   ngOnInit() {
 

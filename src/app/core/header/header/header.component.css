@@ -5,7 +5,7 @@
    background-image: Url("../../../../assets/img/headerBackground.png");
     background-size: cover;
     height: 30%;
-    z-index: -1;
+    z-index: 5;
 }
 .navbar-header{
     margin-top: 4%;
@@ -83,4 +83,36 @@ div.header-contents {
 }
 #headerRow{
     margin:0;
+}
+.image{
+    background-image: url(../../../../assets/img/Cloud.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px !important;
+    width: 65% !important;
+    height: 60px!important;
+    -webkit-appearance: button-bevel;
+    line-height: initial;
+}
+.following{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-family: Cubano-Regular;
+    color: #29ABE2;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none!important;
+}
+
+.followingContent{
+    position: absolute;
+    top: 75%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-family: Cubano-Regular;
+    color: #29ABE2;
+    font-weight: bold;
 }

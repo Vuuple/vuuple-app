@@ -1,3 +1,54 @@
-<p>
-  request-list works!
-</p>
+<div class="row">
+    <div class="col-md-11 ">
+      <div class="row main">
+      <div class="col-md-4 "></div>
+      <div class="col-md-4">
+        <h2>
+          Requests
+        </h2>
+      </div>
+      <div class="col-md-4" style="padding:2%">
+          <form class="navbar-form navbar-right">
+              <input type="text" class="form-control" style="margin-right:15px;width: 250px;" placeholder="Search...">
+           </form>
+      </div>
+    </div>
+    <div class="row table-container">
+        <table class="table" >
+            <thead>
+              <tr style="color:#29ABE2 !important;font-size: 25px;">
+                <th  style=" border-right: 1px solid #29ABE2;  padding: 15px;">Name</th>
+                <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Email</th>
+                <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Username</th>
+                <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Eth Wallet</th>
+                <th  style=" border-right: 1px solid #29ABE2; padding: 15px;"> Static IP  </th>
+                <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">category</th>
+                <th  style=" border-right: 1px solid #29ABE2;padding: 15px;"> add </th>
+                <th  style="padding: 15px;"> delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let request of requests; let i = index;">
+                <td>{{request?.name}}</td>
+                <td>{{request?.email}}</td>
+                <td>{{request?.userName}}</td>
+                <td>{{request?.EthWallet}}</td>
+                <td>{{request?.staticIp}}</td>
+                <td>{{request?.category}}</td>
+                <td>
+                  <button class="action">
+                      {{request?.add}}
+                  </button>
+                </td>
+                <td style="border-right:none">
+                    <button class="action">
+                        {{request?.del}}
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>

@@ -6,35 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./node-list.component.css']
 })
 export class NodeListComponent implements OnInit {
-
-  constructor() { }
+  TotalCompanyRenter="15";
+  constructor() {
+    this.TotalCompanyRenter;
+   }
 nodes=[];
   ngOnInit() {
     this.nodes=[
       {
-      userName:"lender1", address:"0xdfs454ef5we45wf4wef488", email:"lender1@test.com", type:"Lender",
+      userName:"lender1",email:"lender1@test.com",  category:"Lender",address:"0xdfs454ef5we45wf4wef488",status:"active",action:"pan"
     },
       {
-        userName:"Renter1", address:"0xdfs454ef5we45wf4wef488", email:"lender1@test.com", type:"Renter",
+        userName:"Renter1",  email:"lender1@test.com",category:"Renter", address:"0xdfs454ef5we45wf4wef488",status:"deactivated",action:"pan"
     },
       {
-        userName: "lender1", address: "0xdfs454ef5we45wf4wef488", email: "lender1@test.com", type:"Renter",
-    },
-      {
-        userName: "lender1", address: "0xdfs454ef5we45wf4wef488", email: "lender1@test.com", type:"Renter",
-    },
-      {
-      userName:"lender1", address:"0xdfs454ef5we45wf4wef488", email:"lender1@test.com", type:"Lender",
-    },
-      {
-      userName:"lender1", address:"0xdfs454ef5we45wf4wef488", email:"lender1@test.com", type:"Lender",
-    },
-      {
-      userName:"lender1", address:"0xdfs454ef5we45wf4wef488", email:"lender1@test.com", type:"Lender",
-    },
-      {
-        userName: "Renter3", address: "0xdfs454ef5we45wf4wef488", email: "Renter3@test.com", type:"Renter",
-    },
+        userName: "lender1",email: "lender1@test.com", category:"Renter", address: "0xdfs454ef5we45wf4wef488",status:"removed",action:"pan"
+      }
   ]
   }
 

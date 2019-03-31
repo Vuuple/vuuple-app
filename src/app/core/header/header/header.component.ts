@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title =' COMPANY RENTER'
-  constructor() { }
+  admintitle='Admin'
+  admin=['Nodes','vuuple Tokens']
+  user=['following','followers']
+  items=[]
+  constructor() {
+   }
 
   ngOnInit() {
   }

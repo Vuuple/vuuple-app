@@ -2,27 +2,14 @@
   .main{
     padding: 25% 5% 5% 5%;
   }
-  .action{
-    background-image: url(../../../../assets/img/Deletecloud.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: white;
-      -webkit-appearance: button-bevel;
-      line-height: initial;
-      width: 90%;
-      height: 30px;
-      color: white;
-      padding: 6px;
-      font-size: 15px;
+  h2{
+    color:#0077b5;
+    margin-bottom: 2%;
+    text-align: center;
   }
   .table-container{
     /*padding-top:5%;*/
     padding-bottom: 5%;
-  }
-  h2{
-    color:#0077b5;
-    margin-bottom: 2%;
   }
   p{
     text-align: center;

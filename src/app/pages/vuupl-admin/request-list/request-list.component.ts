@@ -6,10 +6,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-list.component.css']
 })
 export class RequestListComponent implements OnInit {
+  requests=[];
 
   constructor() { }
 
   ngOnInit() {
+    this.requests=[
+      {
+        name:"renter",
+        email:"renter",
+        userName:"renter",
+        EthWallet:"dadrt",
+        staticIp:"sfduiweh3u25u295i",
+        category:"renter",
+        add:"add",
+        del:"delete"
+      },
+      {
+        name:"renter",
+        email:"renter",
+        userName:"renter",
+        EthWallet:"dadrt",
+        staticIp:"sfduiweh3u25u295i",
+        category:"renter",
+        add:"add",
+        del:"delete"
+      },
+      {
+        name:"renter",
+        email:"renter",
+        userName:"renter",
+        EthWallet:"dadrt",
+        staticIp:"sfduiweh3u25u295i",
+        category:"renter",
+        add:"add",
+        del:"delete"
+      }
+    ]
   }
 
 }
