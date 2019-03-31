@@ -5,11 +5,12 @@
     <div class="container-fluid nav">
 
 <div class="row" >
-          <a  href="#" style="background-color: #29ABE2 !important; height: 145px;">DASHBOARD</a>
+          <a routerLink="/pages/admin/main" style="background-color: #29ABE2 !important; height: 145px;">DASHBOARD</a>
 
 </div>
 <div class="row item"*ngFor="let item of items" >
-          <a  href="#" class="">{{item}}</a>
+         <!--for trying-->
+          <a routerLink="/pages/admin/setting" class="">{{item}}</a>
 
 </div>
 
