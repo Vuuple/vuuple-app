@@ -1,33 +1,19 @@
 .main{
-  padding: 5% 5% 5% 5%;
-}
+    padding: 5% 5% 5% 5%;
+  }
   .action{
     background-image: url(../../../../assets/img/Deletecloud.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: white;
-      -webkit-appearance: button-bevel;
-      line-height: initial;
-      width: 90%;
-      height: 30px;
-      color: white;
-      padding: 6px;
-      font-size: 15px;
-  }
-  .rejectaction{
-      background-image: url(../../../../assets/img/Deletecloud.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: white;
-      -webkit-appearance: button-bevel;
-      line-height: initial;
-      color: white;
-      padding: 10px;
-      font-size: 15px;
-      width: 80%;
-      height: 40px
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    -webkit-appearance: button-bevel;
+    line-height: initial;
+    width: 50%;
+    height: 50px;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
   }
   .table-container{
     padding-top:5%;

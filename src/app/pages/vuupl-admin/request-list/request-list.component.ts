@@ -13,34 +13,31 @@ export class RequestListComponent implements OnInit {
   ngOnInit() {
     this.requests=[
       {
-        name:"renter",
-        email:"renter",
         userName:"renter",
+        email:"renter",
         EthWallet:"dadrt",
         staticIp:"sfduiweh3u25u295i",
         category:"renter",
         add:"add",
-        del:"delete"
+        reject:"reject"
       },
       {
-        name:"renter",
-        email:"renter",
         userName:"renter",
+        email:"renter",
         EthWallet:"dadrt",
         staticIp:"sfduiweh3u25u295i",
         category:"renter",
         add:"add",
-        del:"delete"
+        reject:"reject"
       },
       {
-        name:"renter",
-        email:"renter",
         userName:"renter",
+        email:"renter",
         EthWallet:"dadrt",
         staticIp:"sfduiweh3u25u295i",
         category:"renter",
         add:"add",
-        del:"delete"
+        reject:"reject"
       }
     ]
   }

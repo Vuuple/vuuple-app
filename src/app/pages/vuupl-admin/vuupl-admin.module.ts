@@ -15,6 +15,7 @@ import { MinersComponent } from './miners/miners.component';
 import { SettingComponent } from './setting/setting.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
+import { AddpointComponent } from './addpoint/addpoint.component';
 
 @NgModule({
   imports: [
@@ -22,11 +23,21 @@ import { ChartModule } from 'primeng/chart';
 
       {
         path: '',
+
         component: DashboardComponent,
+
         children: [
         {
           path: 'main',
           component: DashboardComponent,
+        },
+        {
+          path: 'request',
+          component: RequestListComponent,
+        },
+        {
+          path:'addpoint',
+          component: AddpointComponent,
         },
         {
           path: 'setting',
@@ -55,7 +66,8 @@ import { ChartModule } from 'primeng/chart';
     CompanyRenterComponent,
     LenderComponent,
     MinersComponent,
-    SettingComponent
+    SettingComponent,
+    AddpointComponent
   ]
 })
 export class VuuplAdminModule { }
