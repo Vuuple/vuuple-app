@@ -11,25 +11,24 @@ export class DashboardComponent implements OnInit {
 
   constructor() {
     this.data = {
-      labels: ['A', 'B', 'C'],
+      labels: ['Storage','Tokens', 'Users'],
       datasets: [
         {
-          data: [300, 50, 100],
+          data: [120, 120, 120],
           backgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56"
+            "#0077b5",
+            "#29ABE2",
+            "#3584ad"
           ],
           hoverBackgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56"
+            "#0077b5",
+            "#29ABE2",
+            "#3584ad"
           ]
-        }]
+        }],
     };
   }
   ngOnInit() {
 
   }
-
 }

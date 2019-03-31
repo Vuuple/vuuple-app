@@ -2,10 +2,30 @@
 <div class="row">
     <div class="col-md-11 ">
       <div class="row main">
-  <div class="col-md-4">
-  <p-chart type="doughnut" [data]="data"></p-chart>
-
-  </div>    </div>
-    <div class="col-md-1"></div>
+         <div class="col-md-3" style="margin-top:20%">
+           <p>
+             individual renter <br>
+             company renter <br>
+             lender
+           </p>
+         </div>   
+         <div class="col-md-6 chart">
+            <p-chart type="pie" [data]="data" width="300" height="300"></p-chart>
+            <p style="margin-top:10%">
+                TOKENS IN CONTRACT (CURRENTLY)
+                TOKENS IN ENVIRONMENT (CURRENTLY)
+                TOKENS USED (ALL TIMEE)
+                TOKENS REDEEMED (ALL TIME)
+                TOKENS PURCHASED(ALL TIME)
+              </p>
+         </div>   
+         <div class="col-md-3" style="margin-top:20%">
+            <p> 
+                individual renter <br>
+                company renter <br>
+                lender
+              </p>
+         </div>   
+      </div>
+     <div class="col-md-1"></div>
 </div>
-
