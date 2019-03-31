@@ -82,7 +82,9 @@ line-height: 100px;
 
 /* Style the main content */
 
-
+.dashboard{
+  background-color: #29ABE2 !important; height: 145px;
+}
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
