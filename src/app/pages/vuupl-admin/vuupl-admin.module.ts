@@ -26,8 +26,12 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
         {
           path: 'main',
           component: DashboardComponent,
-        }
-          , {
+        },
+        {
+          path: 'setting',
+          component: SettingComponent,
+        },
+        {
           path: '**',
           component: NotFoundComponent,
         }]
