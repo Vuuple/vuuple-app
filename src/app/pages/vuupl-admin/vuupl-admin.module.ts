@@ -14,10 +14,11 @@ import { LenderComponent } from './lender/lender.component';
 import { MinersComponent } from './miners/miners.component';
 import { SettingComponent } from './setting/setting.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   imports: [
-    CommonModule,FormsModule, ReactiveFormsModule,SharedModule, RouterModule.forChild([
+    CommonModule, FormsModule, ChartModule ,ReactiveFormsModule,SharedModule, RouterModule.forChild([
 
       {
         path: '',
@@ -41,8 +42,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
            SettingComponent
           ],
   declarations: [
-     DashboardComponent, 
-     NodeListComponent, 
+     DashboardComponent,
+     NodeListComponent,
      ManageRequestComponent,
      RequestListComponent,
     TokensComponent,
