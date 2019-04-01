@@ -15,11 +15,16 @@ x-quorum-def: &quorum-def
     
  
       #generating node key
-      bootnode -genkey /examples/raft/nodekey$${NODE_ID}
+      bootnode -genkey /examples/raft/nodekey8
       #getting the pub key hash - which is part of the enode url
-      bootnode -nodekey /examples/raft/nodekey$${NODE_ID} -writeaddress > /examples/raft/pubkeyhash
+      bootnode -nodekey /examples/raft/nodekey8 -writeaddress > /examples/raft/pubkeyhash
       echo generated node key
-      cat /examples/raft/nodekey$${NODE_ID}
+      echo ****************nodekey8 ***************
+
+      cat /examples/raft/nodekey8
+      echo ****************pubkeyhash ***************
+
+      cat /examples/raft/pubkeyhash
       echo for now use node1s account - you can choose to generate a new one
      
 services:
@@ -36,6 +41,3 @@ services:
     environment:
 
       - NODE_ID=8
-
-  
-

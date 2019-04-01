@@ -63,34 +63,15 @@ elif [  ! -f "${tesseraJar}" ]; then
   usage
 fi
 
-#extract the tessera version from the jar
-TESSERA_VERSION=$(unzip -p $tesseraJar META-INF/MANIFEST.MF | grep Tessera-Version | cut -d" " -f2)
-echo "Tessera version (extracted from manifest file): $TESSERA_VERSION"
-
-TESSERA_CONFIG_TYPE=
-
-#TODO - this will break when we get to version 0.10 (hopefully we would have moved to 1.x by then)
-if [ "$TESSERA_VERSION" \> "0.8" ] || [ "$TESSERA_VERSION" == "0.8" ]; then
-    TESSERA_CONFIG_TYPE="-enhanced-"
-fi
-
-if [ "$TESSERA_VERSION" \> "0.9" ] || [ "$TESSERA_VERSION" == "0.9" ]; then
-    TESSERA_CONFIG_TYPE="-09-"
-fi
-
-echo Config type $TESSERA_CONFIG_TYPE
-
 currentDir=`pwd`
-for i in {1..7}
-do
-    DDIR="qdata/c$i"
+    DDIR="qdata/c8"
     mkdir -p ${DDIR}
     mkdir -p qdata/logs
     rm -f "$DDIR/tm.ipc"
 
     DEBUG=""
     if [ "$remoteDebug" == "true" ]; then
-      DEBUG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=500$i -Xdebug"
+      DEBUG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5008 -Xdebug"
     fi
 
     #Only set heap size if not specified on command line
@@ -99,35 +80,28 @@ do
       MEMORY="-Xms128M -Xmx128M"
     fi
 
-    CMD="java $jvmParams $DEBUG $MEMORY -jar ${tesseraJar} -configfile $DDIR/tessera-config$TESSERA_CONFIG_TYPE$i.json"
-    echo "$CMD >> qdata/logs/tessera$i.log 2>&1 &"
-    ${CMD} >> "qdata/logs/tessera$i.log" 2>&1 &
+    CMD="java $jvmParams $DEBUG $MEMORY -jar ${tesseraJar} -configfile $DDIR/tessera-config8.json"
+    echo "$CMD >> qdata/logs/tessera8.log 2>&1 &"
+    ${CMD} >> "qdata/logs/tessera8.log" 2>&1 &
     sleep 1
-done
 
 echo "Waiting until all Tessera nodes are running..."
 DOWN=true
 k=10
-while ${DOWN}; do
-    sleep 1
-    DOWN=false
-    for i in {1..7}
-    do
-        if [ ! -S "qdata/c${i}/tm.ipc" ]; then
-            echo "Node ${i} is not yet listening on tm.ipc"
+        if [ ! -S "qdata/c8/tm.ipc" ]; then
+            echo "Node 8 is not yet listening on tm.ipc"
             DOWN=true
         fi
 
         set +e
         #NOTE: if using https, change the scheme
         #NOTE: if using the IP whitelist, change the host to an allowed host
-        result=$(curl -s http://localhost:900${i}/upcheck)
+        result=$(curl -s http://localhost:9008/upcheck)
         set -e
         if [ ! "${result}" == "I'm up!" ]; then
-            echo "Node ${i} is not yet listening on http"
+            echo "Node 8 is not yet listening on http"
             DOWN=true
         fi
-    done
 
     k=$((k - 1))
     if [ ${k} -le 0 ]; then
