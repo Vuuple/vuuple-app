@@ -1,10 +1,12 @@
+import { ErrorInterceptorService } from './providers/http-provider/error-interceptor.service';
+import { JwtInterceptorService } from './providers/http-provider/jwt-interceptor.service';
 import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -46,7 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ElectronService, AuthGuard],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },ElectronService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
