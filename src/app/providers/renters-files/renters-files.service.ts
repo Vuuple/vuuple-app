@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 
-const RenterFiles = require('../../../../build/contracts/RenterFiles.json');
+const RenterFiles = require('../../../../resources/build/contracts/RenterFiles.json');
 
 declare let require: any;
 declare global {
@@ -14,7 +14,7 @@ window.web3 = window.web3 || {};
 
 @Injectable()
 export class RentersFilesService {
-  
+
   private web3: any;
   private accounts: string[];
   account;
@@ -137,7 +137,7 @@ export class RentersFilesService {
       });
     return result;
   }
-  
+
   async getFileByHash(bzzHash) {
     console.log('decimals');
     const result = await this.renter_files

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 
-const RenterFactory = require('../../../../build/contracts/RenterFactory.json');
+const RenterFactory = require('../../../../resources/build/contracts/RenterFactory.json');
 
 declare let require: any;
 declare global {
