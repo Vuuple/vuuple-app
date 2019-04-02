@@ -20,7 +20,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth/core/auth.guard';
 import { AuthModule } from './auth/auth.module';
-
+import { UploadFileService } from './providers/uploadFile/upload-file.service';
+ 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule,      
     AuthModule,
     TranslateModule.forRoot({
       loader: {
@@ -46,7 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ElectronService, AuthGuard],
+  providers: [ElectronService, AuthGuard,UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

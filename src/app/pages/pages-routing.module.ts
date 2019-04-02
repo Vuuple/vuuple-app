@@ -21,7 +21,7 @@ const routes: Routes = [{
 
  {
     path: '',
-   redirectTo: 'admin',
+    redirectTo: 'renter',
     pathMatch: 'full',
   }, {
     path: '**',

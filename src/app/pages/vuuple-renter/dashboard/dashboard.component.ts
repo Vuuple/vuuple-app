@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
-
+  uploadFile(){
+    this.router.navigate(['/pages/renter/uploadFile']);
+  }
 }

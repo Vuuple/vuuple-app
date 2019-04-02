@@ -1,8 +1,9 @@
 <div class="row">
     <!--<div class="col-md-1"></div>-->
-    <div class="col-md-11 ">
+    <div class="col-md-12 ">
       <div class="row" style="padding-top:8%">
-        <div class="col-md-5" style="padding:2% 2% 0 2%">
+        <div class="col-md-1"></div>
+        <div class="col-md-5" style="padding-top:2%">
             <div class="progress" style="height: 30px;">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
                     <span class="sr-only">50% Complete</span>
@@ -11,7 +12,8 @@
                 <span class="progress-completed">4GB</span>
             </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
           <div class="row">
             <div class="col-md-4">
                 <label for="buyStorage" class="btn"  style="color:#0e76bc;">Buy <br>Storage</label>
@@ -19,15 +21,16 @@
             </div>
             <div class="col-md-4">
                 <label for="files" class="btn"  style="color:#0e76bc;"><span class="glyphicon glyphicon-open"></span><br>Upload</label>
-                <input id="files" style="visibility:hidden;" type="file">
+                <input id="files" style="visibility:hidden;" type="button" (click)="uploadFile()">
             </div>
             <div class="col-md-4">
-                <label for="share" class="btn"  style="color:#0e76bc;"><i class="fas fa-share-alt"></i><br>Share</label>
+                <label for="share" class="btn" style="color:#0e76bc;"><i class="fas fa-share-alt"></i><br>Share</label>
                 <input id="share" style="visibility:hidden;" type="button">
-           </div>
-         </div>
-       </div>
-       <div class="row"style="padding-top:10%">
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="row"style="padding-top:5%">
           <table text-align="center" style="min-height:400px">
               <colgroup>
                 <col width="50%" />
@@ -79,9 +82,8 @@
                   </table>
               </td>
 
-            </table>
-
-      </div>
+          </table>
+       </div>
     </div>
-    <div class="col-md-1"></div>
+    <!--<div class="col-md-1"></div>-->
 </div>

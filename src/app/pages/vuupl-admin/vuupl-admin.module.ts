@@ -16,6 +16,9 @@ import { SettingComponent } from './setting/setting.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
 import { AddpointComponent } from './addpoint/addpoint.component';
+import { EscrowListComponent } from './escrow-list/escrow-list.component';
+import { GeneralInfoComponent } from './general-info/general-info.component';
+import { TokenComponent } from './token/token.component';
 
 @NgModule({
   imports: [
@@ -24,7 +27,7 @@ import { AddpointComponent } from './addpoint/addpoint.component';
       {
         path: '',
 
-        component: DashboardComponent,
+        component:IndividualRenterComponent,
 
         children: [
         {
@@ -38,6 +41,10 @@ import { AddpointComponent } from './addpoint/addpoint.component';
         {
           path:'addpoint',
           component: AddpointComponent,
+        },
+        {
+          path:'escrow',
+          component:EscrowListComponent,
         },
         {
           path: 'setting',
@@ -54,7 +61,9 @@ import { AddpointComponent } from './addpoint/addpoint.component';
            RequestListComponent,
            IndividualRenterComponent,
            MinersComponent,
-           SettingComponent
+           SettingComponent,
+           TokenComponent,
+           GeneralInfoComponent
           ],
   declarations: [
      DashboardComponent,
@@ -67,7 +76,10 @@ import { AddpointComponent } from './addpoint/addpoint.component';
     LenderComponent,
     MinersComponent,
     SettingComponent,
-    AddpointComponent
+    AddpointComponent,
+    EscrowListComponent,
+    GeneralInfoComponent,
+    TokenComponent
   ]
 })
 export class VuuplAdminModule { }

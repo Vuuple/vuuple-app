@@ -2,40 +2,22 @@
   <div class="col-md-11 ">
     <div class="row main">
       <div class="col-md-3">
-        <ul class="nav tabs" role="tablist">
-            <li class="active">
-               <a href="#generalInfo" aria-controls="generalInfo" data-toggle="tab" role="tab">general Info</a>
+        <ul class="nav">
+            <li>
+               <a href="#generalinfo" class="infoButton ">general Info</a>
             </li>
             <li>
-                <a href="#token" data-toggle="tab"aria-controls="token" role="tab">Token</a>
+                <a href="#token" class="tokenButton active">Token</a>
              </li>
         </ul>
       </div>
       <div class="col-md-9 tab-content" >
-         <div class="tab-pane" id="generalInfo" role="tabpanel">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>General Info</h2>
-            </div>
-            <div class="col-md-6">
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" style="margin-right:15px;width: 250px;" placeholder="Search...">
-                 </form>
-            </div>
-          </div>
-         </div>
-         <div class="tab-pane active" id="token" role="tabpanel">
-            <div class="row">
-                <div class="col-md-6">
-                  <h2>Tokens</h2>
-                </div>
-                <div class="col-md-6">
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" style="margin-right:15px;width: 250px;" placeholder="Search...">
-                     </form>
-                </div>
-              </div>
-         </div>
+        <div id="generalinfo">
+           <app-general-info></app-general-info>        
+        </div>
+        <div id="token">
+           <app-token ></app-token>      
+        </div>
       </div>
     </div>
   </div>

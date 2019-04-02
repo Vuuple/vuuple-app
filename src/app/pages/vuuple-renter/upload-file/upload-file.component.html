@@ -1,0 +1,29 @@
+<div clas="row main"style="margin-top:5%"> 
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
+       <h2>Upload your File!</h2>
+        <div style="height:350px;margin-top: 20%">
+            <div *ngIf="error" style="margin-bottom:5%">
+        {{ error.message }}
+            </div>
+             <div *ngIf="uploadResponse.status === 'error'">
+        {{ uploadResponse.message }}
+             </div>
+             <div *ngIf="uploadResponse.status === 'progress'">
+    
+    
+        <div role="progressbar" [style.width.%]="uploadResponse.message" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          {{uploadResponse.message}}%
+        </div>
+    
+             </div>
+    
+             <form  [formGroup]="uplaodForm" (ngSubmit)="onSubmit()">
+                <input type="file"class="choose" name="files" (change)="onFileChange($event)" style="margin-bottom:5%"/>
+                <button type="submit" class="upload">Upload</button>
+     
+             </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

@@ -5,18 +5,25 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { WalletComponent } from './wallet/wallet.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild([
+    CommonModule, SharedModule,FormsModule,ReactiveFormsModule, RouterModule.forChild([
 
       {
         path: '',
-        component: DashboardComponent,
+        component: UploadFileComponent,
         children: [
           {
             path: 'main',
             component: DashboardComponent,
+          },
+          {
+             path:'uploadFile',
+             component:UploadFileComponent,
           }
           ,
           {
@@ -31,6 +38,6 @@ import { WalletComponent } from './wallet/wallet.component';
     ])
   ],
   exports:[WalletComponent],
-  declarations: [DashboardComponent,WalletComponent]
+  declarations: [DashboardComponent,WalletComponent, UploadFileComponent]
 })
 export class VuupleRenterModule { }

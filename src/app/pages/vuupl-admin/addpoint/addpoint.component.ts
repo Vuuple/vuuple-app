@@ -6,16 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addpoint.component.scss']
 })
 export class AddpointComponent implements OnInit {
-  addnode=[];
+   node={
+      username:"node",
+      email:"node@node.com",
+      enode:"node",
+      Ethwallwt:"GFHGJKHBKJNK",
+      staticIP:"KJHKJNKLMKLMKLMKL"
+   }
   constructor() { 
-    this.addnode=[
-      {
-        userName:'',
-        email:'',
-        EthWallet:'',
-        staticIp:''
-      }
-    ]
+   this.node
   }
 
   ngOnInit() {
