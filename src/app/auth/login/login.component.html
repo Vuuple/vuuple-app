@@ -1,23 +1,41 @@
-<div class="login-body" >
-		<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<img style="width:30%;margin-left: 35%;margin-bottom: 5%" src="../../../assets/img/Logo.png"/>
-						<form [formGroup]="loginForm">
-							<div class="form-group">
-								<!--<label>User Name </label>-->
-								<input type="text" formControlName="username" class="form-control" placeholder="Username">
-							</div>
-							<div class="form-group">
-								<!--<label>Password</label>-->
-								<input type="password" class="form-control" formControlName="password" placeholder="Password">
-								<label class="error">{{errorMessage}}</label>
-							</div>
-							<button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-primary">
-								Log in
-							</button>
-						</form>
-					</div>
-				</div>
-			</div>
+<div class="login-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <img
+          style="width:30%;margin-left: 35%;margin-bottom: 5%"
+          src="../../../assets/img/Logo.png"
+        />
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <!--<label>User Name </label>-->
+            <input
+              type="text"
+              formControlName="email"
+              class="form-control"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <!--<label>Password</label>-->
+            <input
+              type="password"
+              class="form-control"
+              formControlName="pwd"
+              placeholder="Password"
+            />
+            <label class="error">{{ errorMessage }}</label>
+          </div>
+          <button
+            type="submit"
+            (click)="login()"
+            [disabled]="!loginForm.valid"
+            class="btn btn-primary"
+          >
+            Log in
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

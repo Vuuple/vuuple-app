@@ -18,24 +18,25 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class DataService<Type> {
+export class DataService {
   private resolveSuffix = '?resolve=true';
   private actionUrl: string;
   private headers: Headers;
 
   constructor(private http: HttpClient) {
-    this.actionUrl = 'http://18.223.208.148:3000/api/';
+    // this.actionUrl = 'http://18.223.208.148:3000/';
+    this.actionUrl = 'http://localhost:3000/';
     this.headers = new Headers();
-    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Content-any', 'application/json');
     this.headers.append('Accept', 'application/json');
   }
 
-  public getAll(ns: string): Observable<Type[]> {
+  public getList(ns: string): Observable<any[]> {
     console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
     return this.http.get(`${this.actionUrl}${ns}`).pipe(map(this.extractData));
   }
 
-  public getSingle(ns: string, id: string): Observable<Type> {
+  public getSingle(ns: string, id: string): Observable<any> {
     console.log('GetSingle ' + ns);
 
     return this.http
@@ -43,26 +44,31 @@ export class DataService<Type> {
       .pipe(map(this.extractData));
   }
 
-  public add(ns: string, asset: Type): Observable<Type> {
-      return this.http
+  public post(ns: string, asset: any): Observable<any> {
+    return this.http
       .post(this.actionUrl + ns, asset)
       .pipe(map(this.extractData));
   }
-
-  public update(ns: string, id: string, itemToUpdate: Type): Observable<Type> {
-
+  public postById(ns: string, id: any, asset: any): Observable<any> {
     return this.http
-      .put(`${this.actionUrl}${ns}/${id}`, itemToUpdate)
+      .post(this.actionUrl + ns + '/' + id, asset)
       .pipe(map(this.extractData));
   }
 
-  public delete(ns: string, id: string): Observable<Type> {
-    console.log('Delete ' + ns);
+  // public update(ns: string, id: string, itemToUpdate: any): Observable<any> {
 
-    return this.http
-      .delete(this.actionUrl + ns + '/' + id)
-      .pipe(map(this.extractData));
-  }
+  //   return this.http
+  //     .put(`${this.actionUrl}${ns}/${id}`, itemToUpdate)
+  //     .pipe(map(this.extractData));
+  // }
+
+  // public delete(ns: string, id: string): Observable<any> {
+  //   console.log('Delete ' + ns);
+
+  //   return this.http
+  //     .delete(this.actionUrl + ns + '/' + id)
+  //     .pipe(map(this.extractData));
+  // }
 
   // private handleError(error: any): Observable<string> {
   //     // In a real world app, we might use a remote logging infrastructure

@@ -6,7 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HttpClient,
+  HTTP_INTERCEPTORS
+} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,6 +26,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth/core/auth.guard';
 import { AuthModule } from './auth/auth.module';
+import { DataService } from './providers/http-provider/data.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,11 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    WebviewDirective
-  ],
+  declarations: [AppComponent, HomeComponent, WebviewDirective],
   imports: [
     BrowserModule,
     FormsModule,
@@ -43,13 +44,26 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },ElectronService, AuthGuard],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true
+    },
+    ElectronService,
+    DataService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

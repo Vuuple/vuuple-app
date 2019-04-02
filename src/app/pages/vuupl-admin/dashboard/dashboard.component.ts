@@ -1,3 +1,4 @@
+import { ServerApiService } from './../../../providers/server-api/server-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,29 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   data: any;
 
-  constructor() {
+  constructor(private apiService: ServerApiService) {
     this.data = {
-      labels: ['Storage','Tokens', 'Users'],
+      labels: ['Storage', 'Tokens', 'Users'],
       datasets: [
         {
           data: [120, 120, 120],
-          backgroundColor: [
-            "#0077b5",
-            "#29ABE2",
-            "#3584ad"
-          ],
-          hoverBackgroundColor: [
-            "#0077b5",
-            "#29ABE2",
-            "#3584ad"
-          ]
-        }],
+          backgroundColor: ['#0077b5', '#29ABE2', '#3584ad'],
+          hoverBackgroundColor: ['#0077b5', '#29ABE2', '#3584ad']
+        }
+      ]
     };
   }
-  ngOnInit() {
+  ngOnInit() {}
+  getData() {
+    const users = this.apiService.getAllUsers().subscribe(s => {
+      console.log(s, 'users');
 
+      return s;
+    });
   }
 }
