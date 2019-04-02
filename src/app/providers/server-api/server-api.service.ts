@@ -15,6 +15,6 @@ export class ServerApiService {
     return this.dataService.getSingle('api/profile', id);
   }
   approve(id, data): Observable<any> {
-    return await this.dataService.postById('api/approve', id, data);
+    return this.dataService.postById('api/approve', id, data);
   }
 }
