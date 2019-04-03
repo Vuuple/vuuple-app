@@ -1,0 +1,277 @@
+# The following environment variables are substituted if present
+# * QUORUM_CONSENSUS: default to istanbul
+# * QUORUM_DOCKER_IMAGE: default to quorumengineering/quorum:2.1.1
+# * QUORUM_TX_MANAGER_DOCKER_IMAGE: default to quorumengineering/tessera:0.7.3
+# To use Constellation, set QUORUM_TX_MANAGER_DOCKER_IMAGE to Constellation docker image,
+# e.g.: QUORUM_TX_MANAGER_DOCKER_IMAGE=quorumengineering/constellation:0.3.2 docker-compose up -d
+version: '3.7'
+x-quorum-def: &quorum-def
+  restart: 'on-failure'
+  image: '${QUORUM_DOCKER_IMAGE:-quorumengineering/quorum:2.1.1}'
+  expose:
+    - '21000'
+    - '50400'
+  healthcheck:
+    test: ['CMD', 'wget', '--spider', 'http://localhost:8545']
+    interval: 3s
+    timeout: 3s
+    retries: 10
+    start_period: 5s
+  labels:
+    com.quorum.consensus: ${QUORUM_CONSENSUS:-istanbul}
+  entrypoint:
+    - /bin/sh
+    - -c
+    - |
+      DDIR=/qdata/dd
+      rm -rf $${DDIR}
+      mkdir -p $${DDIR}/keystore
+      mkdir -p $${DDIR}/geth
+      cp /examples/raft/nodekey8 $${DDIR}/geth/nodekey
+      cp /examples/raft/pubkeyhash $${DDIR}/geth/pubkeyhash
+      cp /examples/keys/key8 $${DDIR}/keystore/
+      cat /examples/permissioned-nodes.json | sed 's/^\(.*\)@.*\?\(.*\)raftport=5040\([0-9]\)\(.*\)$$/\1@3.18.34.201:2100\3?discport=0\&raftport=5040\3\4/g' > $${DDIR}/static-nodes.json
+      echo adding local node to static-nodes.json
+      #this is a bit convoluted but all it does is to add the node8 to the static-nodes.json
+      #remove the last ']<EOL>' characters in the file static-nodes.json
+      head -c -2   $${DDIR}/static-nodes.json > $${DDIR}/static-nodes-cut.json
+      #build the enodeid for the newly created node - it is used in both static-nodes.json as well as with raft_addPeer further down
+      printf %s "\"enode://" >> $${DDIR}/enodeid
+      cat $${DDIR}/geth/pubkeyhash >> $${DDIR}/enodeid
+      #removing the EoL that the cat adds
+      head -c -1 $${DDIR}/enodeid > $${DDIR}/enodeid-cut
+      echo "@192.168.0.101:21000?discport=0&raftport=50400\"" >> $${DDIR}/enodeid-cut
+      cp $${DDIR}/enodeid-cut $${DDIR}/enodeid
+      rm $${DDIR}/enodeid-cut
+      echo ", " >> $${DDIR}/static-nodes-cut.json
+      cat $${DDIR}/enodeid >> $${DDIR}/static-nodes-cut.json
+      echo "]" >> $${DDIR}/static-nodes-cut.json
+      cp $${DDIR}/static-nodes-cut.json $${DDIR}/static-nodes.json
+      rm $${DDIR}/static-nodes-cut*
+      cp $${DDIR}/static-nodes.json $${DDIR}/permissioned-nodes.json
+      cat $${DDIR}/static-nodes.json
+      GENESIS_FILE="/examples/istanbul-genesis.json"
+      if [ "${QUORUM_CONSENSUS:-istanbul}" == "raft" ]; then
+        GENESIS_FILE="/examples/genesis.json"
+      fi
+      NETWORK_ID=$$(cat $${GENESIS_FILE} | grep chainId | awk -F " " '{print $$2}' | awk -F "," '{print $$1}')
+      GETH_ARGS_raft="--raft --raftport 50400"
+      GETH_ARGS_istanbul="--emitcheckpoints --istanbul.blockperiod 1 --mine --minerthreads 1 --syncmode full"
+      geth --datadir $${DDIR} init $${GENESIS_FILE}
+      #create the json rpc command to add node8 as a peer
+      
+      geth \
+        --identity node$${NODE_ID}-${QUORUM_CONSENSUS:-istanbul} \
+        --datadir $${DDIR} \
+        --nodiscover \
+        --verbosity 5 \
+        --networkid $${NETWORK_ID} \
+        $${PERMISSIONED} \
+        --rpc \
+        --rpcaddr 0.0.0.0 \
+        --rpcport 8545 \
+        --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,${QUORUM_CONSENSUS:-istanbul} \
+        --port 21000 \
+        --unlock 0 \
+        --password /examples/passwords.txt \
+        $${GETH_ARGS_${QUORUM_CONSENSUS:-istanbul}}
+x-swarm-def: &swarm-def
+  restart: 'on-failure'
+  image: '${SWARM_DOCKER_IMAGE:-herawy/swarm-base}'
+  expose:
+    - '5001'
+  entrypoint:
+    - /bin/sh
+    - -c
+    - |
+      DDIR=/qdata/dd
+      NETWORK_ID=$$(cat $${GENESIS_FILE} | grep chainId | awk -F " " '{print $$2}' | awk -F "," '{print $$1}')
+      echo "**************************"
+      echo $${ADDRESS}
+      echo password file path $${PassWord}
+      echo "**************************"
+      echo $${DDIR}
+      echo $${PWD}
+      echo $${NETWORK_ID}
+      swarm  --datadir $${DDIR} --bzzaccount $${ADDRESS} --ens-api $${DDIR}/geth.ipc --bzzport 5001 --password /examples/passwords.txt --bzznetworkid 10  --port $${PORT} 
+
+x-tx-manager-def: &tx-manager-def
+  image: '${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.7.3}'
+  expose:
+    - '9000'
+  restart: 'no'
+  healthcheck:
+    test: ['CMD-SHELL', '[ -S /qdata/tm/tm.ipc ] || exit 1']
+    interval: 3s
+    timeout: 3s
+    retries: 20
+    start_period: 5s
+  entrypoint:
+    - /bin/sh
+    - -c
+    - |
+      DDIR=/qdata/tm
+      rm -rf $${DDIR}
+      mkdir -p $${DDIR}
+      DOCKER_IMAGE="${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.7.3}"
+      TX_MANAGER=$$(echo $${DOCKER_IMAGE} | sed 's/^.*\/\(.*\):.*$$/\1/g')
+      echo "TxManager: $${TX_MANAGER}"
+      case $${TX_MANAGER}
+      in
+        tessera)
+          echo creating twoLineFeeds - to help with key generation
+          cat <<EOF > $${DDIR}/twoLineFeeds
+
+
+
+      EOF
+          cat $${DDIR}/twoLineFeeds
+          java -Xms128M -Xmx128M -jar /tessera/tessera-app.jar -keygen -filename $${DDIR}/tm < $${DDIR}/twoLineFeeds
+          echo ******************Generated key - use this as privateFor to send private transactions to node8******************
+          cat $${DDIR}/tm.pub
+          echo ****************************************************************************************************************
+          cat <<EOF > $${DDIR}/tessera-config.json
+          {
+              "useWhiteList": false,
+              "jdbc": {
+                  "username": "sa",
+                  "password": "",
+                  "url": "jdbc:h2:./$${DDIR}/db;MODE=Oracle;TRACE_LEVEL_SYSTEM_OUT=0"
+              },
+              "server": {
+                  "port": 9000,
+                  "hostName": "http://$$(hostname -i)",
+                  "sslConfig": {
+                      "tls": "OFF",
+                      "generateKeyStoreIfNotExisted": true,
+                      "serverKeyStore": "$${DDIR}/server-keystore",
+                      "serverKeyStorePassword": "quorum",
+                      "serverTrustStore": "$${DDIR}/server-truststore",
+                      "serverTrustStorePassword": "quorum",
+                      "serverTrustMode": "TOFU",
+                      "knownClientsFile": "$${DDIR}/knownClients",
+                      "clientKeyStore": "$${DDIR}/client-keystore",
+                      "clientKeyStorePassword": "quorum",
+                      "clientTrustStore": "$${DDIR}/client-truststore",
+                      "clientTrustStorePassword": "quorum",
+                      "clientTrustMode": "TOFU",
+                      "knownServersFile": "$${DDIR}/knownServers"
+                  }
+              },
+         "peer": [
+                 
+                  {
+                      "url": "http://3.18.34.201:24001"
+                  },
+                  {
+                      "url": "http://3.18.34.201:24002"
+                  },
+                  {
+                      "url": "http://3.18.34.201:24003"
+                  },
+                  {
+                      "url": "http://3.18.34.201:24004"
+                  },
+                  {
+                      "url": "http://3.18.34.201:24005"
+                  },
+                  {
+                      "url": "http://3.18.34.201:24006"
+                  },
+                   {
+                      "url": "http://3.18.34.201:24007"
+                  }
+              ],
+              "keys": {
+                  "passwords": [],
+                  "keyData": [
+                      {
+                          "config": $$(cat $${DDIR}/tm.key),
+                          "publicKey": "$$(cat $${DDIR}/tm.pub)"
+                      }
+                  ]
+              },
+              "alwaysSendTo": [],
+              "unixSocketFile": "$${DDIR}/tm.ipc"
+          }
+      EOF
+          java -Xms128M -Xmx128M -jar /tessera/tessera-app.jar -configfile $${DDIR}/tessera-config.json
+          ;;
+        constellation)
+          echo "socket=\"$${DDIR}/tm.ipc\"\npublickeys=[\"/examples/keys/tm$${NODE_ID}.pub\"]\n" > $${DDIR}/tm.conf
+          constellation-node \
+            --url=http://$$(hostname -i):9000/ \
+            --port=9000 \
+            --socket=$${DDIR}/tm.ipc \
+            --othernodes=http://3.18.34.201:24000/,http://3.18.34.201:24001/,http://3.18.34.201:24002/,http://3.18.34.201:24003/,http://3.18.34.201:24004/ \
+            --publickeys=/examples/keys/tm$${NODE_ID}.pub \
+            --privatekeys=/examples/keys/tm$${NODE_ID}.key \
+            --storage=$${DDIR} \
+            --verbosity=4
+          ;;
+        *)
+          echo "Invalid Transaction Manager"
+          exit 1
+          ;;
+      esac
+services:
+  swarm8:
+    <<: *swarm-def
+    hostname: swarm8
+    container_name: swarm-node
+    ports:
+      - '23007:5001'
+    volumes:
+      - ./network/node8:/qdata:rw
+      - ./examples/7nodes:/examples:ro
+    depends_on:
+      - node8
+    environment:
+      - ADDRESS=0xa9e871f88cbeb870d32d88e4221dcfbd36dd635a
+      - PORT=900
+      - PassWord="/examples/passwords.txt"
+    networks:
+      quorum-examples-net:
+        ipv4_address: 172.16.239.20
+  node8:
+    <<: *quorum-def
+    hostname: node8
+    container_name: quorum-node
+    ports:
+      - '22008:8545'
+      - '21008:21000'
+      - '50400:50400'
+    volumes:
+      - ./network/node8:/qdata:rw
+      - ./examples/7nodes:/examples:ro
+    depends_on:
+      - txmanager8
+    environment:
+      - PRIVATE_CONFIG=/qdata/tm/tm.ipc
+      - QUORUM_CONSENSUS=raft
+      - NODE_ID=8
+    networks:
+      quorum-examples-net:
+        ipv4_address: 172.16.239.18
+  txmanager8:
+    <<: *tx-manager-def
+    container_name: txManger-node
+    ports:
+      - '24008:9000'
+    volumes:
+      - ./network/node8:/qdata:rw
+      - ./examples/7nodes:/examples:ro
+    networks:
+      quorum-examples-net:
+        ipv4_address: 172.16.239.108
+    environment:
+      - NODE_ID=8
+networks:
+  quorum-examples-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
+volumes:
+  '8':

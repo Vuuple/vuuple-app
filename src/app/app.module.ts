@@ -1,10 +1,16 @@
+import { ErrorInterceptorService } from './providers/http-provider/error-interceptor.service';
+import { JwtInterceptorService } from './providers/http-provider/jwt-interceptor.service';
 import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HttpClient,
+  HTTP_INTERCEPTORS
+} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,17 +28,15 @@ import { AuthGuard } from './auth/core/auth.guard';
 import { AuthModule } from './auth/auth.module';
 import { UploadFileService } from './providers/uploadFile/upload-file.service';
  
+import { DataService } from './providers/http-provider/data.service';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    WebviewDirective
-  ],
+  declarations: [AppComponent, HomeComponent, WebviewDirective],
   imports: [
     BrowserModule,
     FormsModule,
@@ -42,12 +46,27 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
   ],
-  providers: [ElectronService, AuthGuard,UploadFileService],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true
+    },
+    ElectronService,
+    DataService,
+    AuthGuard,
+    UploadFileService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service'
+import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,7 +9,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['login.css']
 })
 export class LoginComponent {
-
   loginForm: FormGroup;
   errorMessage: string = '';
 
@@ -23,8 +22,8 @@ export class LoginComponent {
 
   createForm() {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['', Validators.required],
+      pwd: ['', Validators.required]
     });
   }
 
@@ -49,14 +48,15 @@ export class LoginComponent {
   //     })
   // }
 
-  tryLogin(value) {
-    const isAuth = this.authService.login(value.username, value.password)
+  async login() {
+    const isAuth = await this.authService.login(
+      this.loginForm.get('email').value,
+      this.loginForm.get('pwd').value
+    );
     if (isAuth) {
-      this.router.navigate(['/']);
-
+      this.router.navigate(['/pages']);
     } else {
-      this.errorMessage = "Incorrect credentials, please use the correct one";
-
+      this.errorMessage = 'Incorrect credentials, please use the correct one';
     }
     // this.authService.login(value)
   }
