@@ -13,7 +13,7 @@ import { CompanyRenterComponent } from './company-renter/company-renter.componen
 import { LenderComponent } from './lender/lender.component';
 import { MinersComponent } from './miners/miners.component';
 import { SettingComponent } from './setting/setting.component';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
 import { AddpointComponent } from './addpoint/addpoint.component';
 import { EscrowListComponent } from './escrow-list/escrow-list.component';
@@ -22,54 +22,57 @@ import { TokenComponent } from './token/token.component';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ChartModule ,ReactiveFormsModule,SharedModule, RouterModule.forChild([
-
+    CommonModule,
+    FormsModule,
+    ChartModule,
+    ReactiveFormsModule,
+    SharedModule,
+    RouterModule.forChild([
       {
         path: '',
 
-        component:DashboardComponent,
-
-        children: [
-        {
-          path: 'main',
-          component: DashboardComponent,
-        },
-        {
-          path: 'request',
-          component: RequestListComponent,
-        },
-        {
-          path:'addpoint',
-          component: AddpointComponent,
-        },
-        {
-          path:'escrow',
-          component:EscrowListComponent,
-        },
-        {
-          path: 'setting',
-          component: SettingComponent,
-        },
-        {
-          path: '**',
-          component: NotFoundComponent,
-        }]
-     }
+        component: DashboardComponent
+      },
+      {
+        path: 'main',
+        component: DashboardComponent
+      },
+      {
+        path: 'request',
+        component: RequestListComponent
+      },
+      {
+        path: 'addpoint',
+        component: AddpointComponent
+      },
+      {
+        path: 'escrow',
+        component: EscrowListComponent
+      },
+      {
+        path: 'setting',
+        component: SettingComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
     ])
   ],
-  exports:[DashboardComponent,
-           RequestListComponent,
-           IndividualRenterComponent,
-           MinersComponent,
-           SettingComponent,
-           TokenComponent,
-           GeneralInfoComponent
-          ],
+  exports: [
+    DashboardComponent,
+    RequestListComponent,
+    IndividualRenterComponent,
+    MinersComponent,
+    SettingComponent,
+    TokenComponent,
+    GeneralInfoComponent
+  ],
   declarations: [
-     DashboardComponent,
-     NodeListComponent,
-     ManageRequestComponent,
-     RequestListComponent,
+    DashboardComponent,
+    NodeListComponent,
+    ManageRequestComponent,
+    RequestListComponent,
     TokensComponent,
     IndividualRenterComponent,
     CompanyRenterComponent,
@@ -82,4 +85,4 @@ import { TokenComponent } from './token/token.component';
     TokenComponent
   ]
 })
-export class VuuplAdminModule { }
+export class VuuplAdminModule {}

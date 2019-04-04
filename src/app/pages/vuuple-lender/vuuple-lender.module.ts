@@ -7,23 +7,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild([
-
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild([
       {
         path: '',
-        component: DashboardComponent,
-        children: [
-          {
-            path: 'main',
-            component: DashboardComponent,
-          }
-          , {
-            path: '**',
-            component: NotFoundComponent,
-          }]
+        component: DashboardComponent
+      },
+      {
+        path: 'main',
+        component: DashboardComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
       }
     ])
   ],
   declarations: [DashboardComponent]
 })
-export class VuupleLenderModule { }
+export class VuupleLenderModule {}
