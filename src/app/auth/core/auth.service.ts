@@ -16,25 +16,38 @@ export class AuthService {
 
   async login(email: string, password: string) {
     const credential = { email: email, pwd: password };
-    return await this.dataService
-      .post('auth/login', credential)
-      .subscribe(s => {
-        this.currentUser = s.rs;
-        localStorage.setItem('user', JSON.stringify(this.currentUser));
-        return this.currentUser != null && this.currentUser !== undefined;
+    // return await this.dataService
+    //   .post('auth/login', credential)
+    //   .subscribe(s => {
+    //     localStorage.setItem('user', JSON.stringify(s.rs));
+    //     this.currentUser = JSON.parse(localStorage.getItem('user'));
+    //     console.log(this.currentUser, ' this.currentUser');
+    //     console.log(s.rs, 's.rs');
+
+    //     return this.currentUser != null && this.currentUser !== undefined;
+    //   });
+
+    return new Promise<any>((resolve, reject) => {
+      this.dataService.post('auth/login', credential).subscribe(s => {
+        localStorage.setItem('user', JSON.stringify(s.rs));
+        this.currentUser = JSON.parse(localStorage.getItem('user'));
+        console.log(this.currentUser, ' this.currentUser');
+        console.log(s.rs, 's.rs');
+
+        resolve(this.currentUser != null && this.currentUser !== undefined);
       });
+    });
   }
   getCuurentUser() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
     return this.currentUser;
   }
   getUserType(): Number {
-    this.currentUser = JSON.parse(localStorage.getItem('user'));
-    if (this.currentUser.isAdmin) {
+    if (this.getCuurentUser().isAdmin) {
       return 1;
-    } else if (this.currentUser.category == 'renter') {
+    } else if (this.getCuurentUser().category == 'renter') {
       return 2;
-    } else if (this.currentUser.category == 'lender') {
+    } else if (this.getCuurentUser().category == 'lender') {
       return 3;
     } else {
       return null;
@@ -42,6 +55,7 @@ export class AuthService {
   }
   logout(): void {
     localStorage.removeItem('user');
+    localStorage.clear();
     this.currentUser = null;
   }
 }

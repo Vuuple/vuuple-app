@@ -57,11 +57,11 @@ export class LoginComponent {
       return 3;
     }
   }
-  async login() {
+  login() {
     this.authService
       .login(this.loginForm.get('email').value, this.loginForm.get('pwd').value)
       .then(isAuth => {
-        if (isAuth) {
+        if (isAuth == true) {
           // switch(this.getcategory()){
           //   case 1:
           //    this.router.navigate(['/pages/admin']);
