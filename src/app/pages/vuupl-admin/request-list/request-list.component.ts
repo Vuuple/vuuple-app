@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerApiService } from '../../../providers/server-api/server-api.service';
+import { Observable} from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-request-list',
@@ -6,40 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-list.component.css']
 })
 export class RequestListComponent implements OnInit {
-  requests=[];
-
-  constructor() { }
+  requests : any =[];
+  requestss : any = [];
+  constructor(private serverApiService:ServerApiService) { 
+    
+     this.requests=[];
+      this.serverApiService.getAllUsers().subscribe((data : {} ) => {
+        console.log(data);
+        this.requests = data;    
+      });
+  }
 
   ngOnInit() {
-    this.requests=[
-      {
-        userName:"renter",
-        email:"renter",
-        EthWallet:"dadrt",
-        staticIp:"sfduiweh3u25u295i",
-        category:"renter",
-        add:"add",
-        reject:"reject"
-      },
-      {
-        userName:"renter",
-        email:"renter",
-        EthWallet:"dadrt",
-        staticIp:"sfduiweh3u25u295i",
-        category:"renter",
-        add:"add",
-        reject:"reject"
-      },
-      {
-        userName:"renter",
-        email:"renter",
-        EthWallet:"dadrt",
-        staticIp:"sfduiweh3u25u295i",
-        category:"renter",
-        add:"add",
-        reject:"reject"
-      }
-    ]
   }
 
 }
