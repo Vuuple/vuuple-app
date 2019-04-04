@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../auth/core/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,8 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  constructor() {
-    this.items = this.adminItem;
+  constructor(public authService: AuthService) {
+    const type = this.authService.getUserType();
+
+    if (type === 1) {
+      this.items = this.adminItem;
+    } else if (type === 2) {
+      this.items = this.renterItems;
+    } else if (type === 3) {
+      this.items = this.LenderItem;
+    } else {
+      this.Logout();
+    }
+  }
+  Logout() {
+    this.authService.logout();
   }
   renterItems = [
     { name: 'Dashboard', link: '/pages/renter' },
@@ -32,7 +46,6 @@ export class NavComponent implements OnInit {
     { name: 'INDIVIDUAL RENTERS', link: '/pages/admin' },
     { name: 'COMAPNY RENTERS', link: '/pages/admin' },
     { name: 'LENDERS', link: '/pages/admin' },
-    { name: 'MINERS', link: '/pages/admin' },
     { name: 'SETTING', link: '/pages/admin/setting' }
   ];
   items = [];
