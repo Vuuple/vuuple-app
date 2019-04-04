@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Params } from '@angular/router';
+import { AuthService } from '../../../auth/core/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +13,15 @@ export class HeaderComponent implements OnInit {
   admin=['Nodes','vuuple Tokens']
   user=['following','followers']
   items=[]
-  constructor() {
+  constructor(   public authService: AuthService,private router: Router,) {
    }
-
+   async Logout(){
+       this.authService.logout();
+       this.router.navigate(['/auth']);
+   }
+   ShowProfile(){
+    this.router.navigate(['/pages/profile']);
+   }
   ngOnInit() {
   }
 

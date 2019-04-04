@@ -27,7 +27,7 @@ import { TokenComponent } from './token/token.component';
       {
         path: '',
 
-        component:IndividualRenterComponent,
+        component:DashboardComponent,
 
         children: [
         {

@@ -28,9 +28,11 @@
             <div class="row">
                <div class="col-md-12 col-lg-12" >
                  <form class="navbar-form navbar-right">
-                   <input type="text" class="form-control" style="margin-right:15px;width: 250px;" placeholder="Search...">
-                    <img class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />
-                </form>
+                   <input type="text" class="form-control" style="margin-right:5px;width: 250px;" placeholder="Search...">
+                    <!--<img  class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />-->
+                    <button class="btn"style="margin-right:5px;" (click)="ShowProfile()"><i class="fas fa-user-cog"></i></button>
+                    <button class="btn" (click)="Logout()"><i class="fas fa-sign-out-alt"></i></button>
+                 </form>
              </div>
              <div class="col-md-12 col-lg-12" style="padding-top: 6%;">
             <!--  <ul class="nav navbar-nav navbar-right sub-clouds">
@@ -62,7 +64,6 @@
   </div>
  </div>
       </div>
-
     </div>
 </div>
 

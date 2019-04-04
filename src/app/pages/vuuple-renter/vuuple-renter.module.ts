@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { WalletComponent } from './wallet/wallet.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
       {
         path: '',
-        component: UploadFileComponent,
+        component: DashboardComponent,
         children: [
           {
             path: 'main',

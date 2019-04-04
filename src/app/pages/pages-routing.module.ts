@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { ProfileComponent } from './shared/profile/profile.component';
 
 const routes: Routes = [{
   path: '',
@@ -17,11 +18,15 @@ const routes: Routes = [{
     },
     {
       path: 'lender',
-      loadChildren: './vuuple-lender/vuuple-lender.module#VuupleLenderModule'/*, canActivate: [LenderGuard]*/ },
-
+      loadChildren: './vuuple-lender/vuuple-lender.module#VuupleLenderModule'/*, canActivate: [LenderGuard]*/ 
+    },
+    {
+      path:'profile',
+      component:ProfileComponent,
+    },
  {
     path: '',
-    redirectTo: 'renter',
+    redirectTo: 'admin',
     pathMatch: 'full',
   }, {
     path: '**',

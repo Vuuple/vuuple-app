@@ -27,12 +27,12 @@ export class NavComponent implements OnInit {
     { name: 'SETTING', link: '/pages/lender/setting' }
   ];
   adminItem = [
-    { name: 'Dashboard', link: '/pages/admin' },
+    { name: 'Dashboard', link: '/pages/admin/main' },
     { name: 'REQUEST', link: '/pages/admin/request' },
     { name: 'INDIVIDUAL RENTERS', link: '/pages/admin' },
     { name: 'COMAPNY RENTERS', link: '/pages/admin' },
     { name: 'LENDERS', link: '/pages/admin' },
-    { name: 'MINERS', link: '/auth' },
+    { name: 'MINERS', link: '/pages/admin' },
     { name: 'SETTING', link: '/pages/admin/setting' }
   ];
   items = [];
