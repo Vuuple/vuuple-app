@@ -95,13 +95,13 @@ console.log(global, 'global');
 
 app.on('before-quit', async () => {
   // set docker-compose down
-  const dockerfile = path.join(
-    global.resourcesPath,
-    'resources',
-    'network-resources',
-    'docker-compose.yml'
-  );
-  await node.stop_docker(dockerfile);
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'resources',
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.stop_docker(dockerfile);
   global.isQuitting = true;
 });
 
@@ -122,13 +122,13 @@ app.on('activate', () => {
 
 const run = async () => {
   log.info(`Starting application: ${productName} ${version} (${environment})`);
-  const dockerfile = path.join(
-    global.resourcesPath,
-    'resources',
-    'network-resources',
-    'docker-compose.yml'
-  );
-  await node.start_docker(dockerfile);
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'resources',
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.start_docker(dockerfile);
   //need to check for containers healthy
 
   await app.whenReady();
