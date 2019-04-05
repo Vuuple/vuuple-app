@@ -4,7 +4,7 @@ const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('graceful-fs'), {
   filter(name) {
     return ['readFile'].includes(name);
-  },
+  }
 });
 
 const log = require('electron-log');
@@ -16,25 +16,24 @@ const {
   version,
   productName,
   copyright,
-  bugs: {
-    url,
-    email,
-  },
+  bugs: { url, email }
 } = require('../package');
 
-// const { getIconPath } = require('./utils');
+const { getIconPath } = require('./utils');
 
 const openAboutWindow = async (parent, title) => {
- // const iconData = await fs.readFileAsync(getIconPath('.svg'), { encoding: 'base64' });
+  const iconData = await fs.readFileAsync(getIconPath('.svg'), {
+    encoding: 'base64'
+  });
   return aboutWindow({
     copyright,
-  //  icon_path: `data:image/svg+xml;base64,${iconData}`,
+    icon_path: `data:image/svg+xml;base64,${iconData}`,
     open_devtools: false,
     use_version_info: false,
     win_options: {
       parent,
       title,
-    //  icon: getIconPath(),
+      icon: getIconPath(),
       width: 320,
       height: 360,
       minWidth: 320,
@@ -48,9 +47,9 @@ const openAboutWindow = async (parent, title) => {
       webPreferences: {
         devTools: false,
         webviewTag: false,
-        disableBlinkFeatures: 'Auxclick',
-      },
-    },
+        disableBlinkFeatures: 'Auxclick'
+      }
+    }
   });
 };
 
@@ -60,7 +59,7 @@ const aboutMenuItem = (visible = true) => ({
   click(menuItem, browserWindow) {
     const { label } = menuItem;
     return openAboutWindow(browserWindow, label);
-  },
+  }
 });
 
 const getApplicationMenu = () => {
@@ -71,8 +70,8 @@ const getApplicationMenu = () => {
       submenu: [
         { role: 'toggleFullScreen' },
         { type: 'separator' },
-        { role: 'toggleDevTools' },
-      ],
+        { role: 'toggleDevTools' }
+      ]
     },
     { role: 'windowMenu' },
     {
@@ -83,16 +82,18 @@ const getApplicationMenu = () => {
           label: 'Report Issue',
           click() {
             return shell.openExternal(url);
-          },
+          }
         },
         {
           label: 'Request Help',
           click() {
             const subject = `${productName} Support Request`;
             const body = `Version: ${version}\r\nPlatform: ${process.platform}`;
-            const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailto = `mailto:${email}?subject=${encodeURIComponent(
+              subject
+            )}&body=${encodeURIComponent(body)}`;
             return shell.openExternal(mailto);
-          },
+          }
         },
         { type: 'separator' },
         {
@@ -100,17 +101,17 @@ const getApplicationMenu = () => {
           click() {
             const { file } = log.transports.file;
             return shell.showItemInFolder(file);
-          },
+          }
         },
         {
           label: 'Open Data Folder',
           click() {
             const dataPath = path.normalize(global.dataPath);
             return shell.showItemInFolder(dataPath);
-          },
-        },
-      ],
-    },
+          }
+        }
+      ]
+    }
   ];
 
   if (is.macos) {
@@ -122,8 +123,8 @@ const getApplicationMenu = () => {
         { role: 'hide' },
         { role: 'hideOthers' },
         { type: 'separator' },
-        { role: 'quit' },
-      ],
+        { role: 'quit' }
+      ]
     });
   }
 
@@ -131,5 +132,5 @@ const getApplicationMenu = () => {
 };
 
 module.exports = {
-  getApplicationMenu,
+  getApplicationMenu
 };
