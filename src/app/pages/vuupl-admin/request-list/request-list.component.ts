@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
 import { Observable} from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { filter } from 'rxjs/operators';
 export class RequestListComponent implements OnInit {
   requests : any =[];
   requestss : any = [];
-  constructor(private serverApiService:ServerApiService) { 
+  constructor(private serverApiService:ServerApiService,
+              private router: Router
+             ) { 
     
      this.requests=[];
       this.serverApiService.getAllUsers().subscribe((data : {} ) => {
@@ -20,7 +23,9 @@ export class RequestListComponent implements OnInit {
         this.requests = data;    
       });
   }
-
+  addNode(){
+       this.router.navigate(['/pages/admin/addpoint']);
+  }
   ngOnInit() {
   }
 

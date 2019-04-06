@@ -43,8 +43,8 @@ export class NavComponent implements OnInit {
   adminItem = [
     { name: 'Dashboard', link: '/pages/admin/main' },
     { name: 'REQUEST', link: '/pages/admin/request' },
-    { name: 'INDIVIDUAL RENTERS', link: '/pages/admin' },
-    { name: 'COMAPNY RENTERS', link: '/pages/admin' },
+    { name: 'INDIVIDUAL ', link: '/pages/admin' },
+    { name: 'COMAPNY', link: '/pages/admin' },
     { name: 'LENDERS', link: '/pages/admin' },
     { name: 'SETTING', link: '/pages/admin/setting' }
   ];

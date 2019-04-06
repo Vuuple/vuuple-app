@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand"(click)="goToHome()">
             <img src="../../../../assets/img/Logo.png" />
           </a>
         </div>
@@ -44,10 +44,11 @@
                     placeholder="Search..."
                   />
                   <!--<img  class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />-->
-                  <button
+                  <button 
                     class="btn"
                     style="margin-right:5px;"
                     (click)="ShowProfile()"
+                    ngbTooltip="Tooltip on top"
                   >
                     <i class="fas fa-user-cog"></i>
                   </button>
@@ -56,8 +57,8 @@
                   </button>
                 </form>
               </div>
-              <div class="col-md-12 col-lg-12" style="padding-top: 6%;">
-                <!--  <ul class="nav navbar-nav navbar-right sub-clouds">
+              <div class="col-md-12 col-lg-12" style="padding-top: 2%;">
+                <ul *ngIf="!items" class="nav navbar-nav navbar-right sub-clouds">
                  <li>
                    <div class="image" >
                        <p class="following">Following</p>
@@ -70,16 +71,21 @@
                     <p class="followingContent">15</p>
                   </div>
                 </li>
-               </ul>-->
-                <ul class="nav navbar-nav navbar-right sub-clouds">
+               </ul>
+                <ul  *ngIf="items" class="nav navbar-nav navbar-right sub-clouds">
+                  <li>
+                      <div class="image">
+                          <a class="following" (click)="goTowallet()">wallet</a>
+                        </div>
+                  </li>
                   <li>
                     <div class="image">
-                      <a class="following" touterLink="#">Nodes</a>
+                      <a class="following" (click)="goToNodes()">Nodes</a>
                     </div>
                   </li>
                   <li>
                     <div class="image">
-                      <a class="following" routerLink="#">vuuple<br />Tokens</a>
+                      <a class="following" (click)="goToTokens()">vuuple<br/>Tokens</a>
                     </div>
                   </li>
                 </ul>

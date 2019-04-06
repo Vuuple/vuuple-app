@@ -16,7 +16,7 @@
     padding-left: 5%
   }
   .tokenButton{
-    background-image: url('../../../../assets/img/Tokenscloud.png');
+    background-image: url('assets/img/Tokenscloud.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -32,7 +32,7 @@
   background-color: white;
 }
 .active{
-  background-image: url('../../../../assets/img/Generalinfocloud.png');
+  background-image: url('assets/img/Generalinfocloud.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

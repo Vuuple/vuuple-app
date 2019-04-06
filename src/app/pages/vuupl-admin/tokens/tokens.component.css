@@ -4,11 +4,10 @@ h2{
     margin-bottom: 2%;
   }
 .main{
-    padding-top: 23%;
-    padding-bottom: 10%;
+    padding:5% 5% 5% 5%;
 }
 .image{
-    background-image: url(../../../../assets/img/Cloud-TokensRedeemed.png);
+    background-image: url('../../../../assets/img/Cloud-TokensRedeemed.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

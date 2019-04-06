@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Params } from '@angular/router';
 import { AuthService } from '../../../auth/core/auth.service';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +9,20 @@ import { AuthService } from '../../../auth/core/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  userTitle = ' COMPANY RENTER';
-  admin = ['Nodes', 'vuuple Tokens'];
-  user = ['following', 'followers'];
-  items = [];
+  userTitle = '';
+  items : any = [];
+
   constructor(public authService: AuthService, private router: Router) {
     const type = this.authService.getUserType();
     if (type === 1) {
       this.userTitle = 'ADMIN';
+       this.items = true;
     } else if (type === 2) {
       this.userTitle = 'COMPANY RENTER';
+      this.items = false;
     } else if (type === 3) {
       this.userTitle = 'COMPANY LENDER';
+      this.items = false;
     } else {
       this.Logout();
     }
@@ -28,8 +31,19 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/auth']);
   }
+ 
+  goTowallet(){}
   ShowProfile() {
     this.router.navigate(['/pages/profile']);
+  }
+  goToNodes(){
+    this.router.navigate(['/pages/admin/nodeList']);
+  }
+  goToTokens(){
+    this.router.navigate(['/pages/admin/tokens']);
+  }
+  goToHome(){
+    this.router.navigate(['/pages']);
   }
   ngOnInit() {}
 }

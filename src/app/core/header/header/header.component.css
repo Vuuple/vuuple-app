@@ -2,10 +2,11 @@
     top: 0;
     border-width: 0 0 1px;
     background-color: transparent;
-   background-image: Url("../../../../assets/img/headerBackground.png");
+    background-image: Url("../../../../assets/img/2560.png");
     background-size: cover;
     height: 30%;
     z-index: 5;
+    border-bottom: none;
 }
 .navbar-header{
     margin-top: 4%;
@@ -85,7 +86,7 @@ div.header-contents {
     margin:0;
 }
 .image{
-    background-image: url(../../../../assets/img/Cloud.png);
+    background-image: url('../../../../assets/img/Cloud.png');
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
