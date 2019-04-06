@@ -18,6 +18,7 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
+              "src/contracts",
               "src/favicon.ico",
               "src/favicon.png",
               "src/favicon.icns",
@@ -29,8 +30,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/chart.js/dist/Chart.bundle.js"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "dev": {

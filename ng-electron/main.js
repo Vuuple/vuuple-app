@@ -1,19 +1,7 @@
 /* eslint-env node */
-const environment = process.env.ELECTRON_ENV
-  || process.env.EMBER_ENV
-  || process.env.NODE_ENV
-  || 'production';
-process.env.NODE_ENV = environment;
-process.env.EMBER_ENV = environment;
-process.env.ELECTRON_ENV = environment;
-
-if (typeof process.env.ELECTRON_IS_DEV === 'undefined') {
-  if (environment === 'development') {
-    process.env.ELECTRON_IS_DEV = 1;
-  }
-}
 
 const Promise = require('bluebird');
+const node = require('../ng-electron/helpers/docker');
 
 global.Promise = Promise;
 
@@ -42,7 +30,7 @@ log.transports.rendererConsole.level = 'info';
 unhandled({
   logger(...args) {
     return log.error(...args);
-  },
+  }
 });
 
 // // https://github.com/electron-archive/grunt-electron-installer#handling-squirrel-events
@@ -55,24 +43,20 @@ unhandled({
 
 const path = require('path');
 
-
 const prettyMs = require('pretty-ms');
 
 const electron = require('electron');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
 
-
 // const updateElectronApp = require('update-electron-app');
 
 const { createWindow } = require('../window');
-// const { downloadStart, nodeStart } = require('./ipc');
+// const { nodeStart } = require('./ipc');
 
 const { version, productName } = require('../package');
 
-const {
-  app, ipcMain, protocol,
-} = electron;
+const { app, ipcMain, protocol } = electron;
 
 let mainWindow = null;
 
@@ -91,23 +75,34 @@ app.on('second-instance', () => {
     mainWindow.show();
   }
 });
+console.log(is.development, 'is.development');
+console.log(process, 'process.resourcesPath');
 
-// const basePath = is.development
-//   ? __dirname
-//   : path.join(process.resourcesPath, 'app.asar.unpacked', 'ember-electron');
-// global.environment = environment;
-// global.dataPath = path.normalize(app.getPath('userData'));
-// global.resourcesPath = path.normalize(path.join(basePath, 'resources'));
-// global.locale = null;
-// global.isDataDownloaded = false;
-// global.isNodeStarted = false;
-// global.isQuitting = false;
-// global.isUpdating = false;
-// global.authorizationToken = null;
+const basePath = is.development
+  ? path.join(__dirname, '..', 'src')
+  : path.join(process.resourcesPath);
+global.environment = process.env;
+global.dataPath = path.normalize(app.getPath('userData'));
+global.resourcesPath = path.normalize(path.join(basePath, 'assets'));
+global.locale = null;
+global.isDataDownloaded = false;
+global.isNodeStarted = false;
+global.isQuitting = false;
+global.isUpdating = false;
+global.authorizationToken = null;
 
-app.on('before-quit', () => {
+console.log(global, 'global');
+
+app.on('before-quit', async () => {
   // set docker-compose down
- // global.isQuitting = true;
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'resources',
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.stop_docker(dockerfile);
+  global.isQuitting = true;
 });
 
 app.on('window-all-closed', () => {
@@ -125,10 +120,16 @@ app.on('activate', () => {
 // ipcMain.on('download-start', downloadStart);
 // ipcMain.on('node-start', nodeStart);
 
-
-
 const run = async () => {
   log.info(`Starting application: ${productName} ${version} (${environment})`);
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'resources',
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.start_docker(dockerfile);
+  //need to check for containers healthy
 
   await app.whenReady();
 
@@ -137,14 +138,14 @@ const run = async () => {
   mainWindow.on('unresponsive', () => {
     log.warn(
       'Application window has become unresponsive:',
-      mainWindow.getTitle(),
+      mainWindow.getTitle()
     );
   });
 
   mainWindow.on('responsive', () => {
     log.info(
       'Application window has become responsive again:',
-      mainWindow.getTitle(),
+      mainWindow.getTitle()
     );
   });
 
@@ -152,12 +153,10 @@ const run = async () => {
     const elapsed = Date.now() - appLaunchTimestamp;
     log.info(
       `Application window ready to show (took ${prettyMs(elapsed)}):`,
-      mainWindow.getTitle(),
+      mainWindow.getTitle()
     );
     mainWindow.show();
   });
-
-
 
   mainWindow.webContents.on('crashed', () => {
     log.error('Application in window has crashed:', mainWindow.getTitle());

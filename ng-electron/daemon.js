@@ -1,18 +1,19 @@
 const os = require('os');
 const net = require('net');
 const path = require('path');
+const node = require('../ng-electron/helpers/docker');
+
 // const selfsigned = require('selfsigned');
 // const loadJsonFile = require('load-json-file');
 // const writeJsonFile = require('write-json-file');
 
 const Promise = require('bluebird');
 
-
 const electron = require('electron');
 const log = require('electron-log');
 // const { is } = require('electron-util');
 
-// const { app } = electron;
+const { app } = electron;
 
 // const generateCert = (commonName) => {
 //   const attrs = [
@@ -53,13 +54,13 @@ const log = require('electron-log');
 //   });
 // });
 
-
-
 const startDaemon = async () => {
-  const dataPath = path.normalize(global.dataPath);
-  log.info(dataPath, 'dataPath');
-
-  const configPath = path.join(dataPath, 'config.json');
+  // start docker network
+  const dockerfile = path.join(
+    '/src/assets/resources/network-resources/docker-compose.yml'
+  );
+  await node.start_docker(dockerfile);
+  // need to check for docker health if healthy return , if not await
   // const loopbackAddress = await getLoopbackAddress();
   // log.info(loopbackAddress, 'loopbackAddress');
   // let config = {};
@@ -71,9 +72,6 @@ const startDaemon = async () => {
   //   config = await loadJsonFile(path.join(__dirname, `config.${env}.json`));
   //   config.rpc.address = loopbackAddress;
   // }
-
-
-
 
   // const host = config.rpc.address;
   // log.info(host, 'host');
@@ -103,16 +101,12 @@ const startDaemon = async () => {
   //   },
   // });
 
-
-
-
   return new Promise((resolve, reject) => {
-//TODO: should return the endpint to call on the local machine or beter server object // check the original file on bcb github
-      return resolve(null);
-
+    //TODO: should return the endpint to call on the local machine or beter server object // check the original file on bcb github
+    return resolve(null);
   });
 };
 
 module.exports = {
-  startDaemon,
+  startDaemon
 };
