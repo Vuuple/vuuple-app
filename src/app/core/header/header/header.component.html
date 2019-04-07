@@ -47,12 +47,13 @@
                   <button 
                     class="btn"
                     style="margin-right:5px;"
-                    (click)="ShowProfile()"
-                    ngbTooltip="Tooltip on top"
-                  >
+                    data-toggle="tooltip" title="Profile!"
+                   (click)="ShowProfile()">                 
                     <i class="fas fa-user-cog"></i>
                   </button>
-                  <button class="btn" (click)="Logout()">
+                  <button class="btn" 
+                  data-toggle="tooltip" title="Logout!"
+                   (click)="Logout()">
                     <i class="fas fa-sign-out-alt"></i>
                   </button>
                 </form>
