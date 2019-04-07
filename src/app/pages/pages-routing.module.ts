@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ProfileComponent } from './shared/profile/profile.component';
+import { ReportIssueComponent } from './shared/report-issue/report-issue.component';
 
 const routes: Routes = [{
   path: '',
@@ -23,6 +24,10 @@ const routes: Routes = [{
     {
       path:'profile',
       component:ProfileComponent,
+    },
+    {
+      path:'report',
+      component:ReportIssueComponent,
     },
  {
     path: '',

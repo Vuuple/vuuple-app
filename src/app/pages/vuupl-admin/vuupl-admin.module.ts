@@ -18,6 +18,7 @@ import { EscrowListComponent } from './escrow-list/escrow-list.component';
 import { GeneralInfoComponent } from './general-info/general-info.component';
 import { TokenComponent } from './token/token.component';
 import { AdminComponent } from './admin/admin.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   imports: [
@@ -29,12 +30,15 @@ import { AdminComponent } from './admin/admin.component';
     RouterModule.forChild([
       {
         path: '',
-
         component: DashboardComponent
       },
       {
         path: 'admin',
         component: AdminComponent
+      },
+      {
+        path: 'wallet',
+        component: WalletComponent
       },
       {
         path: 'main',
@@ -83,7 +87,9 @@ import { AdminComponent } from './admin/admin.component';
     EscrowListComponent,
     GeneralInfoComponent,
     TokenComponent,
-    AdminComponent
+    AdminComponent,
+    WalletComponent,
+    
   ]
 })
 export class VuuplAdminModule {}

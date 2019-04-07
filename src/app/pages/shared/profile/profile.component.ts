@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/core/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   ip:any;
   enode:any;
 
-  constructor(private authservics:AuthService) {
+  constructor(private authservics:AuthService,private router:Router) {
     this.username = this.authservics.currentUser.username;
     this.email = this.authservics.currentUser.email;
     this.ethaddress = this.authservics.currentUser.ethAddress;
@@ -26,7 +27,9 @@ export class ProfileComponent implements OnInit {
     this.ip = this.authservics.currentUser.ip;
     this.enode = this.authservics.currentUser.enode;
    }
-
+   reportIssue(){
+     this.router.navigate(['/pages/report']);
+   }
   ngOnInit() {
   }
 
