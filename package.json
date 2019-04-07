@@ -41,7 +41,6 @@
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
-    "@angular/animations": "^7.2.11",
     "about-window": "^1.12.1",
     "axios": "^0.18.0",
     "bootstrap": "^3.4.1",

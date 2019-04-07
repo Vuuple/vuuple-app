@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-company-renter',
   templateUrl: './company-renter.component.html',
-  styleUrls: ['./company-renter.component.css']
+  styleUrls: ['./company-renter.component.scss']
 })
 export class CompanyRenterComponent implements OnInit {
   GeneralInfo=[];

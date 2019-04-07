@@ -30,7 +30,9 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/chart.js/dist/Chart.bundle.js"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "dev": {

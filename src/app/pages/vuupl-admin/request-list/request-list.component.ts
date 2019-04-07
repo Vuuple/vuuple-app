@@ -1,45 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerApiService } from '../../../providers/server-api/server-api.service';
+import { Observable} from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-request-list',
   templateUrl: './request-list.component.html',
-  styleUrls: ['./request-list.component.css']
+  styleUrls: ['./request-list.component.scss']
 })
 export class RequestListComponent implements OnInit {
-  requests=[];
-
-  constructor() { }
-
+  requests : any =[];
+  requestss : any = [];
+  constructor(private serverApiService:ServerApiService,
+              private router: Router
+             ) { 
+    
+     this.requests=[];
+      this.serverApiService.getAllUsers().subscribe((data : {} ) => {
+        console.log(data);
+        this.requests = data;    
+      });
+  }
+  addNode(){
+       this.router.navigate(['/pages/admin/addpoint']);
+  }
   ngOnInit() {
-    this.requests=[
-      {
-        userName:"renter",
-        email:"renter",
-        EthWallet:"dadrt",
-        staticIp:"sfduiweh3u25u295i",
-        category:"renter",
-        add:"add",
-        reject:"reject"
-      },
-      {
-        userName:"renter",
-        email:"renter",
-        EthWallet:"dadrt",
-        staticIp:"sfduiweh3u25u295i",
-        category:"renter",
-        add:"add",
-        reject:"reject"
-      },
-      {
-        userName:"renter",
-        email:"renter",
-        EthWallet:"dadrt",
-        staticIp:"sfduiweh3u25u295i",
-        category:"renter",
-        add:"add",
-        reject:"reject"
-      }
-    ]
   }
 
 }

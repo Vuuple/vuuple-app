@@ -1,72 +1,81 @@
-.main{
-    padding: 5% 5% 5% 5%;
-  }
-  .withdraw{
-    background-color: #0077b5;
-    color: white;
-    border-radius: 10px;
-    border: 1px solid white;
-    -webkit-appearance: button-bevel;
-  }
-  .table-container{
-    padding-top:5%;
-    padding-bottom: 5%;
-  }
-  h4,h2{
-    color:#0077b5;
-    margin-bottom: 2%;
-  }
-  label{
-    text-align: center;
-    color: #29ABE2;
-    margin-bottom: 3%;
-    font-family:initial;
-    font-size: 15px;
-    font-weight: bolder;
-  }
-  p{
-    margin-bottom: 3%;
-    font-family:initial;
-    font-size: 15px;
-    font-weight: bolder;
-  }
-  table {
-    width: 100%;
-   border-collapse: collapse;
-   min-height: 300px;
-   padding: 5px;
-  }
-  thead >tr{
-    border-bottom: 1px solid #29ABE2;
-  }
-  td,
-  th {
-    padding: 6px;
-    text-align: center;
-  }
-  .table>tbody>tr>td{
+.main {
+  padding: 5% 5% 5% 5%;
+}
+
+.withdraw {
+  background-color: #0077b5;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid white;
+  -webkit-appearance: button-bevel;
+}
+
+.table-container {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+h4, h2 {
+  color: #0077b5;
+  margin-bottom: 2%;
+}
+
+label {
+  text-align: center;
+  color: #29ABE2;
+  margin-bottom: 3%;
+  font-family: initial;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+p {
+  margin-bottom: 3%;
+  font-family: initial;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-height: 300px;
+  padding: 5px;
+}
+
+thead > tr {
+  border-bottom: 1px solid #29ABE2;
+}
+
+td, th {
+  padding: 6px;
+  text-align: center;
+}
+
+.table > {
+  tbody > tr > td {
     line-height: 1.42857143;
     vertical-align: middle;
-   border-right: 1px solid #29ABE2;
-   border-top:none;
+    border-right: 1px solid #29ABE2;
+    border-top: none;
   }
-  .table>thead>tr>th {
+  thead > tr > th {
     vertical-align: bottom;
-     border-bottom: none;
+    border-bottom: none;
   }
-  @media all and (max-width:500px) {
-    table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-      display: block;
-    }
+}
 
-    tr { margin-bottom: 10px}
+@media all and (max-width: 500px) {
+  table, thead, tbody, th, td {
+    display: block;
   }
-  .row.table-container{
-    margin-right: 0;
-    margin-left: 0;
+  tr {
+    display: block;
+    margin-bottom: 10px;
   }
+}
+
+.row.table-container {
+  margin-right: 0;
+  margin-left: 0;
+}

@@ -1,28 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerApiService } from '../../../providers/server-api/server-api.service';
 
 @Component({
   selector: 'app-node-list',
   templateUrl: './node-list.component.html',
-  styleUrls: ['./node-list.component.css']
+  styleUrls: ['./node-list.component.scss']
 })
 export class NodeListComponent implements OnInit {
   TotalCompanyRenter="15";
-  constructor() {
+  nodes : any = [];
+  constructor(private serverApiService : ServerApiService) {
     this.TotalCompanyRenter;
+    this.serverApiService.getAllUsers().subscribe( (data : {}) => {
+      console.log (data);
+      this.nodes = data ;
+    });
    }
-nodes=[];
   ngOnInit() {
-    this.nodes=[
-      {
-      userName:"lender1",email:"lender1@test.com",  category:"Lender",address:"0xdfs454ef5we45wf4wef488",status:"active",action:"pan"
-    },
-      {
-        userName:"Renter1",  email:"lender1@test.com",category:"Renter", address:"0xdfs454ef5we45wf4wef488",status:"deactivated",action:"pan"
-    },
-      {
-        userName: "lender1",email: "lender1@test.com", category:"Renter", address: "0xdfs454ef5we45wf4wef488",status:"removed",action:"pan"
-      }
-  ]
   }
 
 }

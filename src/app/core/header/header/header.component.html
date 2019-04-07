@@ -16,8 +16,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
-            <img src="../../../../assets/img/Logo.png" />
+          <a class="navbar-brand"(click)="goToHome()">
+            <img src="assets/img/Logo.png" />
           </a>
         </div>
       </div>
@@ -28,7 +28,7 @@
               <img
                 class="header-image"
                 alt="cloud Background"
-                src="../../../../assets/img/bigCloud.png"
+                src="assets/img/bigCloud.png"
               />
               <div class="header-contents">{{ userTitle }}</div>
             </div>
@@ -44,20 +44,21 @@
                     placeholder="Search..."
                   />
                   <!--<img  class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />-->
-                  <button
+                  <button 
                     class="btn"
-                    style="margin-right:5px;"
-                    (click)="ShowProfile()"
-                  >
+                    data-toggle="tooltip" title="Profile!"
+                   (click)="ShowProfile()">                 
                     <i class="fas fa-user-cog"></i>
                   </button>
-                  <button class="btn" (click)="Logout()">
+                  <button class="btn" 
+                  data-toggle="tooltip" title="Logout!"
+                   (click)="Logout()">
                     <i class="fas fa-sign-out-alt"></i>
                   </button>
                 </form>
               </div>
-              <div class="col-md-12 col-lg-12" style="padding-top: 6%;">
-                <!--  <ul class="nav navbar-nav navbar-right sub-clouds">
+              <div class="col-md-12 col-lg-12" style="padding-top: 10%;">
+                <ul *ngIf="!isadmin" class="nav navbar-nav navbar-right sub-clouds">
                  <li>
                    <div class="image" >
                        <p class="following">Following</p>
@@ -69,17 +70,22 @@
                     <p class="following">Followers</p>
                     <p class="followingContent">15</p>
                   </div>
-                </li>
-               </ul>-->
-                <ul class="nav navbar-nav navbar-right sub-clouds">
+                 </li>
+                </ul>
+               <ul  *ngIf="isadmin" class="nav navbar-nav navbar-right sub-clouds">
+                  <!-- <li>
+                      <div class="image">
+                          <a class="following" (click)="goTowallet()">wallet</a>
+                        </div>
+                  </li>-->
                   <li>
                     <div class="image">
-                      <a class="following" touterLink="#">Nodes</a>
+                      <a class="following" (click)="goToNodes()">Nodes</a>
                     </div>
                   </li>
                   <li>
                     <div class="image">
-                      <a class="following" routerLink="#">vuuple<br />Tokens</a>
+                      <a class="following" (click)="goToTokens()">vuuple<br/>Tokens</a>
                     </div>
                   </li>
                 </ul>

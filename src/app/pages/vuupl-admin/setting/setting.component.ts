@@ -3,7 +3,7 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.css']
+  styleUrls: ['./setting.component.scss']
 })
 export class SettingComponent implements OnInit {
    EditForm:FormGroup;

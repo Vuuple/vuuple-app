@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-individual-renter',
   templateUrl: './individual-renter.component.html',
-  styleUrls: ['./individual-renter.component.css']
+  styleUrls: ['./individual-renter.component.scss']
 })
 export class IndividualRenterComponent implements OnInit {
   GeneralInfo=[]

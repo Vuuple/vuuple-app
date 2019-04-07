@@ -26,20 +26,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let request of requests; let i = index;">
-                      <td>{{request?.userName}}</td>
+                    <tr *ngFor="let request of requests; let i = index;" >
+                      <td>{{request?.username}}</td>
                       <td>{{request?.email}}</td>
-                      <td>{{request?.EthWallet}}</td>
-                      <td>{{request?.staticIp}}</td>
+                      <td>{{request?.ethAddress}}</td>
+                      <td>{{request?.ip}}</td>
                       <td>{{request?.category}}</td>
                       <td>
-                        <button class="action">
-                            {{request?.add}}
+                        <button class="action" (click)="addNode()">
+                            <!--{{request?.add}}-->
+                             add
                         </button>
                       </td>
                       <td style="border-right:none">
                           <button class="rejectaction">
-                              {{request?.reject}}
+                               <!--{{request?.reject}}-->
+                               reject
                           </button>
                         </td>
                     </tr>

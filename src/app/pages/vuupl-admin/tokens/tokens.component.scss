@@ -1,23 +1,23 @@
-
-h2{
-    color:#0077b5;
+h2 {
+    color: #0077b5;
     margin-bottom: 2%;
   }
-.main{
-    padding-top: 23%;
-    padding-bottom: 10%;
-}
-.image{
-    background-image: url(../../../../assets/img/Cloud-TokensRedeemed.png);
+  
+  .main {
+    padding: 5% 5% 5% 5%;
+  }
+  
+  .image {
+    background-image: url('assets/img/Cloud-TokensRedeemed.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     width: 85% !important;
-    height: 110px!important;
+    height: 110px !important;
     -webkit-appearance: button-bevel;
     line-height: initial;
     background-color: white;
     font-size: 18px;
-    color:white;
+    color: white;
     text-align: center;
-}
+  }

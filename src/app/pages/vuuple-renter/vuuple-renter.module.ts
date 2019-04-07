@@ -38,7 +38,6 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
       }
     ])
   ],
-  exports: [WalletComponent],
-  declarations: [DashboardComponent, WalletComponent, UploadFileComponent]
+  declarations: [DashboardComponent,WalletComponent, UploadFileComponent]
 })
 export class VuupleRenterModule {}
