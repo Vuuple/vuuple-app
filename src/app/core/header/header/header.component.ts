@@ -9,19 +9,19 @@ import { AuthService } from '../../../auth/core/auth.service';
 })
 export class HeaderComponent implements OnInit {
   userTitle = '';
-  items : any = [];
+  isadmin : any = [];
 
   constructor(public authService: AuthService, private router: Router) {
     const type = this.authService.getUserType();
     if (type === 1) {
       this.userTitle = 'ADMIN';
-       this.items = true;
+       this.isadmin = true;
     } else if (type === 2) {
       this.userTitle = 'COMPANY RENTER';
-      this.items = false;
+      this.isadmin = false;
     } else if (type === 3) {
       this.userTitle = 'COMPANY LENDER';
-      this.items = false;
+      this.isadmin = false;
     } else {
       this.Logout();
     }
