@@ -48,40 +48,27 @@ module.exports.list_containers = () => {
   // const child = spawn.sync('docker', ['ps', '-a'], {
   //   stdio: 'inherit'
   // });
+  return new Promise((resolve, reject) => {
+    const networkName = 'network=network-resources_quorum-examples-net';
+    const filter = `-f ${networkName}`;
+    const formate = '--format={{.ID}}';
+    // docker ps -f "network=network-resources_quorum-examples-net" --format "{{.ID}}: {{.Names}}"
 
-  const networkName = 'network=network-resources_quorum-examples-net';
-  const filter = `-f ${networkName}`;
-  const formate = '--format="{{.ID}}: {{.Names}}"';
-  // docker ps -f "network=network-resources_quorum-examples-net" --format "{{.ID}}: {{.Names}}"
+    const child = spawn('docker', ['ps', filter, formate], {
+      stdio: ['ignore', 'pipe', 'pipe']
+    });
 
-  const child = spawn.sync('docker', ['ps', filter, formate], {
-    stdio: 'inherit'
+    let result = '';
+    child.stdout.on('data', function(data) {
+      result += data.toString();
+    });
+    child.on('close', function(code) {
+      return resolve(result.split('\n'));
+    });
+    child.stderr.on('data', data => reject(String(data).trim()));
   });
-
-  child.stdout.on('data', data =>
-    console.log('[node] child.stdout', String(data).trim())
-  );
-  child.stderr.on('data', data =>
-    console.log('[node] child.stderr', String(data).trim())
-  );
-
-  return child;
 };
-function run(cmd, callback) {
-  var spawn = require('child_process').spawn;
-  var command = spawn(cmd);
-  var result = '';
-  command.stdout.on('data', function(data) {
-    result += data.toString();
-  });
-  command.on('close', function(code) {
-    return callback(result);
-  });
-}
 
-run('ls', function(result) {
-  console.log(result);
-});
 module.exports.inspect = container => {
   child = spawn.sync('docker', ['inspect', container], {
     stdio: 'inherit'
@@ -90,23 +77,63 @@ module.exports.inspect = container => {
 };
 
 module.exports.check_health = container => {
-  const child = spawn.sync(
-    'docker',
-    ['inspect', "--format='{{json .State}}'", container],
-    {
-      stdio: 'inherit'
-    }
-  );
-  return child;
+  return new Promise((resolve, reject) => {
+    const child = spawn(
+      'docker',
+      ['inspect', '--format={{json .State.Health.Status}}', container],
+      {
+        stdio: ['ignore', 'pipe', 'pipe']
+      }
+    );
+
+    let result = '';
+    child.stdout.on('data', function(data) {
+      result += data.toString();
+    });
+    child.on('close', function(code) {
+      return resolve(result);
+    });
+    child.stderr.on('data', data => reject(String(data).trim()));
+  });
 };
 
 module.exports.check_status = container => {
-  const child = spawn.sync(
-    'docker',
-    ['inspect', "--format='Status: {{json .State.Status}}'", container],
-    {
-      stdio: 'inherit'
-    }
-  );
-  return child;
+  return new Promise((resolve, reject) => {
+    const child = spawn(
+      'docker',
+      ['inspect', '--format={{json .State.Status}}', container],
+      {
+        stdio: ['ignore', 'pipe', 'pipe']
+      }
+    );
+
+    let result = '';
+    child.stdout.on('data', function(data) {
+      result += data.toString();
+    });
+    child.on('close', function(code) {
+      return resolve(result);
+    });
+    child.stderr.on('data', data => reject(String(data).trim()));
+  });
+};
+module.exports.dockerEvnetsListener = filter => {
+  return new Promise((resolve, reject) => {
+    const child = spawn(
+      'docker',
+      ['events', '--format={{json .State.Status}}', filter],
+      {
+        stdio: ['ignore', 'pipe', 'pipe']
+      }
+    );
+
+    let result = '';
+    child.stdout.on('data', function(data) {
+      result += data.toString();
+    });
+    child.on('close', function(code) {
+      return resolve(result);
+    });
+    child.stderr.on('data', data => reject(String(data).trim()));
+  });
 };
