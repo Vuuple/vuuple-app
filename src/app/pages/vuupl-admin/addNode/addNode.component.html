@@ -1,0 +1,64 @@
+<div class="row main">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h2>
+            Add node
+          </h2>
+        </div>
+        <div class="col-md-4" style="padding:2%">
+            <input type="number" class="form-control" style="margin-right:15px;width: 250px;" placeholder="Type Number">
+        </div>
+    </div> 
+    <div class="row table-container" >
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="border: 1px solid #29ABE2;border-radius:5px ;height: 350px;padding: 2%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+        <h4 style="margin-bottom:5%"> Node details:</h4>
+          <div class="row" style="margin-bottom:3px" >
+            <div class="col-md-3">
+              <label>Username:</label>
+            </div>
+            <div class="col-md-9">
+              <p>{{node.username}}</p>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:3px">
+            <div class="col-md-3">
+              <label>Email:</label>
+            </div>
+            <div class="col-md-9">
+              <p>{{node.email}}</p>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:3px">
+              <div class="col-md-3">
+                 <label>Enode :</label>
+              </div>
+              <div class="col-md-9">
+                <p>{{node.enode}}</p>
+              </div>
+          </div>
+          <div class="row" style="margin-bottom:3px">
+            <div class="col-md-3">
+               <label>Eth Wallet:</label>
+            </div>
+            <div class="col-md-9">
+              <p>{{node.Ethwallwt}}</p>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:3px">
+              <div class="col-md-3">
+                 <label>Static IP :</label>
+              </div>
+              <div class="col-md-9">
+                <p>{{node.staticIP}}</p>
+              </div>
+          </div>
+          <div class="row" style="padding-top:4%;float:right;margin-right: 0.50%">
+              <button class="action">Approve</button>
+              <button class="action">reject</button>
+          </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+</div>

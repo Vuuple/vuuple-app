@@ -19,6 +19,7 @@ import { GeneralInfoComponent } from './general-info/general-info.component';
 import { TokenComponent } from './token/token.component';
 import { AdminComponent } from './admin/admin.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { AddNodeComponent } from './addNode/addNode.component';
 
 @NgModule({
   imports: [
@@ -89,7 +90,7 @@ import { WalletComponent } from './wallet/wallet.component';
     TokenComponent,
     AdminComponent,
     WalletComponent,
-    
+    AddNodeComponent
   ]
 })
 export class VuuplAdminModule {}
