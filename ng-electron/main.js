@@ -89,8 +89,6 @@ global.isQuitting = false;
 global.isUpdating = false;
 global.authorizationToken = null;
 
-console.log(global, 'global');
-
 app.on('before-quit', async () => {
   // set docker-compose down
   const dockerfile = path.join(
@@ -128,8 +126,13 @@ const run = async () => {
   );
   await node.start_docker(dockerfile);
   //need to check for containers healthy
-  let nodes = await node.list_containers();
-  console.log(nodes, 'nodes');
+  const child = await node.list_containers();
+  // const sttus = await node.check_status(child[0]);
+  const health = await node.check_health(child[0]);
+  child.pop();
+  console.log(child, 'child');
+  // console.log(sttus, 'status');
+  console.log(health, 'health');
 
   await app.whenReady();
 
