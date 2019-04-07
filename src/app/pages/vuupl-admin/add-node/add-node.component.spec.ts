@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddNodeComponent } from './addNode.component';
+import { AddNodeComponent } from './add-node.component';
 
 describe('addNodeComponent', () => {
   let component: AddNodeComponent;

@@ -19,7 +19,7 @@ import { GeneralInfoComponent } from './general-info/general-info.component';
 import { TokenComponent } from './token/token.component';
 import { AdminComponent } from './admin/admin.component';
 import { WalletComponent } from './wallet/wallet.component';
-import { AddNodeComponent } from './addNode/addNode.component';
+import { AddNodeComponent } from './add-node/add-node.component';
 
 @NgModule({
   imports: [
@@ -58,7 +58,11 @@ import { AddNodeComponent } from './addNode/addNode.component';
         component: RequestListComponent
       },
       {
-        path: 'addpoint',
+        path: 'addNode',
+        component: AddNodeComponent
+      },
+      {
+        path: 'addPoint',
         component: AddpointComponent
       },
       {
