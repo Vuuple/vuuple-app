@@ -4,7 +4,7 @@ import { ServerApiService } from '../../../providers/server-api/server-api.servi
 @Component({
   selector: 'app-node-list',
   templateUrl: './node-list.component.html',
-  styleUrls: ['./node-list.component.css']
+  styleUrls: ['./node-list.component.scss']
 })
 export class NodeListComponent implements OnInit {
   TotalCompanyRenter="15";
