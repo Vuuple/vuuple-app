@@ -75,8 +75,6 @@ app.on('second-instance', () => {
     mainWindow.show();
   }
 });
-console.log(is.development, 'is.development');
-console.log(process, 'process.resourcesPath');
 
 const basePath = is.development
   ? path.join(__dirname, '..', 'src')
@@ -105,7 +103,7 @@ app.on('before-quit', async () => {
   global.isQuitting = true;
 });
 
-app.on('window-all-closed', () => {
+app.on('window-all-closed', async () => {
   if (!is.macos) {
     app.quit();
   }
@@ -130,6 +128,8 @@ const run = async () => {
   );
   await node.start_docker(dockerfile);
   //need to check for containers healthy
+  let nodes = await node.list_containers();
+  console.log(nodes, 'nodes');
 
   await app.whenReady();
 
