@@ -137,3 +137,35 @@
     background-color: transparent;
     color: white;
   }
+  $alphablack:rgba(0,0,0,0.9);
+
+body {
+  margin:5em;
+}
+
+[data-tooltip] {
+  &:hover {
+    &:before, &:after {
+      display:block;
+      position:absolute;
+      font-size:0.8em;
+      color:white;
+    }
+    &:before {
+      border-radius:0.2em;
+      content:attr(title);
+      background-color:$alphablack;
+      margin-top:-2.5em;
+      padding:0.3em;
+    }
+    &:after {
+      content:'';
+      margin-top:-2.1em;
+      margin-left:1em;
+      border-style:solid;
+      border-color:transparent;
+      border-top-color:$alphablack;
+      border-width:0.5em 0.5em 0 0.5em;
+    }
+  }
+}
