@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-escrow-details',
@@ -9,19 +9,17 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./escrow-details.component.scss']
 })
 export class EscrowDetailsComponent implements OnInit {
-  sub : any ;
-  id : any ;
-  address : any ;
-  constructor(private route : ActivatedRoute,private router : Router ) {
-   
-   }
- ngOnInit() {
+  sub: any;
+  id: any;
+  address: any;
+  constructor(private route: ActivatedRoute, private router: Router) {}
+  ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.address  = params['taddress'];
-      });
-      console.log(this.address);
+      this.address = params['address'];
+    });
+    console.log(this.address);
   }
-  gotToback(){
-     this.router.navigate(['/pages/admin/escrow'])
+  gotToback() {
+    this.router.navigate(['/pages/admin/escrow']);
   }
 }

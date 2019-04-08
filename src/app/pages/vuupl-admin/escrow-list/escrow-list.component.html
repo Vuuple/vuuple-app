@@ -1,43 +1,53 @@
 <div class="row main">
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-          <h2>
-             escrows         
-          </h2>
-        </div>
-        <div class="col-md-4" style="padding:2%">
-          <!--  <input type="button" class="form-control withdraw" style="margin-right:15px;width: 200px;" value="withdraw">-->
-        </div>
-        </div>
-        <div class="row table-container">
-          <table class="table" >
-              <thead>
-                <tr style="color:#29ABE2 !important;font-size: 25px;">
-                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">ID</th>
-                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Address</th>
-                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Renter/Lender Address</th>
-                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Issue Date</th>
-                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">End Date  </th>
-                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Account address</th>
-                  <th  style="padding-top:15px ; padding-bottom:15px">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of escrows; let i = index;">
-                  <td>{{i}}</td>
-                  <td>{{item?.address}}</td>
-                  <td>{{item?.renterLenderAddress}}</td>
-                  <td>{{item?.issueDate}}</td>
-                  <td>{{item?.endDate}}</td>
-                  <td>{{item?.accountAddress}}</td>
-                  <td style="border-right:none">
-                    <button class="action" (click)="goToDetails(item)">
-                      VIEW
-                  </button>
-                </td>
-                </tr>
-              </tbody>
-          </table>
-        </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h2>
+        escrows
+      </h2>
+    </div>
+    <div class="col-md-4" style="padding:2%">
+      <!--  <input type="button" class="form-control withdraw" style="margin-right:15px;width: 200px;" value="withdraw">-->
+    </div>
+  </div>
+  <div class="row table-container">
+    <table class="table">
+      <thead>
+        <tr style="color:#29ABE2 !important;font-size: 25px;">
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">ID</th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Address
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Renter/Lender Address
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Issue Date
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            End Date
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Account address
+          </th>
+          <th style="padding-top:15px ; padding-bottom:15px">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of escrows; let i = index">
+          <td>{{ i }}</td>
+          <td>{{ item?.address }}</td>
+          <td>{{ item?.renterLenderAddress }}</td>
+          <td>{{ item?.issueDate }}</td>
+          <td>{{ item?.endDate }}</td>
+          <td>{{ item?.accountAddress }}</td>
+          <td style="border-right:none">
+            <button class="action" (click)="goToDetails(item?.address)">
+              VIEW
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

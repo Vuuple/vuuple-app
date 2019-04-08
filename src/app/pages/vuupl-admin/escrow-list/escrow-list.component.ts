@@ -1,3 +1,4 @@
+import { ServerApiService } from './../../../providers/server-api/server-api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,40 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./escrow-list.component.scss']
 })
 export class EscrowListComponent implements OnInit {
-  escrows=[] 
-  id : any;
-  saddress : any ;
-  constructor(private router : Router) {
-    this.escrows=[
-      {
-        address:'HJKKNKNKNKLNKNK',
-        renterLenderAddress:'HKHKHKHJKBJBNMBN',
-        issueDate:'1/2019',
-        endDate:'2/2019',
-        accountAddress:'HCVVJHBJKBIJKNK'
-      },
-      {
-        address:'HJKKNKNKNKLNKNK',
-        renterLenderAddress:'HKHKHKHJKBJBNMBN',
-        issueDate:'1/2019',
-        endDate:'2/2019',
-        accountAddress:'HCVVJHBJKBIJKNK'
-      },
-      {
-        address:'HJKKNKNKNKLNKNK',
-        renterLenderAddress:'HKHKHKHJKBJBNMBN',
-        issueDate:'1/2019',
-        endDate:'2/2019',
-        accountAddress:'HCVVJHBJKBIJKNK'
-      },
-    ]
-   }
-   goToDetails(selectedescrow){
-    console.log(selectedescrow.address);
-    this.saddress=selectedescrow.address;
-      this.router.navigate(['/pages/admin/escrowDetails'],this.saddress);
-  }
+  escrows = [];
+  id: any;
+  saddress: any;
+  constructor(private router: Router, private apiService: ServerApiService) {}
   ngOnInit() {
+    this.apiService.getAllEscrows().subscribe(s => {
+      this.escrows = s;
+    });
   }
-
+  goToDetails(selectedescrow) {
+    this.router.navigate(['/pages/admin/escrowDetails'], {
+      queryParams: { address: selectedescrow }
+    });
+  }
 }

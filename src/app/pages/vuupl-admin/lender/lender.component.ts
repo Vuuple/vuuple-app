@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerApiService } from '../../../providers/server-api/server-api.service';
 
 @Component({
   selector: 'app-lender',
@@ -6,25 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lender.component.scss']
 })
 export class LenderComponent implements OnInit {
-  GeneralInfo=[]
-  constructor() {
-    this.GeneralInfo=[
-      {
-        Email:"renter@gmail.com",
-        username:"renter",
-        ipAddress:"qGYUGHJGHJHGJ",
-        EthWallet:"",
-        gender:"male",
-        Country:"syria",
-        mobile:"587866989",
-        OperatingSystem:"windows",
-        status:"active",
-        Action:""
-      }
-    ]
-   }
-
+  data;
+  constructor(private apiService: ServerApiService) {}
   ngOnInit() {
+    this.apiService.getUsersByCategory('lender').subscribe(s => {
+      this.data = s;
+    });
   }
-
 }

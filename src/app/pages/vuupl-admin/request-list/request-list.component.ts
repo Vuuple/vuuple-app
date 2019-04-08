@@ -17,7 +17,7 @@ export class RequestListComponent implements OnInit {
     private router: Router
   ) {
     this.requests = [];
-    this.serverApiService.getAllUsers().subscribe((data: {}) => {
+    this.serverApiService.getAllRequests().subscribe((data: {}) => {
       console.log(data);
       this.requests = data;
     });
