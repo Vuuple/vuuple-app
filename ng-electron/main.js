@@ -117,14 +117,14 @@ app.on('activate', () => {
 // ipcMain.on('node-start', nodeStart);
 
 const run = async () => {
-  log.info(`Starting application: ${productName} ${version} (${environment})`);
-  const dockerfile = path.join(
-    global.resourcesPath,
-    'resources',
-    'network-resources',
-    'docker-compose.yml'
-  );
-  await node.start_docker(dockerfile);
+  // log.info(`Starting application: ${productName} ${version} (${environment})`);
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'resources',
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.start_docker(dockerfile);
   //need to check for containers healthy
   // const child = await node.list_containers();
   // // const sttus = await node.check_status(child[0]);
