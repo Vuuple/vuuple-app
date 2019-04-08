@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-module.exports.send_email = (email, subject, body, attachements) => {
+module.exports.send_email = (to, from, subject, body, attachements) => {
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -15,8 +15,8 @@ module.exports.send_email = (email, subject, body, attachements) => {
   });
 
   let mailOptions = {
-    from: '"Vuuple App" <support@vuuple.com>', // sender address
-    to: email, // list of receivers separated with comma
+    from: from, // sender address
+    to: to, // list of receivers separated with comma
     subject: subject, // Subject line
     text: body, // plain text body
     html: body, // html body
@@ -27,8 +27,7 @@ module.exports.send_email = (email, subject, body, attachements) => {
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
       throw err;
-    }
-    else {
+    } else {
       return info;
     }
   });
