@@ -79,3 +79,17 @@ td, th {
   margin-right: 0;
   margin-left: 0;
 }
+.action {
+  background-image: url('assets/img/Deletecloud.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  -webkit-appearance: button-bevel;
+  line-height: initial;
+  width: 90%;
+  height: 30px;
+  color: white;
+  padding: 6px;
+  font-size: 12px;
+}

@@ -20,6 +20,7 @@ import { TokenComponent } from './token/token.component';
 import { AdminComponent } from './admin/admin.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { AddNodeComponent } from './add-node/add-node.component';
+import { EscrowDetailsComponent } from './escrow-details/escrow-details.component';
 
 @NgModule({
   imports: [
@@ -70,6 +71,10 @@ import { AddNodeComponent } from './add-node/add-node.component';
         component: EscrowListComponent
       },
       {
+        path: 'escrowDetails',
+        component: EscrowDetailsComponent
+      },
+      {
         path: 'setting',
         component: SettingComponent
       },
@@ -94,7 +99,8 @@ import { AddNodeComponent } from './add-node/add-node.component';
     TokenComponent,
     AdminComponent,
     WalletComponent,
-    AddNodeComponent
+    AddNodeComponent,
+    EscrowDetailsComponent
   ]
 })
 export class VuuplAdminModule {}
