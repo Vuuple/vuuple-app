@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 
-const LenderFactory = require('../../../../build/contracts/LenderFactory.json');
+const LenderFactory = require('../../../contracts/LenderFactory.json');
 
 declare let require: any;
 declare global {
@@ -14,7 +14,6 @@ window.web3 = window.web3 || {};
 
 @Injectable()
 export class LendersFactoryService {
-
   private web3: any;
   private accounts: string[];
   account;
@@ -24,7 +23,7 @@ export class LendersFactoryService {
 
   constructor() {
     Web3.providers.HttpProvider.prototype.sendAsync =
-    Web3.providers.HttpProvider.prototype.send;
+      Web3.providers.HttpProvider.prototype.send;
     this.web3 = window.web3;
     console.log(this.web3.version);
     this.onReady();
@@ -61,13 +60,13 @@ export class LendersFactoryService {
     this.status = message;
   }
   test() {
-  return 'Lender Factory Called Successfully';
-   }
+    return 'Lender Factory Called Successfully';
+  }
 
   /**
    * Setter functions
    */
-  async lenderRegister(rentedStorage , lender) {
+  async lenderRegister(rentedStorage, lender) {
     const result = await this.lenderFactory
       .deployed()
       .then(instance => {
@@ -89,7 +88,7 @@ export class LendersFactoryService {
     return result;
   }
 
-// internal function
+  // internal function
   // async _addToMinerRole(contractAddress) {
   //   const result = await this.lenderFactory
   //     .deployed()
@@ -138,14 +137,12 @@ export class LendersFactoryService {
     const result = await this.lenderFactory
       .deployed()
       .then(instance => {
-
         return instance.lenderIndex.call();
       })
       .then(rs => {
         this.setStatus('Transaction complete!');
 
-
-          return rs.toNumber();
+        return rs.toNumber();
       })
       .catch(e => {
         console.log(e);
@@ -154,8 +151,8 @@ export class LendersFactoryService {
     return result;
   }
 
-/**
- * Event functions
- * No Events
- */
+  /**
+   * Event functions
+   * No Events
+   */
 }

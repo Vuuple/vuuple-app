@@ -3,7 +3,7 @@ import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 declare let require: any;
 
-const LenderEscrow = require('../../../../build/contracts/LenderEscrow.json');
+const LenderEscrow = require('../../../contracts/LenderEscrow.json');
 
 declare global {
   interface Window {
@@ -25,7 +25,7 @@ export class LenderEscrowService {
 
   constructor() {
     Web3.providers.HttpProvider.prototype.sendAsync =
-    Web3.providers.HttpProvider.prototype.send;
+      Web3.providers.HttpProvider.prototype.send;
     this.web3 = window.web3;
     console.log(this.web3.version);
     this.onReady();
@@ -54,8 +54,6 @@ export class LenderEscrowService {
     return this.account;
   }
 
-
-
   getCurrentProvider() {
     return this.web3.currentProvider;
   }
@@ -69,10 +67,10 @@ export class LenderEscrowService {
    */
   async withdraw(accountAddress) {
     const result = await this.lender_escrow
-    .at(accountAddress)
+      .at(accountAddress)
       .withdraw({
-          from: this.account,
-          gas: 200000
+        from: this.account,
+        gas: 200000
       })
       .then(res => {
         this.setStatus('withdraw complete!');
@@ -87,10 +85,10 @@ export class LenderEscrowService {
 
   async closeEscrow(accountAddress) {
     const result = await this.lender_escrow
-    .at(accountAddress)
+      .at(accountAddress)
       .closeEscrow({
-          from: this.account,
-          gas: 200000
+        from: this.account,
+        gas: 200000
       })
       .then(res => {
         this.setStatus('closeEscrow complete!');
@@ -103,7 +101,7 @@ export class LenderEscrowService {
     return result;
   }
 
-// internal functions
+  // internal functions
   // async _burn(tokenAmount) {
   //   const result = await this.lender_escrow
   //     .deployed()
@@ -147,100 +145,99 @@ export class LenderEscrowService {
    */
   async isActive(escrowAddress) {
     const result = await this.lender_escrow
-    .at(escrowAddress)
-   .isActive.call()
-   .then(rs => {
-     this.setStatus('isActive complete!');
+      .at(escrowAddress)
+      .isActive.call()
+      .then(rs => {
+        this.setStatus('isActive complete!');
 
-     return rs;
-   })
-   .catch(e => {
-     console.log(e);
-     this.setStatus('Error in isActive; see log.');
-   });
+        return rs;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in isActive; see log.');
+      });
     return result;
-}
+  }
 
-async escrowStatus(escrowAddress) {
-  const result = await this.lender_escrow
-  .at(escrowAddress)
- .escrowStatus.call()
- .then(rs => {
-   this.setStatus('escrowStatus complete!');
+  async escrowStatus(escrowAddress) {
+    const result = await this.lender_escrow
+      .at(escrowAddress)
+      .escrowStatus.call()
+      .then(rs => {
+        this.setStatus('escrowStatus complete!');
 
-   return rs.toNumber();
- })
- .catch(e => {
-   console.log(e);
-   this.setStatus('Error in escrowStatus; see log.');
- });
-  return result;
-}
+        return rs.toNumber();
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in escrowStatus; see log.');
+      });
+    return result;
+  }
 
-async closeTime(escrowAddress) {
-  const result = await this.lender_escrow
-  .at(escrowAddress)
- .closeTime.call()
- .then(rs => {
-   this.setStatus('closeTime complete!');
+  async closeTime(escrowAddress) {
+    const result = await this.lender_escrow
+      .at(escrowAddress)
+      .closeTime.call()
+      .then(rs => {
+        this.setStatus('closeTime complete!');
 
-   return rs.toNumber();
- })
- .catch(e => {
-   console.log(e);
-   this.setStatus('Error in closeTime; see log.');
- });
-  return result;
-}
+        return rs.toNumber();
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in closeTime; see log.');
+      });
+    return result;
+  }
 
-async lenderAccountContract(escrowAddress) {
-  const result = await this.lender_escrow
-  .at(escrowAddress)
- .lenderAccountContract.call()
- .then(rs => {
-   this.setStatus('lenderAccountContract complete!');
+  async lenderAccountContract(escrowAddress) {
+    const result = await this.lender_escrow
+      .at(escrowAddress)
+      .lenderAccountContract.call()
+      .then(rs => {
+        this.setStatus('lenderAccountContract complete!');
 
-   return rs;
- })
- .catch(e => {
-   console.log(e);
-   this.setStatus('Error in lenderAccountContract; see log.');
- });
-  return result;
-}
+        return rs;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in lenderAccountContract; see log.');
+      });
+    return result;
+  }
 
-async lender(escrowAddress) {
-  const result = await this.lender_escrow
-  .at(escrowAddress)
- .lender.call()
- .then(rs => {
-   this.setStatus('lender complete!');
+  async lender(escrowAddress) {
+    const result = await this.lender_escrow
+      .at(escrowAddress)
+      .lender.call()
+      .then(rs => {
+        this.setStatus('lender complete!');
 
-   return rs;
- })
- .catch(e => {
-   console.log(e);
-   this.setStatus('Error in lender; see log.');
- });
-  return result;
-}
+        return rs;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in lender; see log.');
+      });
+    return result;
+  }
 
-async tokenAmount(escrowAddress) {
-  const result = await this.lender_escrow
-  .at(escrowAddress)
- .tokenAmount.call()
- .then(rs => {
-   this.setStatus('tokenAmount complete!');
+  async tokenAmount(escrowAddress) {
+    const result = await this.lender_escrow
+      .at(escrowAddress)
+      .tokenAmount.call()
+      .then(rs => {
+        this.setStatus('tokenAmount complete!');
 
-   return rs.toNumber();
- })
- .catch(e => {
-   console.log(e);
-   this.setStatus('Error in tokenAmount; see log.');
- });
-  return result;
-}
-
+        return rs.toNumber();
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in tokenAmount; see log.');
+      });
+    return result;
+  }
 
   /**
    * Event functions

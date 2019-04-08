@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 
-const RenterFiles = require('../../../../resources/build/contracts/RenterFiles.json');
+const RenterFiles = require('../../../contracts/RenterFiles.json');
 
 declare let require: any;
 declare global {
@@ -14,7 +14,6 @@ window.web3 = window.web3 || {};
 
 @Injectable()
 export class RentersFilesService {
-
   private web3: any;
   private accounts: string[];
   account;
@@ -62,25 +61,29 @@ export class RentersFilesService {
   /**
    * Setter functions
    */
-  async addFile(bzzHash,
+  async addFile(
+    bzzHash,
     fileName,
     size,
     fileType,
     bzzSchema,
     isEncrypted,
-    encryptedKey) {
+    encryptedKey
+  ) {
     const result = await this.renter_files
       .deployed()
       .then(instance => {
         console.log('instance', instance);
 
-        return instance.addFile(bzzHash,
+        return instance.addFile(
+          bzzHash,
           fileName,
           size,
           fileType,
           bzzSchema,
           isEncrypted,
-          encryptedKey);
+          encryptedKey
+        );
       })
       .then(res => {
         this.setStatus('Transaction complete!');
@@ -184,7 +187,7 @@ export class RentersFilesService {
     return result;
   }
 
-/**
- * Event functions
- */
+  /**
+   * Event functions
+   */
 }

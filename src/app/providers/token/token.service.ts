@@ -3,7 +3,7 @@ import * as contract from 'truffle-contract';
 declare let require: any;
 import Web3 from 'web3';
 
-const VuupleToken = require('../../../../resources/build/contracts/VuupleToken.json');
+const VuupleToken = require('../../../contracts/VuupleToken.json');
 declare global {
   interface Window {
     web3: any;

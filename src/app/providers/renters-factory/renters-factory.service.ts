@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 
-const RenterFactory = require('../../../../resources/build/contracts/RenterFactory.json');
+const RenterFactory = require('../../../contracts/RenterFactory.json');
 
 declare let require: any;
 declare global {
@@ -14,7 +14,6 @@ window.web3 = window.web3 || {};
 
 @Injectable()
 export class RentersFactoryService {
-
   private web3: any;
   private accounts: string[];
   account;
@@ -145,7 +144,7 @@ export class RentersFactoryService {
     return result;
   }
 
-/**
- * Event functions
- */
+  /**
+   * Event functions
+   */
 }

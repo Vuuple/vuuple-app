@@ -1,3 +1,4 @@
+import { IUser } from './../../auth/core/user';
 import { Injectable } from '@angular/core';
 import { DataService } from '../http-provider/data.service';
 import { Observable } from 'rxjs';
@@ -8,10 +9,10 @@ import { Observable } from 'rxjs';
 export class ServerApiService {
   constructor(private dataService: DataService) {}
 
-  getAllUsers(): Observable<any[]> {
+  getAllUsers(): Observable<IUser[]> {
     return this.dataService.getList('api/users');
   }
-  getUser(id): Observable<any> {
+  getUser(id): Observable<IUser> {
     return this.dataService.getSingle('api/profile', id);
   }
   approve(id, data): Observable<any> {

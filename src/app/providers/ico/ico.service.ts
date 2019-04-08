@@ -3,7 +3,7 @@ import * as contract from 'truffle-contract';
 import Web3 from 'web3';
 
 declare let require: any;
-const VuupleICO = require('../../../../resources/build/contracts/VuupleICO.json');
+const VuupleICO = require('../../../contracts/VuupleICO.json');
 declare global {
   interface Window {
     web3: any;
