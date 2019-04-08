@@ -3,7 +3,7 @@ export interface IUser {
   id: string;
   username: string;
   email: string;
-  isAdmin: boolean;
+  role: string;
   ethAddress: string;
   category: string;
   status: string;

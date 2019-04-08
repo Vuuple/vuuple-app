@@ -28,22 +28,32 @@ export class AuthService {
     //   });
 
     return new Promise<any>((resolve, reject) => {
-      this.dataService.post('auth/login', credential).subscribe(s => {
-        localStorage.setItem('user', JSON.stringify(s.rs));
+      this.dataService.post('users/login', credential).subscribe(s => {
+        console.log(s);
+        let user = s.user;
+        user.token = s.token;
+        console.log(user, 'user');
+
+        localStorage.setItem('user', JSON.stringify(user));
         this.currentUser = JSON.parse(localStorage.getItem('user'));
         console.log(this.currentUser, ' this.currentUser');
-        console.log(s.rs, 's.rs');
 
         resolve(this.currentUser != null && this.currentUser !== undefined);
       });
     });
   }
   getCuurentUser() {
-    this.currentUser = JSON.parse(localStorage.getItem('user'));
+    const user = localStorage.getItem('user');
+    if (user != undefined) {
+      this.currentUser = JSON.parse(user);
+    }
     return this.currentUser;
   }
   getUserType(): Number {
-    if (this.getCuurentUser().isAdmin) {
+    if (
+      this.getCuurentUser().role == 'admin' ||
+      this.getCuurentUser().role == 'superAdmin'
+    ) {
       return 1;
     } else if (this.getCuurentUser().category == 'renter') {
       return 2;

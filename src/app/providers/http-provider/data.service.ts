@@ -24,8 +24,9 @@ export class DataService {
   private headers: Headers;
 
   constructor(private http: HttpClient) {
-    this.actionUrl = 'http://18.223.208.148:3000/';
-   // this.actionUrl = 'http://localhost:3000/';
+    this.actionUrl = 'http://18.223.208.148:3000/api/';
+    // this.actionUrl = 'http://18.221.44.174:3000';
+    // this.actionUrl = 'http://localhost:3000/';
     this.headers = new Headers();
     this.headers.append('Content-any', 'application/json');
     this.headers.append('Accept', 'application/json');
@@ -34,6 +35,12 @@ export class DataService {
   public getList(ns: string): Observable<any[]> {
     console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
     return this.http.get(`${this.actionUrl}${ns}`).pipe(map(this.extractData));
+  }
+  public getListWitFilter(ns: string, filter: string): Observable<any[]> {
+    console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
+    return this.http
+      .get(`${this.actionUrl}${ns}+/+${filter}`)
+      .pipe(map(this.extractData));
   }
 
   public getSingle(ns: string, id: string): Observable<any> {

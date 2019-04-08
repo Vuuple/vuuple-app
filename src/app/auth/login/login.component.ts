@@ -48,28 +48,12 @@ export class LoginComponent {
   //       this.router.navigate(['/user']);
   //     })
   // }
-  getcategory() {
-    if ((this.authService.currentUser.isAdmin = true)) {
-      return 1;
-    } else if ((this.authService.currentUser.category = 'renter')) {
-      return 2;
-    } else if ((this.authService.currentUser.category = 'lender')) {
-      return 3;
-    }
-  }
+
   login() {
     this.authService
       .login(this.loginForm.get('email').value, this.loginForm.get('pwd').value)
       .then(isAuth => {
         if (isAuth == true) {
-          // switch(this.getcategory()){
-          //   case 1:
-          //    this.router.navigate(['/pages/admin']);
-          //    case 2:
-          //    this.router.navigate(['/pages/renter']);
-          //    case 3:
-          //    this.router.navigate(['/pages/lender']);
-          // }
           const type = this.authService.getUserType();
 
           if (type === 1) {
