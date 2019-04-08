@@ -22,8 +22,8 @@ export class RequestListComponent implements OnInit {
       this.requests = data;
     });
   }
-  addNode() {
-    this.router.navigate(['/pages/admin/addNode']);
+  addNode(id) {
+    this.router.navigate(['/pages/admin/addNode'], { queryParams: { id: id } });
   }
   ngOnInit() {}
 }

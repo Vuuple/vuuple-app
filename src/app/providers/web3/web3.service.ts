@@ -35,4 +35,11 @@ export class Web3Service {
 
     return this.accounts[index];
   }
+
+  async unLockAccount(address, pasword) {
+    return await this.web3.eth.personal.unlockAccount(address, pasword, 600);
+  }
+  async getProvider() {
+    return await this.web3.currentProvider;
+  }
 }
