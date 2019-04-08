@@ -43,7 +43,7 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
       },
       {
         path: 'main',
-        component: EscrowListComponent
+        component: DashboardComponent
       },
       {
         path: 'nodeList',
