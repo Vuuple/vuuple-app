@@ -19,6 +19,7 @@ import { GeneralInfoComponent } from './general-info/general-info.component';
 import { TokenComponent } from './token/token.component';
 import { AdminComponent } from './admin/admin.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { EscrowDetailsComponent } from './escrow-details/escrow-details.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,7 @@ import { WalletComponent } from './wallet/wallet.component';
       },
       {
         path: 'main',
-        component: DashboardComponent
+        component: EscrowListComponent
       },
       {
         path: 'nodeList',
@@ -63,6 +64,10 @@ import { WalletComponent } from './wallet/wallet.component';
       {
         path: 'escrow',
         component: EscrowListComponent
+      },
+      {
+        path: 'escrowDetails',
+        component: EscrowDetailsComponent
       },
       {
         path: 'setting',
@@ -89,6 +94,7 @@ import { WalletComponent } from './wallet/wallet.component';
     TokenComponent,
     AdminComponent,
     WalletComponent,
+    EscrowDetailsComponent,
     
   ]
 })

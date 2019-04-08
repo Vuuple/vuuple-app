@@ -7,7 +7,7 @@
           </h2>
         </div>
         <div class="col-md-4" style="padding:2%">
-            <input type="button" class="form-control withdraw" style="margin-right:15px;width: 200px;" value="withdraw">
+          <!--  <input type="button" class="form-control withdraw" style="margin-right:15px;width: 200px;" value="withdraw">-->
         </div>
         </div>
         <div class="row table-container">
@@ -19,7 +19,8 @@
                   <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Renter/Lender Address</th>
                   <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Issue Date</th>
                   <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">End Date  </th>
-                  <th  style="padding: 15px;"> Account address</th>
+                  <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Account address</th>
+                  <th  style="padding-top:15px ; padding-bottom:15px">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -29,7 +30,12 @@
                   <td>{{item?.renterLenderAddress}}</td>
                   <td>{{item?.issueDate}}</td>
                   <td>{{item?.endDate}}</td>
-                  <td style="border-right:none">{{item?.accountAddress}}</td>
+                  <td>{{item?.accountAddress}}</td>
+                  <td style="border-right:none">
+                    <button class="action" (click)="goToDetails(item)">
+                      VIEW
+                  </button>
+                </td>
                 </tr>
               </tbody>
           </table>
