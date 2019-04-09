@@ -79,9 +79,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\nimport \"../Roles.sol\";\n\ncontract MinterRole {\n  using Roles for Roles.Role;\n\n  event MinterAdded(address indexed account);\n  event MinterRemoved(address indexed account);\n\n  Roles.Role private minters;\n\n  constructor() internal {\n    _addMinter(msg.sender);\n  }\n\n  modifier onlyMinter() {\n    require(isMinter(msg.sender));\n    _;\n  }\n\n  function isMinter(address account) public view returns (bool) {\n    return minters.has(account);\n  }\n\n  function addMinter(address account) public onlyMinter {\n    _addMinter(account);\n  }\n\n  function renounceMinter() public {\n    _removeMinter(msg.sender);\n  }\n\n  function _addMinter(address account) internal {\n    minters.add(account);\n    emit MinterAdded(account);\n  }\n\n  function _removeMinter(address account) internal {\n    minters.remove(account);\n    emit MinterRemoved(account);\n  }\n}\n",
-  "sourcePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
+  "sourcePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
   "ast": {
-    "absolutePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
+    "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
     "exportedSymbols": {
       "MinterRole": [
         3247
@@ -102,7 +102,7 @@
         "src": "0:24:14"
       },
       {
-        "absolutePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
+        "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
         "file": "../Roles.sol",
         "id": 3147,
         "nodeType": "ImportDirective",
@@ -1287,7 +1287,7 @@
     "src": "0:860:14"
   },
   "legacyAST": {
-    "absolutePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
+    "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
     "exportedSymbols": {
       "MinterRole": [
         3247
@@ -1308,7 +1308,7 @@
         "src": "0:24:14"
       },
       {
-        "absolutePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
+        "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
         "file": "../Roles.sol",
         "id": 3147,
         "nodeType": "ImportDirective",
@@ -2498,5 +2498,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-01T14:20:54.774Z"
+  "updatedAt": "2019-04-09T23:23:33.418Z"
 }

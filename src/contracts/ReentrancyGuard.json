@@ -13,9 +13,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\n/**\n * @title Helps contracts guard against reentrancy attacks.\n * @author Remco Bloemen <remco@2π.com>, Eenae <alexey@mixbytes.io>\n * @dev If you mark a function `nonReentrant`, you should also\n * mark it `external`.\n */\ncontract ReentrancyGuard {\n\n  /// @dev counter to allow mutex lock with only one SSTORE operation\n  uint256 private _guardCounter;\n\n  constructor() internal {\n    // The counter starts at one to prevent changing it from zero to a non-zero\n    // value, which is a more expensive operation.\n    _guardCounter = 1;\n  }\n\n  /**\n   * @dev Prevents a contract from calling itself, directly or indirectly.\n   * Calling a `nonReentrant` function from another `nonReentrant`\n   * function is not supported. It is possible to prevent this from happening\n   * by making the `nonReentrant` function external, and make it call a\n   * `private` function that does the actual work.\n   */\n  modifier nonReentrant() {\n    _guardCounter += 1;\n    uint256 localCounter = _guardCounter;\n    _;\n    require(localCounter == _guardCounter);\n  }\n\n}\n",
-  "sourcePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
+  "sourcePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
   "ast": {
-    "absolutePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
+    "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
     "exportedSymbols": {
       "ReentrancyGuard": [
         4534
@@ -383,7 +383,7 @@
     "src": "0:1074:25"
   },
   "legacyAST": {
-    "absolutePath": "/home/ubuntu/vuuple-solidity-contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
+    "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
     "exportedSymbols": {
       "ReentrancyGuard": [
         4534
@@ -756,5 +756,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-01T14:20:54.781Z"
+  "updatedAt": "2019-04-09T23:23:33.425Z"
 }
