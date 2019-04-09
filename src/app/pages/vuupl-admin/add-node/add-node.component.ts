@@ -1,7 +1,7 @@
 import { LendersFactoryService } from './../../../providers/lenders-factory/lenders-factory.service';
-import { RentersFactoryService } from './../../../providers/renters-factory/renters-factory.service';
+// import { RentersFactoryService } from './../../../providers/renters-factory/renters-factory.service';
 import { LendersRegistrationService } from './../../../providers/lenders-registration/lenders-registration.service';
-import { RentersRegistrationService } from './../../../providers/renters-registration/renters-registration.service';
+// import { RentersRegistrationService } from './../../../providers/renters-registration/renters-registration.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
@@ -16,10 +16,10 @@ import {
   templateUrl: './add-node.component.html',
   styleUrls: ['./add-node.component.scss'],
   providers: [
-    RentersFactoryService,
     LendersFactoryService,
-    LendersRegistrationService,
-    RentersRegistrationService
+    LendersRegistrationService
+    // RentersFactoryService,
+    // RentersRegistrationService
   ]
 })
 export class AddNodeComponent implements OnInit {
@@ -37,9 +37,9 @@ export class AddNodeComponent implements OnInit {
   constructor(
     private serverApiService: ServerApiService,
     private route: ActivatedRoute,
-    private rentersFactoryService: RentersFactoryService,
+    // private rentersFactoryService: RentersFactoryService,
     private lendersFactoryService: LendersFactoryService,
-    private rentersRegistrationService: RentersRegistrationService,
+    // private rentersRegistrationService: RentersRegistrationService,
     private lendersRegistrationService: LendersRegistrationService
   ) {}
 
@@ -61,6 +61,7 @@ export class AddNodeComponent implements OnInit {
     // unloack his account
 
     if (this.node.category == 'lender') {
+      //TODO: need to update docker file to set storage value
       await this._approveOnContract();
     }
 

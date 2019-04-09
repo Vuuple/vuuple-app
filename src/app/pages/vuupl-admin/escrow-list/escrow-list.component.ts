@@ -17,9 +17,9 @@ export class EscrowListComponent implements OnInit {
       this.escrows = s;
     });
   }
-  goToDetails(selectedescrow) {
+  goToDetails(selectedescrow, _category) {
     this.router.navigate(['/pages/admin/escrowDetails'], {
-      queryParams: { address: selectedescrow }
+      queryParams: { address: selectedescrow, category: _category }
     });
   }
 }
