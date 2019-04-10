@@ -10,7 +10,24 @@ module.exports.start_docker = file => {
       console.log(err);
     });
 };
+module.exports.startNetwork = file => {
+  let child;
+  var env = Object.create(process.env);
+  env.QUORUM_CONSENSUS = 'raft';
+  child = spawn.sync('docker-compose', ['-f', file, 'up', '-d'], {
+    env: env,
+    stdio: 'inherit'
+  });
 
+  return new Promise((resolve, reject) => {
+    const { pid } = child;
+    if (pid) {
+      resolve(child);
+    } else {
+      reject(child);
+    }
+  });
+};
 module.exports.stop_docker = file => {
   docker_compose('down', file)
     .then(child => {
