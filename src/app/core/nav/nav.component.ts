@@ -25,7 +25,7 @@ export class NavComponent implements OnInit {
   }
   renterItems = [
     { name: 'Dashboard', link: '/pages/renter' },
-    { name: 'WALLET', link: '/pages/renter' },
+    { name: 'WALLET', link: '/pages/renter/wallet' },
     { name: 'PURCHASE', link: '/pages/renter' },
     { name: 'REDEEM', link: '/pages/renter' },
     { name: 'ACCOUNT', link: '/pages/renter' },
@@ -34,7 +34,7 @@ export class NavComponent implements OnInit {
 
   LenderItem = [
     { name: 'Dashboard', link: '/pages/lender' },
-    { name: 'WALLET', link: '/pages/lender' },
+    { name: 'WALLET', link: '/pages/renter/wallet' },
     { name: 'ALLOCATE', link: '/pages/lender' },
     { name: 'REDEEM', link: '/pages/lender' },
     { name: 'ACCOUNT', link: '/pages/lender' },

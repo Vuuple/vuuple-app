@@ -42,7 +42,7 @@ export class AuthService {
       });
     });
   }
-  getCuurentUser() {
+  getCuurentUser(): IUser {
     const user = localStorage.getItem('user');
     if (user != undefined) {
       this.currentUser = JSON.parse(user);
