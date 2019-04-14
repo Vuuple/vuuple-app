@@ -1,0 +1,10 @@
+{
+  "version": "2",
+  "rpc_enable": "true",
+  "rpc": {
+    "address": "127.0.0.1",
+    "port": "22008"
+
+  }
+
+}

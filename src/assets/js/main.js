@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 const Promise = require('bluebird');
-const node = require('../ng-electron/helpers/docker');
+const node = require('./helpers/docker');
 
 global.Promise = Promise;
 
@@ -51,10 +51,10 @@ const contextMenu = require('electron-context-menu');
 
 // const updateElectronApp = require('update-electron-app');
 
-const { createWindow } = require('../window');
+const { createWindow } = require('./window');
 // const { nodeStart } = require('./ipc');
 
-const { version, productName } = require('../package');
+const { version, productName } = require('../../../package');
 
 const { app, ipcMain, protocol } = electron;
 
@@ -75,13 +75,14 @@ app.on('second-instance', () => {
     mainWindow.show();
   }
 });
+console.log(process.resourcesPath, 'process.resourcesPath');
 
 const basePath = is.development
-  ? path.join(__dirname, '..', 'src')
-  : path.join(process.resourcesPath);
+  ? path.join(__dirname, '..')
+  : path.join(process.resourcesPath, 'app', 'dist', 'assets');
 global.environment = process.env;
 global.dataPath = path.normalize(app.getPath('userData'));
-global.resourcesPath = path.normalize(path.join(basePath, 'assets'));
+global.resourcesPath = path.normalize(path.join(basePath, 'resources'));
 global.locale = null;
 global.isDataDownloaded = false;
 global.isNodeStarted = false;
@@ -93,7 +94,6 @@ app.on('before-quit', async () => {
   // set docker-compose down
   const dockerfile = path.join(
     global.resourcesPath,
-    'resources',
     'network-resources',
     'docker-compose.yml'
   );
@@ -120,7 +120,6 @@ const run = async () => {
   // log.info(`Starting application: ${productName} ${version} (${environment})`);
   const dockerfile = path.join(
     global.resourcesPath,
-    'resources',
     'network-resources',
     'docker-compose.yml'
   );
