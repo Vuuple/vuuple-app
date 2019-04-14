@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './core/auth.service';
 import { RouterModule } from '@angular/router';
+import { RenterRegisterComponent } from './renter-register/renter-register.component';
+import { LenderRegisterComponent } from './lender-register/lender-register.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,7 @@ import { RouterModule } from '@angular/router';
             }]
         }])
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RenterRegisterComponent, LenderRegisterComponent],
   exports: [LoginComponent],
   providers: [AuthService]
 })
