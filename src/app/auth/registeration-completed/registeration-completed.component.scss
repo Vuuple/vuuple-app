@@ -1,0 +1,23 @@
+.registerBody {
+    background: url('assets/img/Background-1-1024x594.png') ;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	-ms-background-size: cover;
+	background-size: cover;
+  }
+  
+  .title {
+    width: 100%;
+    height: 100%;
+  }
+  p{
+      color:white;
+      font-family: sans-serif;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 500
+  }
+  p > img {
+      width: 20%;
+  }

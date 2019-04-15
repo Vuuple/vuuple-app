@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../core/auth.service';
-import { DataService } from './../../providers/http-provider/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-renter-register',
@@ -12,10 +11,9 @@ import { DataService } from './../../providers/http-provider/data.service';
 export class RenterRegisterComponent implements OnInit {
   renterRegisterForm : FormGroup;
   users: any[];
-  constructor(private formBuilder: FormBuilder,
-              private http : HttpClient,
-              public authService: AuthService,
-              private dataService: DataService) { }
+  constructor(private formBuilder : FormBuilder,
+              private authService : AuthService,
+              private router : Router) { }
 
   ngOnInit() {
     this.renterRegisterForm = this.formBuilder.group({
@@ -33,7 +31,9 @@ export class RenterRegisterComponent implements OnInit {
                                     this.renterRegisterForm.value.email,
                                     this.renterRegisterForm.value.password,
                                     this.renterRegisterForm.value.ethereumAddress,
-                                    'renter',this.renterRegisterForm.value.staticIP)
+                                    'renter',this.renterRegisterForm.value.staticIP);
+     this.router.navigate(['/auth/registerCompleted']);
+
    }
 
 }

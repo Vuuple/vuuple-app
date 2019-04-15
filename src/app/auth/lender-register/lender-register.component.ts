@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../core/auth.service';
-import { DataService } from './../../providers/http-provider/data.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,11 +12,9 @@ import { DataService } from './../../providers/http-provider/data.service';
 export class LenderRegisterComponent implements OnInit {
   lenderRegisterForm : FormGroup;
   users: any[];
-  constructor(private formBuilder: FormBuilder,
-              private http : HttpClient,
-              public authService: AuthService,
-              private dataService: DataService
-              ) {
+  constructor(private formBuilder : FormBuilder,
+             private authService : AuthService,
+             private router: Router) {
   }
 
   ngOnInit() {
@@ -38,6 +35,7 @@ export class LenderRegisterComponent implements OnInit {
                                      this.lenderRegisterForm.value.email,
                                      this.lenderRegisterForm.value.password,
                                      this.lenderRegisterForm.value.ethereumAddress,
-                                     'lender',this.lenderRegisterForm.value.staticIP)
+                                     'lender',this.lenderRegisterForm.value.staticIP);
+     this.router.navigate(['/auth/registerCompleted']);
     }
 }

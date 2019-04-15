@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <img
-          style="width:30%;margin-left: 35%;margin-bottom: 5%"
+          style="width:30%;margin-left: 32%;margin-bottom: 5%"
           src="../../../assets/img/Logo.png"
         />
         <form [formGroup]="loginForm">
@@ -24,7 +24,7 @@
               formControlName="pwd"
               placeholder="Password"
             />
-            <a style="color:white">forgot Password ?</a>
+            <a style="color:white">Forgot Password ?</a>
             <!--Popup-->
           <!--  <label for="modal-toggle" class="btn btn-link" >
               Show Details
@@ -51,6 +51,7 @@
           >
             Log in
           </button>
+          <p style="margin-top: 20px;">Not Registered?  <a (click)="createAccount()">Create an account</a></p>
         </form>
       </div>
     </div>
