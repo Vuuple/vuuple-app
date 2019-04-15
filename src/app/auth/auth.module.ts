@@ -14,7 +14,7 @@ import { LenderRegisterComponent } from './lender-register/lender-register.compo
 
         [{
           path: '',
-          component: LoginComponent,
+          component: RenterRegisterComponent,
           children: [
             { path: 'login', component: LoginComponent },
             {
