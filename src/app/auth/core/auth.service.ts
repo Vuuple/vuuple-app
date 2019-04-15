@@ -42,6 +42,15 @@ export class AuthService {
       });
     });
   }
+  async registerClient(username : string ,email : string ,pwd : string ,ethAddress : string ,category : string ,ip : string ){
+       const client ={username : username ,email : email , pwd : pwd ,ethAddress : ethAddress , category : category ,ip : ip };
+       console.log(client);
+       return new Promise<any>((resolve, reject) => {
+        this.dataService.post('users/register', client).subscribe(s => {
+          console.log(s);
+        });
+      });
+  }
   getCuurentUser() {
     const user = localStorage.getItem('user');
     if (user != undefined) {
