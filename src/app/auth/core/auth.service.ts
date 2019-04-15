@@ -51,7 +51,6 @@ export class AuthService {
         });
       });
   }
-  getCuurentUser() {
   getCuurentUser(): IUser {
     const user = localStorage.getItem('user');
     if (user != undefined) {
@@ -59,6 +58,7 @@ export class AuthService {
     }
     return this.currentUser;
   }
+
   getUserType(): Number {
     if (
       this.getCuurentUser().role == 'admin' ||
