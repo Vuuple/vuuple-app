@@ -9,7 +9,7 @@ import { IUser } from '../../../auth/core/user';
 import {
   getRaftId,
   sendConfirmationMail
-} from '../../../../../ng-electron/helpers/joinNetwork.js';
+} from '../../../../assets/js/helpers/joinNetwork.js';
 
 @Component({
   selector: 'app-add-node',

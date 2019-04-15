@@ -6,12 +6,11 @@
   "files": [
     "**/*",
     "!**/*.ts",
+    "**/*.js",
     "!*.code-workspace",
     "!LICENSE.md",
     "!package.json",
     "!package-lock.json",
-    "!src/",
-    "!ng-electron/",
     "!e2e/",
     "!hooks/",
     "!angular.json",
@@ -20,6 +19,7 @@
     "!tsconfig.json",
     "!tslint.json"
   ],
+  "asar": true,
   "win": {
     "icon": "dist",
     "target": ["portable"]

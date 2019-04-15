@@ -24,7 +24,7 @@ x-quorum-def: &quorum-def
     - -c
     - |
       DDIR=/qdata/dd
-
+      rm -rf $${DDIR}
       mkdir -p $${DDIR}/keystore
       mkdir -p $${DDIR}/geth
       cp /examples/raft/nodekey8 $${DDIR}/geth/nodekey
@@ -111,7 +111,7 @@ x-tx-manager-def: &tx-manager-def
     - -c
     - |
       DDIR=/qdata/tm
-
+      rm -rf $${DDIR}
       mkdir -p $${DDIR}
       DOCKER_IMAGE="${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.7.3}"
       TX_MANAGER=$$(echo $${DOCKER_IMAGE} | sed 's/^.*\/\(.*\):.*$$/\1/g')

@@ -13,12 +13,12 @@ window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
 
   // use our cluster  only on develop with those who don't have geth like Ghithaa
-  window.web3 = new Web3(
-    new Web3.providers.HttpProvider('http://3.18.34.201:22004')
-  );
   // window.web3 = new Web3(
-  //   new Web3.providers.HttpProvider('http://127.0.0.1:22008')
+  //   new Web3.providers.HttpProvider('http://3.18.34.201:22004')
   // );
+  window.web3 = new Web3(
+    new Web3.providers.HttpProvider('http://127.0.0.1:22008')
+  );
 
   platformBrowserDynamic()
     .bootstrapModule(AppModule)
