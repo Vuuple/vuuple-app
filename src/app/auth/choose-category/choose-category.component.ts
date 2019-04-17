@@ -12,9 +12,12 @@ export class ChooseCategoryComponent implements OnInit {
 
   ngOnInit() {
   }
-    valueChange(values:any){
-      this.category = values.target.defaultValue;
-      console.log(this.category);
-      this.router.navigate(['/auth/renterRegister'], { queryParams: { val : this.category} });
+  valueChange(values:any){
+    this.category = values.target.defaultValue;
+    console.log(this.category);
+    this.router.navigate(['/auth/renterRegister'], { queryParams: { val : this.category} });
       }
+  returnToLogin(){
+    this.router.navigate(['/auth/login']);
+   }
 }
