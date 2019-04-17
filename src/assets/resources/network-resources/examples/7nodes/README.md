@@ -1,14 +1,3 @@
-
-# first generate key by calling init.yml script 
-docker-compose -f ./init.yml  up -d
-
-# then act as lender by calling lender.yml script
-QUORUM_CONSENSUS=raft docker-compose -f ./lender.yml  up -d
-
-# or act as renter by calling renter.yml script 
-QUORUM_CONSENSUS=raft docker-compose -f ./renter.yml  up -d
-
-
 # 7nodes
 ## Demonstrating Privacy
 The 7nodes example comes with some simple contracts to demonstrate the privacy features of Quorum.  In this demo we will:
@@ -197,7 +186,7 @@ MISCELLANEOUS OPTIONS:
 ```
 
 ## Next steps
-Additional contracts can be found in `quorum-examples/examples/7nodes/` for you to use and edit.  You can also create your own contracts to help you understand how the nodes in a Quorum network work together.
+Additional samples can be found in `quorum-examples/examples/7nodes/samples` for you to use and edit.  You can also create your own contracts to help you understand how the nodes in a Quorum network work together.
 
 ## Reducing the number of nodes 
 It is easy to reduce the number of nodes used in the example.  You may want to do this for memory usage reasons or just to experiment with a different network configuration.
