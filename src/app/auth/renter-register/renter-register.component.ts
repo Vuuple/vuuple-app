@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../core/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-renter-register',
@@ -12,11 +12,23 @@ export class RenterRegisterComponent implements OnInit {
   renterRegisterForm : FormGroup;
   users: any[];
   srcImage : any ;
+  category : any ;
   constructor(private formBuilder : FormBuilder,
               private authService : AuthService,
+              private route: ActivatedRoute,
               private router : Router) {
-               /// this.srcImage = "../../../assets/img/companyRenter.png";
-                this.srcImage = "../../../assets/img/individualRenter.png"
+                this.route.queryParams.subscribe(params  => {
+                  this.category = params['val'];
+                  console.log(this.category);
+                  if(this.category == 'Individual'){
+                    this.srcImage = "../../../assets/img/individualRenter.png"
+                  }
+                  else{
+                   this.srcImage = "../../../assets/img/companyRenter.png";
+                  }
+                });
+               // this.srcImage = "../../../assets/img/companyRenter.png";
+               // this.srcImage = "../../../assets/img/individualRenter.png"
                }
 
   ngOnInit() {

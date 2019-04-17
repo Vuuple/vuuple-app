@@ -1,0 +1,35 @@
+<div class="container registerBody">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h2 style="text-align:center;margin-top:50px;color: white;">Choose your renter category</h2>
+    </div>
+    <div class="col-md-3">
+     <p style="text-align:center;margin-top:60px;" (click)="returnToLogin()"><img src="../../../assets/img/Close-X.png" style="width:6%;"/></p> 
+    </div>
+  </div>
+  <div class="row">
+   <div class="col-md-3"></div>
+   <div class="col-md-6" style="margin-top:50px">
+     <div class="row">
+    <img style="float:left;margin-top: 60px" src="../../../assets/img/Individual-300x169.png" class="title"/>
+    <img style="float: right;margin-top: 20px" src="../../../assets/img/Company-300x175.png" class="title"/>
+   </div>
+   <div class="row">
+    <input 
+    type="checkbox" 
+    value="Individual"
+    (change)="valueChange($event)"
+    style="float:left;margin-top: 60px;margin-left:100px"
+    />
+    <input 
+    type="checkbox" 
+    value="Company"
+    (change)="valueChange($event)"
+    style="float: right;margin-top: 20px;margin-right: 100px" 
+    />
+   </div>
+  </div>
+   <div class="col-md-3"></div>
+  </div>
+</div>
