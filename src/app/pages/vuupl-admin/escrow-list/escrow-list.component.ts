@@ -13,8 +13,9 @@ export class EscrowListComponent implements OnInit {
   saddress: any;
   constructor(private router: Router, private apiService: ServerApiService) {}
   ngOnInit() {
-    this.apiService.getEscrowsByUserId(1).subscribe(s => {
+    this.apiService.getAllEscrows().subscribe(s => {
       this.escrows = s;
+      console.log(this.escrows)
     });
   }
   goToDetails(selectedescrow, _category) {
