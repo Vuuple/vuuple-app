@@ -1,28 +1,39 @@
 <div class="main">
-    <form>
+    <form [formGroup]="sendMailForm">
       <h4>Report Issue</h4>
-        <label>
+        <div class="">
+        <label class="">
           <p class="label-txt">Title</p>
-          <input type="text" class="input">
+          <input type="text" class="input" formControlName="title">
           <div class="line-box">
             <div class="line"></div>
           </div>
         </label>
-        <label>
+        </div>
+        <div class="">
+        <label class="">
             <p class="label-txt">Description</p>
-            <textarea rows = "2" cols = "50" name = "description" class="input">      
+            <textarea rows = "4" cols = "50" name = "description" formControlName="description" class="input">   
              </textarea>          
              <div class="line-box">
               <div class="line"></div>
             </div>
-          </label>
-        <label>
+        </label> 
+        </div>
+        <div class="">
+        <label class="">
           <p class="label-txt">Email</p>
-          <input type="text" class="input">
+          <input type="text" class="input"formControlName="email">
           <div class="line-box">
             <div class="line"></div>
           </div>
-        </label>     
-        <button type="submit">submit</button> 
+        </label> 
+        </div>    
+        <div class="">
+            <label class="">
+              <input type="file" class="input"  formControlName="attachFile"(change)="showPreviewFile($event)">
+            </label> 
+        </div>  
+        <button type="submit" (click)="sendEmail()">submit</button> 
       </form>
 </div>
