@@ -91,7 +91,7 @@ global.isUpdating = false;
 global.authorizationToken = null;
 
 app.on('before-quit', async () => {
-  // set docker-compose down
+  // // set docker-compose down
   // const dockerfile = path.join(
   //   global.resourcesPath,
   //   'network-resources',
@@ -117,14 +117,14 @@ app.on('activate', () => {
 // ipcMain.on('node-start', nodeStart);
 
 const run = async () => {
-  // log.info(`Starting application: ${productName} ${version} (${environment})`);
+  // // log.info(`Starting application: ${productName} ${version} (${environment})`);
   // const dockerfile = path.join(
   //   global.resourcesPath,
   //   'network-resources',
   //   'docker-compose.yml'
   // );
-  // await node.start_docker(dockerfile);
-  // need to check for containers healthy
+  // await node.startNetwork(dockerfile);
+  // // need to check for containers healthy
   // const child = await node.list_containers();
   // // const sttus = await node.check_status(child[0]);
   // const health = await node.check_health(child[0]);

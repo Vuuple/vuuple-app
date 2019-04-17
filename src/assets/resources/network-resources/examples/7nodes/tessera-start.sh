@@ -63,15 +63,33 @@ elif [  ! -f "${tesseraJar}" ]; then
   usage
 fi
 
+#extract the tessera version from the jar
+TESSERA_VERSION=$(unzip -p $tesseraJar META-INF/MANIFEST.MF | grep Tessera-Version | cut -d" " -f2)
+echo "Tessera version (extracted from manifest file): $TESSERA_VERSION"
+
+TESSERA_CONFIG_TYPE=
+
+#TODO - this will break when we get to version 0.10 (hopefully we would have moved to 1.x by then)
+if [ "$TESSERA_VERSION" \> "0.8" ] || [ "$TESSERA_VERSION" == "0.8" ]; then
+    TESSERA_CONFIG_TYPE="-enhanced-"
+fi
+
+if [ "$TESSERA_VERSION" \> "0.9" ] || [ "$TESSERA_VERSION" == "0.9" ]; then
+    TESSERA_CONFIG_TYPE="-09-"
+fi
+
+echo Config type $TESSERA_CONFIG_TYPE
+
 currentDir=`pwd`
-    DDIR="qdata/c8"
+
+    DDIR="qdata/c"
     mkdir -p ${DDIR}
     mkdir -p qdata/logs
     rm -f "$DDIR/tm.ipc"
 
     DEBUG=""
     if [ "$remoteDebug" == "true" ]; then
-      DEBUG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5008 -Xdebug"
+      DEBUG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5000 -Xdebug"
     fi
 
     #Only set heap size if not specified on command line
@@ -80,28 +98,34 @@ currentDir=`pwd`
       MEMORY="-Xms128M -Xmx128M"
     fi
 
-    CMD="java $jvmParams $DEBUG $MEMORY -jar ${tesseraJar} -configfile $DDIR/tessera-config8.json"
-    echo "$CMD >> qdata/logs/tessera8.log 2>&1 &"
-    ${CMD} >> "qdata/logs/tessera8.log" 2>&1 &
+    CMD="java $jvmParams $DEBUG $MEMORY -jar ${tesseraJar} -configfile $DDIR/tessera-config$TESSERA_CONFIG_TYPE.json"
+    echo "$CMD >> qdata/logs/tessera.log 2>&1 &"
+    ${CMD} >> "qdata/logs/tessera.log" 2>&1 &
     sleep 1
+
 
 echo "Waiting until all Tessera nodes are running..."
 DOWN=true
 k=10
-        if [ ! -S "qdata/c8/tm.ipc" ]; then
-            echo "Node 8 is not yet listening on tm.ipc"
+while ${DOWN}; do
+    sleep 1
+    DOWN=false
+
+        if [ ! -S "qdata/c/tm.ipc" ]; then
+            echo "Node 1 is not yet listening on tm.ipc"
             DOWN=true
         fi
 
         set +e
         #NOTE: if using https, change the scheme
         #NOTE: if using the IP whitelist, change the host to an allowed host
-        result=$(curl -s http://localhost:9008/upcheck)
+        result=$(curl -s http://0.0.0.0:9000/upcheck)
         set -e
         if [ ! "${result}" == "I'm up!" ]; then
-            echo "Node 8 is not yet listening on http"
+            echo "Node 1 is not yet listening on http"
             DOWN=true
         fi
+    
 
     k=$((k - 1))
     if [ ${k} -le 0 ]; then

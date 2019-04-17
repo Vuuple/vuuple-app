@@ -1,28 +1,3 @@
-# Vuuple Single node 
-this repo contain the script for creating and joining  the vuuple network
-
-
-
-#init.sh
-this script is for creating the nodekey that is used by the admin to run raft_addPeer command
-#raft_addPeer
-example for adding raft peer command  through node 4 in aws network 
-curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"raft_addPeer","params":[ "enode://736c15ca3536c55f7755c736ed7049257d22c224f032689863aa4288012578bc10775757afe0c93e67f3d6fc1ccef6b6d5e33f455cde180d5c1cf1c13467004f@192.168.0.101:22008?discport=0&raftport=50400" ],"id":1}' http://3.18.34.201:22004
-
-we can do it from the  geth javascript console  as well
-the returend id value is used with --raftjoinexisting  in raft-start.sh so that the node could join the network 
-#renter.sh
-
-this  script is used to bootsrap the renter network ( one quorom node , one tx manger node)
-
-#lender.sh
-
-this  script is used to bootsrap the lender network ( one quorom node , one tx manger node, one swarm node)
-
-
-
-
-
 # Quorum Examples
 
 This repository contains setup examples for Quorum.
@@ -40,7 +15,7 @@ generate new ones using Geth's `account` tool and the `--generate-keys` option f
 ## Getting Started
 The 7nodes example can be run in three ways:
 1. By running a preconfigured Vagrant environment which comes complete with Quorum, Constellation, Tessera and the 7nodes example (__works on any machine__).
-1. By running [`docker-compose`](https://docs.docker.com/compose/) against a preconfigured [compose file](docker-compose.yml) which starts 7nodes example (__Windows is not supported__).
+1. By running [`docker-compose`](https://docs.docker.com/compose/) against a preconfigured [compose file](docker-compose.yml) which starts 7nodes example (tested on Windows 10, macOS Mojave & Ubuntu 18.04).
 1. By downloading and locally running Quorum, Tessera and the examples (__requires an Ubuntu-based/macOS machine; note that Constellation does not support running locally__)
 
 ### Setting up Vagrant
@@ -107,6 +82,17 @@ issues with the version of curl bundled with Vagrant.
    ```sh
    docker-compose down
    ```
+
+#### Troubleshooting Docker
+
+1. Docker is frozen
+   * Check if your Docker daemon is allocated enough memory (minimum 4G)
+1. Tessera is crashed due to missing file/directory
+   * This is due to the location of `quorum-examples` folder is not shared
+   * Please refer to Docker documentation for more details:
+     * [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/troubleshoot/#shared-drives)
+     * [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/#file-sharing)
+     * [Docker Machine](https://docs.docker.com/machine/overview/): this depends on what Docker machine provider is used. Please refer to its documentation on how to configure shared folders/drives
 
 ### Setting up locally
 > This is only possible with Tessera. Constellation is not supported when running the examples locally. To use Constellation, the examples must be run in Vagrant.
