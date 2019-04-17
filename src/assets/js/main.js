@@ -91,13 +91,13 @@ global.isUpdating = false;
 global.authorizationToken = null;
 
 app.on('before-quit', async () => {
-  // set docker-compose down
-  const dockerfile = path.join(
-    global.resourcesPath,
-    'network-resources',
-    'docker-compose.yml'
-  );
-  await node.stop_docker(dockerfile);
+  // // set docker-compose down
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.stop_docker(dockerfile);
   global.isQuitting = true;
 });
 
@@ -117,21 +117,21 @@ app.on('activate', () => {
 // ipcMain.on('node-start', nodeStart);
 
 const run = async () => {
-  // log.info(`Starting application: ${productName} ${version} (${environment})`);
-  const dockerfile = path.join(
-    global.resourcesPath,
-    'network-resources',
-    'docker-compose.yml'
-  );
-  await node.startNetwork(dockerfile);
-  // need to check for containers healthy
-  const child = await node.list_containers();
-  // const sttus = await node.check_status(child[0]);
-  const health = await node.check_health(child[0]);
-  child.pop();
-  console.log(child, 'child');
-  // console.log(sttus, 'status');
-  console.log(health, 'health');
+  // // log.info(`Starting application: ${productName} ${version} (${environment})`);
+  // const dockerfile = path.join(
+  //   global.resourcesPath,
+  //   'network-resources',
+  //   'docker-compose.yml'
+  // );
+  // await node.startNetwork(dockerfile);
+  // // need to check for containers healthy
+  // const child = await node.list_containers();
+  // // const sttus = await node.check_status(child[0]);
+  // const health = await node.check_health(child[0]);
+  // child.pop();
+  // console.log(child, 'child');
+  // // console.log(sttus, 'status');
+  // console.log(health, 'health');
 
   await app.whenReady();
 
