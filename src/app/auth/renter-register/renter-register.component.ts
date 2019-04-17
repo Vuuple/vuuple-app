@@ -26,6 +26,7 @@ export class RenterRegisterComponent implements OnInit {
       password : ['', Validators.required],
       staticIP : ['', Validators.required],
       ethereumAddress : ['', Validators.required],
+      enode : ['' , Validators.required ],
       termService : ['', Validators.required],
       privacyPolicy : ['', Validators.required]
     });
@@ -35,7 +36,8 @@ export class RenterRegisterComponent implements OnInit {
                                     this.renterRegisterForm.value.email,
                                     this.renterRegisterForm.value.password,
                                     this.renterRegisterForm.value.ethereumAddress,
-                                    'renter',this.renterRegisterForm.value.staticIP);
+                                    'renter',this.renterRegisterForm.value.staticIP,
+                                    this.renterRegisterForm.value.enode);
      this.router.navigate(['/auth/registerCompleted']);
 
    }

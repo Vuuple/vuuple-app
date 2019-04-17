@@ -24,6 +24,7 @@ export class LenderRegisterComponent implements OnInit {
       password : ['', Validators.required],
       staticIP : ['', Validators.required],
       ethereumAddress : ['', Validators.required],
+      enode : ['' ,Validators.required],
       storage : ['', Validators.required],
       termService : ['', Validators.required],
       privacyPolicy : ['', Validators.required]
@@ -35,7 +36,8 @@ export class LenderRegisterComponent implements OnInit {
                                      this.lenderRegisterForm.value.email,
                                      this.lenderRegisterForm.value.password,
                                      this.lenderRegisterForm.value.ethereumAddress,
-                                     'lender',this.lenderRegisterForm.value.staticIP);
+                                     'lender',this.lenderRegisterForm.value.staticIP,
+                                     this.lenderRegisterForm.value.enode);
      this.router.navigate(['/auth/registerCompleted']);
     }
     returnToLogin(){
