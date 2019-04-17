@@ -67,11 +67,12 @@ button {
     PADDING: 3%;
 }
 p{
-	color:white;
+	color:#333;
 	font-family: sans-serif;
 	text-align: center;
 	font-size: 15px;
-	font-weight: 500
+	font-weight: 500;
+	margin-left: 5%;
 }
 a{
 	font-family: sans-serif;

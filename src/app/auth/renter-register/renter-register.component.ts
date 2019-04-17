@@ -11,9 +11,13 @@ import { Router } from '@angular/router';
 export class RenterRegisterComponent implements OnInit {
   renterRegisterForm : FormGroup;
   users: any[];
+  srcImage : any ;
   constructor(private formBuilder : FormBuilder,
               private authService : AuthService,
-              private router : Router) { }
+              private router : Router) {
+               /// this.srcImage = "../../../assets/img/companyRenter.png";
+                this.srcImage = "../../../assets/img/individualRenter.png"
+               }
 
   ngOnInit() {
     this.renterRegisterForm = this.formBuilder.group({
@@ -35,5 +39,9 @@ export class RenterRegisterComponent implements OnInit {
      this.router.navigate(['/auth/registerCompleted']);
 
    }
+   returnToLogin(){
+    this.router.navigate(['/auth/login']);
 
+  }
+  
 }

@@ -4,7 +4,9 @@
     <div class="col-md-4">
       <img src="../../../assets/img/lenderTitle.png" class="title"/>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+     <p style="text-align:center;margin-top:60px;" (click)="returnToLogin()"><img src="../../../assets/img/Close-X.png" style="width:6%;"/></p> 
+    </div>
   </div>
   <div class="row">
    <div class="col-md-4"></div>
@@ -41,7 +43,7 @@
                     type="text"
                     formControlName="staticIP"
                     class="form-control"
-                    placeholder="Static IP"
+                    placeholder="Static IP Address"
                   />
                 </div>
                 <div class="form-group">
@@ -57,7 +59,7 @@
                         type="number"
                         formControlName="storage"
                         class="form-control"
-                        placeholder="How much storage to offer ?"
+                        placeholder="How many GB’s do you plan to lend?"
                       />
                     </div>
                     <div class="form-group checkbox">

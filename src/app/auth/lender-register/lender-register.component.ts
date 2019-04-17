@@ -38,4 +38,8 @@ export class LenderRegisterComponent implements OnInit {
                                      'lender',this.lenderRegisterForm.value.staticIP);
      this.router.navigate(['/auth/registerCompleted']);
     }
+    returnToLogin(){
+      this.router.navigate(['/auth/login']);
+
+    }
 }
