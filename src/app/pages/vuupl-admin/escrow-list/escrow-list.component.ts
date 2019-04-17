@@ -13,7 +13,7 @@ export class EscrowListComponent implements OnInit {
   saddress: any;
   constructor(private router: Router, private apiService: ServerApiService) {}
   ngOnInit() {
-    this.apiService.getAllEscrows().subscribe(s => {
+    this.apiService.getEscrowsByUserId(1).subscribe(s => {
       this.escrows = s;
     });
   }

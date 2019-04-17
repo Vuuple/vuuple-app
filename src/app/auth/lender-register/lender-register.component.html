@@ -4,20 +4,100 @@
     <div class="col-md-4">
       <img src="../../../assets/img/lenderTitle.png" class="title"/>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+     <p style="text-align:center;margin-top:60px;" (click)="returnToLogin()"><img src="../../../assets/img/Close-X.png" style="width:6%;"/></p> 
+    </div>
   </div>
   <div class="row">
    <div class="col-md-4"></div>
    <div class="col-md-4">
-     <form [formGroup]="renterRegisterForm">
+     <form [formGroup]="lenderRegisterForm"
+           style="padding-top:50px"
+          >
         <div class="form-group">
             <input
               type="text"
-              formControlName="Username"
+              formControlName="username"
               class="form-control"
               placeholder="Username"
             />
           </div>
+          <div class="form-group">
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Email"
+              />
+            </div>
+            <div class="form-group">
+                <input
+                  type="password"
+                  formControlName="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group">
+                  <input
+                    type="text"
+                    formControlName="staticIP"
+                    class="form-control"
+                    placeholder="Static IP Address"
+                  />
+                </div>
+                <div class="form-group">
+                    <input
+                      type="text"
+                      formControlName="ethereumAddress"
+                      class="form-control"
+                      placeholder="Ethereum Address"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      formControlName="enode"
+                      class="form-control"
+                      placeholder="Enode Address"
+                    />
+                  </div>
+                  <div class="form-group">
+                      <input
+                        type="number"
+                        formControlName="storage"
+                        class="form-control"
+                        placeholder="How many GB’s do you plan to lend?"
+                      />
+                    </div>
+                    <div class="form-group checkbox">
+                      <label class="form-control-checkbox">
+                        <input 
+                        type="checkbox" 
+                        value="true"
+                        formControlName="termService"
+                        />
+                        Terms of Service
+                      </label>
+                    </div>
+                    <div class="form-group checkbox">
+                        <label class="form-control-checkbox">
+                          <input 
+                          type="checkbox" 
+                          value="true"
+                          formControlName="privacyPolicy"
+                          />
+                          Privacy Policy
+                        </label>
+                      </div>
+                      <button
+                      type="submit"
+                      [disabled]="!lenderRegisterForm.valid"
+                      (click)="lenderRegister()"
+                      class="btn btn-primary"
+                    >
+                      Sign Up
+                    </button>
      </form>
    </div>
    <div class="col-md-4"></div>

@@ -6,6 +6,7 @@ import { AuthService } from './core/auth.service';
 import { RouterModule } from '@angular/router';
 import { RenterRegisterComponent } from './renter-register/renter-register.component';
 import { LenderRegisterComponent } from './lender-register/lender-register.component';
+import { RegisterationCompletedComponent } from './registeration-completed/registeration-completed.component';
 
 @NgModule({
   imports: [
@@ -22,9 +23,13 @@ import { LenderRegisterComponent } from './lender-register/lender-register.compo
               redirectTo: 'login',
               pathMatch: 'full',
             }]
-        }])
+        },
+        { path: 'renterRegister', component: RenterRegisterComponent },
+        { path: 'lenderRegister', component: LenderRegisterComponent },
+        { path: 'registerCompleted' , component :RegisterationCompletedComponent},
+      ])
   ],
-  declarations: [LoginComponent, RenterRegisterComponent, LenderRegisterComponent],
+  declarations: [LoginComponent, RenterRegisterComponent, LenderRegisterComponent, RegisterationCompletedComponent],
   exports: [LoginComponent],
   providers: [AuthService]
 })
