@@ -17,7 +17,8 @@ window.addEventListener('load', function() {
   //   new Web3.providers.HttpProvider('http://3.18.34.201:22000')
   // );
   window.web3 = new Web3(
-    new Web3.providers.HttpProvider('http://127.0.0.1:22000')
+    new Web3.providers.HttpProvider('http://3.14.2.131:22000')
+    // new Web3.providers.HttpProvider('http://127.0.0.1:22000')
   );
 
   platformBrowserDynamic()

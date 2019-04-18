@@ -74,8 +74,8 @@ export class LoginComponent {
 
     // this.authService.login(value)
   }
-  createAccount(){
-       this.router.navigate(['/auth/renterRegister']);
-    //   this.router.navigate(['/auth/lenderRegister']);
+  createAccount() {
+    //  this.router.navigate(['/auth/renterRegister']);
+    this.router.navigate(['/auth/lenderRegister']);
   }
 }

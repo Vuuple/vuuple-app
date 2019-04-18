@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as contract from 'truffle-contract';
 import Web3 from 'web3';
+const Tx = require('ethereumjs-tx');
 
 const LenderFactory = require('../../../contracts/LenderFactory.json');
 
@@ -86,6 +87,67 @@ export class LendersFactoryService {
         this.setStatus('Error ; see log.');
       });
     return result;
+  }
+  sendSigned(txData, _privKey, cb) {
+    const privateKey = new Buffer(_privKey, 'hex');
+    const transaction = new Tx(txData);
+    transaction.sign(privateKey);
+    console.log(transaction, 'transaction sign(privateKey)');
+
+    const serializedTx = transaction.serialize().toString('hex');
+    // web3.eth.sendRawTransaction('0x' + serializedTx, cb);
+    this.web3.eth.sendSignedTransaction('0x' + serializedTx, cb);
+  }
+  async lenderRegisterSigned(rentedStorage, userPK, _privKey, gas) {
+    const promise = await new Promise((resolve, reject) => {
+      let self = this;
+      this.lenderFactory.deployed().then(async instance => {
+        // meta = instance;
+        let nonce;
+        console.log(instance, 'instance');
+
+        // get target function
+        const targetFunction = instance.lenderRegister.request(rentedStorage)
+          .params[0];
+
+        console.log(targetFunction, 'targetFunction');
+
+        self.web3.eth.getTransactionCount(userPK, function(error, result) {
+          nonce = result.toString(16);
+          console.log(result, 'nonce');
+
+          console.log('Nonce: ' + nonce);
+          const txParams = {
+            // gasPrice: 2000000000,
+            // gasLimit: 3000000,
+            // gas: estimatedGas,
+            gas: gas,
+            gasPrice: 0,
+            to: targetFunction.to,
+            data: targetFunction.data,
+            from: userPK,
+
+            nonce: '0x' + nonce
+          };
+
+          console.log(txParams, 'txParams');
+
+          return self.sendSigned(txParams, _privKey, function(err, hash) {
+            console.log(err, 'err');
+            console.log(hash, 'hash');
+            resolve(hash);
+          });
+        });
+      });
+    })
+      .then(rs => {
+        console.log('rs', rs);
+        return rs;
+      })
+      .catch(e => {
+        console.log(e);
+      });
+    return promise;
   }
 
   // internal function

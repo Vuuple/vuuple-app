@@ -1,65 +1,22 @@
 const path = require('path');
 const node = require('./docker');
 const fs = require('fs');
+const resourctpath = require('electron').remote.getGlobal('resourcesPath');
 
-async function getNodeKey(category) {
+async function getNodeKey() {
   let dockerPath;
   let nodeKeyFilePath;
-  if (category == 'lender') {
-    dockerPath = path.join(
-      __dirname,
-      '..',
-      '/..',
-      '/src',
-      '/assets',
-      '/resources',
-      '/mail-resources',
-      '/lender-resources',
-      '/docker-compose.yml'
-    );
-    nodeKeyFilePath = path.join(
-      __dirname,
-      '..',
-      '/..',
-      '/src',
-      '/assets',
-      '/resources',
-      '/mail-resources',
-      '/lender-resources',
-      '/network-resources',
-      '/examples',
-      '/7nodes',
-      '/raft',
-      '/pubkeyhash'
-    );
-  } else if (category == 'renter') {
-    dockerPath = path.join(
-      __dirname,
-      '..',
-      '/..',
-      '/src',
-      '/assets',
-      '/resources',
-      '/mail-resources',
-      '/renter-resources',
-      '/docker-compose.yml'
-    );
-    nodeKeyFilePath = path.join(
-      __dirname,
-      '..',
-      '/..',
-      '/src',
-      '/assets',
-      '/resources',
-      '/mail-resources',
-      '/renter-resources',
-      '/network-resources',
-      '/examples',
-      '/7nodes',
-      '/raft',
-      '/pubkeyhash'
-    );
-  }
+
+  dockerPath = path.join(resourctpath, 'network-resources/', '/init.yml');
+  nodeKeyFilePath = path.join(
+    resourctpath,
+    'network-resources/',
+    '/examples',
+    '/7nodes',
+    '/raft',
+    '/pubkeyhash'
+  );
+
   await createNodeKey(dockerPath);
   return await readFile(nodeKeyFilePath);
 }

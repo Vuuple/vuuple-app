@@ -82,6 +82,8 @@ const basePath = is.development
   : path.join(process.resourcesPath, 'app', 'dist', 'assets');
 global.environment = process.env;
 global.dataPath = path.normalize(app.getPath('userData'));
+console.log(basePath, 'basePath');
+
 global.resourcesPath = path.normalize(path.join(basePath, 'resources'));
 global.locale = null;
 global.isDataDownloaded = false;
