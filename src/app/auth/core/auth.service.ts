@@ -73,6 +73,13 @@ export class AuthService {
       return null;
     }
   }
+  isApproved(): boolean{
+    if(this.getCuurentUser().status == "approved"){
+      return true;
+    }else{
+      return false;
+    }
+  }
   logout(): void {
     localStorage.removeItem('user');
     localStorage.clear();
