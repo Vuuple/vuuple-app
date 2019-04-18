@@ -35,7 +35,11 @@ export class Web3Service {
 
     return this.accounts[index];
   }
+  isVaildAddress(address) {
+    console.log('service hit');
 
+    return this.web3.utils.isAddress(address);
+  }
   async unLockAccount(address, pasword) {
     return await this.web3.eth.personal.unlockAccount(address, pasword, 600);
   }
