@@ -366,7 +366,7 @@ services:
     ports:
       - '23007:5001'
     volumes:
-      - ./network/node:/qdata:rw
+      - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro
     depends_on:
       - node
@@ -386,7 +386,7 @@ services:
       - '50400:50400'
       - '30301:30301'
     volumes:
-      - ./network/node:/qdata:rw
+      - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro
     depends_on:
       - txmanager
@@ -403,7 +403,7 @@ services:
     ports:
       - '9000:9000'
     volumes:
-      - ./network/node:/qdata:rw
+      - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro
     networks:
       quorum-examples-net:
