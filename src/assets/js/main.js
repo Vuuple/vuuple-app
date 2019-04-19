@@ -2,6 +2,9 @@
 
 const Promise = require('bluebird');
 const node = require('./helpers/docker');
+var copydir = require('copy-dir');
+const makeDir = require('make-dir');
+const fs = require('fs');
 
 global.Promise = Promise;
 
@@ -82,7 +85,7 @@ const basePath = is.development
   : path.join(process.resourcesPath, 'app', 'dist', 'assets');
 global.environment = process.env;
 global.dataPath = path.normalize(app.getPath('userData'));
-console.log(basePath, 'basePath');
+console.log(global.dataPath, 'global.dataPath');
 
 global.resourcesPath = path.normalize(path.join(basePath, 'resources'));
 global.locale = null;
@@ -95,7 +98,7 @@ global.authorizationToken = null;
 app.on('before-quit', async () => {
   // // set docker-compose down
   // const dockerfile = path.join(
-  //   global.resourcesPath,
+  //   networkPath,
   //   'network-resources',
   //   'docker-compose.yml'
   // );
@@ -119,22 +122,43 @@ app.on('activate', () => {
 // ipcMain.on('node-start', nodeStart);
 
 const run = async () => {
-  // // log.info(`Starting application: ${productName} ${version} (${environment})`);
-  // const dockerfile = path.join(
-  //   global.resourcesPath,
-  //   'network-resources',
-  //   'docker-compose.yml'
-  // );
-  // await node.startNetwork(dockerfile);
-  // // need to check for containers healthy
-  // const child = await node.list_containers();
-  // // const sttus = await node.check_status(child[0]);
-  // const health = await node.check_health(child[0]);
-  // child.pop();
-  // console.log(child, 'child');
-  // // console.log(sttus, 'status');
-  // console.log(health, 'health');
+  let dataPath = path.normalize(global.dataPath);
 
+  if (!path.isAbsolute(dataPath)) {
+    console.log('! isAbsolute');
+
+    dataPath = path.resolve(path.relative(global.dataPath, dataPath));
+  }
+
+  await makeDir(dataPath, { fs });
+  const networkPath = path.join(dataPath, 'network-resources');
+  if (!fs.existsSync(networkPath)) {
+    console.log('pathnot found');
+
+    copydir.sync(
+      path.join(global.resourcesPath, 'network-resources'),
+      networkPath
+    );
+    global.networkPath = networkPath;
+    global.networkIP = 'http://3.14.2.131:22000';
+  } else {
+    // // log.info(`Starting application: ${productName} ${version} (${environment})`);
+    // const dockerfile = path.join(
+    //   networkPath,
+    //   'network-resources',
+    //   'docker-compose.yml'
+    // );
+    // await node.startNetwork(dockerfile);
+    // // need to check for containers healthy
+    // const child = await node.list_containers();
+    // // const sttus = await node.check_status(child[0]);
+    // const health = await node.check_health(child[0]);
+    // child.pop();
+    // console.log(child, 'child');
+    // // console.log(sttus, 'status');
+    // console.log(health, 'health');
+    global.networkIP = 'http://127.0.0.1:22000';
+  }
   await app.whenReady();
 
   mainWindow = await createWindow();

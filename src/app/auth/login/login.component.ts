@@ -70,6 +70,10 @@ export class LoginComponent {
           this.errorMessage =
             'Incorrect credentials, please use the correct one';
         }
+      })
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
       });
 
     // this.authService.login(value)

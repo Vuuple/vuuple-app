@@ -19,7 +19,7 @@
     "!tsconfig.json",
     "!tslint.json"
   ],
-  "asar": true,
+  "asar": false,
   "win": {
     "icon": "dist",
     "target": ["portable"]

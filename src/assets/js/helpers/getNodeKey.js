@@ -1,16 +1,16 @@
 const path = require('path');
 const node = require('./docker');
 const fs = require('fs');
-const resourctpath = require('electron').remote.getGlobal('resourcesPath');
+const networkPath = require('electron').remote.getGlobal('networkPath');
 
 async function getNodeKey() {
   let dockerPath;
   let nodeKeyFilePath;
 
-  dockerPath = path.join(resourctpath, 'network-resources/', '/init.yml');
+  dockerPath = path.join(networkPath, '/init.yml');
   nodeKeyFilePath = path.join(
-    resourctpath,
-    'network-resources/',
+    networkPath,
+
     '/examples',
     '/7nodes',
     '/raft',

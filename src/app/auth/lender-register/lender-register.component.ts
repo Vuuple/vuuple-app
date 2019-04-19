@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { UserWalletService } from '../../providers/user-wallet/user-wallet.service';
 import { Web3Service } from '../../providers/web3/web3.service';
 import { LendersFactoryService } from '../../providers/lenders-factory/lenders-factory.service';
-const resourctpath = require('electron').remote.getGlobal('resourcesPath');
+const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
 @Component({
@@ -27,6 +27,8 @@ export class LenderRegisterComponent implements OnInit {
   accountPrivateKey: any;
   accountData: any;
   accountPublic: string;
+  enode: any;
+  errorMessage;
   constructor(
     private lendersFactoryService: LendersFactoryService,
     private web3Service: Web3Service,
@@ -47,7 +49,7 @@ export class LenderRegisterComponent implements OnInit {
       password: ['', Validators.required],
       staticIP: ['', Validators.required],
       ethereumAddress: ['', Validators.required],
-      enode: ['', Validators.required],
+      // enode: ['', Validators.required],
       storage: ['', Validators.required],
       termService: ['', Validators.required],
       privacyPolicy: ['', Validators.required]
@@ -56,12 +58,13 @@ export class LenderRegisterComponent implements OnInit {
   lenderRegister() {
     this.savetocontract();
   }
-  getEnode() {
-    const _enode = getNodeKey();
+  async getEnode() {
+    const _enode = await getNodeKey();
     console.log(_enode, 'enode');
 
     if (_enode) {
-      this.lenderRegisterForm.patchValue({ enode: _enode });
+      this.enode - _enode;
+      // this.lenderRegisterForm.patchValue({ enode: _enode });
       this.saveToNodeServer();
     }
   }
@@ -95,8 +98,8 @@ export class LenderRegisterComponent implements OnInit {
     console.log('exporttofile func');
 
     const keyPath = path.join(
-      resourctpath,
-      'network-resources/',
+      networkPath,
+
       'examples/',
       '7nodes/',
       'keys/',
@@ -112,11 +115,16 @@ export class LenderRegisterComponent implements OnInit {
     console.log(password, 'password');
     console.log(keyObject, 'keyObject');
 
-    this.userWallet.recoverKeys(password, keyObject).then(privateKey => {
-      this.accountPrivateKey = this.userWallet.buf2hex(privateKey);
-      // this.getAddress(this.accountPrivateKey);
-    });
-    console.log(this.accountPrivateKey, 'test     this.accountPrivateKey');
+    this.userWallet
+      .recoverKeys(password, keyObject)
+      .then(privateKey => {
+        this.accountPrivateKey = this.userWallet.buf2hex(privateKey);
+        // this.getAddress(this.accountPrivateKey);
+      })
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
+      });
   }
   // getAddress(privateKey) {
   //   this.userWallet.privateKeyToAddress(privateKey).then(data => {
@@ -141,19 +149,35 @@ export class LenderRegisterComponent implements OnInit {
           this.exportToFile(this.accountData);
           this.getEnode();
         }
+      })
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
       });
   }
   saveToNodeServer() {
-    this.authService.registerClient(
-      this.lenderRegisterForm.value.username,
-      this.lenderRegisterForm.value.email,
-      this.lenderRegisterForm.value.password,
-      this.lenderRegisterForm.value.ethereumAddress,
-      'lender',
-      this.lenderRegisterForm.value.staticIP,
-      this.lenderRegisterForm.value.enode
-    );
-    this.router.navigate(['/auth/registerCompleted']);
+    console.log(this.enode, 'this.enode');
+
+    this.authService
+      .registerClient(
+        this.lenderRegisterForm.value.username,
+        this.lenderRegisterForm.value.email,
+        this.lenderRegisterForm.value.password,
+        this.lenderRegisterForm.value.ethereumAddress,
+        'lender',
+        this.lenderRegisterForm.value.staticIP,
+        // this.lenderRegisterForm.value.enode
+        this.enode
+      )
+      .then(s => {
+        this.router.navigate(['/auth/registerCompleted']);
+
+        console.log(s, 'result');
+      })
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
+      });
   }
   // getKeys() {
   //   if (this.password != undefined && this.keyObject != undefined) {
