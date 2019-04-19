@@ -10,6 +10,8 @@ import {
   getRaftId,
   sendConfirmationMail
 } from '../../../../assets/js/helpers/joinNetwork.js';
+import { LenderEscrowService } from '../../../providers/lenders-escrow/lenders-escrow.service';
+const networkIP = require('electron').remote.getGlobal('networkIP');
 
 @Component({
   selector: 'app-add-node',
@@ -17,8 +19,8 @@ import {
   styleUrls: ['./add-node.component.scss'],
   providers: [
     LendersFactoryService,
-    LendersRegistrationService
-    // RentersFactoryService,
+    LendersRegistrationService,
+    LenderEscrowService
     // RentersRegistrationService
   ]
 })
@@ -30,14 +32,21 @@ export class AddNodeComponent implements OnInit {
   //   Ethwallwt: 'GFHGJKHBKJNK',
   //   staticIP: 'KJHKJNKLMKLMKLMKL'
   // };
-  endpoint = '';
-  attach;
+
   id;
   node: IUser;
+  escrow: {
+    escrowAddress: string;
+    issueDate: string;
+    endDate: string;
+    category: string;
+  };
+  lendercontract: any;
+  errorMessage: any;
   constructor(
     private serverApiService: ServerApiService,
     private route: ActivatedRoute,
-    // private rentersFactoryService: RentersFactoryService,
+    private lenderEscrowService: LenderEscrowService,
     private lendersFactoryService: LendersFactoryService,
     // private rentersRegistrationService: RentersRegistrationService,
     private lendersRegistrationService: LendersRegistrationService
@@ -60,35 +69,66 @@ export class AddNodeComponent implements OnInit {
   async approve() {
     // unloack his account
 
+    const data = await this._addToNetwork();
     if (this.node.category == 'lender') {
       //TODO: need to update docker file to set storage value
       await this._approveOnContract();
     }
-
-    const data = await this._addToNetwork();
     await this._saveToDatabase(data);
     await this._emailUser();
   }
 
   async _approveOnContract() {
-    const lendercontract = await this.lendersFactoryService.getLenderContract(
+    this.lendercontract = await this.lendersFactoryService.getLenderContract(
       this.node.ethAddress
     );
-    await this.lendersRegistrationService.approve(lendercontract);
+    await this.lendersRegistrationService.approve(this.lendercontract);
+    //get escrow data and save it in db
+    await this.getEscrowData();
   }
   async _addToNetwork() {
-    const data = await getRaftId(
-      this.node.ip,
-      this.endpoint,
-      this.node.category
-    );
-    return data;
+    const raftId = await getRaftId(this.node.ip, networkIP, this.node.enode);
+    return raftId;
   }
   async _saveToDatabase(data) {
-    this.serverApiService.approve(this.node.id, data);
+    this.serverApiService.approve(this.node.id, { raftId: data });
   }
   async _emailUser() {
-    const mail = await sendConfirmationMail(this.attach, this.node.email);
+    const mail = await sendConfirmationMail(this.node.email);
     console.log(mail, 'testmail');
+  }
+  async getEscrowData() {
+    /**   --data "{
+	\"escrowAddress\": \"asdasdg\",
+	\"issueDate\": \"1999-06-02T00:00:00.000Z\",
+	\"endDate\": \"1999-06-02T00:00:00.000Z\",
+	\"category\": \"renter\"
+}"*/
+    this.escrow = {
+      escrowAddress: '',
+      issueDate: '',
+      endDate: '',
+      category: 'lender'
+    };
+    this.escrow.escrowAddress = await this.lendersRegistrationService.escrow(
+      this.lendercontract
+    );
+    this.escrow.issueDate = await this.lendersRegistrationService.registerDate(
+      this.lendercontract
+    );
+    this.escrow.endDate = await this.lenderEscrowService.closeTime(
+      this.escrow.escrowAddress
+    );
+    this.addEscrowData();
+  }
+  async addEscrowData() {
+    this.serverApiService
+      .addEscrow(this.escrow)
+      .toPromise()
+      .then(s => {})
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
+      });
   }
 }
