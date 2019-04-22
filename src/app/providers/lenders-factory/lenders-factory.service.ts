@@ -26,7 +26,7 @@ export class LendersFactoryService {
     Web3.providers.HttpProvider.prototype.sendAsync =
       Web3.providers.HttpProvider.prototype.send;
     this.web3 = window.web3;
-    console.log(this.web3.version);
+    console.log(this.web3, 'web3');
     this.onReady();
   }
 

@@ -23,12 +23,13 @@
       </div>
       <div class="col-md-9 col-lg-9">
         <div id="navbar" class=" row navbar-collapse collapse">
-          <div class="col-md-7 col-lg-7" style="left: 5%;">
+          <div class="col-md-1"></div>
+          <div class="col-md-6 col-lg-6">
             <div class="header-wrapper">
               <img
                 class="header-image"
                 alt="cloud Background"
-                src="assets/img/bigCloud.png"
+                src="assets/img/bigTitleCloud.png"
               />
               <div class="header-contents">{{ userTitle }}</div>
             </div>
@@ -40,7 +41,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    style="margin-right:5px;width: 200px;"
+                    style="width: 200px;margin-right: 5px"
                     placeholder="Search..."
                   />
                   <!--<img  class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />-->
@@ -48,10 +49,11 @@
                     class="btn"
                     data-tooltip title=" Click To Profile! "
                     (click)="ShowProfile()">                 
-                    <i class="fas fa-user-cog"></i>
+                    <i class="fas fa-user-cog" data-tooltip title=" Click To Profile! "
+                    (click)="ShowProfile()"></i>
                   </button>
                 <!-- <i class="fas fa-cloud" style="color:white"></i>--> 
-                  <img src="../../../../assets/img/networkIcon.png" (click)="toggle()" data-tooltip title="{{toolTip}}" style="width:8%" />             
+                  <img src={{srcImage}} (click)="toggle()" data-tooltip title="{{toolTip}}" style="width:20px;margin-right:5px;margin-left:5px" />             
                   <button class="btn" 
                     data-tooltip title=" Logout! "
                     (click)="Logout()">
@@ -59,7 +61,7 @@
                   </button>
                 </form>
               </div>
-              <div class="col-md-12 col-lg-12" style="padding-top: 10%;">
+              <div class="col-md-12 col-lg-12" style="padding-top: 8%;">
                 <ul *ngIf="!isadmin" class="nav navbar-nav navbar-right sub-clouds">
                  <li>
                    <div class="image" >

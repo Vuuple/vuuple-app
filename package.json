@@ -68,7 +68,8 @@
     "pretty-ms": "^4.0.0",
     "primeng": "^7.1.0",
     "tslib": "^1.9.0",
-    "web3": "1.0.0-beta.36"
+    "web3": "1.0.0-beta.36",
+    "web3-raft": "1.0.0-beta.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.12.1",

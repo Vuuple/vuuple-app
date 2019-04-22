@@ -63,7 +63,9 @@ export class LenderRegisterComponent implements OnInit {
     console.log(_enode, 'enode');
 
     if (_enode) {
-      this.enode - _enode;
+      this.enode = _enode;
+      console.log(this.enode, ' this.enode');
+
       // this.lenderRegisterForm.patchValue({ enode: _enode });
       this.saveToNodeServer();
     }
@@ -170,6 +172,8 @@ export class LenderRegisterComponent implements OnInit {
         this.enode
       )
       .then(s => {
+        console.log(s, 's');
+
         this.router.navigate(['/auth/registerCompleted']);
 
         console.log(s, 'result');

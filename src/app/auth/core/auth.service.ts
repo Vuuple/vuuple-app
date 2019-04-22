@@ -62,9 +62,16 @@ export class AuthService {
     };
     console.log(client);
     return new Promise<any>((resolve, reject) => {
-      this.dataService.post('users/register', client).subscribe(s => {
-        console.log(s);
-      });
+      this.dataService.post('users/register', client).subscribe(
+        s => {
+          resolve(s);
+        },
+        error => {
+          reject(error);
+        },
+        // on complete
+        () => resolve(true)
+      );
     });
   }
   getCuurentUser(): IUser {
@@ -89,10 +96,10 @@ export class AuthService {
       return null;
     }
   }
-  isApproved(): boolean{
-    if(this.getCuurentUser().status == "approved"){
+  isApproved(): boolean {
+    if (this.getCuurentUser().status == 'approved') {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
