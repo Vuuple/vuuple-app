@@ -1,10 +1,10 @@
-import { RenterFactoryService } from './../../providers/renters-factory/renters-factory.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../core/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Web3Service } from '../../providers/web3/web3.service';
 import { UserWalletService } from '../../providers/user-wallet/user-wallet.service';
+import { RenterFactoryService } from '../../providers/renter-factory/renter-factory.service';
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
