@@ -44,11 +44,13 @@ export class ServerApiService {
   }
 
   // escrow route
-
+  addEscrow(data): Observable<any> {
+    return this.dataService.post('escrows', data);
+  }
   getAllEscrows(): Observable<any[]> {
     return this.dataService.getList('escrows');
   }
   getEscrowsByUserId(id): Observable<any[]> {
-    return this.dataService.getListWitFilter('escrows/user/id' ,id );
+    return this.dataService.getListWitFilter('escrows/user/id', id);
   }
 }

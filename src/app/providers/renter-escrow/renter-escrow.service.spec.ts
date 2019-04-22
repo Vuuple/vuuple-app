@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RentersFilesService } from './renters-files.service';
+import { RenterEscrowService } from './renter-escrow.service';
 
-describe('RentersFilesService', () => {
+describe('RenterEscrowService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RentersFilesService = TestBed.get(RentersFilesService);
+    const service: RenterEscrowService = TestBed.get(RenterEscrowService);
     expect(service).toBeTruthy();
   });
 });
