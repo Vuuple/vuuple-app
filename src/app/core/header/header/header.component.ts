@@ -10,7 +10,8 @@ import { AuthService } from '../../../auth/core/auth.service';
 export class HeaderComponent implements OnInit {
   userTitle = '';
   isadmin : any = [];
-
+  isActive: boolean = false ;
+  toolTip: string;
   constructor(public authService: AuthService, private router: Router) {
     const type = this.authService.getUserType();
     if (type === 1) {
@@ -30,7 +31,16 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/auth']);
   }
- 
+  toggle(){
+    this.isActive = !this.isActive;
+    if(this.isActive == true){
+      this.toolTip = "connected"
+    }
+    else{
+      this.toolTip = "disconnected"
+    }
+    console.log(this.isActive);
+  }
   goTowallet(){}
   ShowProfile() {
     this.router.navigate(['/pages/profile']);

@@ -13,6 +13,7 @@ export class ReportIssueComponent implements OnInit {
   emailTo ="support@vuuple.com";
   data : [any] ;
   localUrl: any;
+  attachName: any;
   constructor(private fb : FormBuilder) { }
 
   ngOnInit() {
@@ -38,10 +39,10 @@ export class ReportIssueComponent implements OnInit {
       from :this.sendMailForm.value.email,
       title : this.sendMailForm.value.title,
       des :this.sendMailForm.value.description,
-      attachfile : this.localUrl
+      attachfile : this.localUrl,
     }];
     console.log(this.data);
-    const mail =  send_email (this.emailTo,this.sendMailForm.value.email,this.sendMailForm.value.title,this.localUrl);
+    const mail =  send_email (this.emailTo,this.sendMailForm.value.email,this.sendMailForm.value.title,this.sendMailForm.value.description,this.localUrl);
     console.log(mail,'testmail')
   }
 }

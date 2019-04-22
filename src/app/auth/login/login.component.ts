@@ -55,13 +55,17 @@ export class LoginComponent {
       .then(isAuth => {
         if (isAuth == true) {
           const type = this.authService.getUserType();
+          const isApproved = this.authService.isApproved();
+          console.log(isApproved);
 
-          if (type === 1) {
+          if (type === 1 && isApproved === true) {
             this.router.navigate(['/pages/admin']);
-          } else if (type === 2) {
+          } else if (type === 2 && isApproved === true) {
             this.router.navigate(['/pages/renter']);
-          } else if (type === 3) {
+          } else if (type === 3 && isApproved === true) {
             this.router.navigate(['/pages/lender']);
+          } else if (isApproved === false) {
+            this.router.navigate(['/auth/registerCompleted']);
           } else {
             this.errorMessage =
               'Incorrect credentials, please use the correct one';
@@ -79,7 +83,8 @@ export class LoginComponent {
     // this.authService.login(value)
   }
   createAccount() {
-    //  this.router.navigate(['/auth/renterRegister']);
-    this.router.navigate(['/auth/lenderRegister']);
+    //   this.router.navigate(['/auth/renterRegister']);
+    //   this.router.navigate(['/auth/lenderRegister']);
+    this.router.navigate(['/auth/chooseCategory']);
   }
 }

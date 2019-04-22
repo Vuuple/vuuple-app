@@ -8,14 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./escrow-list.component.scss']
 })
 export class EscrowListComponent implements OnInit {
-  escrows = [];
-  id: any;
+  escrows :any =  []
+  id = "5cab6b97bcadab30f8b60976";
   saddress: any;
-  constructor(private router: Router, private apiService: ServerApiService) {}
+  constructor(private router: Router, private apiService: ServerApiService) {
+
+  }
   ngOnInit() {
-    this.apiService.getEscrowsByUserId(1).subscribe(s => {
+   /* this.apiService.getAllEscrows().subscribe(s => {
       this.escrows = s;
-    });
+      console.log(this.escrows)
+    });*/
+    console.log(this.id);
+    this.apiService.getEscrowsByUserId(this.id).subscribe(data => {
+      this.escrows = data;
+      console.log(this.escrows);
+    })
   }
   goToDetails(selectedescrow, _category) {
     this.router.navigate(['/pages/admin/escrowDetails'], {
