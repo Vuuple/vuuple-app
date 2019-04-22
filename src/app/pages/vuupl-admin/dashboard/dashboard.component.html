@@ -1,32 +1,72 @@
 <!--<app-node-list></app-node-list>-->
-<div class="row">
-    <div class="col-md-11">
       <div class="row main">
-         <div class="col-md-3" style="margin-top:20%">
+         <div class="col-md-3" style="margin-top:20%" >
            <p>
              individual renter <br>
              company renter <br>
              lender
            </p>
+        
          </div>   
          <div class="col-md-6 chart">
-            <p-chart type="pie" [data]="data" width="300" height="300"></p-chart>
-            <p style="margin-top:10%">
-                TOKENS IN CONTRACT (CURRENTLY)
-                TOKENS IN ENVIRONMENT (CURRENTLY)
-                TOKENS USED (ALL TIMEE)
-                TOKENS REDEEMED (ALL TIME)
+            <p-chart type="pie" [data]="data" [options]="options" width="300" height="300"></p-chart>
+             <p style="margin-top:10%">
+                TOKENS IN CONTRACT (CURRENTLY)<br>
+                TOKENS IN ENVIRONMENT (CURRENTLY)<br>
+                TOKENS USED (ALL TIMEE)<br>
+                TOKENS REDEEMED (ALL TIME)<br>
                 TOKENS PURCHASED(ALL TIME)
               </p>
          </div>   
          <div class="col-md-3" style="margin-top:20%">
-            <p> 
+               <p> 
                 individual renter <br>
                 company renter <br>
                 lender
               </p>
          </div>   
       </div>
-    </div>
-     <div class="col-md-1"></div>
-</div>
+    <!--  <div class="row" style="padding:1%">
+        <table class="table" >
+          <thead>
+            <tr style="color:#29ABE2 !important;font-size: 25px;">
+              <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+                Users 
+              </th>
+              <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+                Storage
+              </th>
+              <th style="padding: 15px;">
+                Tokens
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Individual renter </td>
+              <td> TOKENS IN CONTRACT (CURRENTLY) </td>
+              <td style="border-right:none"> Individual renter </td>
+            </tr>
+            <tr>
+              <td> Company renter </td>
+              <td> TOKENS IN ENVIRONMENT (CURRENTLY)</td>
+              <td style="border-right:none"> Company renter </td>
+            </tr>
+            <tr>
+              <td> Lender </td>
+              <td> TOKENS USED (ALL TIMEE)</td>
+              <td style="border-right:none"> Lender </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>TOKENS REDEEMED (ALL TIME) </td>
+              <td style="border-right:none"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>TOKENS PURCHASED(ALL TIME)</td>
+              <td style="border-right:none"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>--> 

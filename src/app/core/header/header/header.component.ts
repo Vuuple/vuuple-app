@@ -12,7 +12,10 @@ export class HeaderComponent implements OnInit {
   isadmin : any = [];
   isActive: boolean = false ;
   toolTip: string;
+  srcImage : any ;
+
   constructor(public authService: AuthService, private router: Router) {
+    this.srcImage = "../../../assets/img/networkDisconnected.png"
     const type = this.authService.getUserType();
     if (type === 1) {
       this.userTitle = 'ADMIN';
@@ -34,10 +37,12 @@ export class HeaderComponent implements OnInit {
   toggle(){
     this.isActive = !this.isActive;
     if(this.isActive == true){
-      this.toolTip = "connected"
+      this.toolTip = "connected";
+      this.srcImage = "../../../assets/img/networkConnected.png"
     }
     else{
-      this.toolTip = "disconnected"
+      this.toolTip = "disconnected";
+      this.srcImage = "../../../assets/img/networkDisconnected.png"
     }
     console.log(this.isActive);
   }
