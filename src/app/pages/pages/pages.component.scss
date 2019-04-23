@@ -6,7 +6,13 @@
 
 .nav {
   // margin-left: 0.80%;
-  margin-top: 2%;
+  margin-top: 3%;
+}
+@media (max-width:1125px){
+  .nav {
+    // margin-left: 0.80%;
+    margin-top: 5%;
+  }
 }
 .container {
   height: 100%;

@@ -1,3 +1,85 @@
-<p>
-  dashboard works!
-</p>
+<div class="row main">
+  <div class="col-md-6">
+     <h3 class="title">storage allocation</h3>
+     <div class="row"></div>
+     <div class="row" style="border-right:2px solid #29ABE2">
+      <label>Current Month:</label>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            60%
+          </div>
+        </div>
+     </div>
+     <div class="row" style="border-right:2px solid #29ABE2">
+      <label>Amount Allocated:</label>
+     </div>
+     <div class="row" style="border-right:2px solid #29ABE2">
+      <label>Currency Earned:</label>
+     </div>
+     <div class="row" style="border-right:2px solid #29ABE2">
+       <p>
+        *All contracts are engaged on a monthly basis.
+         A lender cannot decrease the amount of storage allocated until the contract expires.
+       </p>
+       <p>
+        *Note: Lenders are paid USD 0.02/GB/Month.
+       </p>
+     </div>
+     <div class="row" style="border-right:2px solid #29ABE2">
+       <button
+       class="btn btn-primary"
+       >
+         Allocate storage
+       </button>
+     </div>
+  </div>
+  <div class="col-md-6">
+     <h3 class="title">System checks</h3>
+     <div class="row"></div>
+     <div class="row" style="padding-left:50px">
+        <label class="form-control-checkbox">
+            <input 
+            type="checkbox" 
+            value="true"
+            />
+            24 hour check       
+           </label>
+     </div>
+     <div class="row" style="padding-left:50px">
+        <label class="form-control-checkbox">
+            <input 
+            type="checkbox" 
+            value="true"
+            />
+            Latency     
+           </label>
+     </div>
+     <div class="row" style="padding-left:50px">
+        <label class="form-control-checkbox">
+            <input 
+            type="checkbox" 
+            value="true"
+            />
+            Bandwidth    
+           </label>
+     </div>
+     <div class="row" style="padding-left:50px">
+        <label class="form-control-checkbox">
+            <input 
+            type="checkbox" 
+            value="true"
+            />
+            Storage Allocation    
+           </label>
+     </div>
+     <div class="row" style="padding-left:50px;text-align:center">
+        <h4>Total Points</h4>
+        <label>Current Standing:{{nowPints}}/{{totalPoints}}</label>
+     </div>
+     <div class="row" style="padding-left:50px">
+        <p>
+            * You must stay above a 90% ratio to receive VUUPLE.
+        </p>
+     </div>
+  </div>
+</div>
