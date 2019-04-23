@@ -96,10 +96,9 @@ global.isUpdating = false;
 global.authorizationToken = null;
 
 app.on('before-quit', async () => {
-  // // set docker-compose down
+  // // // set docker-compose down
   // const dockerfile = path.join(
   //   networkPath,
-  //   'network-resources',
   //   'docker-compose.yml'
   // );
   // await node.stop_docker(dockerfile);
@@ -145,7 +144,6 @@ const run = async () => {
     // // log.info(`Starting application: ${productName} ${version} (${environment})`);
     // const dockerfile = path.join(
     //   networkPath,
-    //   'network-resources',
     //   'docker-compose.yml'
     // );
     // await node.startNetwork(dockerfile);
@@ -157,7 +155,9 @@ const run = async () => {
     // console.log(child, 'child');
     // // console.log(sttus, 'status');
     // console.log(health, 'health');
-    global.networkIP = 'http://127.0.0.1:22000';
+    // global.networkIP = 'http://127.0.0.1:22000';
+    global.networkPath = networkPath;
+    global.networkIP = 'http://3.14.2.131:22000';
   }
   await app.whenReady();
 

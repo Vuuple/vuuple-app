@@ -7,13 +7,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
 import { IUser } from '../../../auth/core/user';
 import {
-  getRaftId,
+  // getRaftId,
   sendConfirmationMail
 } from '../../../../assets/js/helpers/joinNetwork.js';
 import { LenderEscrowService } from '../../../providers/lenders-escrow/lenders-escrow.service';
 import { NetworkService } from '../../../providers/network-service/network.service';
-const networkIP = require('electron').remote.getGlobal('networkIP');
-
+// const networkIP = require('electron').remote.getGlobal('networkIP');
+const request = require('../../../../assets/js/helpers/requests.js');
 @Component({
   selector: 'app-add-node',
   templateUrl: './add-node.component.html',
@@ -75,7 +75,7 @@ export class AddNodeComponent implements OnInit {
     const data = await this._addToNetwork();
     if (this.node.category == 'lender') {
       //TODO: need to update docker file to set storage value
-      await this._approveOnContract();
+      //  await this._approveOnContract();
     }
     await this._saveToDatabase(data);
     await this._emailUser();
@@ -96,13 +96,25 @@ export class AddNodeComponent implements OnInit {
   }
   async _addToNetwork() {
     //   const raftId = await getRaftId(this.node.ip, networkIP, this.node.enode);
-    const enode = `enode://${this.node.enode}@${
-      this.node.ip
-    }:22000?discport=0&raftport=50400`.trim();
+    const enode =
+      '"enode://' +
+      this.node.enode.trim() +
+      '@' +
+      this.node.ip.trim() +
+      ':22000?discport=0&raftport=50400"'.trim();
     console.log(enode, 'enode in c');
 
-    const raftId = await this.networkService.addRaftPeer(enode);
-    console.log(raftId, 'raftId');
+    // const raftId = await this.networkService.addRaftPeer(enode);
+    let raftId;
+    const resObj = await request.curlRaftAddPeer(enode);
+    console.log(resObj, 'resObj');
+    if (resObj.result == undefined) {
+      raftId = null;
+      console.log(resObj);
+    } else {
+      raftId = resObj.result;
+      console.log(raftId, 'raftIdd');
+    }
 
     return raftId;
   }
