@@ -33,7 +33,7 @@ export class NavComponent implements OnInit {
   ];
 
   LenderItem = [
-    { name: 'Dashboard', link: '/pages/lender' },
+    { name: 'Dashboard', link: '/pages/lender/main' },
     { name: 'WALLET', link: '/pages/renter/wallet' },
     { name: 'ALLOCATE', link: '/pages/lender' },
     { name: 'REDEEM', link: '/pages/lender' },
@@ -44,9 +44,9 @@ export class NavComponent implements OnInit {
     { name: 'Dashboard', link: '/pages/admin/main' },
     { name: 'wallet ', link: '/pages/admin/wallet' },
     { name: 'REQUEST', link: '/pages/admin/request' },
-    { name: 'INDIVIDUAL ', link: '/pages/admin' },
-    { name: 'COMAPNY', link: '/pages/admin' },
-    { name: 'LENDERS', link: '/pages/admin' },
+    { name: 'INDIVIDUAL ', link: '/pages/admin/individual' },
+    { name: 'COMAPNY', link: '/pages/admin/company' },
+    { name: 'LENDERS', link: '/pages/admin/lender' },
     { name: 'SETTING', link: '/pages/admin/setting' }
   ];
   items = [];

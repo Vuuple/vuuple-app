@@ -21,10 +21,10 @@ export class HeaderComponent implements OnInit {
       this.userTitle = 'ADMIN';
        this.isadmin = true;
     } else if (type === 2) {
-      this.userTitle = 'COMPANY RENTER';
+      this.userTitle = 'RENTER';
       this.isadmin = false;
     } else if (type === 3) {
-      this.userTitle = 'COMPANY LENDER';
+      this.userTitle = 'LENDER';
       this.isadmin = false;
     } else {
       this.Logout();

@@ -36,27 +36,20 @@
           <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
             category
           </th>
-          <th style=" border-right: 1px solid #29ABE2;padding: 15px;">add</th>
-          <th style="padding: 15px;">reject</th>
+          <th style="padding: 15px;">add</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let request of requests; let i = index ">
           <td>{{ request?.username }}</td>
           <td>{{ request?.email }}</td>
-          <td>{{ request?.ethAddress }}</td>
+          <td>{{ request?.ethAddress | slice:0:20 }}<br>{{ request?.ethAddress | slice:20:40 }}</td>
           <td>{{ request?.ip }}</td>
           <td>{{ request?.category }}</td>
-          <td>
+          <td style="border-right:none">
             <button class="action" (click)="addNode(request?._id)">
               <!--{{request?.add}}-->
               add
-            </button>
-          </td>
-          <td style="border-right:none">
-            <button class="rejectaction">
-              <!--{{request?.reject}}-->
-              reject
             </button>
           </td>
         </tr>

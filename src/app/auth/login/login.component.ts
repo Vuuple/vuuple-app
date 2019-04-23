@@ -65,7 +65,7 @@ export class LoginComponent {
           } else if ((type === 3) && (isApproved === true )) {
             this.router.navigate(['/pages/lender']);
           } else if (isApproved === false ){
-            this.router.navigate(['/auth/registerCompleted']);
+            this.router.navigate(['/pages']);///auth/registerCompleted
           }else {
             this.errorMessage =
               'Incorrect credentials, please use the correct one';

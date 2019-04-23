@@ -38,6 +38,5 @@ export class RequestListComponent implements OnInit {
     // get current page of items
     this.pagedItems = this.requests.slice(this.pager.startIndex, this.pager.endIndex + 1);
 }
- 
   ngOnInit() {}
 }
