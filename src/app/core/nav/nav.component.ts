@@ -35,10 +35,10 @@ export class NavComponent implements OnInit {
   LenderItem = [
     { name: 'Dashboard', link: '/pages/lender/main' },
     { name: 'WALLET', link: '/pages/renter/wallet' },
-    { name: 'ALLOCATE', link: '/pages/lender' },
-    { name: 'REDEEM', link: '/pages/lender' },
-    { name: 'ACCOUNT', link: '/pages/lender' },
-    { name: 'SETTING', link: '/pages/lender/setting' }
+    { name: 'ALLOCATE', link: '/pages/lender/allocate' },
+    { name: 'REDEEM', link: '/pages/lender/redeem' },
+    { name: 'ACCOUNT', link: '/pages/lender/account' },
+    { name: 'SETTING', link: '/pages/admin/setting' }
   ];
   adminItem = [
     { name: 'Dashboard', link: '/pages/admin/main' },
