@@ -8,6 +8,8 @@ import { WalletComponent } from './wallet/wallet.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { AccountComponent } from './account/account.component';
+import { PurchaseComponent } from './purchase/purchase.component';
 
 @NgModule({
   imports: [
@@ -33,11 +35,19 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
         component: WalletComponent
       },
       {
+        path: 'account',
+        component : AccountComponent
+      },
+      {
+        path: 'purchase',
+        component : PurchaseComponent
+      },
+      {
         path: '**',
         component: NotFoundComponent
       }
     ])
   ],
-  declarations: [DashboardComponent,WalletComponent, UploadFileComponent]
+  declarations: [DashboardComponent,WalletComponent, UploadFileComponent, AccountComponent, PurchaseComponent]
 })
 export class VuupleRenterModule {}

@@ -8,8 +8,6 @@ import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { TokensComponent } from './tokens/tokens.component';
 import { IndividualRenterComponent } from './individual-renter/individual-renter.component';
-import { CompanyRenterComponent } from './company-renter/company-renter.component';
-import { LenderComponent } from './lender/lender.component';
 import { SettingComponent } from './setting/setting.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
@@ -32,7 +30,7 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
     RouterModule.forChild([
       {
         path: '',
-        component: DashboardComponent
+        component:DashboardComponent
       },
       {
         path: 'admin',
@@ -90,8 +88,6 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
     RequestListComponent,
     TokensComponent,
     IndividualRenterComponent,
-    CompanyRenterComponent,
-    LenderComponent,
     SettingComponent,
     AddpointComponent,
     EscrowListComponent,
