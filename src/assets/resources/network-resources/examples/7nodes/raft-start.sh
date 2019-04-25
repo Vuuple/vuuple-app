@@ -67,8 +67,8 @@ fi
 echo "[*] Starting Ethereum nodes with ChainID and NetworkId of $NETWORK_ID"
 QUORUM_GETH_ARGS=${QUORUM_GETH_ARGS:-}
 set -v
-ARGS="--nodiscover --verbosity 5 --networkid $NETWORK_ID --raft --raftjoinexisting 6   --syncmode full --rpc --rpcaddr 0.0.0.0 --rpccorsdomain * --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft --emitcheckpoints $QUORUM_GETH_ARGS"
-PRIVATE_CONFIG=qdata/c/tm.ipc nohup geth --datadir qdata/dd $ARGS  --raftport 50400 --rpcport 22000 --port 21000 --unlock 0 --password passwords.txt 2>>qdata/logs.log 
+ARGS="--nodiscover --verbosity 5 --networkid $NETWORK_ID --raft --raftjoinexisting --syncmode full --rpc --rpcaddr 0.0.0.0 --rpccorsdomain * --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft --emitcheckpoints $QUORUM_GETH_ARGS"
+PRIVATE_CONFIG=qdata/c/tm.ipc nohup geth --datadir qdata/dd $ARGS  --raftport 50400 --rpcport 22000 --port 21000 --unlock 0 --password passwords.txt 2>>qdata/logs.log
 set +v
 
 echo

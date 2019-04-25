@@ -6,7 +6,9 @@ const template = require('../../resources/mail-resources/mail-templates.json');
 
 async function getRaftId(ip, endpoint, enode) {
   // const endpoint = 'http://3.18.34.201:22004';
-  // const enode = `enode://3f36c87a685f6d6947d685fd76d29f08f39b1eea9570a765b8cb6ee94b89755a01e6fc61e9e460a9e6310dbf0a2e12f126c54fe09c23e6b4176ea8f7835c33ea@18.191.179.75:22000?discport=0&raftport=50400`; // from db
+  //   "enode://6407bfc4d754aae5b9957b9303acf3fc64a3d08afb6fe4acfa955ab90b628e442cafae6b67bdba1d74e57e13aa6a3131c436ad45d4d9cdbf6be78f59da5a6b5d@3.17.185.195:21000?discport=30301&raftport=50400"
+
+  // const enode = `enode://0c12df9da5b30947a16ba9e8aa8a426123dbe7494c8a3080d341ac728a99317bbb75cc6a8bccfe1be17fcdd1469fa087f02488750eb6251c3f4ea6263ad44d06@192.168.0.103:22000?discport=0&raftport=50400`; // from db
   const resObj = await requests.raft_add_peer(endpoint, enode);
   let id;
   if (resObj.data.result == undefined) {
