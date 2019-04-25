@@ -15,6 +15,7 @@ export class RequestListComponent implements OnInit {
   requestss: any = [];
   pager: any;
   pagedItems: any;
+  pages: any;
   constructor(
     private serverApiService: ServerApiService,
     private router: Router,
@@ -34,7 +35,7 @@ export class RequestListComponent implements OnInit {
   setPage(page: number) {
     // get pager object from service
     this.pager = this.pagerService.getPager(this.requests.length, page);
-
+     this.pages= this.pager.pages;
     // get current page of items
     this.pagedItems = this.requests.slice(this.pager.startIndex, this.pager.endIndex + 1);
 }

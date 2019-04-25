@@ -1,26 +1,18 @@
-<div class="row">
-  <div class="col-md-11 ">
     <div class="row main">
-      <div class="col-md-3">
+      <div class="col-md-2">
         <ul class="nav">
             <li>
-               <a href="#generalinfo" class="infoButton ">general Info</a>
+               <a (click)="toggle(true)"  id="generalInfo" class="infoButton"[class.active]="show">general Info</a>
             </li>
             <li>
-                <a href="#token" class="tokenButton active">Token</a>
+                <a (click)="toggle(false)" id="token" class="tokenButton"[class.active]="!show" >Token</a>
              </li>
         </ul>
       </div>
-      <div class="col-md-9 tab-content" >
-        <div id="generalinfo">
-           <app-general-info></app-general-info>        
-        </div>
-        <div id="token">
-           <app-token ></app-token>      
-        </div>
+      <div class="col-md-10" >
+           <app-general-info *ngIf="show"></app-general-info>        
+           <app-token *ngIf="!show"></app-token>      
       </div>
     </div>
-  </div>
-  <div class="col-md-1"></div>
-</div>
+
 
