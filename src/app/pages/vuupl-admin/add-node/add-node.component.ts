@@ -3,7 +3,7 @@ import { LendersFactoryService } from './../../../providers/lenders-factory/lend
 import { LendersRegistrationService } from './../../../providers/lenders-registration/lenders-registration.service';
 // import { RentersRegistrationService } from './../../../providers/renters-registration/renters-registration.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
 import { IUser } from '../../../auth/core/user';
 import {
@@ -49,6 +49,7 @@ export class AddNodeComponent implements OnInit {
     private networkService: NetworkService,
     private serverApiService: ServerApiService,
     private route: ActivatedRoute,
+    private router: Router,
     private lenderEscrowService: LenderEscrowService,
     private lendersFactoryService: LendersFactoryService,
     // private rentersRegistrationService: RentersRegistrationService,
@@ -162,5 +163,8 @@ export class AddNodeComponent implements OnInit {
 
   async reject() {
     await this.serverApiService.reject(this.node.id);
+  }
+  goBack(){
+    this.router.navigate(['/pages/admin/request']);
   }
 }

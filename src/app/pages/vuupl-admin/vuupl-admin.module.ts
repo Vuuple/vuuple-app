@@ -77,6 +77,10 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
         component: SettingComponent
       },
       {
+        path: 'client',
+        component:IndividualRenterComponent
+      },
+      {
         path: '**',
         component: NotFoundComponent
       }
