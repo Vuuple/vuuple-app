@@ -24,12 +24,12 @@ export class NavComponent implements OnInit {
     this.authService.logout();
   }
   renterItems = [
-    { name: 'Dashboard', link: '/pages/renter' },
+    { name: 'Dashboard', link: '/pages/renter/main' },
     { name: 'WALLET', link: '/pages/renter/wallet' },
-    { name: 'PURCHASE', link: '/pages/renter' },
-    { name: 'REDEEM', link: '/pages/renter' },
-    { name: 'ACCOUNT', link: '/pages/renter' },
-    { name: 'SETTING', link: '/pages/renter/setting' }
+    { name: 'PURCHASE', link: '/pages/renter/purchase' },
+    { name: 'REDEEM', link: '/pages/lender/redeem' },
+    { name: 'ACCOUNT', link: '/pages/renter/account' },
+    { name: 'SETTING', link: '/pages/admin/setting' }
   ];
 
   LenderItem = [
