@@ -67,13 +67,29 @@ export class AddNodeComponent implements OnInit {
         this.serverApiService.getUser(this.id).subscribe(data => {
           console.log(data);
           this.node = data;
+          this.test();
           console.log(this.node, '  if this.node');
         });
       }
     });
     console.log(this.node, '   this.node');
   }
+  async test() {
+    console.log(this.node.ethAddress, ' this.node.ethAddress');
 
+    const lenderIndex = await this.lendersFactoryService.lenderIndex();
+    console.log(lenderIndex, 'lenderIndex');
+
+    this.lendercontract = await this.lendersFactoryService.getLenderContract(
+      this.node.ethAddress
+    );
+    const isApproved = await this.lendersRegistrationService.approved(
+      this.lendercontract
+    );
+    this.getEscrowData();
+    console.log(isApproved, 'lendercontract');
+    console.log(this.lendercontract, 'lendercontract');
+  }
   async approve() {
     // unloack his account
     const contract = await this.rentersFactoryService.getRenterContract(
@@ -90,8 +106,8 @@ export class AddNodeComponent implements OnInit {
     } else {
     }
 
-    // await this._saveToDatabase(data);
-    // await this._emailUser();
+    await this._saveToDatabase(data);
+    await this._emailUser();
   }
 
   async _approveOnContract() {
@@ -106,8 +122,7 @@ export class AddNodeComponent implements OnInit {
     if (this.lendercontract != '0x0000000000000000000000000000000000000000') {
       console.log(this.lendercontract, 'lendercontract');
 
-      await this.lendersRegistrationService.approve(this.lendercontract);
-      //get escrow data and save it in db
+      //  get escrow data and save it in db
       const isApproved = await this.lendersRegistrationService.approved(
         this.lendercontract
       );
@@ -172,19 +187,20 @@ export class AddNodeComponent implements OnInit {
       this.lendercontract
     );
     console.log(this.escrow.escrowAddress, 'this.escrow.escrowAddress');
-
-    this.escrow.issueDate = new Date(
-      (await this.lendersRegistrationService.registerDate(
-        this.lendercontract
-      )) * 1000
-    );
-    console.log(this.escrow.issueDate, ' this.escrow.issueDate ');
+    // const issue = await this.lendersRegistrationService.registerDate(
+    //   this.lendercontract
+    // );
+    // console.log(issue, 'issue date');
 
     this.escrow.endDate = new Date(
       (await this.lenderEscrowService.closeTime(this.escrow.escrowAddress)) *
         1000
     );
+    let end = new Date(this.escrow.endDate);
+    end.setMonth(this.escrow.endDate.getMonth() - 1);
     console.log(this.escrow.endDate, ' this.escrow.endDate');
+    this.escrow.issueDate = end;
+    console.log(this.escrow.issueDate, ' this.escrow.issueDate ');
   }
   async addEscrowData() {
     this.serverApiService
@@ -200,7 +216,7 @@ export class AddNodeComponent implements OnInit {
   async reject() {
     await this.serverApiService.reject(this.node.id);
   }
-  goBack(){
+  goBack() {
     this.router.navigate(['/pages/admin/request']);
   }
 }

@@ -65,8 +65,8 @@ export class LoginComponent {
           } else if (type === 3 && isApproved === true) {
             this.router.navigate(['/pages/lender']);
           } else if (isApproved === false) {
-           // this.router.navigate(['/auth/registerCompleted']);
-           this.router.navigate(['/pages']);//just now 
+            // this.router.navigate(['/auth/registerCompleted']);
+            this.router.navigate(['/pages']); //just now
           } else {
             this.errorMessage =
               'Incorrect credentials, please use the correct one';
@@ -85,7 +85,7 @@ export class LoginComponent {
   }
   createAccount() {
     //   this.router.navigate(['/auth/renterRegister']);
-    // this.router.navigate(['/auth/lenderRegister']);
-    this.router.navigate(['/auth/chooseCategory']);
+    this.router.navigate(['/auth/lenderRegister']);
+    //this.router.navigate(['/auth/chooseCategory']);
   }
 }
