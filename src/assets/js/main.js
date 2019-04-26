@@ -139,7 +139,8 @@ const run = async () => {
       networkPath
     );
     global.networkPath = networkPath;
-    global.networkIP = 'http://3.14.2.131:22000';
+    global.isLocal = false;
+    // global.networkIP = 'http://3.14.2.131:22000';
   } else {
     // // log.info(`Starting application: ${productName} ${version} (${environment})`);
     // const dockerfile = path.join(
@@ -157,7 +158,8 @@ const run = async () => {
     // console.log(health, 'health');
     // global.networkIP = 'http://127.0.0.1:22000';
     global.networkPath = networkPath;
-    global.networkIP = 'http://3.14.2.131:22000';
+    //  global.networkIP = 'http://3.14.2.131:22000';
+    global.isLocal = true;
   }
   await app.whenReady();
 
