@@ -83,21 +83,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
     "exportedSymbols": {
-      "MinterRole": [
-        3247
-      ]
+      "MinterRole": [3247]
     },
     "id": 3248,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3146,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:14"
       },
@@ -119,9 +112,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 3247,
-        "linearizedBaseContracts": [
-          3247
-        ],
+        "linearizedBaseContracts": [3247],
         "name": "MinterRole",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -457,10 +448,7 @@
                       "id": 3171,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "319:7:14",
                       "typeDescriptions": {
@@ -1289,21 +1277,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
     "exportedSymbols": {
-      "MinterRole": [
-        3247
-      ]
+      "MinterRole": [3247]
     },
     "id": 3248,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3146,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:14"
       },
@@ -1325,9 +1306,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 3247,
-        "linearizedBaseContracts": [
-          3247
-        ],
+        "linearizedBaseContracts": [3247],
         "name": "MinterRole",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1663,10 +1642,7 @@
                       "id": 3171,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "319:7:14",
                       "typeDescriptions": {
@@ -2498,5 +2474,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.632Z"
+  "updatedAt": "2019-04-26T19:41:08.329Z"
 }

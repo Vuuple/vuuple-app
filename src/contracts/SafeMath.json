@@ -10,21 +10,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol",
     "exportedSymbols": {
-      "SafeMath": [
-        3672
-      ]
+      "SafeMath": [3672]
     },
     "id": 3673,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3546,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:17"
       },
@@ -35,9 +28,7 @@
         "documentation": "@title SafeMath\n@dev Math operations with safety checks that revert on error",
         "fullyImplemented": true,
         "id": 3672,
-        "linearizedBaseContracts": [
-          3672
-        ],
+        "linearizedBaseContracts": [3672],
         "name": "SafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -135,9 +126,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    3563
-                  ],
+                  "assignments": [3563],
                   "declarations": [
                     {
                       "constant": false,
@@ -307,10 +296,7 @@
                       "id": 3568,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "546:7:17",
                       "typeDescriptions": {
@@ -535,10 +521,7 @@
                       "id": 3588,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "768:7:17",
                       "typeDescriptions": {
@@ -565,9 +548,7 @@
                   "src": "768:14:17"
                 },
                 {
-                  "assignments": [
-                    3595
-                  ],
+                  "assignments": [3595],
                   "declarations": [
                     {
                       "constant": false,
@@ -839,10 +820,7 @@
                       "id": 3612,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1151:7:17",
                       "typeDescriptions": {
@@ -869,9 +847,7 @@
                   "src": "1151:15:17"
                 },
                 {
-                  "assignments": [
-                    3619
-                  ],
+                  "assignments": [3619],
                   "declarations": [
                     {
                       "constant": false,
@@ -1084,9 +1060,7 @@
               "src": "1339:64:17",
               "statements": [
                 {
-                  "assignments": [
-                    3637
-                  ],
+                  "assignments": [3637],
                   "declarations": [
                     {
                       "constant": false,
@@ -1224,10 +1198,7 @@
                       "id": 3642,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1368:7:17",
                       "typeDescriptions": {
@@ -1452,10 +1423,7 @@
                       "id": 3660,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1608:7:17",
                       "typeDescriptions": {
@@ -1651,21 +1619,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol",
     "exportedSymbols": {
-      "SafeMath": [
-        3672
-      ]
+      "SafeMath": [3672]
     },
     "id": 3673,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3546,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:17"
       },
@@ -1676,9 +1637,7 @@
         "documentation": "@title SafeMath\n@dev Math operations with safety checks that revert on error",
         "fullyImplemented": true,
         "id": 3672,
-        "linearizedBaseContracts": [
-          3672
-        ],
+        "linearizedBaseContracts": [3672],
         "name": "SafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1776,9 +1735,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    3563
-                  ],
+                  "assignments": [3563],
                   "declarations": [
                     {
                       "constant": false,
@@ -1948,10 +1905,7 @@
                       "id": 3568,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "546:7:17",
                       "typeDescriptions": {
@@ -2176,10 +2130,7 @@
                       "id": 3588,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "768:7:17",
                       "typeDescriptions": {
@@ -2206,9 +2157,7 @@
                   "src": "768:14:17"
                 },
                 {
-                  "assignments": [
-                    3595
-                  ],
+                  "assignments": [3595],
                   "declarations": [
                     {
                       "constant": false,
@@ -2480,10 +2429,7 @@
                       "id": 3612,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1151:7:17",
                       "typeDescriptions": {
@@ -2510,9 +2456,7 @@
                   "src": "1151:15:17"
                 },
                 {
-                  "assignments": [
-                    3619
-                  ],
+                  "assignments": [3619],
                   "declarations": [
                     {
                       "constant": false,
@@ -2725,9 +2669,7 @@
               "src": "1339:64:17",
               "statements": [
                 {
-                  "assignments": [
-                    3637
-                  ],
+                  "assignments": [3637],
                   "declarations": [
                     {
                       "constant": false,
@@ -2865,10 +2807,7 @@
                       "id": 3642,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1368:7:17",
                       "typeDescriptions": {
@@ -3093,10 +3032,7 @@
                       "id": 3660,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1608:7:17",
                       "typeDescriptions": {
@@ -3295,5 +3231,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.634Z"
+  "updatedAt": "2019-04-26T19:41:08.331Z"
 }

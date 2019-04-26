@@ -184,21 +184,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
     "exportedSymbols": {
-      "IERC20": [
-        4359
-      ]
+      "IERC20": [4359]
     },
     "id": 4360,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4292,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:23"
       },
@@ -209,9 +202,7 @@
         "documentation": "@title ERC20 interface\n@dev see https://github.com/ethereum/EIPs/issues/20",
         "fullyImplemented": false,
         "id": 4359,
-        "linearizedBaseContracts": [
-          4359
-        ],
+        "linearizedBaseContracts": [4359],
         "name": "IERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1018,21 +1009,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
     "exportedSymbols": {
-      "IERC20": [
-        4359
-      ]
+      "IERC20": [4359]
     },
     "id": 4360,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4292,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:23"
       },
@@ -1043,9 +1027,7 @@
         "documentation": "@title ERC20 interface\n@dev see https://github.com/ethereum/EIPs/issues/20",
         "fullyImplemented": false,
         "id": 4359,
-        "linearizedBaseContracts": [
-          4359
-        ],
+        "linearizedBaseContracts": [4359],
         "name": "IERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1855,5 +1837,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.639Z"
+  "updatedAt": "2019-04-26T19:41:08.336Z"
 }

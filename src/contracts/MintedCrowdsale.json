@@ -119,21 +119,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
     "exportedSymbols": {
-      "MintedCrowdsale": [
-        3544
-      ]
+      "MintedCrowdsale": [3544]
     },
     "id": 3545,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3514,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:16"
       },
@@ -180,19 +173,12 @@
             "src": "317:9:16"
           }
         ],
-        "contractDependencies": [
-          3512,
-          4534
-        ],
+        "contractDependencies": [3512, 4534],
         "contractKind": "contract",
         "documentation": "@title MintedCrowdsale\n@dev Extension of Crowdsale contract whose tokens are minted in each purchase.\nToken ownership should be transferred to MintedCrowdsale for minting.",
         "fullyImplemented": false,
         "id": 3544,
-        "linearizedBaseContracts": [
-          3544,
-          3512,
-          4534
-        ],
+        "linearizedBaseContracts": [3544, 3512, 4534],
         "name": "MintedCrowdsale",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -424,10 +410,7 @@
                       "id": 3529,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "696:7:16",
                       "typeDescriptions": {
@@ -545,21 +528,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
     "exportedSymbols": {
-      "MintedCrowdsale": [
-        3544
-      ]
+      "MintedCrowdsale": [3544]
     },
     "id": 3545,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3514,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:16"
       },
@@ -606,19 +582,12 @@
             "src": "317:9:16"
           }
         ],
-        "contractDependencies": [
-          3512,
-          4534
-        ],
+        "contractDependencies": [3512, 4534],
         "contractKind": "contract",
         "documentation": "@title MintedCrowdsale\n@dev Extension of Crowdsale contract whose tokens are minted in each purchase.\nToken ownership should be transferred to MintedCrowdsale for minting.",
         "fullyImplemented": false,
         "id": 3544,
-        "linearizedBaseContracts": [
-          3544,
-          3512,
-          4534
-        ],
+        "linearizedBaseContracts": [3544, 3512, 4534],
         "name": "MintedCrowdsale",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -850,10 +819,7 @@
                       "id": 3529,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "696:7:16",
                       "typeDescriptions": {
@@ -974,5 +940,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.634Z"
+  "updatedAt": "2019-04-26T19:41:08.331Z"
 }

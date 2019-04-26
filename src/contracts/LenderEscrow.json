@@ -146,21 +146,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/LendersContracts/LenderEscrow.sol",
     "exportedSymbols": {
-      "LenderEscrow": [
-        180
-      ]
+      "LenderEscrow": [180]
     },
     "id": 181,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:0"
       },
@@ -182,9 +175,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 180,
-        "linearizedBaseContracts": [
-          180
-        ],
+        "linearizedBaseContracts": [180],
         "name": "LenderEscrow",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -907,10 +898,7 @@
                       "id": 58,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "995:7:0",
                       "typeDescriptions": {
@@ -1022,10 +1010,7 @@
                       "id": 69,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1099:7:0",
                       "typeDescriptions": {
@@ -1153,10 +1138,7 @@
                       "id": 79,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1182:7:0",
                       "typeDescriptions": {
@@ -2275,21 +2257,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/LendersContracts/LenderEscrow.sol",
     "exportedSymbols": {
-      "LenderEscrow": [
-        180
-      ]
+      "LenderEscrow": [180]
     },
     "id": 181,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:0"
       },
@@ -2311,9 +2286,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 180,
-        "linearizedBaseContracts": [
-          180
-        ],
+        "linearizedBaseContracts": [180],
         "name": "LenderEscrow",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3036,10 +3009,7 @@
                       "id": 58,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "995:7:0",
                       "typeDescriptions": {
@@ -3151,10 +3121,7 @@
                       "id": 69,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1099:7:0",
                       "typeDescriptions": {
@@ -3282,10 +3249,7 @@
                       "id": 79,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1182:7:0",
                       "typeDescriptions": {
@@ -4407,5 +4371,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.614Z"
+  "updatedAt": "2019-04-26T19:41:08.311Z"
 }

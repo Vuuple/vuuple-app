@@ -613,21 +613,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/LendersContracts/LenderRegistration.sol",
     "exportedSymbols": {
-      "LenderRegistration": [
-        643
-      ]
+      "LenderRegistration": [643]
     },
     "id": 644,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 294,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:2"
       },
@@ -707,18 +700,12 @@
             "src": "306:14:2"
           }
         ],
-        "contractDependencies": [
-          180,
-          2753
-        ],
+        "contractDependencies": [180, 2753],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 643,
-        "linearizedBaseContracts": [
-          643,
-          2753
-        ],
+        "linearizedBaseContracts": [643, 2753],
         "name": "LenderRegistration",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1286,10 +1273,7 @@
                       "id": 339,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1333:7:2",
                       "typeDescriptions": {
@@ -1437,10 +1421,7 @@
                       "id": 350,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1433:7:2",
                       "typeDescriptions": {
@@ -1678,10 +1659,7 @@
                       "id": 362,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1541:7:2",
                       "typeDescriptions": {
@@ -1793,10 +1771,7 @@
                       "id": 379,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1690:7:2",
                       "typeDescriptions": {
@@ -1892,10 +1867,7 @@
                       "id": 389,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1771:7:2",
                       "typeDescriptions": {
@@ -1991,10 +1963,7 @@
                       "id": 398,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1843:7:2",
                       "typeDescriptions": {
@@ -2923,10 +2892,7 @@
                       "id": 479,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2708:7:2",
                       "typeDescriptions": {
@@ -3286,10 +3252,7 @@
                             "id": 507,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              4552,
-                              4553
-                            ],
+                            "overloadedDeclarations": [4552, 4553],
                             "referencedDeclaration": 4552,
                             "src": "2932:7:2",
                             "typeDescriptions": {
@@ -4023,10 +3986,7 @@
                       "id": 562,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "3394:7:2",
                       "typeDescriptions": {
@@ -4402,10 +4362,7 @@
                             "id": 595,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              4552,
-                              4553
-                            ],
+                            "overloadedDeclarations": [4552, 4553],
                             "referencedDeclaration": 4552,
                             "src": "3649:7:2",
                             "typeDescriptions": {
@@ -4628,10 +4585,7 @@
                       "id": 613,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "4222:7:2",
                       "typeDescriptions": {
@@ -4860,10 +4814,7 @@
                       "id": 631,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "4487:7:2",
                       "typeDescriptions": {
@@ -5032,21 +4983,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/LendersContracts/LenderRegistration.sol",
     "exportedSymbols": {
-      "LenderRegistration": [
-        643
-      ]
+      "LenderRegistration": [643]
     },
     "id": 644,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 294,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:2"
       },
@@ -5126,18 +5070,12 @@
             "src": "306:14:2"
           }
         ],
-        "contractDependencies": [
-          180,
-          2753
-        ],
+        "contractDependencies": [180, 2753],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 643,
-        "linearizedBaseContracts": [
-          643,
-          2753
-        ],
+        "linearizedBaseContracts": [643, 2753],
         "name": "LenderRegistration",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -5705,10 +5643,7 @@
                       "id": 339,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1333:7:2",
                       "typeDescriptions": {
@@ -5856,10 +5791,7 @@
                       "id": 350,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1433:7:2",
                       "typeDescriptions": {
@@ -6097,10 +6029,7 @@
                       "id": 362,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1541:7:2",
                       "typeDescriptions": {
@@ -6212,10 +6141,7 @@
                       "id": 379,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1690:7:2",
                       "typeDescriptions": {
@@ -6311,10 +6237,7 @@
                       "id": 389,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1771:7:2",
                       "typeDescriptions": {
@@ -6410,10 +6333,7 @@
                       "id": 398,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1843:7:2",
                       "typeDescriptions": {
@@ -7342,10 +7262,7 @@
                       "id": 479,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2708:7:2",
                       "typeDescriptions": {
@@ -7705,10 +7622,7 @@
                             "id": 507,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              4552,
-                              4553
-                            ],
+                            "overloadedDeclarations": [4552, 4553],
                             "referencedDeclaration": 4552,
                             "src": "2932:7:2",
                             "typeDescriptions": {
@@ -8442,10 +8356,7 @@
                       "id": 562,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "3394:7:2",
                       "typeDescriptions": {
@@ -8821,10 +8732,7 @@
                             "id": 595,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              4552,
-                              4553
-                            ],
+                            "overloadedDeclarations": [4552, 4553],
                             "referencedDeclaration": 4552,
                             "src": "3649:7:2",
                             "typeDescriptions": {
@@ -9047,10 +8955,7 @@
                       "id": 613,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "4222:7:2",
                       "typeDescriptions": {
@@ -9279,10 +9184,7 @@
                       "id": 631,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "4487:7:2",
                       "typeDescriptions": {
@@ -9454,5 +9356,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.616Z"
+  "updatedAt": "2019-04-26T19:41:08.313Z"
 }

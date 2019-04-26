@@ -132,21 +132,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol",
     "exportedSymbols": {
-      "Crowdsale": [
-        3512
-      ]
+      "Crowdsale": [3512]
     },
     "id": 3513,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3249,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:15"
       },
@@ -215,17 +208,12 @@
             "src": "892:15:15"
           }
         ],
-        "contractDependencies": [
-          4534
-        ],
+        "contractDependencies": [4534],
         "contractKind": "contract",
         "documentation": "@title Crowdsale\n@dev Crowdsale is a base contract for managing a token crowdsale,\nallowing investors to purchase tokens with ether. This contract implements\nsuch functionality in its most fundamental form and can be extended to provide additional\nfunctionality and/or custom behavior.\nThe external interface represents the basic interface for purchasing tokens, and conform\nthe base architecture for crowdsales. They are *not* intended to be modified / overridden.\nThe internal interface conforms the extensible and modifiable surface of crowdsales. Override\nthe methods to add functionality. Consider using 'super' where appropriate to concatenate\nbehavior.",
         "fullyImplemented": true,
         "id": 3512,
-        "linearizedBaseContracts": [
-          3512,
-          4534
-        ],
+        "linearizedBaseContracts": [3512, 4534],
         "name": "Crowdsale",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -585,10 +573,7 @@
                       "id": 3288,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2307:7:15",
                       "typeDescriptions": {
@@ -717,10 +702,7 @@
                       "id": 3294,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2330:7:15",
                       "typeDescriptions": {
@@ -849,10 +831,7 @@
                       "id": 3302,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2365:7:15",
                       "typeDescriptions": {
@@ -1564,9 +1543,7 @@
               "src": "3773:520:15",
               "statements": [
                 {
-                  "assignments": [
-                    3372
-                  ],
+                  "assignments": [3372],
                   "declarations": [
                     {
                       "constant": false,
@@ -1700,9 +1677,7 @@
                   "src": "3815:44:15"
                 },
                 {
-                  "assignments": [
-                    3382
-                  ],
+                  "assignments": [3382],
                   "declarations": [
                     {
                       "constant": false,
@@ -2436,10 +2411,7 @@
                       "id": 3428,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "5050:7:15",
                       "typeDescriptions": {
@@ -2530,10 +2502,7 @@
                       "id": 3436,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "5090:7:15",
                       "typeDescriptions": {
@@ -3440,21 +3409,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol",
     "exportedSymbols": {
-      "Crowdsale": [
-        3512
-      ]
+      "Crowdsale": [3512]
     },
     "id": 3513,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3249,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:15"
       },
@@ -3523,17 +3485,12 @@
             "src": "892:15:15"
           }
         ],
-        "contractDependencies": [
-          4534
-        ],
+        "contractDependencies": [4534],
         "contractKind": "contract",
         "documentation": "@title Crowdsale\n@dev Crowdsale is a base contract for managing a token crowdsale,\nallowing investors to purchase tokens with ether. This contract implements\nsuch functionality in its most fundamental form and can be extended to provide additional\nfunctionality and/or custom behavior.\nThe external interface represents the basic interface for purchasing tokens, and conform\nthe base architecture for crowdsales. They are *not* intended to be modified / overridden.\nThe internal interface conforms the extensible and modifiable surface of crowdsales. Override\nthe methods to add functionality. Consider using 'super' where appropriate to concatenate\nbehavior.",
         "fullyImplemented": true,
         "id": 3512,
-        "linearizedBaseContracts": [
-          3512,
-          4534
-        ],
+        "linearizedBaseContracts": [3512, 4534],
         "name": "Crowdsale",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3893,10 +3850,7 @@
                       "id": 3288,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2307:7:15",
                       "typeDescriptions": {
@@ -4025,10 +3979,7 @@
                       "id": 3294,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2330:7:15",
                       "typeDescriptions": {
@@ -4157,10 +4108,7 @@
                       "id": 3302,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "2365:7:15",
                       "typeDescriptions": {
@@ -4872,9 +4820,7 @@
               "src": "3773:520:15",
               "statements": [
                 {
-                  "assignments": [
-                    3372
-                  ],
+                  "assignments": [3372],
                   "declarations": [
                     {
                       "constant": false,
@@ -5008,9 +4954,7 @@
                   "src": "3815:44:15"
                 },
                 {
-                  "assignments": [
-                    3382
-                  ],
+                  "assignments": [3382],
                   "declarations": [
                     {
                       "constant": false,
@@ -5744,10 +5688,7 @@
                       "id": 3428,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "5050:7:15",
                       "typeDescriptions": {
@@ -5838,10 +5779,7 @@
                       "id": 3436,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "5090:7:15",
                       "typeDescriptions": {
@@ -6751,5 +6689,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.633Z"
+  "updatedAt": "2019-04-26T19:41:08.330Z"
 }

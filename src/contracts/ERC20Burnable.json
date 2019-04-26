@@ -262,21 +262,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol",
     "exportedSymbols": {
-      "ERC20Burnable": [
-        4147
-      ]
+      "ERC20Burnable": [4147]
     },
     "id": 4148,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4118,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:19"
       },
@@ -312,19 +305,12 @@
             "src": "167:5:19"
           }
         ],
-        "contractDependencies": [
-          4116,
-          4359
-        ],
+        "contractDependencies": [4116, 4359],
         "contractKind": "contract",
         "documentation": "@title Burnable Token\n@dev Token that can be irreversibly burned (destroyed).",
         "fullyImplemented": true,
         "id": 4147,
-        "linearizedBaseContracts": [
-          4147,
-          4116,
-          4359
-        ],
+        "linearizedBaseContracts": [4147, 4116, 4359],
         "name": "ERC20Burnable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -646,21 +632,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol",
     "exportedSymbols": {
-      "ERC20Burnable": [
-        4147
-      ]
+      "ERC20Burnable": [4147]
     },
     "id": 4148,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4118,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:19"
       },
@@ -696,19 +675,12 @@
             "src": "167:5:19"
           }
         ],
-        "contractDependencies": [
-          4116,
-          4359
-        ],
+        "contractDependencies": [4116, 4359],
         "contractKind": "contract",
         "documentation": "@title Burnable Token\n@dev Token that can be irreversibly burned (destroyed).",
         "fullyImplemented": true,
         "id": 4147,
-        "linearizedBaseContracts": [
-          4147,
-          4116,
-          4359
-        ],
+        "linearizedBaseContracts": [4147, 4116, 4359],
         "name": "ERC20Burnable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1033,5 +1005,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.637Z"
+  "updatedAt": "2019-04-26T19:41:08.334Z"
 }

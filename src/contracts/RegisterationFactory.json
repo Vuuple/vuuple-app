@@ -64,21 +64,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/RegisterationFactory.sol",
     "exportedSymbols": {
-      "RegisterationFactory": [
-        2889
-      ]
+      "RegisterationFactory": [2889]
     },
     "id": 2890,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2755,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "88:24:9"
       },
@@ -128,17 +121,12 @@
       },
       {
         "baseContracts": [],
-        "contractDependencies": [
-          643,
-          1845
-        ],
+        "contractDependencies": [643, 1845],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 2889,
-        "linearizedBaseContracts": [
-          2889
-        ],
+        "linearizedBaseContracts": [2889],
         "name": "RegisterationFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -578,10 +566,7 @@
                       "id": 2785,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "882:7:9",
                       "typeDescriptions": {
@@ -779,10 +764,7 @@
                       "id": 2800,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "988:7:9",
                       "typeDescriptions": {
@@ -1794,21 +1776,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/RegisterationFactory.sol",
     "exportedSymbols": {
-      "RegisterationFactory": [
-        2889
-      ]
+      "RegisterationFactory": [2889]
     },
     "id": 2890,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2755,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "88:24:9"
       },
@@ -1858,17 +1833,12 @@
       },
       {
         "baseContracts": [],
-        "contractDependencies": [
-          643,
-          1845
-        ],
+        "contractDependencies": [643, 1845],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 2889,
-        "linearizedBaseContracts": [
-          2889
-        ],
+        "linearizedBaseContracts": [2889],
         "name": "RegisterationFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2308,10 +2278,7 @@
                       "id": 2785,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "882:7:9",
                       "typeDescriptions": {
@@ -2509,10 +2476,7 @@
                       "id": 2800,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "988:7:9",
                       "typeDescriptions": {
@@ -3527,5 +3491,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.630Z"
+  "updatedAt": "2019-04-26T19:41:08.327Z"
 }

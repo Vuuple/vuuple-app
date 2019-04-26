@@ -17,21 +17,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
     "exportedSymbols": {
-      "ReentrancyGuard": [
-        4534
-      ]
+      "ReentrancyGuard": [4534]
     },
     "id": 4535,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4505,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:25"
       },
@@ -42,9 +35,7 @@
         "documentation": "@title Helps contracts guard against reentrancy attacks.\n@author Remco Bloemen <remco@2π.com>, Eenae <alexey@mixbytes.io>\n@dev If you mark a function `nonReentrant`, you should also\nmark it `external`.",
         "fullyImplemented": true,
         "id": 4534,
-        "linearizedBaseContracts": [
-          4534
-        ],
+        "linearizedBaseContracts": [4534],
         "name": "ReentrancyGuard",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -218,9 +209,7 @@
                   "src": "954:18:25"
                 },
                 {
-                  "assignments": [
-                    4522
-                  ],
+                  "assignments": [4522],
                   "declarations": [
                     {
                       "constant": false,
@@ -331,10 +320,7 @@
                       "id": 4526,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1027:7:25",
                       "typeDescriptions": {
@@ -385,21 +371,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol",
     "exportedSymbols": {
-      "ReentrancyGuard": [
-        4534
-      ]
+      "ReentrancyGuard": [4534]
     },
     "id": 4535,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4505,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:25"
       },
@@ -410,9 +389,7 @@
         "documentation": "@title Helps contracts guard against reentrancy attacks.\n@author Remco Bloemen <remco@2π.com>, Eenae <alexey@mixbytes.io>\n@dev If you mark a function `nonReentrant`, you should also\nmark it `external`.",
         "fullyImplemented": true,
         "id": 4534,
-        "linearizedBaseContracts": [
-          4534
-        ],
+        "linearizedBaseContracts": [4534],
         "name": "ReentrancyGuard",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -586,9 +563,7 @@
                   "src": "954:18:25"
                 },
                 {
-                  "assignments": [
-                    4522
-                  ],
+                  "assignments": [4522],
                   "declarations": [
                     {
                       "constant": false,
@@ -699,10 +674,7 @@
                       "id": 4526,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1027:7:25",
                       "typeDescriptions": {
@@ -756,5 +728,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.640Z"
+  "updatedAt": "2019-04-26T19:41:08.337Z"
 }

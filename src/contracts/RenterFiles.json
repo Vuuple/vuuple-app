@@ -195,21 +195,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterFiles.sol",
     "exportedSymbols": {
-      "RenterFiles": [
-        1299
-      ]
+      "RenterFiles": [1299]
     },
     "id": 1300,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 976,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:6"
       },
@@ -220,9 +213,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1299,
-        "linearizedBaseContracts": [
-          1299
-        ],
+        "linearizedBaseContracts": [1299],
         "name": "RenterFiles",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -682,10 +673,7 @@
                       "id": 1009,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4553,
                       "src": "684:7:6",
                       "typeDescriptions": {
@@ -1531,10 +1519,7 @@
                                     "id": 1134,
                                     "name": "revert",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [
-                                      4554,
-                                      4555
-                                    ],
+                                    "overloadedDeclarations": [4554, 4555],
                                     "referencedDeclaration": 4554,
                                     "src": "1895:6:6",
                                     "typeDescriptions": {
@@ -2685,9 +2670,7 @@
               "src": "2388:308:6",
               "statements": [
                 {
-                  "assignments": [
-                    1200
-                  ],
+                  "assignments": [1200],
                   "declarations": [
                     {
                       "constant": false,
@@ -4087,10 +4070,7 @@
                       "id": 1286,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "3265:7:6",
                       "typeDescriptions": {
@@ -4214,21 +4194,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterFiles.sol",
     "exportedSymbols": {
-      "RenterFiles": [
-        1299
-      ]
+      "RenterFiles": [1299]
     },
     "id": 1300,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 976,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:6"
       },
@@ -4239,9 +4212,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1299,
-        "linearizedBaseContracts": [
-          1299
-        ],
+        "linearizedBaseContracts": [1299],
         "name": "RenterFiles",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -4701,10 +4672,7 @@
                       "id": 1009,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4553,
                       "src": "684:7:6",
                       "typeDescriptions": {
@@ -5550,10 +5518,7 @@
                                     "id": 1134,
                                     "name": "revert",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [
-                                      4554,
-                                      4555
-                                    ],
+                                    "overloadedDeclarations": [4554, 4555],
                                     "referencedDeclaration": 4554,
                                     "src": "1895:6:6",
                                     "typeDescriptions": {
@@ -6704,9 +6669,7 @@
               "src": "2388:308:6",
               "statements": [
                 {
-                  "assignments": [
-                    1200
-                  ],
+                  "assignments": [1200],
                   "declarations": [
                     {
                       "constant": false,
@@ -8106,10 +8069,7 @@
                       "id": 1286,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "3265:7:6",
                       "typeDescriptions": {
@@ -8236,5 +8196,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.620Z"
+  "updatedAt": "2019-04-26T19:41:08.317Z"
 }

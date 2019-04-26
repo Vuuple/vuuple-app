@@ -344,21 +344,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Capped.sol",
     "exportedSymbols": {
-      "ERC20Capped": [
-        4204
-      ]
+      "ERC20Capped": [4204]
     },
     "id": 4205,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4149,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:20"
       },
@@ -394,23 +387,12 @@
             "src": "153:13:20"
           }
         ],
-        "contractDependencies": [
-          3247,
-          4116,
-          4290,
-          4359
-        ],
+        "contractDependencies": [3247, 4116, 4290, 4359],
         "contractKind": "contract",
         "documentation": "@title Capped token\n@dev Mintable token with a token cap.",
         "fullyImplemented": true,
         "id": 4204,
-        "linearizedBaseContracts": [
-          4204,
-          4290,
-          3247,
-          4116,
-          4359
-        ],
+        "linearizedBaseContracts": [4204, 4290, 3247, 4116, 4359],
         "name": "ERC20Capped",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -511,10 +493,7 @@
                       "id": 4159,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "241:7:20",
                       "typeDescriptions": {
@@ -858,10 +837,7 @@
                       "id": 4185,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "470:7:20",
                       "typeDescriptions": {
@@ -1066,21 +1042,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Capped.sol",
     "exportedSymbols": {
-      "ERC20Capped": [
-        4204
-      ]
+      "ERC20Capped": [4204]
     },
     "id": 4205,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4149,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:20"
       },
@@ -1116,23 +1085,12 @@
             "src": "153:13:20"
           }
         ],
-        "contractDependencies": [
-          3247,
-          4116,
-          4290,
-          4359
-        ],
+        "contractDependencies": [3247, 4116, 4290, 4359],
         "contractKind": "contract",
         "documentation": "@title Capped token\n@dev Mintable token with a token cap.",
         "fullyImplemented": true,
         "id": 4204,
-        "linearizedBaseContracts": [
-          4204,
-          4290,
-          3247,
-          4116,
-          4359
-        ],
+        "linearizedBaseContracts": [4204, 4290, 3247, 4116, 4359],
         "name": "ERC20Capped",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1233,10 +1191,7 @@
                       "id": 4159,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "241:7:20",
                       "typeDescriptions": {
@@ -1580,10 +1535,7 @@
                       "id": 4185,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "470:7:20",
                       "typeDescriptions": {
@@ -1791,5 +1743,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.638Z"
+  "updatedAt": "2019-04-26T19:41:08.335Z"
 }

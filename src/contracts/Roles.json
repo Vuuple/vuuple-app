@@ -10,21 +10,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
     "exportedSymbols": {
-      "Roles": [
-        3144
-      ]
+      "Roles": [3144]
     },
     "id": 3145,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3052,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:13"
       },
@@ -35,9 +28,7 @@
         "documentation": "@title Roles\n@dev Library for managing addresses assigned to a Role.",
         "fullyImplemented": true,
         "id": 3144,
-        "linearizedBaseContracts": [
-          3144
-        ],
+        "linearizedBaseContracts": [3144],
         "name": "Roles",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -206,10 +197,7 @@
                       "id": 3064,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "308:7:13",
                       "typeDescriptions": {
@@ -332,10 +320,7 @@
                       "id": 3072,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "344:7:13",
                       "typeDescriptions": {
@@ -648,10 +633,7 @@
                       "id": 3096,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "544:7:13",
                       "typeDescriptions": {
@@ -758,10 +740,7 @@
                       "id": 3104,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "580:7:13",
                       "typeDescriptions": {
@@ -1074,10 +1053,7 @@
                       "id": 3129,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "823:7:13",
                       "typeDescriptions": {
@@ -1286,21 +1262,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
     "exportedSymbols": {
-      "Roles": [
-        3144
-      ]
+      "Roles": [3144]
     },
     "id": 3145,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3052,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:13"
       },
@@ -1311,9 +1280,7 @@
         "documentation": "@title Roles\n@dev Library for managing addresses assigned to a Role.",
         "fullyImplemented": true,
         "id": 3144,
-        "linearizedBaseContracts": [
-          3144
-        ],
+        "linearizedBaseContracts": [3144],
         "name": "Roles",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1482,10 +1449,7 @@
                       "id": 3064,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "308:7:13",
                       "typeDescriptions": {
@@ -1608,10 +1572,7 @@
                       "id": 3072,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "344:7:13",
                       "typeDescriptions": {
@@ -1924,10 +1885,7 @@
                       "id": 3096,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "544:7:13",
                       "typeDescriptions": {
@@ -2034,10 +1992,7 @@
                       "id": 3104,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "580:7:13",
                       "typeDescriptions": {
@@ -2350,10 +2305,7 @@
                       "id": 3129,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "823:7:13",
                       "typeDescriptions": {
@@ -2565,5 +2517,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.632Z"
+  "updatedAt": "2019-04-26T19:41:08.329Z"
 }

@@ -132,21 +132,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleICO.sol",
     "exportedSymbols": {
-      "VuupleICO": [
-        3018
-      ]
+      "VuupleICO": [3018]
     },
     "id": 3019,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2998,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:11"
       },
@@ -193,21 +186,12 @@
             "src": "178:15:11"
           }
         ],
-        "contractDependencies": [
-          3512,
-          3544,
-          4534
-        ],
+        "contractDependencies": [3512, 3544, 4534],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 3018,
-        "linearizedBaseContracts": [
-          3018,
-          3544,
-          3512,
-          4534
-        ],
+        "linearizedBaseContracts": [3018, 3544, 3512, 4534],
         "name": "VuupleICO",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -396,21 +380,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleICO.sol",
     "exportedSymbols": {
-      "VuupleICO": [
-        3018
-      ]
+      "VuupleICO": [3018]
     },
     "id": 3019,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2998,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:11"
       },
@@ -457,21 +434,12 @@
             "src": "178:15:11"
           }
         ],
-        "contractDependencies": [
-          3512,
-          3544,
-          4534
-        ],
+        "contractDependencies": [3512, 3544, 4534],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 3018,
-        "linearizedBaseContracts": [
-          3018,
-          3544,
-          3512,
-          4534
-        ],
+        "linearizedBaseContracts": [3018, 3544, 3512, 4534],
         "name": "VuupleICO",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -698,5 +666,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:52.537Z"
+  "updatedAt": "2019-04-26T19:41:17.227Z"
 }

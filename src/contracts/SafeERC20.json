@@ -10,21 +10,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/SafeERC20.sol",
     "exportedSymbols": {
-      "SafeERC20": [
-        4503
-      ]
+      "SafeERC20": [4503]
     },
     "id": 4504,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4361,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:24"
       },
@@ -57,9 +50,7 @@
         "documentation": "@title SafeERC20\n@dev Wrappers around ERC20 operations that throw on failure.\nTo use this library you can add a `using SafeERC20 for ERC20;` statement to your contract,\nwhich allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
         "fullyImplemented": true,
         "id": 4503,
-        "linearizedBaseContracts": [
-          4503
-        ],
+        "linearizedBaseContracts": [4503],
         "name": "SafeERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -193,10 +184,7 @@
                       "id": 4375,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "507:7:24",
                       "typeDescriptions": {
@@ -452,10 +440,7 @@
                       "id": 4395,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "672:7:24",
                       "typeDescriptions": {
@@ -876,10 +861,7 @@
                       "id": 4414,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1036:7:24",
                       "typeDescriptions": {
@@ -1002,10 +984,7 @@
                       "id": 4431,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1110:7:24",
                       "typeDescriptions": {
@@ -1148,9 +1127,7 @@
               "src": "1265:135:24",
               "statements": [
                 {
-                  "assignments": [
-                    4450
-                  ],
+                  "assignments": [4450],
                   "declarations": [
                     {
                       "constant": false,
@@ -1452,10 +1429,7 @@
                       "id": 4462,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1350:7:24",
                       "typeDescriptions": {
@@ -1598,9 +1572,7 @@
               "src": "1512:135:24",
               "statements": [
                 {
-                  "assignments": [
-                    4481
-                  ],
+                  "assignments": [4481],
                   "declarations": [
                     {
                       "constant": false,
@@ -1902,10 +1874,7 @@
                       "id": 4493,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1597:7:24",
                       "typeDescriptions": {
@@ -2051,21 +2020,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/SafeERC20.sol",
     "exportedSymbols": {
-      "SafeERC20": [
-        4503
-      ]
+      "SafeERC20": [4503]
     },
     "id": 4504,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 4361,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:24"
       },
@@ -2098,9 +2060,7 @@
         "documentation": "@title SafeERC20\n@dev Wrappers around ERC20 operations that throw on failure.\nTo use this library you can add a `using SafeERC20 for ERC20;` statement to your contract,\nwhich allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
         "fullyImplemented": true,
         "id": 4503,
-        "linearizedBaseContracts": [
-          4503
-        ],
+        "linearizedBaseContracts": [4503],
         "name": "SafeERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2234,10 +2194,7 @@
                       "id": 4375,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "507:7:24",
                       "typeDescriptions": {
@@ -2493,10 +2450,7 @@
                       "id": 4395,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "672:7:24",
                       "typeDescriptions": {
@@ -2917,10 +2871,7 @@
                       "id": 4414,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1036:7:24",
                       "typeDescriptions": {
@@ -3043,10 +2994,7 @@
                       "id": 4431,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1110:7:24",
                       "typeDescriptions": {
@@ -3189,9 +3137,7 @@
               "src": "1265:135:24",
               "statements": [
                 {
-                  "assignments": [
-                    4450
-                  ],
+                  "assignments": [4450],
                   "declarations": [
                     {
                       "constant": false,
@@ -3493,10 +3439,7 @@
                       "id": 4462,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1350:7:24",
                       "typeDescriptions": {
@@ -3639,9 +3582,7 @@
               "src": "1512:135:24",
               "statements": [
                 {
-                  "assignments": [
-                    4481
-                  ],
+                  "assignments": [4481],
                   "declarations": [
                     {
                       "constant": false,
@@ -3943,10 +3884,7 @@
                       "id": 4493,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1597:7:24",
                       "typeDescriptions": {
@@ -4095,5 +4033,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.639Z"
+  "updatedAt": "2019-04-26T19:41:08.336Z"
 }

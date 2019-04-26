@@ -178,21 +178,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterEscrow.sol",
     "exportedSymbols": {
-      "RenterEscrow": [
-        885
-      ]
+      "RenterEscrow": [885]
     },
     "id": 886,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 702,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:4"
       },
@@ -225,9 +218,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 885,
-        "linearizedBaseContracts": [
-          885
-        ],
+        "linearizedBaseContracts": [885],
         "name": "RenterEscrow",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1072,10 +1063,7 @@
                       "id": 768,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1136:7:4",
                       "typeDescriptions": {
@@ -1203,10 +1191,7 @@
                       "id": 780,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1249:7:4",
                       "typeDescriptions": {
@@ -1318,10 +1303,7 @@
                       "id": 791,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1353:7:4",
                       "typeDescriptions": {
@@ -1449,10 +1431,7 @@
                       "id": 801,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1436:7:4",
                       "typeDescriptions": {
@@ -2371,21 +2350,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterEscrow.sol",
     "exportedSymbols": {
-      "RenterEscrow": [
-        885
-      ]
+      "RenterEscrow": [885]
     },
     "id": 886,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 702,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:4"
       },
@@ -2418,9 +2390,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 885,
-        "linearizedBaseContracts": [
-          885
-        ],
+        "linearizedBaseContracts": [885],
         "name": "RenterEscrow",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3265,10 +3235,7 @@
                       "id": 768,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1136:7:4",
                       "typeDescriptions": {
@@ -3396,10 +3363,7 @@
                       "id": 780,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1249:7:4",
                       "typeDescriptions": {
@@ -3511,10 +3475,7 @@
                       "id": 791,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1353:7:4",
                       "typeDescriptions": {
@@ -3642,10 +3603,7 @@
                       "id": 801,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "1436:7:4",
                       "typeDescriptions": {
@@ -4567,5 +4525,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:43.618Z"
+  "updatedAt": "2019-04-26T19:41:08.315Z"
 }

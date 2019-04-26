@@ -88,21 +88,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
     "exportedSymbols": {
-      "VuupleAdmins": [
-        2996
-      ]
+      "VuupleAdmins": [2996]
     },
     "id": 2997,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2891,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:10"
       },
@@ -124,9 +117,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 2996,
-        "linearizedBaseContracts": [
-          2996
-        ],
+        "linearizedBaseContracts": [2996],
         "name": "VuupleAdmins",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -462,10 +453,7 @@
                       "id": 2916,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "394:7:10",
                       "typeDescriptions": {
@@ -1345,21 +1333,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
     "exportedSymbols": {
-      "VuupleAdmins": [
-        2996
-      ]
+      "VuupleAdmins": [2996]
     },
     "id": 2997,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2891,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:10"
       },
@@ -1381,9 +1362,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 2996,
-        "linearizedBaseContracts": [
-          2996
-        ],
+        "linearizedBaseContracts": [2996],
         "name": "VuupleAdmins",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1719,10 +1698,7 @@
                       "id": 2916,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "394:7:10",
                       "typeDescriptions": {
@@ -2612,5 +2588,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:52.516Z"
+  "updatedAt": "2019-04-26T19:41:17.205Z"
 }

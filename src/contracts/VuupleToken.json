@@ -430,21 +430,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
     "exportedSymbols": {
-      "VuupleToken": [
-        3050
-      ]
+      "VuupleToken": [3050]
     },
     "id": 3051,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3020,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:12"
       },
@@ -538,15 +531,7 @@
             "src": "442:13:12"
           }
         ],
-        "contractDependencies": [
-          3247,
-          4116,
-          4147,
-          4204,
-          4262,
-          4290,
-          4359
-        ],
+        "contractDependencies": [3247, 4116, 4147, 4204, 4262, 4290, 4359],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
@@ -806,21 +791,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
     "exportedSymbols": {
-      "VuupleToken": [
-        3050
-      ]
+      "VuupleToken": [3050]
     },
     "id": 3051,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 3020,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:12"
       },
@@ -914,15 +892,7 @@
             "src": "442:13:12"
           }
         ],
-        "contractDependencies": [
-          3247,
-          4116,
-          4147,
-          4204,
-          4262,
-          4290,
-          4359
-        ],
+        "contractDependencies": [3247, 4116, 4147, 4204, 4262, 4290, 4359],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
@@ -1261,5 +1231,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:52.529Z"
+  "updatedAt": "2019-04-26T19:41:17.219Z"
 }

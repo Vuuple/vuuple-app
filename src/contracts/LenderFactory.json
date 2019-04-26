@@ -78,21 +78,14 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/LendersContracts/LenderFactory.sol",
     "exportedSymbols": {
-      "LenderFactory": [
-        292
-      ]
+      "LenderFactory": [292]
     },
     "id": 293,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 182,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:1"
       },
@@ -131,16 +124,12 @@
       },
       {
         "baseContracts": [],
-        "contractDependencies": [
-          643
-        ],
+        "contractDependencies": [643],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 292,
-        "linearizedBaseContracts": [
-          292
-        ],
+        "linearizedBaseContracts": [292],
         "name": "LenderFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -624,10 +613,7 @@
                       "id": 214,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "771:7:1",
                       "typeDescriptions": {
@@ -1470,21 +1456,14 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/LendersContracts/LenderFactory.sol",
     "exportedSymbols": {
-      "LenderFactory": [
-        292
-      ]
+      "LenderFactory": [292]
     },
     "id": 293,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 182,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".24"
-        ],
+        "literals": ["solidity", "^", "0.4", ".24"],
         "nodeType": "PragmaDirective",
         "src": "0:24:1"
       },
@@ -1523,16 +1502,12 @@
       },
       {
         "baseContracts": [],
-        "contractDependencies": [
-          643
-        ],
+        "contractDependencies": [643],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 292,
-        "linearizedBaseContracts": [
-          292
-        ],
+        "linearizedBaseContracts": [292],
         "name": "LenderFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2016,10 +1991,7 @@
                       "id": 214,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4552,
-                        4553
-                      ],
+                      "overloadedDeclarations": [4552, 4553],
                       "referencedDeclaration": 4552,
                       "src": "771:7:1",
                       "typeDescriptions": {
@@ -2872,5 +2844,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-25T13:00:52.541Z"
+  "updatedAt": "2019-04-26T19:41:17.231Z"
 }
