@@ -21,7 +21,20 @@
   padding-top: 5%;
   padding-bottom: 5%;
 }
-
+.backButton {
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	color: white;
+    background-color:#0077b5;
+    border-radius: 10px;
+    height: 40px;
+    -webkit-appearance: button-bevel;
+    line-height: initial;
+	font-size: 20px;
+	width: 60%;
+	margin-top: 20px
+}
 h4, h2 {
   color: #0077b5;
   margin-bottom: 2%;
@@ -41,6 +54,7 @@ p {
   font-family: initial;
   font-size: 15px;
   font-weight: bolder;
+  word-break: break-all;
 }
 
 table {
