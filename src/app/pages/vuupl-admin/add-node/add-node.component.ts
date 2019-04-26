@@ -1,3 +1,4 @@
+import { RenterFactoryService } from './../../../providers/renter-factory/renter-factory.service';
 import { LendersFactoryService } from './../../../providers/lenders-factory/lenders-factory.service';
 // import { RentersFactoryService } from './../../../providers/renters-factory/renters-factory.service';
 import { LendersRegistrationService } from './../../../providers/lenders-registration/lenders-registration.service';
@@ -22,6 +23,7 @@ const request = require('../../../../assets/js/helpers/requests.js');
     LendersFactoryService,
     LendersRegistrationService,
     NetworkService,
+    RenterFactoryService,
     LenderEscrowService
     // RentersRegistrationService
   ]
@@ -39,8 +41,8 @@ export class AddNodeComponent implements OnInit {
   node: IUser;
   escrow: {
     escrowAddress: string;
-    issueDate: string;
-    endDate: string;
+    issueDate: Date;
+    endDate: Date;
     category: string;
   };
   lendercontract: any;
@@ -51,7 +53,7 @@ export class AddNodeComponent implements OnInit {
     private route: ActivatedRoute,
     private lenderEscrowService: LenderEscrowService,
     private lendersFactoryService: LendersFactoryService,
-    // private rentersRegistrationService: RentersRegistrationService,
+    private rentersFactoryService: RenterFactoryService,
     private lendersRegistrationService: LendersRegistrationService
   ) {}
 
@@ -64,32 +66,54 @@ export class AddNodeComponent implements OnInit {
         this.serverApiService.getUser(this.id).subscribe(data => {
           console.log(data);
           this.node = data;
+          console.log(this.node, '  if this.node');
         });
       }
     });
+    console.log(this.node, '   this.node');
   }
 
   async approve() {
     // unloack his account
+    const contract = await this.rentersFactoryService.getRenterContract(
+      this.node.ethAddress
+    );
+    const index = await this.rentersFactoryService.getRenterIndex();
+    console.log(index, 'index');
+    console.log(contract, 'contract');
 
-    const data = await this._addToNetwork();
+    //  const data = await this._addToNetwork();
     if (this.node.category == 'lender') {
       //TODO: need to update docker file to set storage value
-      //  await this._approveOnContract();
+      await this._approveOnContract();
+    } else {
     }
-    await this._saveToDatabase(data);
-    await this._emailUser();
+
+    // await this._saveToDatabase(data);
+    // await this._emailUser();
   }
 
   async _approveOnContract() {
+    console.log(this.node.ethAddress, ' this.node.ethAddress');
+
+    const lenderIndex = await this.lendersFactoryService.lenderIndex();
+    console.log(lenderIndex, 'lenderIndex');
+
     this.lendercontract = await this.lendersFactoryService.getLenderContract(
       this.node.ethAddress
     );
-    console.log(this.lendercontract, 'lendercontract');
-    if (this.lendercontract != '0x') {
+    if (this.lendercontract != '0x0000000000000000000000000000000000000000') {
+      console.log(this.lendercontract, 'lendercontract');
+
       await this.lendersRegistrationService.approve(this.lendercontract);
       //get escrow data and save it in db
+      const isApproved = await this.lendersRegistrationService.approved(
+        this.lendercontract
+      );
+      console.log(isApproved, 'isApproved');
+
       await this.getEscrowData();
+      await this.addEscrowData();
     } else {
       this.errorMessage = 'no contract found';
     }
@@ -119,7 +143,9 @@ export class AddNodeComponent implements OnInit {
     return raftId;
   }
   async _saveToDatabase(data) {
-    await this.serverApiService.approve(this.node.id, { raftId: data });
+    await this.serverApiService
+      .approve(this.node['_id'], { raftId: data })
+      .subscribe(s => console.log(s, 'approved'));
   }
   async _emailUser() {
     const mail = await sendConfirmationMail(this.node.email);
@@ -134,20 +160,30 @@ export class AddNodeComponent implements OnInit {
 }"*/
     this.escrow = {
       escrowAddress: '',
-      issueDate: '',
-      endDate: '',
+      issueDate: null,
+      endDate: null,
       category: 'lender'
     };
+    this.escrow.category = 'lender';
+    console.log(this.escrow.category, 'this.escrow.category');
+
     this.escrow.escrowAddress = await this.lendersRegistrationService.escrow(
       this.lendercontract
     );
-    this.escrow.issueDate = await this.lendersRegistrationService.registerDate(
-      this.lendercontract
+    console.log(this.escrow.escrowAddress, 'this.escrow.escrowAddress');
+
+    this.escrow.issueDate = new Date(
+      (await this.lendersRegistrationService.registerDate(
+        this.lendercontract
+      )) * 1000
     );
-    this.escrow.endDate = await this.lenderEscrowService.closeTime(
-      this.escrow.escrowAddress
+    console.log(this.escrow.issueDate, ' this.escrow.issueDate ');
+
+    this.escrow.endDate = new Date(
+      (await this.lenderEscrowService.closeTime(this.escrow.escrowAddress)) *
+        1000
     );
-    this.addEscrowData();
+    console.log(this.escrow.endDate, ' this.escrow.endDate');
   }
   async addEscrowData() {
     this.serverApiService
