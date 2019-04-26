@@ -49,16 +49,16 @@ export class RenterRegisterComponent implements OnInit {
       privacyPolicy: ['', Validators.required]
     });
     this.route.queryParams.subscribe(params => {
-      const type = params['trype'];
+      const type = params['type'];
       console.log(type, ' type');
 
       if (type != undefined && type != null) {
-        if (type == 'Org') {
-          this.srcImage = '../../../assets/img/companyRenter.png';
+        if (type == 'org') {
+          // this.srcImage = '../../../assets/img/companyRenter.png';
           this.currentType = 0;
         } else {
           this.currentType = 1;
-          this.srcImage = '../../../assets/img/individualRenter.png';
+          // this.srcImage = '../../../assets/img/individualRenter.png';
         }
       }
     });

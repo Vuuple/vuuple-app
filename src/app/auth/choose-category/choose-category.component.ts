@@ -7,17 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./choose-category.component.scss']
 })
 export class ChooseCategoryComponent implements OnInit {
-  category : any ;
-  constructor(private router : Router) { }
+  category: any;
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-  }
-  valueChange(values:any){
-    this.category = values.target.defaultValue;
-    console.log(this.category);
-    this.router.navigate(['/auth/renterRegister'], { queryParams: { val : this.category} });
-      }
-  returnToLogin(){
+  ngOnInit() {}
+  // setAccountType(val) {
+  //   if (val == 0) {
+  //     this.router.navigate(['/auth/renterRegister'], {
+  //       queryParams: { type: 'org' }
+  //     });
+  //   } else {
+  //     this.router.navigate(['/auth/renterRegister'], {
+  //       queryParams: { type: 'Individual' }
+  //     });
+  //   }
+  // }
+  // valueChange(values: any) {
+  //   this.category = values.target.defaultValue;
+  //   console.log(this.category, 'category');
+  //   this.router.navigate(['/auth/renterRegister'], {
+  //     queryParams: { type: this.category }
+  //   });
+  // }
+  returnToLogin() {
     this.router.navigate(['/auth/login']);
-   }
+  }
 }
