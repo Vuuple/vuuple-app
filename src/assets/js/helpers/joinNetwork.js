@@ -21,9 +21,17 @@ async function getRaftId(ip, endpoint, enode) {
 
   return { id };
 }
-async function sendConfirmationMail(to) {
+async function sendConfirmationMail(to, userName, category, raftId) {
   //TODO: zip the folder and send it
   // send
+  template.networkConfirmation.body[1] = userName;
+  template.networkConfirmation.body[4] = category;
+  template.networkConfirmation.body[7] = raftId;
+  console.log(
+    template.networkConfirmation.body,
+    ' template.networkConfirmation.body'
+  );
+
   return await mailer.send_email(
     to,
     '"Vuuple App" <support@vuuple.com>',

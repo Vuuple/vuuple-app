@@ -38,6 +38,7 @@ export class AddNodeComponent implements OnInit {
   // };
 
   id;
+  raftId;
   node: IUser;
   escrow: {
     escrowAddress: string;
@@ -67,29 +68,28 @@ export class AddNodeComponent implements OnInit {
         this.serverApiService.getUser(this.id).subscribe(data => {
           console.log(data);
           this.node = data;
-          this.test();
           console.log(this.node, '  if this.node');
         });
       }
     });
     console.log(this.node, '   this.node');
   }
-  async test() {
-    console.log(this.node.ethAddress, ' this.node.ethAddress');
+  // async test() {
+  //   console.log(this.node.ethAddress, ' this.node.ethAddress');
 
-    const lenderIndex = await this.lendersFactoryService.lenderIndex();
-    console.log(lenderIndex, 'lenderIndex');
+  //   const lenderIndex = await this.lendersFactoryService.lenderIndex();
+  //   console.log(lenderIndex, 'lenderIndex');
 
-    this.lendercontract = await this.lendersFactoryService.getLenderContract(
-      this.node.ethAddress
-    );
-    const isApproved = await this.lendersRegistrationService.approved(
-      this.lendercontract
-    );
-    this.getEscrowData();
-    console.log(isApproved, 'lendercontract');
-    console.log(this.lendercontract, 'lendercontract');
-  }
+  //   this.lendercontract = await this.lendersFactoryService.getLenderContract(
+  //     this.node.ethAddress
+  //   );
+  //   const isApproved = await this.lendersRegistrationService.approved(
+  //     this.lendercontract
+  //   );
+  //   this.getEscrowData();
+  //   console.log(isApproved, 'lendercontract');
+  //   console.log(this.lendercontract, 'lendercontract');
+  // }
   async approve() {
     // unloack his account
     const contract = await this.rentersFactoryService.getRenterContract(
@@ -145,18 +145,17 @@ export class AddNodeComponent implements OnInit {
     console.log(enode, 'enode in c');
 
     // const raftId = await this.networkService.addRaftPeer(enode);
-    let raftId;
     const resObj = await request.curlRaftAddPeer(enode);
     console.log(resObj, 'resObj');
     if (resObj.result == undefined) {
-      raftId = null;
+      this.raftId = null;
       console.log(resObj);
     } else {
-      raftId = resObj.result;
-      console.log(raftId, 'raftIdd');
+      this.raftId = resObj.result;
+      console.log(this.raftId, 'raftIdd');
     }
 
-    return raftId;
+    return this.raftId;
   }
   async _saveToDatabase(data) {
     await this.serverApiService
@@ -164,7 +163,12 @@ export class AddNodeComponent implements OnInit {
       .subscribe(s => console.log(s, 'approved'));
   }
   async _emailUser() {
-    const mail = await sendConfirmationMail(this.node.email);
+    const mail = await sendConfirmationMail(
+      this.node.email,
+      this.node.username,
+      this.node.category,
+      this.raftId
+    );
     console.log(mail, 'testmail');
   }
   async getEscrowData() {

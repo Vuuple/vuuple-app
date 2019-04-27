@@ -1,214 +1,219 @@
 {
-    "resetPassword": {
-        "subject": "4-Digit Code",
-        "body": [
-            "Hello,",
-            "",
-            "You requested to reset your password. Please enter the 5-digit code below:",
-            "    x x x x x",
-            "The code will expire in 30 seconds.",
-            "If you did not request to reset your password, please ignore this email.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "networkConfirmation": {
-        "subject": "Welcome to Vuuple!",
-        "body": [
-            "Hello,",
-            "",
-            "You have been approved to join the Vuuple Network as a {category} (either individual renter, company renter, or lender). Please log in to your desktop application to access your account.",
-            "If you did not create a Vuuple account, please email support@vuuple.com.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "purchaseNotification": {
-        "subject": " VUUPLE Tokens Purchase",
-        "body": [
-            "Hello,",
-            "",
-            "We have received your request to purchase {number} VUUPLE. We are processing the transaction now. Once completed, the tokens will be deposited into your wallet. You can use, transfer, or redeem your tokens at any time.",
-            "If you did not request to purchase VUUPLE, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "redemptionNotification": {
-        "subject": "VUUPLE Tokens Redemption",
-        "body": [
-            "Hello,",
-            "",
-            "We have received your request to redeem {number} VUUPLE. We are processing the transaction now. Once completed, the fiat currency will be deposited into your wallet and you will be able to transfer the money.",
-            "If you did not request to redeem your VUUPLE, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "renterStoragePurchase": {
-        "subject": "Storage Purchased",
-        "body": [
-            "Hello,",
-            "",
-            "You have purchased {number} GB of storage for one month (approximately 30 days). Your contract will automatically renew on the day of expiration. If you do not want to renew your contract, please log in to your dashboard and adjust your plan under the account tab.",
-            "Note: You cannot cancel your plan once you purchase your monthly storage, but you will not be charged for storage you do not use.",
-            "If you did not purchase any storage, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "renterContractEnding": {
-        "subject": "Contract Expiration",
-        "body": [
-            "Hello,",
-            "",
-            "Your renter's storage contract expires in 24 hours. <b>If you plan to renew your plan</b>, please ensure you have selected to do so under the accounts tab in your dashboard. <b>If you do not wish to renew your plan</b>, please ensure you have deselected the option to renew in the same tab.",
-            "If you have any questions, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "lenderContractEnding": {
-        "subject": "Contract Expiration",
-        "body": [
-            "Hello,",
-            "",
-            "Your lender's contract expires in 24 hours. <b>If you plan to renew your plan</b>, please ensure you have selected to do so under the accounts tab in your dashboard. <b>If you do not wish to renew your plan</b>, please ensure you have deselected the option to renew in the same tab.",
-            "If you have any questions, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "lenderStorageAllocation": {
-        "subject": "Allocation of Storage",
-        "body": [
-            "Hello,",
-            "",
-            "You have chosen to allocate {number} GB of your storage space this month (approximately 30 days). You will not have access to use that space at any time during the contract period. Please continuously check your reputation points to remain in good standing with the Network.  If at any point you choose to cancel your contract, please contact support@vuuple.com.",
-            "Note: You will only receive token payment for storage hosted on your device. Payment is calculated as a function of time. If you cancel your contract, you will not receive any token payment.",
-            "If you did not chose to allocate your storage space to the Network, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "transferVuuple": {
-        "subject": "VUUPLE Transfer",
-        "body": [
-            "Hello,",
-            "",
-            "You have transferred {number} VUUPLE out of your wallet.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "TransferFiat": {
-        "subject": "Fiat Currency Transfer",
-        "body": [
-            "Hello,",
-            "",
-            "You have transferred USD {number} out of your wallet.",
-            "If you did not transfer any fiat currency out of your wallet, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "changeEmail": {
-        "subject": "Email Change",
-        "body": [
-            "Hello,",
-            "",
-            "You have successfully changed your email to {email name}.",
-            "If you did not change your email, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "changePassword": {
-        "subject": "Password Change",
-        "body": [
-            "Hello,",
-            "",
-            "You have successfully changed your password.",
-            "If you did not change your password, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "lenderPayment": {
-        "subject": "Lender's Payment",
-        "body": [
-            "Hello,",
-            "",
-            "You have received {number} VUUPLE for lending your storage. The tokens are being distributed to your wallet. Please review the breakdown we provided:",
-            "Dates: {month, day, year}-{month, day, year}",
-            "Data Allocated: {number} GB",
-            "Data Used: {number} GB",
-            "Payment: .02 VUUPLE/GB/Month",
-            "Time Storage was Used on Network: {number}Days {number}Hours {number}Minutes {number}Seconds",
-            "Payment Received: {number}VUUPLE",
-            "",
-            "If you did not allocate storage to the network, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    },
-    "renterPayment": {
-        "subject": "Renter's Payment",
-        "body": [
-            "Hello,",
-            "",
-            "You have paid Vuuple, Inc. {number} VUUPLE for renting storage. Please review the breakdown we provided:",
-            "Dates: {month, day, year}-{month, day, year}",
-            "Storage Rented: {number} GB",
-            "Storage Used: {Number} GB",
-            "Payment: 0.10 VUUPLE/GB/Month",
-            "Payment Charged: {number} VUUPLE",
-            "Note: You are charged for the largest amount of data you used any time during the contract.",
-            "If you did not purchase data, please email support@vuuple.com immediately.",
-            "",
-            "Thank you for using Vuuple!",
-            "",
-            "Sincerely,",
-            "The Vuuple Team"
-        ]
-    }
+  "resetPassword": {
+    "subject": "4-Digit Code",
+    "body": [
+      "Hello,",
+      "",
+      "You requested to reset your password. Please enter the 5-digit code below:",
+      "    x x x x x",
+      "The code will expire in 30 seconds.",
+      "If you did not request to reset your password, please ignore this email.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "networkConfirmation": {
+    "subject": "Welcome to Vuuple!",
+    "body": [
+      "Hello,",
+      "{userName}",
+      "",
+      "You have been approved to join the Vuuple Network as a ",
+      "{category}",
+      " . Please log in to your desktop application and update your raft id in setting.",
+      "Your Raft Id is ",
+      "{raftID}",
+      "If you did not create a Vuuple account, please email support@vuuple.com.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "purchaseNotification": {
+    "subject": " VUUPLE Tokens Purchase",
+    "body": [
+      "Hello,",
+      "",
+      "We have received your request to purchase {number} VUUPLE. We are processing the transaction now. Once completed, the tokens will be deposited into your wallet. You can use, transfer, or redeem your tokens at any time.",
+      "If you did not request to purchase VUUPLE, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "redemptionNotification": {
+    "subject": "VUUPLE Tokens Redemption",
+    "body": [
+      "Hello,",
+      "",
+      "We have received your request to redeem {number} VUUPLE. We are processing the transaction now. Once completed, the fiat currency will be deposited into your wallet and you will be able to transfer the money.",
+      "If you did not request to redeem your VUUPLE, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "renterStoragePurchase": {
+    "subject": "Storage Purchased",
+    "body": [
+      "Hello,",
+      "",
+      "You have purchased {number} GB of storage for one month (approximately 30 days). Your contract will automatically renew on the day of expiration. If you do not want to renew your contract, please log in to your dashboard and adjust your plan under the account tab.",
+      "Note: You cannot cancel your plan once you purchase your monthly storage, but you will not be charged for storage you do not use.",
+      "If you did not purchase any storage, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "renterContractEnding": {
+    "subject": "Contract Expiration",
+    "body": [
+      "Hello,",
+      "",
+      "Your renter's storage contract expires in 24 hours. <b>If you plan to renew your plan</b>, please ensure you have selected to do so under the accounts tab in your dashboard. <b>If you do not wish to renew your plan</b>, please ensure you have deselected the option to renew in the same tab.",
+      "If you have any questions, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "lenderContractEnding": {
+    "subject": "Contract Expiration",
+    "body": [
+      "Hello,",
+      "",
+      "Your lender's contract expires in 24 hours. <b>If you plan to renew your plan</b>, please ensure you have selected to do so under the accounts tab in your dashboard. <b>If you do not wish to renew your plan</b>, please ensure you have deselected the option to renew in the same tab.",
+      "If you have any questions, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "lenderStorageAllocation": {
+    "subject": "Allocation of Storage",
+    "body": [
+      "Hello,",
+      "",
+      "You have chosen to allocate {number} GB of your storage space this month (approximately 30 days). You will not have access to use that space at any time during the contract period. Please continuously check your reputation points to remain in good standing with the Network.  If at any point you choose to cancel your contract, please contact support@vuuple.com.",
+      "Note: You will only receive token payment for storage hosted on your device. Payment is calculated as a function of time. If you cancel your contract, you will not receive any token payment.",
+      "If you did not chose to allocate your storage space to the Network, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "transferVuuple": {
+    "subject": "VUUPLE Transfer",
+    "body": [
+      "Hello,",
+      "",
+      "You have transferred {number} VUUPLE out of your wallet.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "TransferFiat": {
+    "subject": "Fiat Currency Transfer",
+    "body": [
+      "Hello,",
+      "",
+      "You have transferred USD {number} out of your wallet.",
+      "If you did not transfer any fiat currency out of your wallet, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "changeEmail": {
+    "subject": "Email Change",
+    "body": [
+      "Hello,",
+      "",
+      "You have successfully changed your email to {email name}.",
+      "If you did not change your email, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "changePassword": {
+    "subject": "Password Change",
+    "body": [
+      "Hello,",
+      "",
+      "You have successfully changed your password.",
+      "If you did not change your password, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "lenderPayment": {
+    "subject": "Lender's Payment",
+    "body": [
+      "Hello,",
+      "",
+      "You have received {number} VUUPLE for lending your storage. The tokens are being distributed to your wallet. Please review the breakdown we provided:",
+      "Dates: {month, day, year}-{month, day, year}",
+      "Data Allocated: {number} GB",
+      "Data Used: {number} GB",
+      "Payment: .02 VUUPLE/GB/Month",
+      "Time Storage was Used on Network: {number}Days {number}Hours {number}Minutes {number}Seconds",
+      "Payment Received: {number}VUUPLE",
+      "",
+      "If you did not allocate storage to the network, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  },
+  "renterPayment": {
+    "subject": "Renter's Payment",
+    "body": [
+      "Hello,",
+      "",
+      "You have paid Vuuple, Inc. {number} VUUPLE for renting storage. Please review the breakdown we provided:",
+      "Dates: {month, day, year}-{month, day, year}",
+      "Storage Rented: {number} GB",
+      "Storage Used: {Number} GB",
+      "Payment: 0.10 VUUPLE/GB/Month",
+      "Payment Charged: {number} VUUPLE",
+      "Note: You are charged for the largest amount of data you used any time during the contract.",
+      "If you did not purchase data, please email support@vuuple.com immediately.",
+      "",
+      "Thank you for using Vuuple!",
+      "",
+      "Sincerely,",
+      "The Vuuple Team"
+    ]
+  }
 }
