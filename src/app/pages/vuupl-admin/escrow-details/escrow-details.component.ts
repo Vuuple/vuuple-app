@@ -4,6 +4,7 @@ import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
 import { LenderEscrowService } from '../../../providers/lenders-escrow/lenders-escrow.service';
 import { RenterEscrowService } from '../../../providers/renter-escrow/renter-escrow.service';
+import { AuthService } from '../../../auth/core/auth.service';
 
 @Component({
   selector: 'app-escrow-details',
@@ -18,13 +19,19 @@ export class EscrowDetailsComponent implements OnInit {
   category: any;
   escrow;
   EscrowStatus = ['Active', 'Completed', 'Closed'];
+  ready = false;
+  currentUser: any;
   constructor(
     private lenderEscrowService: LenderEscrowService,
     private renterEscrowService: RenterEscrowService,
     private route: ActivatedRoute,
+    private authservics: AuthService,
+
     private router: Router
   ) {}
   ngOnInit() {
+    this.currentUser = this.authservics.currentUser;
+
     this.route.queryParams.subscribe(params => {
       console.log(params, 'params');
 
@@ -72,6 +79,13 @@ export class EscrowDetailsComponent implements OnInit {
     console.log(this.escrow.closeTime, ' this.escrow.closeTime');
     this.escrow.issueDate = end;
     console.log(this.escrow, '   this.escrow');
+    if (
+      this.escrow.isActive &&
+      this.escrow.closeTime > Date.now() &&
+      this.escrow.userAddress == this.currentUser.ethAddress
+    ) {
+      this.ready = true;
+    }
   }
   async getRenterScrowDetails() {
     this.escrow = {};
@@ -99,6 +113,15 @@ export class EscrowDetailsComponent implements OnInit {
     console.log(this.escrow.closeTime, ' this.escrow.closeTime');
     this.escrow.issueDate = end;
     console.log(this.escrow, '   this.escrow');
+    if (this.escrow.isActive && this.escrow.closeTime > Date.now()) {
+      this.ready = true;
+    }
   }
-  withdraw() {}
+  async withdraw() {
+    if (this.category == 'lender') {
+      await this.lenderEscrowService.withdraw(this.address);
+    } else if (this.category == 'renter') {
+      await this.renterEscrowService.withdraw(this.address);
+    }
+  }
 }
