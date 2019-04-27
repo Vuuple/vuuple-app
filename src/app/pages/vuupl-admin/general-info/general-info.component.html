@@ -45,7 +45,17 @@
         <td>{{ item?.ip }}</td>
         <td>{{ item?.ethAddress }}</td>
 
-        <td [ngClass]="(item?.status =='pending') ? 'pending': (item?.status == 'approved') ? 'approved' : panned ">{{ item?.status }}</td>
+        <td
+          [ngClass]="
+            item?.status == 'pending'
+              ? 'pending'
+              : item?.status == 'approved'
+              ? 'approved'
+              : 'panned'
+          "
+        >
+          {{ item?.status }}
+        </td>
         <td style="border-right:none">
           <button class="action">
             <a
