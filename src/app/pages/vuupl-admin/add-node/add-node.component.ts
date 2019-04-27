@@ -108,6 +108,7 @@ export class AddNodeComponent implements OnInit {
 
     await this._saveToDatabase(data);
     await this._emailUser();
+    this.goBack();
   }
 
   async _approveOnContract() {
@@ -218,7 +219,19 @@ export class AddNodeComponent implements OnInit {
   }
 
   async reject() {
-    await this.serverApiService.reject(this.node.id);
+    await this.serverApiService
+      .reject(this.node['_id'])
+      .toPromise()
+      .then(s => {
+        console.log(s, 's');
+
+        this.goBack();
+      })
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
+      });
+    this.goBack();
   }
   goBack() {
     this.router.navigate(['/pages/admin/request']);
