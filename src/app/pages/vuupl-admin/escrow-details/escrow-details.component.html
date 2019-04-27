@@ -97,8 +97,14 @@
         </div>
       </div>
       <div class="row" style="padding-top:4%;float:right;margin-right: 0.50%">
-        <button class="action">withdraw</button>
-        <button class="action" (click)="gotToback()">back</button>
+        <div class="col-md-6">
+          <button class="action" [disabled]="!ready" (click)="withdraw()">
+            withdraw
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="action" (click)="gotToback()">back</button>
+        </div>
       </div>
     </div>
     <div class="col-md-2"></div>
