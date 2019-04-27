@@ -143,7 +143,7 @@ export class LenderEscrowService {
   /**
    * Getter functions
    */
-  async isActive(escrowAddress) {
+  async getIsActive(escrowAddress) {
     const result = await this.lender_escrow
       .at(escrowAddress)
       .isActive.call()
@@ -159,7 +159,7 @@ export class LenderEscrowService {
     return result;
   }
 
-  async escrowStatus(escrowAddress) {
+  async getEscrowStatus(escrowAddress) {
     const result = await this.lender_escrow
       .at(escrowAddress)
       .escrowStatus.call()
@@ -175,7 +175,7 @@ export class LenderEscrowService {
     return result;
   }
 
-  async closeTime(escrowAddress) {
+  async getCloseTime(escrowAddress) {
     const result = await this.lender_escrow
       .at(escrowAddress)
       .closeTime.call()
@@ -191,7 +191,7 @@ export class LenderEscrowService {
     return result;
   }
 
-  async lenderAccountContract(escrowAddress) {
+  async getLenderAccountContract(escrowAddress) {
     const result = await this.lender_escrow
       .at(escrowAddress)
       .lenderAccountContract.call()
@@ -207,7 +207,7 @@ export class LenderEscrowService {
     return result;
   }
 
-  async lender(escrowAddress) {
+  async getLender(escrowAddress) {
     const result = await this.lender_escrow
       .at(escrowAddress)
       .lender.call()
@@ -223,7 +223,7 @@ export class LenderEscrowService {
     return result;
   }
 
-  async tokenAmount(escrowAddress) {
+  async getTokenAmount(escrowAddress) {
     const result = await this.lender_escrow
       .at(escrowAddress)
       .tokenAmount.call()

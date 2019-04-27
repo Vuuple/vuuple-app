@@ -193,7 +193,7 @@ export class AddNodeComponent implements OnInit {
     // console.log(issue, 'issue date');
 
     this.escrow.endDate = new Date(
-      (await this.lenderEscrowService.closeTime(this.escrow.escrowAddress)) *
+      (await this.lenderEscrowService.getCloseTime(this.escrow.escrowAddress)) *
         1000
     );
     let end = new Date(this.escrow.endDate);

@@ -18,9 +18,9 @@
           <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
             Address
           </th>
-          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          <!-- <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
             Renter/Lender Address
-          </th>
+          </th> -->
           <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
             Issue Date
           </th>
@@ -28,7 +28,7 @@
             End Date
           </th>
           <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-            Account address
+            Status
           </th>
           <th style="padding-top:15px ; padding-bottom:15px">Action</th>
         </tr>
@@ -36,15 +36,28 @@
       <tbody>
         <tr *ngFor="let item of escrows; let i = index">
           <td>{{ i }}</td>
-          <td>{{ item?.address }}</td>
-          <td>{{ item?.renterLenderAddress }}</td>
+          <td>{{ item?.escrowAddress }}</td>
+          <!-- <td>{{ item?.renterLenderAddress }}</td> -->
           <td>{{ item?.issueDate }}</td>
           <td>{{ item?.endDate }}</td>
-          <td>{{ item?.accountAddress }}</td>
+          <td>{{ item?.status }}</td>
           <td style="border-right:none">
-            <button class="action" (click)="goToDetails(item?.address)">
+            <button
+              class="action"
+              (click)="goToDetails(item?.escrowAddress, item?.category)"
+            >
               VIEW
             </button>
+            <!--      <button>
+              <a
+                [routerLink]="['/pages/admin/escrowDetails']"
+                [queryParams]="{
+                  address: item?.escrowAddress,
+                  category: item?.category
+                }"
+              >
+                VIEW
+              </a> -->
           </td>
         </tr>
       </tbody>

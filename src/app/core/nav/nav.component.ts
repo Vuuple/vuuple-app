@@ -44,6 +44,7 @@ export class NavComponent implements OnInit {
     { name: 'Dashboard', link: '/pages/admin/main' },
     { name: 'wallet ', link: '/pages/admin/wallet' },
     { name: 'REQUEST', link: '/pages/admin/request' },
+    { name: 'ESCROWS', link: '/pages/admin/escrow' },
     {
       name: 'INDIVIDUAL ',
       link: '/pages/admin/individualRenter',

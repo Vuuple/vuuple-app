@@ -15,14 +15,15 @@
   padding-bottom: 5%;
 }
 
-h4, h2 {
+h4,
+h2 {
   color: #0077b5;
   margin-bottom: 2%;
 }
 
 label {
   text-align: center;
-  color: #29ABE2;
+  color: #29abe2;
   margin-bottom: 3%;
   font-family: initial;
   font-size: 15px;
@@ -44,10 +45,11 @@ table {
 }
 
 thead > tr {
-  border-bottom: 1px solid #29ABE2;
+  border-bottom: 1px solid #29abe2;
 }
 
-td, th {
+td,
+th {
   padding: 6px;
   text-align: center;
 }
@@ -56,7 +58,7 @@ td, th {
   tbody > tr > td {
     line-height: 1.42857143;
     vertical-align: middle;
-    border-right: 1px solid #29ABE2;
+    border-right: 1px solid #29abe2;
     border-top: none;
   }
   thead > tr > th {
@@ -66,7 +68,11 @@ td, th {
 }
 
 @media all and (max-width: 500px) {
-  table, thead, tbody, th, td {
+  table,
+  thead,
+  tbody,
+  th,
+  td {
     display: block;
   }
   tr {
@@ -92,4 +98,7 @@ td, th {
   color: white;
   padding: 6px;
   font-size: 12px;
+}
+a {
+  color: white;
 }

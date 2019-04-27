@@ -17,6 +17,7 @@ export class EscrowDetailsComponent implements OnInit {
   address: any;
   category: any;
   escrow;
+  EscrowStatus = ['Active', 'Completed', 'Closed'];
   constructor(
     private lenderEscrowService: LenderEscrowService,
     private renterEscrowService: RenterEscrowService,
@@ -24,12 +25,19 @@ export class EscrowDetailsComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+    this.route.queryParams.subscribe(params => {
+      console.log(params, 'params');
+
       this.address = params['address'];
       this.category = params['category'];
+      console.log(this.category, 'category');
+      console.log(this.address, 'address');
+
       if (this.address != null && this.address != undefined) {
         if (this.category == 'lender') {
-        } else if (this.category == 'lender') {
+          this.getLenderScrowDetails();
+        } else if (this.category == 'renter') {
+          this.getRenterScrowDetails();
         }
       }
     });
@@ -40,21 +48,38 @@ export class EscrowDetailsComponent implements OnInit {
     this.router.navigate(['/pages/admin/escrow']);
   }
   async getLenderScrowDetails() {
-    this.escrow.escrowStatus = await this.lenderEscrowService.escrowStatus(
+    this.escrow = {};
+    this.escrow.escrowStatus = await this.lenderEscrowService.getEscrowStatus(
       this.address
     );
-    this.escrow.tokenAmount = await this.lenderEscrowService.tokenAmount(
+    this.escrow.userAddress = await this.lenderEscrowService.getLender(
       this.address
     );
-    this.escrow.isActive = await this.lenderEscrowService.isActive(
+    this.escrow.account = await this.lenderEscrowService.getLenderAccountContract(
       this.address
     );
-    this.escrow.closeTime = await this.lenderEscrowService.closeTime(
+    this.escrow.tokenAmount = await this.lenderEscrowService.getTokenAmount(
       this.address
     );
+    this.escrow.isActive = await this.lenderEscrowService.getIsActive(
+      this.address
+    );
+    this.escrow.closeTime = new Date(
+      (await this.lenderEscrowService.getCloseTime(this.address)) * 1000
+    );
+    let end = new Date(this.escrow.closeTime);
+    end.setMonth(this.escrow.closeTime.getMonth() - 1);
+    console.log(this.escrow.closeTime, ' this.escrow.closeTime');
+    this.escrow.issueDate = end;
+    console.log(this.escrow, '   this.escrow');
   }
   async getRenterScrowDetails() {
+    this.escrow = {};
+
     this.escrow.escrowStatus = await this.renterEscrowService.getEscrowStatus(
+      this.address
+    );
+    this.escrow.userAddress = await this.renterEscrowService.getRenter(
       this.address
     );
     this.escrow.tokenAmount = await this.renterEscrowService.getVuupleToken(
@@ -63,9 +88,17 @@ export class EscrowDetailsComponent implements OnInit {
     this.escrow.isActive = await this.renterEscrowService.isActive(
       this.address
     );
-    this.escrow.closeTime = await this.renterEscrowService.getCloseTime(
+    this.escrow.account = await this.renterEscrowService.getRenterAccountContract(
       this.address
     );
+    this.escrow.closeTime = new Date(
+      (await this.renterEscrowService.getCloseTime(this.address)) * 1000
+    );
+    let end = new Date(this.escrow.closeTime);
+    end.setMonth(this.escrow.closeTime.getMonth() - 1);
+    console.log(this.escrow.closeTime, ' this.escrow.closeTime');
+    this.escrow.issueDate = end;
+    console.log(this.escrow, '   this.escrow');
   }
   withdraw() {}
 }
