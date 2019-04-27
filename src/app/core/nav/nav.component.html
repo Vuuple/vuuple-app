@@ -1,22 +1,18 @@
-
-
-
-  <nav class="navbar  sidebar" role="navigation">
-    <div class="container-fluid nav">
-
-<!-- <div class="row" >
+<nav class="navbar  sidebar" role="navigation">
+  <div class="container-fluid nav">
+    <!-- <div class="row" >
           <a routerLink="/" style="background-color: #29ABE2 !important; height: 145px;">DASHBOARD</a>
 
 </div> -->
-<div class="row item"*ngFor="let item of items" >
-         <!--for trying-->
-          <a [routerLink]="[item.link]" routerLinkActive="active">
-             {{item.name}}
-          </a>
-</div>
-
+    <div class="row item" *ngFor="let item of items">
+      <!--for trying-->
+      <a
+        [routerLink]="[item.link]"
+        [queryParams]="{ type: item?.type }"
+        routerLinkActive="active"
+      >
+        {{ item.name }}
+      </a>
     </div>
-  </nav>
-
-
-
+  </div>
+</nav>

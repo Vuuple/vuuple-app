@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { TokensComponent } from './tokens/tokens.component';
-import { IndividualRenterComponent } from './individual-renter/individual-renter.component';
 import { SettingComponent } from './setting/setting.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
@@ -19,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { AddNodeComponent } from './add-node/add-node.component';
 import { EscrowDetailsComponent } from './escrow-details/escrow-details.component';
+import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-Interceptor.component';
 
 @NgModule({
   imports: [
@@ -30,7 +30,7 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
     RouterModule.forChild([
       {
         path: '',
-        component:DashboardComponent
+        component: DashboardComponent
       },
       {
         path: 'admin',
@@ -42,7 +42,7 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
       },
       {
         path: 'main',
-        component:DashboardComponent
+        component: DashboardComponent
       },
       {
         path: 'nodeList',
@@ -78,15 +78,15 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
       },
       {
         path: 'individualRenter',
-        component:IndividualRenterComponent
+        component: UserlistInterceptorComponent
       },
       {
         path: 'companyRenter',
-        component:IndividualRenterComponent
+        component: UserlistInterceptorComponent
       },
       {
         path: 'lender',
-        component:IndividualRenterComponent
+        component: UserlistInterceptorComponent
       },
       {
         path: '**',
@@ -99,7 +99,7 @@ import { EscrowDetailsComponent } from './escrow-details/escrow-details.componen
     NodeListComponent,
     RequestListComponent,
     TokensComponent,
-    IndividualRenterComponent,
+    UserlistInterceptorComponent,
     SettingComponent,
     AddpointComponent,
     EscrowListComponent,
