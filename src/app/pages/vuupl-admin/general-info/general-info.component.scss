@@ -67,6 +67,7 @@ th {
     vertical-align: middle;
     border-right: 1px solid #29abe2;
     border-top: none;
+    word-break: break-all;
   }
   thead > tr > th {
     vertical-align: bottom;
@@ -94,4 +95,13 @@ th {
 }
 a {
   color: white;
+}
+.approved{
+  color:green;
+}
+.pending{
+  color:yellow;
+}
+.panned{
+   color:red;
 }

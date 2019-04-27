@@ -28,12 +28,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of nodes; let i = index;">
+            <tr *ngFor="let item of pagedItems; let i = index;">
               <td>{{item?.username}}</td>
               <td>{{item?.email}}</td>
               <td>{{item?.category}}</td>
               <td>{{item?.ip}}</td>
-              <td>{{item?.status}}</td>
+              <td [ngClass]="(item?.status =='pending') ? 'pending': (item?.status == 'approved') ? 'approved' : panned ">{{item?.status}}</td>
               <td style="border-right:none">
                 <button class="action">
                     Pan
@@ -43,4 +43,26 @@
           </tbody>
       </table>
   </div>
+  <div class="row">
+    <!-- pager -->
+    <ul *ngIf="pages && pages.length" class="pagination">
+     <li [ngClass]="{disabled:pager.currentPage === 1}">
+         <a (click)="setPage(1)">First</a>
+     </li>
+     <li [ngClass]="{disabled:pager.currentPage === 1}">
+         <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+     </li>
+     <li *ngFor="let page of pages" [ngClass]="{active:pager.currentPage === page}">
+         <a (click)="setPage(page)">{{page}}</a>
+     </li>
+     <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a (click)="setPage(pager.currentPage + 1)">Next</a>
+     </li>
+     <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a (click)="setPage(pager.totalPages)">Last</a>
+     </li>
+ </ul>
+</div>
+ 
 
+ 

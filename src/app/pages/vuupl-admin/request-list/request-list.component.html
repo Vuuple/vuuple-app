@@ -40,7 +40,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let request of requests; let i = index ">
+        <tr *ngFor="let request of pagedItems; let i = index ">
           <td>{{ request?.username }}</td>
           <td>{{ request?.email }}</td>
           <td>{{ request?.ethAddress | slice:0:20 }}<br>{{ request?.ethAddress | slice:20:40 }}</td>
