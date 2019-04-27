@@ -99,7 +99,7 @@ export class AddNodeComponent implements OnInit {
     console.log(index, 'index');
     console.log(contract, 'contract');
 
-    //  const data = await this._addToNetwork();
+    const data = await this._addToNetwork();
     if (this.node.category == 'lender') {
       //TODO: need to update docker file to set storage value
       await this._approveOnContract();
