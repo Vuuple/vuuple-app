@@ -33,7 +33,7 @@
               <td>{{item?.email}}</td>
               <td>{{item?.category}}</td>
               <td>{{item?.ip}}</td>
-              <td [ngClass]="(item?.status =='pending') ? 'pending': (item?.status == 'approved') ? 'approved' : panned ">{{item?.status}}</td>
+              <td [ngClass]="(item?.status =='pending') ? 'pending': (item?.status == 'approved') ? 'approved' : 'panned'  ">{{item?.status}}</td>
               <td style="border-right:none">
                 <button class="action">
                     Pan
