@@ -24,7 +24,7 @@ export class DataService {
   private headers: Headers;
 
   constructor(private http: HttpClient) {
-     this.actionUrl = 'http://18.223.208.148:3000/api/';
+    this.actionUrl = 'http://18.223.208.148:3000/api/';
     //this.actionUrl = 'http://18.221.44.174:3000';
     // this.actionUrl = 'http://localhost:3000/';
     this.headers = new Headers();
@@ -39,7 +39,7 @@ export class DataService {
   public getListWitFilter(ns: string, filter: string): Observable<any[]> {
     console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
     return this.http
-      .get(`${this.actionUrl}${ns}+/+${filter}`)
+      .get(`${this.actionUrl}${ns}/${filter}`)
       .pipe(map(this.extractData));
   }
 
