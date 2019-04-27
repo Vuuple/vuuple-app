@@ -12,7 +12,7 @@ import {
   sendConfirmationMail
 } from '../../../../assets/js/helpers/joinNetwork.js';
 import { LenderEscrowService } from '../../../providers/lenders-escrow/lenders-escrow.service';
-import { NetworkService } from '../../../providers/network-service/network.service';
+// import { NetworkService } from '../../../providers/network-service/network.service';
 // const networkIP = require('electron').remote.getGlobal('networkIP');
 const request = require('../../../../assets/js/helpers/requests.js');
 @Component({
@@ -22,7 +22,7 @@ const request = require('../../../../assets/js/helpers/requests.js');
   providers: [
     LendersFactoryService,
     LendersRegistrationService,
-    NetworkService,
+    // NetworkService,
     RenterFactoryService,
     LenderEscrowService
     // RentersRegistrationService
@@ -48,7 +48,7 @@ export class AddNodeComponent implements OnInit {
   lendercontract: any;
   errorMessage: any;
   constructor(
-    private networkService: NetworkService,
+    // private networkService: NetworkService,
     private serverApiService: ServerApiService,
     private route: ActivatedRoute,
     private router: Router,

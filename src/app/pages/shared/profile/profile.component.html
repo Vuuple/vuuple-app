@@ -1,55 +1,82 @@
 <div class="main">
   <div class="panel panel-default">
-      <div class="panel-heading">  <h4 >User Profile</h4></div>
-      <div class="panel-body">
-          <div class="box box-info">
-            <div class="box-body">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-4">
-                    <div text-align="center">
-                      <img alt="User Pic" for="files"  class="btn" src="assets/img/vuupleIcone.png" id="profile-image1" class="img-circle img-responsive"/> 
-                      <label for="files" style="color:#999;" class="btn"><i class="fas fa-plus"></i></label>
-                      <input id="files" style="visibility:hidden;" type="file">  
-                      </div>
-                  </div>
-                  <div class="col-sm-6">
-                   <span> <h4 style="color:#29ABE2;">{{username}} </h4></span>
-                    <span><p>{{category}}</p></span>            
-                  </div>
-                <div class="clearfix"></div>
-                <hr style="margin:5px 0 5px 0;">
-                <div class="clearfix"></div>
-                <div class="col-sm-5 col-xs-6 tital " >Username:</div><div class="col-sm-7 col-xs-6 ">{{username}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-5 col-xs-6 tital " >Email:</div><div class="col-sm-7 col-xs-6 ">{{email}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-5 col-xs-6 tital " > EthAddress:</div><div class="col-sm-7 col-xs-6 ">{{ethaddress}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-5 col-xs-6 tital " > Category:</div><div class="col-sm-7 col-xs-6 ">{{category}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-5 col-xs-6 tital " > Status:</div><div class="col-sm-7 col-xs-6 ">{{status}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-5 col-xs-6 tital " >  Port:</div><div class="col-sm-7 col-xs-6 ">{{port}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-5 col-xs-6 tital " >  Ip:</div><div class="col-sm-7 col-xs-6 ">{{ip}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div> 
-                <div class="col-sm-5 col-xs-6 tital " >  Enod:</div><div class="col-sm-7 col-xs-6 ">{{enode}}</div>
-                <div class="clearfix"></div>
-                <div class="bot-border"></div>
-                <div class="col-sm-8 col-xs-6 tital"></div>
-                <div class="col-sm-4 col-xs-6">
-                    <button type="button" class="btn btn-info btn-lg" (click)="reportIssue()">Report Issue</button>
-                </div>
-                <div class="clearfix"></div>
+    <div class="panel-heading"><h4>User Profile</h4></div>
+    <div class="panel-body">
+      <div class="box box-info">
+        <div class="box-body">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+            <div text-align="center">
+              <img
+                alt="User Pic"
+                for="files"
+                class="btn"
+                src="assets/img/vuupleIcone.png"
+                id="profile-image1"
+                class="img-circle img-responsive"
+              />
+              <label for="files" style="color:#999;" class="btn"
+                ><i class="fas fa-plus"></i
+              ></label>
+              <input id="files" style="visibility:hidden;" type="file" />
             </div>
           </div>
+          <div class="col-sm-6">
+            <span>
+              <h4 style="color:#29ABE2;">{{ username }}</h4></span
+            >
+            <span
+              ><p>{{ category }}</p></span
+            >
+          </div>
+          <div class="clearfix"></div>
+          <hr style="margin:5px 0 5px 0;" />
+          <div class="clearfix"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Username:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.username }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Email:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.email }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">EthAddress:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.ethAddress }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Category:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.category }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Status:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.status }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Port:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.port }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Ip:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.ip }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-5 col-xs-6 tital ">Enod:</div>
+          <div class="col-sm-7 col-xs-6 ">{{ node?.enode }}</div>
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+          <div class="col-sm-8 col-xs-6 tital"></div>
+          <div class="col-sm-4 col-xs-6">
+            <button
+              type="button"
+              class="btn btn-info btn-lg"
+              (click)="reportIssue()"
+            >
+              Report Issue
+            </button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
       </div>
+    </div>
   </div>
 </div>

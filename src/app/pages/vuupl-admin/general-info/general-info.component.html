@@ -1,46 +1,61 @@
-    <div class="row">
-      <div class="col-md-6">
-        <h2>
-          General Info
-        </h2>
-      </div>
-      <div class="col-md-6" style="padding:2%">
-        <form class="navbar-form navbar-right">
-          <input
-            type="text"
-            class="form-control"
-            style="margin-right:15px;width: 250px;"
-            placeholder="Search..."
-          />
-        </form>
-      </div>
-    </div>
-    <div class="row table-container">
-     <table class="table">
-        <thead>
-          <tr style="color:#29ABE2 !important;font-size: 25px;">
-            <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-                Email
-            </th>
-            <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-                Username
-            </th>
-            <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-                Ip addres
-            </th>
-            <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-                Eth wallet
-            </th>
-            <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-                Status
-            </th>
-            <th style="padding: 15px;">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="">
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
+<div class="row">
+  <div class="col-md-6">
+    <h2>
+      General Info
+    </h2>
+  </div>
+  <div class="col-md-6" style="padding:2%">
+    <form class="navbar-form navbar-right">
+      <input
+        type="text"
+        class="form-control"
+        style="margin-right:15px;width: 250px;"
+        placeholder="Search..."
+      />
+    </form>
+  </div>
+</div>
+<div class="row table-container">
+  <table class="table">
+    <thead>
+      <tr style="color:#29ABE2 !important;font-size: 25px;">
+        <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          Email
+        </th>
+        <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          Username
+        </th>
+        <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          Ip address
+        </th>
+        <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          Eth wallet
+        </th>
+        <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          Status
+        </th>
+        <th style="padding: 15px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item?.email }}</td>
+
+        <td>{{ item?.username }}</td>
+        <td>{{ item?.ip }}</td>
+        <td>{{ item?.ethAddress }}</td>
+
+        <td>{{ item?.status }}</td>
+        <td style="border-right:none">
+          <button class="action">
+            <a
+              [routerLink]="['/pages/profile']"
+              [queryParams]="{ id: item?._id }"
+              >view</a
+            >
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
