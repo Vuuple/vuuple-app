@@ -67,19 +67,23 @@ export class WalletComponent implements OnInit {
     this.accountContract = await this.lendersFactoryService.getLenderContract(
       this.cuurentUser.ethAddress
     );
-    const escrowAddress = await this.lendersRegistrationService.getEscrow(
-      this.accountContract
-    );
-    await this.getLenderEscrow(escrowAddress);
+    if (this.accountContract != '0x0000000000000000000000000000000000000000') {
+      const escrowAddress = await this.lendersRegistrationService.getEscrow(
+        this.accountContract
+      );
+      await this.getLenderEscrow(escrowAddress);
+    }
   }
   async getRenterData() {
     this.accountContract = await this.rentersFactoryService.getRenterContract(
       this.cuurentUser.ethAddress
     );
-    const escrowAddress = await this.rentersRegistrationService.getEscrow(
-      this.accountContract
-    );
-    await this.getRenterEscrow(escrowAddress);
+    if (this.accountContract != '0x0000000000000000000000000000000000000000') {
+      const escrowAddress = await this.rentersRegistrationService.getEscrow(
+        this.accountContract
+      );
+      await this.getRenterEscrow(escrowAddress);
+    }
   }
   async getLenderEscrow(address) {
     this.tokensInUse += await this.lenderEscrowService.getTokenAmount(address);
