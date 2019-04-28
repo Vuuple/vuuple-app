@@ -64,7 +64,29 @@
           <div class="col-sm-7 col-xs-6 ">{{ node?.enode }}</div>
           <div class="clearfix"></div>
           <div class="bot-border"></div>
-          <div class="col-sm-8 col-xs-6 tital"></div>
+          <div class="col-sm-8 col-xs-6 tital">
+            <button class="btn btn-link">
+              <a
+                [routerLink]="['/pages/admin/escrow']"
+                [queryParams]="{ id: node?._id }"
+                >View Escrows</a
+              >
+            </button>
+            <button
+              class="btn btn-link"
+              *ngIf="
+                (currentUser?.role == 'admin' ||
+                  currentUser?.role == 'superAdmin') &&
+                node?.category == 'lender'
+              "
+            >
+              <a
+                [routerLink]="['/pages/admin/addPoint']"
+                [queryParams]="{ id: node?._id }"
+                >Add Points</a
+              >
+            </button>
+          </div>
           <div class="col-sm-4 col-xs-6">
             <button
               type="button"

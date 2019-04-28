@@ -9,7 +9,7 @@ import { SettingComponent } from './setting/setting.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild([])],
   declarations: [
     NotFoundComponent,
     ProfileComponent,

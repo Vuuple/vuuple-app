@@ -34,10 +34,10 @@ export class ServerApiService {
     return this.dataService.getSingle('users', id);
   }
   ban(id): Observable<any> {
-    return this.dataService.postById('users/approve', id, '');
+    return this.dataService.postById('users/ban', id, '');
   }
   reject(id): Observable<any> {
-    return this.dataService.postById('users/approve', id, '');
+    return this.dataService.postById('users/reject', id, '');
   }
   approve(id, data): Observable<any> {
     return this.dataService.postById('users/approve', id, data);

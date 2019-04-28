@@ -108,13 +108,14 @@ export class AddNodeComponent implements OnInit {
 
     await this._saveToDatabase(data);
     await this._emailUser();
+    this.goBack();
   }
 
   async _approveOnContract() {
     console.log(this.node.ethAddress, ' this.node.ethAddress');
 
-    const lenderIndex = await this.lendersFactoryService.lenderIndex();
-    console.log(lenderIndex, 'lenderIndex');
+    // const lenderIndex = await this.lendersFactoryService.lenderIndex();
+    // console.log(lenderIndex, 'lenderIndex');
 
     this.lendercontract = await this.lendersFactoryService.getLenderContract(
       this.node.ethAddress
@@ -123,7 +124,7 @@ export class AddNodeComponent implements OnInit {
       console.log(this.lendercontract, 'lendercontract');
 
       //  get escrow data and save it in db
-      const isApproved = await this.lendersRegistrationService.approved(
+      const isApproved = await this.lendersRegistrationService.getApproved(
         this.lendercontract
       );
       console.log(isApproved, 'isApproved');
@@ -187,7 +188,7 @@ export class AddNodeComponent implements OnInit {
     this.escrow.category = 'lender';
     console.log(this.escrow.category, 'this.escrow.category');
 
-    this.escrow.escrowAddress = await this.lendersRegistrationService.escrow(
+    this.escrow.escrowAddress = await this.lendersRegistrationService.getEscrow(
       this.lendercontract
     );
     console.log(this.escrow.escrowAddress, 'this.escrow.escrowAddress');
@@ -218,7 +219,19 @@ export class AddNodeComponent implements OnInit {
   }
 
   async reject() {
-    await this.serverApiService.reject(this.node.id);
+    await this.serverApiService
+      .reject(this.node['_id'])
+      .toPromise()
+      .then(s => {
+        console.log(s, 's');
+
+        this.goBack();
+      })
+      .catch(err => {
+        this.errorMessage = err;
+        console.error(err);
+      });
+    this.goBack();
   }
   goBack() {
     this.router.navigate(['/pages/admin/request']);
