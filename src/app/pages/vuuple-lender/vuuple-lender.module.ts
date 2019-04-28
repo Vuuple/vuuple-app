@@ -7,10 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AllocateComponent } from './allocate/allocate.component';
 import { RedeemComponent } from './redeem/redeem.component';
 import { AccountComponent } from './account/account.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SharedModule,
     RouterModule.forChild([
       {
@@ -39,6 +41,11 @@ import { AccountComponent } from './account/account.component';
       }
     ])
   ],
-  declarations: [DashboardComponent, AllocateComponent, RedeemComponent, AccountComponent]
+  declarations: [
+    DashboardComponent,
+    AllocateComponent,
+    RedeemComponent,
+    AccountComponent
+  ]
 })
 export class VuupleLenderModule {}
