@@ -4,8 +4,8 @@
     <button
       type="submit"
       class="btn btn-primary"
-      (click)="deactivate()"
+      (click)="changeActiveStatus()"
+      [ngClass]="status == true ? 'active' : 'deActive' "
     >
-    Deactivate
     </button>
   </div>
