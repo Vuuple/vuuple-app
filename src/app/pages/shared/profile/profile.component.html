@@ -69,7 +69,19 @@
               <a
                 [routerLink]="['/pages/admin/escrow']"
                 [queryParams]="{ id: node?._id }"
-                >Vie Escrows</a
+                >View Escrows</a
+              >
+            </button>
+            <button
+              class="btn btn-link"
+              *ngIf="
+                currentUser?.role != 'client' && node?.category == 'lender'
+              "
+            >
+              <a
+                [routerLink]="['/pages/admin/addPoint']"
+                [queryParams]="{ id: node?._id }"
+                >Add Points</a
               >
             </button>
           </div>

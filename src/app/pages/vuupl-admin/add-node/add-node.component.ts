@@ -114,8 +114,8 @@ export class AddNodeComponent implements OnInit {
   async _approveOnContract() {
     console.log(this.node.ethAddress, ' this.node.ethAddress');
 
-    const lenderIndex = await this.lendersFactoryService.lenderIndex();
-    console.log(lenderIndex, 'lenderIndex');
+    // const lenderIndex = await this.lendersFactoryService.lenderIndex();
+    // console.log(lenderIndex, 'lenderIndex');
 
     this.lendercontract = await this.lendersFactoryService.getLenderContract(
       this.node.ethAddress
@@ -124,7 +124,7 @@ export class AddNodeComponent implements OnInit {
       console.log(this.lendercontract, 'lendercontract');
 
       //  get escrow data and save it in db
-      const isApproved = await this.lendersRegistrationService.approved(
+      const isApproved = await this.lendersRegistrationService.getApproved(
         this.lendercontract
       );
       console.log(isApproved, 'isApproved');
@@ -188,7 +188,7 @@ export class AddNodeComponent implements OnInit {
     this.escrow.category = 'lender';
     console.log(this.escrow.category, 'this.escrow.category');
 
-    this.escrow.escrowAddress = await this.lendersRegistrationService.escrow(
+    this.escrow.escrowAddress = await this.lendersRegistrationService.getEscrow(
       this.lendercontract
     );
     console.log(this.escrow.escrowAddress, 'this.escrow.escrowAddress');

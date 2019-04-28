@@ -3,7 +3,7 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <h2>
-        Add node
+        Add Points
       </h2>
     </div>
     <div class="col-md-4" style="padding:2%">
@@ -15,35 +15,48 @@
       />
     </div>
   </div>
-  <div class="row table-container">
+  <div class="row">
     <div class="col-md-2"></div>
     <div
-      class="col-md-8"
-      style="border: 1px solid #29ABE2;border-radius:5px ;height: 350px;padding: 2%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+      class="col-md-8 container"
+      style="border: 2px dashed #29ABE2;
+        border-radius:5px ;
+        min-height: 400px;
+        padding: 3%;
+        margin-top: 5%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
     >
-      <h4 style="margin-bottom:5%">Node details:</h4>
+      <h4 style="margin-bottom:5%">Lender details:</h4>
       <div class="row" style="margin-bottom:3px">
-        <div class="col-md-3">
-          <label>Username:</label>
+        <div class="col-md-4">
+          <label>Passing Percentage:</label>
         </div>
-        <div class="col-md-9">
-          <p>{{ node.username }}</p>
+        <div class="col-md-6">
+          <p>{{ node?.passingPercentage }}</p>
         </div>
       </div>
       <div class="row" style="margin-bottom:3px">
         <div class="col-md-3">
-          <label>Email:</label>
+          <label>Renewal Date:</label>
         </div>
         <div class="col-md-9">
-          <p>{{ node.email }}</p>
+          <p>{{ node?.renewalDate | date }}</p>
         </div>
       </div>
       <div class="row" style="margin-bottom:3px">
         <div class="col-md-3">
-          <label>Enode :</label>
+          <label>Rented Storage :</label>
         </div>
         <div class="col-md-9">
-          <p>{{ node.enode }}</p>
+          <p style="word-break: break-all;">{{ node?.rentedStorage }}</p>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:3px">
+        <div class="col-md-3">
+          <label>Current Points :</label>
+        </div>
+        <div class="col-md-9">
+          <p style="word-break: break-all;">{{ node?.reputationPoints }}</p>
         </div>
       </div>
       <div class="row" style="margin-bottom:3px">
@@ -51,20 +64,42 @@
           <label>Eth Wallet:</label>
         </div>
         <div class="col-md-9">
-          <p>{{ node.Ethwallwt }}</p>
+          <p>{{ node?.ethAddress }}</p>
         </div>
       </div>
       <div class="row" style="margin-bottom:3px">
         <div class="col-md-3">
-          <label>Static IP :</label>
+          <label>Balance :</label>
         </div>
         <div class="col-md-9">
-          <p>{{ node.staticIP }}</p>
+          <p>{{ node?.balance }}</p>
         </div>
       </div>
-      <div class="row" style="padding-top:4%;float:right;margin-right: 0.50%">
-        <button class="action">Add Point</button>
-        <button class="action">Back</button>
+      <div class="row" style="margin-bottom:3px">
+        <div class="col-md-4">
+          <label> Is Approved :</label>
+        </div>
+        <div class="col-md-8">
+          <input type="checkbox" checked="!node?.approved" />
+        </div>
+      </div>
+      <div class="row" style="float:right;margin-right: 0.50%">
+        <button
+          class="action"
+          (click)="addPoint()"
+          [disabled]="
+            lendercontract == '0x0000000000000000000000000000000000000000'
+          "
+        >
+          Add Point
+        </button>
+        <button
+          class="btn btn-link"
+          [routerLink]="['/pages/profile']"
+          [queryParams]="{ id: id }"
+        >
+          Back to profile
+        </button>
       </div>
     </div>
     <div class="col-md-2"></div>

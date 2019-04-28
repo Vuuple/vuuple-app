@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   enode: any;
   id: any;
   node;
+  currentUser;
   constructor(
     private serverApiService: ServerApiService,
     private authservics: AuthService,
@@ -35,6 +36,8 @@ export class ProfileComponent implements OnInit {
         this.serverApiService.getUser(this.id).subscribe(data => {
           console.log(data);
           this.node = data;
+          this.currentUser = this.authservics.currentUser;
+
           console.log(this.node, '  if this.node');
         });
       } else {

@@ -211,7 +211,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async contractOwner(getLenderContract) {
+  async getContractOwner(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .contractOwner.call()
@@ -227,7 +227,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async renewalDate(getLenderContract) {
+  async getRenewalDate(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .renewalDate.call()
@@ -242,7 +242,7 @@ export class LendersRegistrationService {
       });
     return result;
   }
-  async escrow(getLenderContract) {
+  async getEscrow(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .escrow.call()
@@ -258,7 +258,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async registerDate(getLenderContract) {
+  async getRegisterDate(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .registerDate.call()
@@ -274,7 +274,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async passingPercentage(getLenderContract) {
+  async getPassingPercentage(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .PASSING_PERCENTAGE.call()
@@ -290,7 +290,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async targetPoints(getLenderContract) {
+  async getTargetPoints(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .TARGET_POINTS.call()
@@ -306,7 +306,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async lenderReputationPoints(getLenderContract) {
+  async getLenderReputationPoints(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .lenderReputationPoints.call()
@@ -322,7 +322,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async rentedStorage(getLenderContract) {
+  async getRentedStorage(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .rentedStorage.call()
@@ -338,7 +338,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async active(getLenderContract) {
+  async getActive(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .active.call()
@@ -354,7 +354,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async approved(getLenderContract) {
+  async getApproved(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .approved.call()
@@ -370,7 +370,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async banned(getLenderContract) {
+  async getBanned(getLenderContract) {
     const result = await this.lender_registration
       .at(getLenderContract)
       .banned.call()
