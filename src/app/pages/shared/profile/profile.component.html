@@ -75,7 +75,9 @@
             <button
               class="btn btn-link"
               *ngIf="
-                currentUser?.role != 'client' && node?.category == 'lender'
+                (currentUser?.role == 'admin' ||
+                  currentUser?.role == 'superAdmin') &&
+                node?.category == 'lender'
               "
             >
               <a
