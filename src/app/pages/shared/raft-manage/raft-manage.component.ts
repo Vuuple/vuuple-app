@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { AuthService } from '../../../../auth/core/auth.service';
 import {} from '@angular/forms/src/model';
+import { AuthService } from '../../../auth/core/auth.service';
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const fs = require('fs');
