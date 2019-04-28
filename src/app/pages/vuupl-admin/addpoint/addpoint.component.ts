@@ -43,9 +43,9 @@ export class AddpointComponent implements OnInit {
       this.node.ethAddress
     );
     if (this.lendercontract != '0x0000000000000000000000000000000000000000') {
-      this.node.balance = await this.lenderService.getBalance(
-        this.lendercontract
-      );
+      // this.node.balance = await this.lenderService.getBalance(
+      //   this.lendercontract
+      // );
       this.node.reputationPoints = await this.lenderService.getLenderReputationPoints(
         this.lendercontract
       );
