@@ -4,8 +4,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ReportIssueComponent } from './report-issue/report-issue.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { RaftManageComponent } from './raft-manage/raft-manage.component';
+import { RaftManageComponent } from './raft-manage/raft-manage/raft-manage.component';
+import { SettingComponent } from './setting/setting.component';
+import { ActivateAccountComponent } from './activate-account/activate-account.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild([])],
@@ -13,8 +14,10 @@ import { RaftManageComponent } from './raft-manage/raft-manage.component';
     NotFoundComponent,
     ProfileComponent,
     ReportIssueComponent,
-    RaftManageComponent
+    RaftManageComponent,
+    SettingComponent,
+    ActivateAccountComponent
   ],
-  exports: [NotFoundComponent, RaftManageComponent]
+  exports: [NotFoundComponent, RaftManageComponent, ActivateAccountComponent]
 })
 export class SharedModule {}

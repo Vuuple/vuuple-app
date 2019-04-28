@@ -1,16 +1,14 @@
 <div class="main">
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <h2>Setting</h2>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h2>Credentials</h2>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-3"></div>
   </div>
-  <div class="row" style="margin-top:10%">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <app-raft-manage></app-raft-manage>
-
+  <div class="row" style="margin-top:5%;">
+     <div class="col-md-2"></div>
+     <div class="col-md-8" style="border:2px dashed #0077b5;padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
       <form [formGroup]="EditForm">
         <div class="form-group row">
           <label for="Name" class="col-md-2">Name:</label>
@@ -28,7 +26,7 @@
         </div>
 
         <div class="form-group row">
-          <label for="emails" class="col-md-2">EMail:</label>
+          <label for="emails" class="col-md-2">Email:</label>
           <div class="col-md-8">
             <input
               type="email"
@@ -70,6 +68,20 @@
           </button>
         </div>
       </form>
+     </div>
+     <div class="col-md-2"></div>
+  </div>
+  <div class="row"style="margin-top:5%;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"style="border:2px dashed #0077b5;padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+      <app-raft-manage></app-raft-manage>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div *ngIf="activeAccount" class="row"style="margin-top:5%;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"style="border:2px dashed #0077b5;padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+    <app-activate-account></app-activate-account>
     </div>
     <div class="col-md-2"></div>
   </div>

@@ -4,6 +4,7 @@ import { PagesComponent } from './pages/pages.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ProfileComponent } from './shared/profile/profile.component';
 import { ReportIssueComponent } from './shared/report-issue/report-issue.component';
+import { SettingComponent } from './shared/setting/setting.component';
 
 const routes: Routes = [{
   path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [{
       path:'report',
       component:ReportIssueComponent,
     },
+    {
+      path: 'setting',
+      component: SettingComponent
+   },
  {
     path: '',
     redirectTo: 'admin',
