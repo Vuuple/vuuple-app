@@ -5,9 +5,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ReportIssueComponent } from './report-issue/report-issue.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RaftManageComponent } from './raft-manage/raft-manage/raft-manage.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild([])],
   declarations: [
     NotFoundComponent,
     ProfileComponent,
