@@ -5,6 +5,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ReportIssueComponent } from './report-issue/report-issue.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RaftManageComponent } from './raft-manage/raft-manage/raft-manage.component';
+import { SettingComponent } from './setting/setting.component';
+import { ActivateAccountComponent } from './activate-account/activate-account.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule],
@@ -12,8 +14,10 @@ import { RaftManageComponent } from './raft-manage/raft-manage/raft-manage.compo
     NotFoundComponent,
     ProfileComponent,
     ReportIssueComponent,
-    RaftManageComponent
+    RaftManageComponent,
+    SettingComponent,
+    ActivateAccountComponent
   ],
-  exports: [NotFoundComponent, RaftManageComponent]
+  exports: [NotFoundComponent, RaftManageComponent, ActivateAccountComponent]
 })
 export class SharedModule {}

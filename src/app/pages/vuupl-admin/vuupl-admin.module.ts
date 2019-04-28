@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { TokensComponent } from './tokens/tokens.component';
-import { SettingComponent } from './setting/setting.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
 import { AddpointComponent } from './addpoint/addpoint.component';
@@ -72,10 +71,10 @@ import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-
         path: 'escrowDetails',
         component: EscrowDetailsComponent
       },
-      {
-        path: 'setting',
-        component: SettingComponent
-      },
+      //{
+       // path: 'setting',
+      //  component: SettingComponent
+     // },
       {
         path: 'individualRenter',
         component: UserlistInterceptorComponent
@@ -100,7 +99,6 @@ import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-
     RequestListComponent,
     TokensComponent,
     UserlistInterceptorComponent,
-    SettingComponent,
     AddpointComponent,
     EscrowListComponent,
     GeneralInfoComponent,

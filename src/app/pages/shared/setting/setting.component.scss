@@ -1,0 +1,39 @@
+.main {
+    padding: 5% 5% 5% 5%;
+    min-height: 500px;
+  }
+  input{
+    border: 1px solid #29ABE2;
+  }
+  label {
+    color: #0077b5;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: -webkit-pictograph;
+  }  
+  h2 {
+    color: #0077b5;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 0px;
+  }
+  button {
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+      background-color:#0077b5;
+      border-radius: 10px;
+      height: 40px;
+      -webkit-appearance: button-bevel;
+      line-height: initial;
+    font-size: 20px;
+    width: 25%;
+    margin-top: 20px;
+    float: right;
+    margin-right: 10%;
+  }
