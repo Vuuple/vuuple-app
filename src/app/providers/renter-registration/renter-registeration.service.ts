@@ -64,9 +64,9 @@ export class RenterRegisterationService {
   /**
    * Setter functions
    */
-  async renewSubscription(getRenterContract, _renteredStorage) {
+  async renewSubscription(renterContract, _renteredStorage) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .renewSubscription(_renteredStorage, {
         from: this.account,
         gas: 200000
@@ -83,7 +83,7 @@ export class RenterRegisterationService {
   }
 
   async addFileToStorage(
-    getRenterContract,
+    renterContract,
     bzzHash,
     fileName,
     size,
@@ -93,7 +93,7 @@ export class RenterRegisterationService {
     encryptedKey
   ) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .addFileToStorage(
         bzzHash,
         fileName,
@@ -118,9 +118,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async completeSubscription(getRenterContract, account) {
+  async completeSubscription(renterContract, account) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .completeSubscription({
         from: account,
         gas: 4082886
@@ -136,9 +136,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async deactivateAccount(getRenterContract) {
+  async deactivateAccount(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .setActiveStatus(false, {
         from: this.account,
         gas: 200000
@@ -154,9 +154,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async banAccount(getRenterContract) {
+  async banAccount(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .setBanStatus(true, {
         from: this.account,
         gas: 200000
@@ -171,9 +171,9 @@ export class RenterRegisterationService {
       });
     return result;
   }
-  async activateAccount(getRenterContract) {
+  async activateAccount(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .setActiveStatus(true, {
         from: this.account,
         gas: 4082886
@@ -189,9 +189,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async unbanAccount(getRenterContract) {
+  async unbanAccount(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .setBanStatus(false, {
         from: this.account,
         gas: 4082886
@@ -210,9 +210,9 @@ export class RenterRegisterationService {
   /**
    * Getter functions
    */
-  async getEscrow(getRenterContract) {
+  async getEscrow(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .escrow.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -226,9 +226,9 @@ export class RenterRegisterationService {
       });
     return result;
   }
-  async getBalance(getRenterContract) {
+  async getBalance(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .getBalance.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -243,9 +243,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getRenterFiles(getRenterContract) {
+  async getRenterFiles(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .getRenterFiles.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -260,9 +260,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getContractOwner(getRenterContract) {
+  async getContractOwner(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .contractOwner.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -277,9 +277,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getMembershipType(getRenterContract) {
+  async getMembershipType(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .membershipType.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -294,9 +294,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getRenewalDate(getRenterContract) {
+  async getRenewalDate(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .renewalDate.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -311,9 +311,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getRegisterDate(getRenterContract) {
+  async getRegisterDate(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .registerDate.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -328,9 +328,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getRenteredStorage(getRenterContract) {
+  async getRenteredStorage(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .renteredStorage.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -345,9 +345,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getUsedStorage(getRenterContract) {
+  async getUsedStorage(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .usedStorage.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -362,9 +362,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getTokenAmount(getRenterContract) {
+  async getTokenAmount(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .tokenAmount.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -379,9 +379,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async getCurrentStatus(getRenterContract) {
+  async getCurrentStatus(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .currentStatus.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -396,9 +396,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async isActive(getRenterContract) {
+  async isActive(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .active.call()
       .then(rs => {
         // console.log('rs', rs);
@@ -413,9 +413,9 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async isBanned(getRenterContract) {
+  async isBanned(renterContract) {
     const result = await this.renterRegistration
-      .at(getRenterContract)
+      .at(renterContract)
       .banned.call()
       .then(rs => {
         // console.log('rs', rs);

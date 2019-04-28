@@ -18,7 +18,7 @@ export class LendersRegistrationService {
   private accounts: string[];
   account;
   public ready = false;
-  lender_registration = contract(LenderRegistration);
+  lenderRegistration = contract(LenderRegistration);
   status: string;
 
   constructor() {
@@ -34,7 +34,7 @@ export class LendersRegistrationService {
    */
   onReady() {
     // Bootstrap the IdentityManager abstraction for Use.
-    this.lender_registration.setProvider(this.web3.currentProvider);
+    this.lenderRegistration.setProvider(this.web3.currentProvider);
 
     this.getCurrentAccount();
   }
@@ -63,9 +63,9 @@ export class LendersRegistrationService {
   /**
    * Setter functions
    */
-  async renewSubscription(getLenderContract, oferedSpace, owner) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async renewSubscription(lenderContract, oferedSpace, owner) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .renewSubscription(oferedSpace, {
         from: owner,
         gas: 200000
@@ -80,13 +80,12 @@ export class LendersRegistrationService {
       });
     return result;
   }
-
-  async setActiveStatus(getLenderContract, status, owner) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
-      .setActiveStatus(status, {
-        from: owner,
-        gas: 4982886
+  async deactivateAccount(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
+      .setActiveStatus(false, {
+        from: this.account,
+        gas: 200000
       })
       .then(res => {
         this.setStatus('setActiveStatus complete!');
@@ -99,9 +98,61 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async addReputationalPoint(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async banAccount(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
+      .setBanStatus(true, {
+        from: this.account,
+        gas: 200000
+      })
+      .then(res => {
+        this.setStatus('setBanStatus complete!');
+        return res;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in setBanStatus; see log.');
+      });
+    return result;
+  }
+  async activateAccount(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
+      .setActiveStatus(true, {
+        from: this.account,
+        gas: 4082886
+      })
+      .then(res => {
+        this.setStatus('setActiveStatus complete!');
+        return res;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in setActiveStatus; see log.');
+      });
+    return result;
+  }
+  // async setActiveStatus(lenderContract, status, owner) {
+  //   const result = await this.lender_registration
+  //     .at(lenderContract)
+  //     .setActiveStatus(status, {
+  //       from: owner,
+  //       gas: 4982886
+  //     })
+  //     .then(res => {
+  //       this.setStatus('setActiveStatus complete!');
+  //       return res;
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //       this.setStatus('Error in setActiveStatus; see log.');
+  //     });
+  //   return result;
+  // }
+
+  async addReputationalPoint(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .addReputationalPoint({
         from: this.account,
         gas: 200000
@@ -117,9 +168,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async approve(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async approve(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .approve({
         from: this.account,
         gas: 4982886
@@ -135,9 +186,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async setBanStatus(getRenterContract, status) {
-    const result = await this.lender_registration
-      .at(getRenterContract)
+  async setBanStatus(lenderContract, status) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .setBanStatus(status, {
         from: this.account,
         gas: 200000
@@ -153,9 +204,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async withdraw(getLenderContract, owner) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async withdraw(lenderContract, owner) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .withdraw({
         from: owner,
         gas: 200000
@@ -194,9 +245,9 @@ export class LendersRegistrationService {
   /**
    * Getter functions
    */
-  async getBalance(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getBalance(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .getBalance.call()
       .then(rs => {
         console.log('rs', rs);
@@ -211,9 +262,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getContractOwner(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getContractOwner(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .contractOwner.call()
       .then(rs => {
         this.setStatus('contractOwner complete!');
@@ -227,9 +278,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getRenewalDate(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getRenewalDate(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .renewalDate.call()
       .then(rs => {
         this.setStatus('renewalDate complete!');
@@ -242,9 +293,9 @@ export class LendersRegistrationService {
       });
     return result;
   }
-  async getEscrow(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getEscrow(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .escrow.call()
       .then(rs => {
         this.setStatus('escrow complete!');
@@ -258,9 +309,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getRegisterDate(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getRegisterDate(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .registerDate.call()
       .then(rs => {
         this.setStatus('registerDate complete!');
@@ -274,9 +325,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getPassingPercentage(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getPassingPercentage(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .PASSING_PERCENTAGE.call()
       .then(rs => {
         this.setStatus('passingPercentage complete!');
@@ -290,9 +341,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getTargetPoints(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getTargetPoints(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .TARGET_POINTS.call()
       .then(rs => {
         this.setStatus('targetPoints complete!');
@@ -306,9 +357,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getLenderReputationPoints(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getLenderReputationPoints(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .lenderReputationPoints.call()
       .then(rs => {
         this.setStatus('lenderReputationPoints complete!');
@@ -322,9 +373,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getRentedStorage(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getRentedStorage(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .rentedStorage.call()
       .then(rs => {
         this.setStatus('rentedStorage complete!');
@@ -338,9 +389,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getActive(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getActive(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .active.call()
       .then(rs => {
         this.setStatus('active complete!');
@@ -354,9 +405,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getApproved(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getApproved(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .approved.call()
       .then(rs => {
         this.setStatus('approved complete!');
@@ -370,9 +421,9 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getBanned(getLenderContract) {
-    const result = await this.lender_registration
-      .at(getLenderContract)
+  async getBanned(lenderContract) {
+    const result = await this.lenderRegistration
+      .at(lenderContract)
       .banned.call()
       .then(rs => {
         this.setStatus('getBalance complete!');
