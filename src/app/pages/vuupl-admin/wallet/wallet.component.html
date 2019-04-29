@@ -1,3 +1,39 @@
-<p>
-  wallet works!
-</p>
+<div class="row walletmain">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <button class="PurchaseButton">
+      Purchase Vuuple
+    </button>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+  <div class="col-md-6 tokenColum">
+    <h2 style="text-align:center">Vuuuple Tokens</h2>
+    <img src="../../../../assets/img/TokenDollar.png" />
+    <h3 style="text-align:center">Tokens Available:</h3>
+    <p>{{ avialableTokens }}<br />Vuuple</p>
+    <h3 style="text-align:center">Tokens In Use:</h3>
+    <p>{{ tokensInUse }}<br />Vuuple</p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <button class="transferButton">
+        Transfer Vuuple
+      </button>
+    </div>
+  </div>
+  <div class="col-md-6 fiatcurrency">
+    <h2 style="text-align:center">Fiat Currency</h2>
+    <img class="dollarimage" src="../../../../assets/img/Dollar.png" />
+    <h3 style="text-align:center">Tokens Redeemd:</h3>
+    <p>{{ tokensRedeemd }}<br />Vuuple</p>
+    <h3 style="text-align:center">Fait Currency in account:</h3>
+    <p>{{ faitCurrencyInAccount }}<br />USD</p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <button class="transferButton">
+        Transfer Currency
+      </button>
+    </div>
+  </div>
+</div>

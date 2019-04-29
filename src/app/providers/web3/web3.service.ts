@@ -52,6 +52,11 @@ export class Web3Service {
 
     return this.account;
   }
+  async getBalanceOf(address) {
+    let balance = await this.web3.eth.getBalance(address); //Will give value in.
+    // balance = this.web3.toDecimal(balance);
+    return balance;
+  }
   async getAccountByIndex(index) {
     this.accounts = await this.web3.eth.getAccounts();
 

@@ -45,6 +45,7 @@ export class AddNodeComponent implements OnInit {
     issueDate: Date;
     endDate: Date;
     category: string;
+    userid: string;
   };
   lendercontract: any;
   errorMessage: any;
@@ -69,27 +70,29 @@ export class AddNodeComponent implements OnInit {
           console.log(data);
           this.node = data;
           console.log(this.node, '  if this.node');
+          this.test();
         });
       }
     });
     console.log(this.node, '   this.node');
   }
-  // async test() {
-  //   console.log(this.node.ethAddress, ' this.node.ethAddress');
+  async test() {
+    console.log(this.node.ethAddress, ' this.node.ethAddress');
 
-  //   const lenderIndex = await this.lendersFactoryService.lenderIndex();
-  //   console.log(lenderIndex, 'lenderIndex');
+    const lenderIndex = await this.lendersFactoryService.lenderIndex();
+    console.log(lenderIndex, 'lenderIndex');
 
-  //   this.lendercontract = await this.lendersFactoryService.getLenderContract(
-  //     this.node.ethAddress
-  //   );
-  //   const isApproved = await this.lendersRegistrationService.approved(
-  //     this.lendercontract
-  //   );
-  //   this.getEscrowData();
-  //   console.log(isApproved, 'lendercontract');
-  //   console.log(this.lendercontract, 'lendercontract');
-  // }
+    this.lendercontract = await this.lendersFactoryService.getLenderContract(
+      this.node.ethAddress
+    );
+    const isApproved = await this.lendersRegistrationService.getApproved(
+      this.lendercontract
+    );
+    this.getEscrowData();
+    console.log(isApproved, 'lendercontract');
+    console.log(this.lendercontract, 'lendercontract');
+  }
+  // TODO optomize & refactore this code
   async approve() {
     // unloack his account
     const contract = await this.rentersFactoryService.getRenterContract(
@@ -104,11 +107,10 @@ export class AddNodeComponent implements OnInit {
       //TODO: need to update docker file to set storage value
       await this._approveOnContract();
     } else {
+      await this._saveToDatabase(data);
+      await this._emailUser();
+      this.goBack();
     }
-
-    await this._saveToDatabase(data);
-    await this._emailUser();
-    this.goBack();
   }
 
   async _approveOnContract() {
@@ -129,7 +131,6 @@ export class AddNodeComponent implements OnInit {
       );
       console.log(isApproved, 'isApproved');
 
-      await this.getEscrowData();
       await this.addEscrowData();
     } else {
       this.errorMessage = 'no contract found';
@@ -183,9 +184,11 @@ export class AddNodeComponent implements OnInit {
       escrowAddress: '',
       issueDate: null,
       endDate: null,
-      category: 'lender'
+      category: 'lender',
+      userid: null
     };
     this.escrow.category = 'lender';
+    this.escrow.userid = this.node.id;
     console.log(this.escrow.category, 'this.escrow.category');
 
     this.escrow.escrowAddress = await this.lendersRegistrationService.getEscrow(
@@ -208,10 +211,16 @@ export class AddNodeComponent implements OnInit {
     console.log(this.escrow.issueDate, ' this.escrow.issueDate ');
   }
   async addEscrowData() {
+    await this.getEscrowData();
+
     this.serverApiService
       .addEscrow(this.escrow)
       .toPromise()
-      .then(s => {})
+      .then(async s => {
+        await this._saveToDatabase(this.raftId);
+        await this._emailUser();
+        this.goBack();
+      })
       .catch(err => {
         this.errorMessage = err;
         console.error(err);
