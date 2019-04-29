@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SettingComponent } from './setting/setting.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 import { RaftManageComponent } from './raft-manage/raft-manage.component';
+
 import { RouterModule } from '@angular/router';
 
 @NgModule({

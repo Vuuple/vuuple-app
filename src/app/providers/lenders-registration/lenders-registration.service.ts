@@ -389,7 +389,7 @@ export class LendersRegistrationService {
     return result;
   }
 
-  async getActive(lenderContract) {
+  async isActive(lenderContract) {
     const result = await this.lenderRegistration
       .at(lenderContract)
       .active.call()

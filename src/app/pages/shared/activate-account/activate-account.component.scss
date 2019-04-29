@@ -30,3 +30,21 @@ button {
    float: left;  
    margin-left: 25%;
 }
+.active{
+  background-color: #0077b5;
+ color: white;
+}
+.active::after{
+ background-color: #0077b5;
+ color: white;
+ content: 'deactivate'
+}
+.deActive{
+  background-color: #29ABE2;
+color: white;
+}
+.deActive::after{
+background-color: #29ABE2;
+color: white;
+content: 'Activate'
+}
