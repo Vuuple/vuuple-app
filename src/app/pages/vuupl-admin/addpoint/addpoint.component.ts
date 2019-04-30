@@ -58,8 +58,8 @@ export class AddpointComponent implements OnInit {
       this.node.rentedStorage = await this.lenderService.getRentedStorage(
         this.lendercontract
       );
-      this.node.renewalDate = new Date(
-        (await this.lenderService.getRenewalDate(this.lendercontract)) * 1000
+      this.node.renewalDate = await this.lenderService.getRenewalDate(
+        this.lendercontract
       );
     }
   }

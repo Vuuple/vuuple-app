@@ -302,7 +302,7 @@ export class RenterRegisterationService {
         // console.log('rs', rs);
         this.setStatus('getRenewalDate complete!');
 
-        return rs.toNumber();
+        return new Date(rs.toNumber() / 1000000);
       })
       .catch(e => {
         console.log(e);
@@ -319,7 +319,7 @@ export class RenterRegisterationService {
         // console.log('rs', rs);
         this.setStatus('getRegisterDate complete!');
 
-        return rs.toNumber();
+        return new Date(rs.toNumber() / 1000000);
       })
       .catch(e => {
         console.log(e);

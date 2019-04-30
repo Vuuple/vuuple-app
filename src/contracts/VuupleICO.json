@@ -132,24 +132,31 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleICO.sol",
     "exportedSymbols": {
-      "VuupleICO": [3018]
+      "VuupleICO": [
+        3070
+      ]
     },
-    "id": 3019,
+    "id": 3071,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2998,
-        "literals": ["solidity", "^", "0.4", ".24"],
+        "id": 3050,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:11"
       },
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
         "file": "./VuupleToken.sol",
-        "id": 2999,
+        "id": 3051,
         "nodeType": "ImportDirective",
-        "scope": 3019,
-        "sourceUnit": 3051,
+        "scope": 3071,
+        "sourceUnit": 3103,
         "src": "26:27:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -157,10 +164,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
         "file": "../../node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
-        "id": 3000,
+        "id": 3052,
         "nodeType": "ImportDirective",
-        "scope": 3019,
-        "sourceUnit": 3545,
+        "scope": 3071,
+        "sourceUnit": 3597,
         "src": "54:99:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -171,39 +178,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3001,
+              "id": 3053,
               "name": "MintedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3544,
+              "referencedDeclaration": 3596,
               "src": "178:15:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MintedCrowdsale_$3544",
+                "typeIdentifier": "t_contract$_MintedCrowdsale_$3596",
                 "typeString": "contract MintedCrowdsale"
               }
             },
-            "id": 3002,
+            "id": 3054,
             "nodeType": "InheritanceSpecifier",
             "src": "178:15:11"
           }
         ],
-        "contractDependencies": [3512, 3544, 4534],
+        "contractDependencies": [
+          3564,
+          3596,
+          4586
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3018,
-        "linearizedBaseContracts": [3018, 3544, 3512, 4534],
+        "id": 3070,
+        "linearizedBaseContracts": [
+          3070,
+          3596,
+          3564,
+          4586
+        ],
         "name": "VuupleICO",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3016,
+              "id": 3068,
               "nodeType": "Block",
               "src": "403:14:11",
               "statements": []
             },
             "documentation": null,
-            "id": 3017,
+            "id": 3069,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -212,11 +228,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 3011,
+                    "id": 3063,
                     "name": "_rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3004,
+                    "referencedDeclaration": 3056,
                     "src": "370:5:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -225,11 +241,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 3012,
+                    "id": 3064,
                     "name": "_wallet",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3006,
+                    "referencedDeclaration": 3058,
                     "src": "377:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -238,29 +254,29 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 3013,
+                    "id": 3065,
                     "name": "_token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3008,
+                    "referencedDeclaration": 3060,
                     "src": "386:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3050",
+                      "typeIdentifier": "t_contract$_VuupleToken_$3102",
                       "typeString": "contract VuupleToken"
                     }
                   }
                 ],
-                "id": 3014,
+                "id": 3066,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 3010,
+                  "id": 3062,
                   "name": "Crowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3512,
+                  "referencedDeclaration": 3564,
                   "src": "360:9:11",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3512_$",
+                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3564_$",
                     "typeString": "type(contract Crowdsale)"
                   }
                 },
@@ -271,15 +287,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3009,
+              "id": 3061,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3004,
+                  "id": 3056,
                   "name": "_rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3017,
+                  "scope": 3069,
                   "src": "241:13:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -288,7 +304,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3003,
+                    "id": 3055,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "241:7:11",
@@ -302,10 +318,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3006,
+                  "id": 3058,
                   "name": "_wallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3017,
+                  "scope": 3069,
                   "src": "270:15:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -314,7 +330,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3005,
+                    "id": 3057,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:11",
@@ -328,26 +344,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 3008,
+                  "id": 3060,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3017,
+                  "scope": 3069,
                   "src": "301:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleToken_$3050",
+                    "typeIdentifier": "t_contract$_VuupleToken_$3102",
                     "typeString": "contract VuupleToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3007,
+                    "id": 3059,
                     "name": "VuupleToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3050,
+                    "referencedDeclaration": 3102,
                     "src": "301:11:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3050",
+                      "typeIdentifier": "t_contract$_VuupleToken_$3102",
                       "typeString": "contract VuupleToken"
                     }
                   },
@@ -359,19 +375,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 3015,
+              "id": 3067,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "403:0:11"
             },
-            "scope": 3018,
+            "scope": 3070,
             "src": "202:215:11",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3019,
+        "scope": 3071,
         "src": "156:263:11"
       }
     ],
@@ -380,24 +396,31 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleICO.sol",
     "exportedSymbols": {
-      "VuupleICO": [3018]
+      "VuupleICO": [
+        3070
+      ]
     },
-    "id": 3019,
+    "id": 3071,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2998,
-        "literals": ["solidity", "^", "0.4", ".24"],
+        "id": 3050,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:11"
       },
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
         "file": "./VuupleToken.sol",
-        "id": 2999,
+        "id": 3051,
         "nodeType": "ImportDirective",
-        "scope": 3019,
-        "sourceUnit": 3051,
+        "scope": 3071,
+        "sourceUnit": 3103,
         "src": "26:27:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -405,10 +428,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
         "file": "../../node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
-        "id": 3000,
+        "id": 3052,
         "nodeType": "ImportDirective",
-        "scope": 3019,
-        "sourceUnit": 3545,
+        "scope": 3071,
+        "sourceUnit": 3597,
         "src": "54:99:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -419,39 +442,48 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3001,
+              "id": 3053,
               "name": "MintedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3544,
+              "referencedDeclaration": 3596,
               "src": "178:15:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MintedCrowdsale_$3544",
+                "typeIdentifier": "t_contract$_MintedCrowdsale_$3596",
                 "typeString": "contract MintedCrowdsale"
               }
             },
-            "id": 3002,
+            "id": 3054,
             "nodeType": "InheritanceSpecifier",
             "src": "178:15:11"
           }
         ],
-        "contractDependencies": [3512, 3544, 4534],
+        "contractDependencies": [
+          3564,
+          3596,
+          4586
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3018,
-        "linearizedBaseContracts": [3018, 3544, 3512, 4534],
+        "id": 3070,
+        "linearizedBaseContracts": [
+          3070,
+          3596,
+          3564,
+          4586
+        ],
         "name": "VuupleICO",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3016,
+              "id": 3068,
               "nodeType": "Block",
               "src": "403:14:11",
               "statements": []
             },
             "documentation": null,
-            "id": 3017,
+            "id": 3069,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -460,11 +492,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 3011,
+                    "id": 3063,
                     "name": "_rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3004,
+                    "referencedDeclaration": 3056,
                     "src": "370:5:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -473,11 +505,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 3012,
+                    "id": 3064,
                     "name": "_wallet",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3006,
+                    "referencedDeclaration": 3058,
                     "src": "377:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -486,29 +518,29 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 3013,
+                    "id": 3065,
                     "name": "_token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3008,
+                    "referencedDeclaration": 3060,
                     "src": "386:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3050",
+                      "typeIdentifier": "t_contract$_VuupleToken_$3102",
                       "typeString": "contract VuupleToken"
                     }
                   }
                 ],
-                "id": 3014,
+                "id": 3066,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 3010,
+                  "id": 3062,
                   "name": "Crowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3512,
+                  "referencedDeclaration": 3564,
                   "src": "360:9:11",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3512_$",
+                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3564_$",
                     "typeString": "type(contract Crowdsale)"
                   }
                 },
@@ -519,15 +551,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3009,
+              "id": 3061,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3004,
+                  "id": 3056,
                   "name": "_rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3017,
+                  "scope": 3069,
                   "src": "241:13:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -536,7 +568,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3003,
+                    "id": 3055,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "241:7:11",
@@ -550,10 +582,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3006,
+                  "id": 3058,
                   "name": "_wallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3017,
+                  "scope": 3069,
                   "src": "270:15:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -562,7 +594,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3005,
+                    "id": 3057,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:11",
@@ -576,26 +608,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 3008,
+                  "id": 3060,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3017,
+                  "scope": 3069,
                   "src": "301:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleToken_$3050",
+                    "typeIdentifier": "t_contract$_VuupleToken_$3102",
                     "typeString": "contract VuupleToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3007,
+                    "id": 3059,
                     "name": "VuupleToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3050,
+                    "referencedDeclaration": 3102,
                     "src": "301:11:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3050",
+                      "typeIdentifier": "t_contract$_VuupleToken_$3102",
                       "typeString": "contract VuupleToken"
                     }
                   },
@@ -607,19 +639,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 3015,
+              "id": 3067,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "403:0:11"
             },
-            "scope": 3018,
+            "scope": 3070,
             "src": "202:215:11",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3019,
+        "scope": 3071,
         "src": "156:263:11"
       }
     ],
@@ -666,5 +698,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-26T19:41:17.227Z"
+  "updatedAt": "2019-04-30T13:15:16.796Z"
 }

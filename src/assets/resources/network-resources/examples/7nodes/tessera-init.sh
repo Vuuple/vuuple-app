@@ -7,8 +7,8 @@ currentDir=$(pwd)
     DDIR="${currentDir}/qdata/c"
     mkdir -p ${DDIR}
     mkdir -p qdata/logs
-    cp "keys/tm1.pub" "${DDIR}/tm.pub"
-    cp "keys/tm1.key" "${DDIR}/tm.key"
+    cp "keys/tm.pub" "${DDIR}/tm.pub"
+    cp "keys/tm.key" "${DDIR}/tm.key"
     rm -f "${DDIR}/tm.ipc"
 
     #change tls to "strict" to enable it (don't forget to also change http -> https)
@@ -41,20 +41,20 @@ currentDir=$(pwd)
             "knownServersFile": "${DDIR}/knownServers"
         }
     },
-      "peer": [
-               {
-                   "url": "http://3.14.2.131:9000"
-               },
-               {
-                   "url": "http://3.18.34.201:9000"
-               },
-               {
-                   "url": "http://3.18.204.171:9000"
-               },
-               {
-                   "url": "http://3.19.116.28:9000"
-               }
-            ],
+              "peer": [
+                  {
+                      "url": "http://3.14.2.131:9000"
+                  },
+                  {
+                      "url": "http://3.18.34.201:9000"
+                  },
+                  {
+                      "url": "http://3.18.204.171:9000"
+                  },
+                  {
+                      "url": "http://3.19.116.28:9000"
+                  }
+              ],
     "keys": {
         "passwords": [],
         "keyData": [
@@ -125,20 +125,20 @@ EOF
             "communicationType" : "REST"
         }
     ],
-   "peer": [
-               {
-                   "url": "http://3.14.2.131:9000"
-               },
-               {
-                   "url": "http://3.18.34.201:9000"
-               },
-               {
-                   "url": "http://3.18.204.171:9000"
-               },
-               {
-                   "url": "http://3.19.116.28:9000"
-               }
-            ],
+              "peer": [
+                  {
+                      "url": "http://3.14.2.131:9000"
+                  },
+                  {
+                      "url": "http://3.18.34.201:9000"
+                  },
+                  {
+                      "url": "http://3.18.204.171:9000"
+                  },
+                  {
+                      "url": "http://3.19.116.28:9000"
+                  }
+              ],
     "keys": {
         "passwords": [],
         "keyData": [
@@ -197,20 +197,20 @@ cat <<EOF > ${DDIR}/tessera-config-09.json
             "communicationType" : "REST"
         }
     ],
-    "peer": [
-               {
-                   "url": "http://3.14.2.131:9000"
-               },
-               {
-                   "url": "http://3.18.34.201:9000"
-               },
-               {
-                   "url": "http://3.18.204.171:9000"
-               },
-               {
-                   "url": "http://3.19.116.28:9000"
-               }
-            ],
+              "peer": [
+                  {
+                      "url": "http://3.14.2.131:9000"
+                  },
+                  {
+                      "url": "http://3.18.34.201:9000"
+                  },
+                  {
+                      "url": "http://3.18.204.171:9000"
+                  },
+                  {
+                      "url": "http://3.19.116.28:9000"
+                  }
+              ],
     "keys": {
         "passwords": [],
         "keyData": [

@@ -168,7 +168,7 @@ export class RenterEscrowService {
         console.log('rs', rs);
         this.setStatus('getCloseTime complete!');
 
-        return rs.toNumber();
+        return new Date(rs.toNumber() / 1000000);
       })
       .catch(e => {
         console.log(e);

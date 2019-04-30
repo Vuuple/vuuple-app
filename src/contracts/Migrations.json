@@ -73,14 +73,21 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/Migrations.sol",
     "exportedSymbols": {
-      "Migrations": [700]
+      "Migrations": [
+        700
+      ]
     },
     "id": 701,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 645,
-        "literals": ["solidity", "^", "0.4", ".23"],
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".23"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:3"
       },
@@ -91,7 +98,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 700,
-        "linearizedBaseContracts": [700],
+        "linearizedBaseContracts": [
+          700
+        ],
         "name": "Migrations",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -184,7 +193,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4549,
+                        "referencedDeclaration": 4601,
                         "src": "150:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -270,7 +279,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4549,
+                        "referencedDeclaration": 4601,
                         "src": "201:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -472,7 +481,9 @@
               "src": "395:109:3",
               "statements": [
                 {
-                  "assignments": [687],
+                  "assignments": [
+                    687
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -712,14 +723,21 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/Migrations.sol",
     "exportedSymbols": {
-      "Migrations": [700]
+      "Migrations": [
+        700
+      ]
     },
     "id": 701,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 645,
-        "literals": ["solidity", "^", "0.4", ".23"],
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".23"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:3"
       },
@@ -730,7 +748,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 700,
-        "linearizedBaseContracts": [700],
+        "linearizedBaseContracts": [
+          700
+        ],
         "name": "Migrations",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -823,7 +843,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4549,
+                        "referencedDeclaration": 4601,
                         "src": "150:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -909,7 +929,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4549,
+                        "referencedDeclaration": 4601,
                         "src": "201:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1111,7 +1131,9 @@
               "src": "395:109:3",
               "statements": [
                 {
-                  "assignments": [687],
+                  "assignments": [
+                    687
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -1361,5 +1383,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-26T19:41:17.229Z"
+  "updatedAt": "2019-04-30T13:15:16.803Z"
 }

@@ -195,14 +195,21 @@
   "ast": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterFiles.sol",
     "exportedSymbols": {
-      "RenterFiles": [1299]
+      "RenterFiles": [
+        1299
+      ]
     },
     "id": 1300,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 976,
-        "literals": ["solidity", "^", "0.4", ".24"],
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:6"
       },
@@ -213,7 +220,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1299,
-        "linearizedBaseContracts": [1299],
+        "linearizedBaseContracts": [
+          1299
+        ],
         "name": "RenterFiles",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -598,7 +607,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4549,
+                            "referencedDeclaration": 4601,
                             "src": "692:3:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -673,8 +682,11 @@
                       "id": 1009,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [4552, 4553],
-                      "referencedDeclaration": 4553,
+                      "overloadedDeclarations": [
+                        4604,
+                        4605
+                      ],
+                      "referencedDeclaration": 4605,
                       "src": "684:7:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -802,7 +814,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4549,
+                        "referencedDeclaration": 4601,
                         "src": "876:3:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1519,8 +1531,11 @@
                                     "id": 1134,
                                     "name": "revert",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [4554, 4555],
-                                    "referencedDeclaration": 4554,
+                                    "overloadedDeclarations": [
+                                      4606,
+                                      4607
+                                    ],
+                                    "referencedDeclaration": 4606,
                                     "src": "1895:6:6",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -2670,7 +2685,9 @@
               "src": "2388:308:6",
               "statements": [
                 {
-                  "assignments": [1200],
+                  "assignments": [
+                    1200
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -4017,7 +4034,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4549,
+                            "referencedDeclaration": 4601,
                             "src": "3273:3:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -4070,8 +4087,11 @@
                       "id": 1286,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [4552, 4553],
-                      "referencedDeclaration": 4552,
+                      "overloadedDeclarations": [
+                        4604,
+                        4605
+                      ],
+                      "referencedDeclaration": 4604,
                       "src": "3265:7:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4130,7 +4150,7 @@
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4557,
+                      "referencedDeclaration": 4609,
                       "src": "3308:12:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
@@ -4194,14 +4214,21 @@
   "legacyAST": {
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterFiles.sol",
     "exportedSymbols": {
-      "RenterFiles": [1299]
+      "RenterFiles": [
+        1299
+      ]
     },
     "id": 1300,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 976,
-        "literals": ["solidity", "^", "0.4", ".24"],
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:6"
       },
@@ -4212,7 +4239,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1299,
-        "linearizedBaseContracts": [1299],
+        "linearizedBaseContracts": [
+          1299
+        ],
         "name": "RenterFiles",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -4597,7 +4626,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4549,
+                            "referencedDeclaration": 4601,
                             "src": "692:3:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -4672,8 +4701,11 @@
                       "id": 1009,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [4552, 4553],
-                      "referencedDeclaration": 4553,
+                      "overloadedDeclarations": [
+                        4604,
+                        4605
+                      ],
+                      "referencedDeclaration": 4605,
                       "src": "684:7:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4801,7 +4833,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4549,
+                        "referencedDeclaration": 4601,
                         "src": "876:3:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -5518,8 +5550,11 @@
                                     "id": 1134,
                                     "name": "revert",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [4554, 4555],
-                                    "referencedDeclaration": 4554,
+                                    "overloadedDeclarations": [
+                                      4606,
+                                      4607
+                                    ],
+                                    "referencedDeclaration": 4606,
                                     "src": "1895:6:6",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -6669,7 +6704,9 @@
               "src": "2388:308:6",
               "statements": [
                 {
-                  "assignments": [1200],
+                  "assignments": [
+                    1200
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -8016,7 +8053,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4549,
+                            "referencedDeclaration": 4601,
                             "src": "3273:3:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -8069,8 +8106,11 @@
                       "id": 1286,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [4552, 4553],
-                      "referencedDeclaration": 4552,
+                      "overloadedDeclarations": [
+                        4604,
+                        4605
+                      ],
+                      "referencedDeclaration": 4604,
                       "src": "3265:7:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -8129,7 +8169,7 @@
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4557,
+                      "referencedDeclaration": 4609,
                       "src": "3308:12:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
@@ -8196,5 +8236,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-04-26T19:41:08.317Z"
+  "updatedAt": "2019-04-30T13:13:33.232Z"
 }

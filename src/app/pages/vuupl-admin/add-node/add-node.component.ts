@@ -95,13 +95,6 @@ export class AddNodeComponent implements OnInit {
   // TODO optomize & refactore this code
   async approve() {
     // unloack his account
-    const contract = await this.rentersFactoryService.getRenterContract(
-      this.node.ethAddress
-    );
-    const index = await this.rentersFactoryService.getRenterIndex();
-    console.log(index, 'index');
-    console.log(contract, 'contract');
-
     const data = await this._addToNetwork();
     if (this.node.category == 'lender') {
       //TODO: need to update docker file to set storage value
@@ -116,8 +109,8 @@ export class AddNodeComponent implements OnInit {
   async _approveOnContract() {
     console.log(this.node.ethAddress, ' this.node.ethAddress');
 
-    // const lenderIndex = await this.lendersFactoryService.lenderIndex();
-    // console.log(lenderIndex, 'lenderIndex');
+    const lenderIndex = await this.lendersFactoryService.lenderIndex();
+    console.log(lenderIndex, 'lenderIndex');
 
     this.lendercontract = await this.lendersFactoryService.getLenderContract(
       this.node.ethAddress
@@ -188,8 +181,9 @@ export class AddNodeComponent implements OnInit {
       userid: null
     };
     this.escrow.category = 'lender';
-    this.escrow.userid = this.node.id;
-    console.log(this.escrow.category, 'this.escrow.category');
+    this.escrow.userid = this.node['_id'];
+    console.log(this.node, 'this.node');
+    console.log(this.escrow, 'this.escrow');
 
     this.escrow.escrowAddress = await this.lendersRegistrationService.getEscrow(
       this.lendercontract
@@ -200,9 +194,8 @@ export class AddNodeComponent implements OnInit {
     // );
     // console.log(issue, 'issue date');
 
-    this.escrow.endDate = new Date(
-      (await this.lenderEscrowService.getCloseTime(this.escrow.escrowAddress)) *
-        1000
+    this.escrow.endDate = await this.lenderEscrowService.getCloseTime(
+      this.escrow.escrowAddress
     );
     let end = new Date(this.escrow.endDate);
     end.setMonth(this.escrow.endDate.getMonth() - 1);

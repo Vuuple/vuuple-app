@@ -47,8 +47,8 @@ export class AllocateComponent implements OnInit {
         this.lendercontract
       );
       this.myForm.patchValue({ storage: this.node.rentedStorage });
-      this.node.renewalDate = new Date(
-        (await this.lenderService.getRenewalDate(this.lendercontract)) * 1000
+      this.node.renewalDate = await this.lenderService.getRenewalDate(
+        this.lendercontract
       );
       if (
         new Date(this.node.renewalDate).getTime() <

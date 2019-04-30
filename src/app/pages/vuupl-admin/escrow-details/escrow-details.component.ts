@@ -71,8 +71,8 @@ export class EscrowDetailsComponent implements OnInit {
     this.escrow.isActive = await this.lenderEscrowService.getIsActive(
       this.address
     );
-    this.escrow.closeTime = new Date(
-      (await this.lenderEscrowService.getCloseTime(this.address)) * 1000
+    this.escrow.closeTime = await this.lenderEscrowService.getCloseTime(
+      this.address
     );
     let end = new Date(this.escrow.closeTime);
     end.setMonth(this.escrow.closeTime.getMonth() - 1);
@@ -105,8 +105,8 @@ export class EscrowDetailsComponent implements OnInit {
     this.escrow.account = await this.renterEscrowService.getRenterAccountContract(
       this.address
     );
-    this.escrow.closeTime = new Date(
-      (await this.renterEscrowService.getCloseTime(this.address)) * 1000
+    this.escrow.closeTime = await this.renterEscrowService.getCloseTime(
+      this.address
     );
     let end = new Date(this.escrow.closeTime);
     end.setMonth(this.escrow.closeTime.getMonth() - 1);

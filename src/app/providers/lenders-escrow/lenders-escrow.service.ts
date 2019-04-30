@@ -182,7 +182,7 @@ export class LenderEscrowService {
       .then(rs => {
         this.setStatus('closeTime complete!');
 
-        return rs.toNumber();
+        return new Date(rs.toNumber() / 1000000);
       })
       .catch(e => {
         console.log(e);

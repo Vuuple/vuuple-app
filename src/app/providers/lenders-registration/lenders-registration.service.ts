@@ -285,7 +285,7 @@ export class LendersRegistrationService {
       .then(rs => {
         this.setStatus('renewalDate complete!');
 
-        return rs.toNumber();
+        return new Date(rs.toNumber() / 1000000);
       })
       .catch(e => {
         console.log(e);
@@ -316,7 +316,7 @@ export class LendersRegistrationService {
       .then(rs => {
         this.setStatus('registerDate complete!');
 
-        return rs.toNumber();
+        return new Date(rs.toNumber() / 1000000);
       })
       .catch(e => {
         console.log(e);

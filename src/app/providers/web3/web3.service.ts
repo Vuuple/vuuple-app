@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-const Web3Net = require('web3-net');
+// const Web3Net = require('web3-net');
 
 declare global {
   interface Window {
@@ -15,7 +15,7 @@ export class Web3Service {
   private web3: any;
   private accounts: string[];
   account;
-  net = new Web3Net('ws://3.18.34.201:22000');
+  // net = new Web3Net('ws://3.18.34.201:22000');
   constructor() {
     this.web3 = window.web3;
   }
