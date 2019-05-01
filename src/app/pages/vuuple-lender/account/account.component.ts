@@ -6,12 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
-   number:any;
+  number: any;
+  renew;
   constructor() {
-    this.number = "15";
-   }
-
-  ngOnInit() {
+    this.number = '15';
   }
 
+  ngOnInit() {}
 }
