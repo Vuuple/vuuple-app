@@ -29,9 +29,14 @@ export class EscrowListComponent implements OnInit {
 
       if (this.id != undefined && this.id != null) {
         console.log(this.id);
-        this.apiService.getEscrowsByUserId(this.id).subscribe(data => {
-          this.escrows = data;
-          console.log(this.escrows);
+        this.apiService.getEscrowsByUserId(this.id).subscribe((data: any[]) => {
+          this.escrows = data
+            .map(s => s.escrows)
+            .map(sub => {
+              console.log(sub.key, 'sub');
+              return sub[0];
+            });
+          console.log(this.escrows, 'maped  this.escrows');
         });
       } else {
         this.apiService.getAllEscrows().subscribe(s => {
