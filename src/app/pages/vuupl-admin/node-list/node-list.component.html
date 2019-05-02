@@ -60,7 +60,7 @@
           {{ item?.status }}
         </td>
         <td style="border-right:none">
-          <button class="action">
+          <button class="action" (click)="ban(item?.category,item?.ethAddress,item?.id)">
             Ban
           </button>
         </td>
