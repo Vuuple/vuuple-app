@@ -42,11 +42,8 @@ export class NodeListComponent implements OnInit {
     private pagerService: PagerService ,
     private lendersFactoryService: LendersFactoryService,
     private rentersFactoryService: RenterFactoryService,
-    private lenderEscrowService: LenderEscrowService,
-    private renterEscrowService: RenterEscrowService,
     private lendersRegistrationService: LendersRegistrationService,
     private rentersRegistrationService: RenterRegisterationService,
-    private tokenService: TokenService,
    
   ) {
     this.TotalCompanyRenter;

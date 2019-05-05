@@ -18,6 +18,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { AddNodeComponent } from './add-node/add-node.component';
 import { EscrowDetailsComponent } from './escrow-details/escrow-details.component';
 import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-Interceptor.component';
+import { CreatAdminComponent } from './creat-admin/creat-admin.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,10 @@ import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-
       {
         path: 'admin',
         component: AdminComponent
+      },
+      {
+        path: 'createAdmin',
+        component: CreatAdminComponent
       },
       {
         path: 'wallet',
@@ -106,7 +111,8 @@ import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-
     AdminComponent,
     WalletComponent,
     AddNodeComponent,
-    EscrowDetailsComponent
+    EscrowDetailsComponent,
+    CreatAdminComponent
   ]
 })
 export class VuuplAdminModule {}

@@ -85,8 +85,7 @@ export class VuuplAdminService {
       });
     return result;
   }
-
-  async renounceVuupleAdmin() {
+  async renounceVuupleAdmin(account) {
     const result = await this.vuuple_admin
       .deployed()
       .then(instance => {
