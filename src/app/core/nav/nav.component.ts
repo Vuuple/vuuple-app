@@ -52,7 +52,9 @@ export class NavComponent implements OnInit {
     },
     { name: 'COMAPNY', link: '/pages/admin/companyRenter', type: 'renter' },
     { name: 'LENDERS', link: '/pages/admin/lender', type: 'lender' },
+    { name: 'admins',  link: '/pages/admin/admin'},
     { name: 'SETTING', link: '/pages/setting' }
+    
   ];
   items = [];
   ngOnInit() {}

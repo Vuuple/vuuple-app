@@ -42,7 +42,9 @@ export class ServerApiService {
   approve(id, data): Observable<any> {
     return this.dataService.postById('users/approve', id, data);
   }
-
+  registerAdmin(data): Observable<any>{
+    return this.dataService.post('users/admin',data) ;
+  }
   // escrow route
   addEscrow(data): Observable<any> {
     return this.dataService.post('escrows', data);

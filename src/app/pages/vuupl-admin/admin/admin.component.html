@@ -1,6 +1,10 @@
 <div class="row main">
   <div class="row">
-      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button  (click)="createAdmin()" class="btn">
+          Create New Admin
+        </button>
+      </div>
       <div class="col-md-4">
         <h2>
          Admins
@@ -19,8 +23,9 @@
               <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Username</th>
               <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Email</th>
               <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Eth Wallet</th>
+              <th  style=" border-right: 1px solid #29ABE2; padding: 15px;">Enode</th>
               <th  style=" border-right: 1px solid #29ABE2; padding: 15px;"> Static IP  </th>
-              <th  style="  padding: 15px;">category</th>
+              <th  style="  padding: 15px;">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -28,8 +33,13 @@
               <td>{{item?.username}}</td>
               <td>{{item?.email}}</td>
               <td>{{item?.ethAddress}}</td>
+              <td >{{item?.enode}}</td>
               <td>{{item?.ip}}</td>
-              <td style="border:none">{{item?.category}}</td>
+              <td style="border-right:none">
+                <button class="action" (click)="ban(item?._id,item?.ethAddress)">
+                  Ban
+                </button>
+              </td>
             </tr>
           </tbody>
       </table>

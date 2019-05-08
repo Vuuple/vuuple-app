@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   isActive: boolean = false ;
   toolTip: string;
   srcImage : any ;
+  isRenter: boolean;
 
   constructor(public authService: AuthService, private router: Router) {
     this.srcImage = "../../../assets/img/networkDisconnected.png"
@@ -20,12 +21,15 @@ export class HeaderComponent implements OnInit {
     if (type === 1) {
       this.userTitle = 'ADMIN';
        this.isadmin = true;
+       this.isRenter = false; 
     } else if (type === 2) {
       this.userTitle = 'RENTER';
       this.isadmin = false;
+      this.isRenter =  true ; 
     } else if (type === 3) {
       this.userTitle = 'LENDER';
       this.isadmin = false;
+      this.isRenter = false; 
     } else {
       this.Logout();
     }

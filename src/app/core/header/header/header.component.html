@@ -38,12 +38,12 @@
             <div class="row">
               <div class="col-md-12 col-lg-12">
                 <form class="navbar-form navbar-right">
-                  <input
+               <!--  <input
                     type="text"
                     class="form-control"
                     style="width: 200px;margin-right: 5px"
                     placeholder="Search..."
-                  />
+                  />--> 
                   <!--<img  class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />-->
                   <button 
                     class="btn"
@@ -62,7 +62,7 @@
                 </form>
               </div>
               <div class="col-md-12 col-lg-12" style="padding-top: 8%;">
-                <ul *ngIf="!isadmin" class="nav navbar-nav navbar-right sub-clouds">
+                <ul *ngIf="isRenter" class="nav navbar-nav navbar-right sub-clouds">
                  <li>
                    <div class="image" >
                        <p class="following">Following</p>
