@@ -85,6 +85,27 @@ export class VuuplAdminService {
       });
     return result;
   }
+  async removeVuupleAdmin(account) {
+    const result = await this.vuuple_admin
+      .deployed()
+      .then(instance => {
+        console.log('instance', instance);
+
+        return instance.removeVuupleAdmin(account, {
+          from: this.account,
+          gas: '200000'
+        });
+      })
+      .then(res => {
+        this.setStatus('This address is now an Admin');
+        return res;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error ; see log.');
+      });
+    return result;
+  }
   async renounceVuupleAdmin(account) {
     const result = await this.vuuple_admin
       .deployed()
