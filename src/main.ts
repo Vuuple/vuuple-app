@@ -21,14 +21,14 @@ window.addEventListener('load', function() {
   console.log(isLocal, 'isLocal');
   if (isLocal) {
     window.web3 = new Web3(
-      new Web3.providers.HttpProvider('http://3.16.57.132:22001')
-      // new Web3.providers.HttpProvider('http://3.14.2.131:22000')
+      // new Web3.providers.HttpProvider('http://3.16.57.132:22001')
+      new Web3.providers.HttpProvider('http://3.14.2.131:22000')
       // new Web3.providers.HttpProvider('http://127.0.0.1:22000')
     );
   } else {
     window.web3 = new Web3(
-      new Web3.providers.HttpProvider('http://3.16.57.132:22001')
-      // new Web3.providers.HttpProvider('http://3.14.2.131:22000')
+      //  new Web3.providers.HttpProvider('http://3.16.57.132:22001')
+      new Web3.providers.HttpProvider('http://3.14.2.131:22000')
       // new Web3.providers.HttpProvider('http://127.0.0.1:22000')
     );
   }
