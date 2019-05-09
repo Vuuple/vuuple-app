@@ -14,20 +14,25 @@ export class HeaderComponent implements OnInit {
   toolTip: string;
   srcImage : any ;
   isRenter: boolean;
+  userImage: string;
+  conn: boolean;
 
   constructor(public authService: AuthService, private router: Router) {
     this.srcImage = "../../../assets/img/networkDisconnected.png"
     const type = this.authService.getUserType();
     if (type === 1) {
       this.userTitle = 'ADMIN';
+      this.userImage = "assets/img/Admin.png" ;
        this.isadmin = true;
        this.isRenter = false; 
     } else if (type === 2) {
       this.userTitle = 'RENTER';
+      this.userImage = "assets/img/Renter(2).png" ;
       this.isadmin = false;
       this.isRenter =  true ; 
     } else if (type === 3) {
       this.userTitle = 'LENDER';
+      this.userImage = "assets/img/Lender1.png" ;
       this.isadmin = false;
       this.isRenter = false; 
     } else {
@@ -42,9 +47,11 @@ export class HeaderComponent implements OnInit {
     this.isActive = !this.isActive;
     if(this.isActive == true){
       this.toolTip = "connected";
+      this.conn =true ;
       this.srcImage = "../../../assets/img/networkConnected.png"
     }
     else{
+      this.conn =false ;
       this.toolTip = "disconnected";
       this.srcImage = "../../../assets/img/networkDisconnected.png"
     }

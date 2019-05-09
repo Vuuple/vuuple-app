@@ -1,103 +1,125 @@
-<nav class="navbar navbar-fixed-top">
-  <div class="container-fluid ">
-    <div id="headerRow" class="row">
-      <div class="col-md-3 col-lg-3" style="padding-top: 2%;">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar"
-            aria-expanded="false"
-            aria-controls="navbar"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand"(click)="goToHome()">
-            <img src="assets/img/Logo.png" />
-          </a>
-        </div>
-      </div>
-      <div class="col-md-9 col-lg-9">
-        <div id="navbar" class=" row navbar-collapse collapse">
-          <div class="col-md-1"></div>
-          <div class="col-md-6 col-lg-6">
-            <div class="header-wrapper">
-              <img
-                class="header-image"
-                alt="cloud Background"
-                src="assets/img/bigTitleCloud.png"
-              />
-              <div class="header-contents">{{ userTitle }}</div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-5" style="padding-top: 1%;">
-            <div class="row">
-              <div class="col-md-12 col-lg-12">
-                <form class="navbar-form navbar-right">
-               <!--  <input
-                    type="text"
-                    class="form-control"
-                    style="width: 200px;margin-right: 5px"
-                    placeholder="Search..."
-                  />--> 
-                  <!--<img  class="headerIcon" alt="" src="../../../../assets/img/Icon.png" />-->
-                  <button 
-                    class="btn"
-                    data-tooltip title=" Click To Profile! "
-                    (click)="ShowProfile()">                 
-                    <i class="fas fa-user-cog"
-                    (click)="ShowProfile()"></i>
-                  </button>
-                <!-- <i class="fas fa-cloud" style="color:white"></i>--> 
-                  <img src={{srcImage}} (click)="toggle()" data-tooltip title="{{toolTip}}" style="width:20px;margin-right:5px;margin-left:5px" />             
-                  <button class="btn" 
-                    data-tooltip title=" Logout! "
-                    (click)="Logout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                  </button>
-                </form>
-              </div>
-              <div class="col-md-12 col-lg-12" style="padding-top: 8%;">
-                <ul *ngIf="isRenter" class="nav navbar-nav navbar-right sub-clouds">
-                 <li>
-                   <div class="image" >
-                       <p class="following">Following</p>
-                       <p class="followingContent">15</p>
-                    </div>
-                 </li>
-                 <li>
-                  <div class="image">
-                    <p class="following">Followers</p>
-                    <p class="followingContent">15</p>
-                  </div>
-                 </li>
-                </ul>
-               <ul  *ngIf="isadmin" class="nav navbar-nav navbar-right sub-clouds">
-                  <!-- <li>
-                      <div class="image">
-                          <a class="following" (click)="goTowallet()">wallet</a>
-                        </div>
-                  </li>-->
-                  <li>
-                    <div class="image" >
-                      <a class="following" (click)="goToNodes()">Nodes</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="image">
-                      <a class="following" (click)="goToTokens()">vuuple<br/>Tokens</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<nav class="navbar navbar-fixed-top navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" (click)="goToHome()">
+          <img alt="Brand" src="assets/img/Logo.png">
+      </a>
+      <a > 
+           <img  style="padding:0.4px 20px;margin-left:80px"
+                  class="header-image"
+                  alt="cloud Background"
+                  src={{userImage}}
+                />
+      </a>
     </div>
-  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+    <!--  <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>-->
+      <div class="row"style="padding:15px 20px 0px 10px">
+      <ul class="nav navbar-nav navbar-right">
+          <li class="searchIcon">
+              <label class="dropdown">
+      
+                  <div class="dd-button">
+                      <i class="fas fa-search"></i>          
+                  </div>
+                
+                  <input type="checkbox" class="dd-input" id="test">
+                
+                  <ul class="dd-menu">
+                    <li>
+                      <input type="text"  placeholder="Search">
+                    </li>
+                  </ul>
+                  
+                </label>
+          </li>
+        <li>
+          <a (click)="ShowProfile()" class="t-bottom t-md bordered" data-tooltip="Click To Profile!">  
+          <i class="fas fa-user-cog fa-2x"></i>
+          </a>
+        </li>
+        <li>
+        <a *ngIf="conn" class="t-bottom t-md bordered" data-tooltip="connected" >
+          <img src={{srcImage}} (click)="toggle()" style="width:40px;" />    
+        </a>         
+        </li>
+        <li>
+            <a *ngIf="!conn" class="t-bottom t-md bordered" data-tooltip="disconnected" >
+              <img src={{srcImage}} (click)="toggle()" style="width:40px;" />    
+            </a>         
+            </li>
+         <li>
+          <a (click)="Logout()" class="t-bottom t-md bordered" data-tooltip="Logout!">  
+              <i class="fas fa-sign-out-alt fa-2x"></i>
+          </a>
+         </li>
+      <!--  <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+       <!-- <button type="submit" class="btn btn-default">Submit</button>-->
+      </form>
+      </div>
+      <div class="row" style="padding:0px 100px 0px 10px">
+          <ul *ngIf="isRenter" class="nav navbar-nav navbar-right sub-clouds">
+              <li >
+                <a class="image"style="margin-right: 30px;" >
+                    <p class="following">Following<br>15</p>
+                </a>
+              </li>
+              <li>
+               <a class="image"style="margin-right: 20px;">
+                 <p class="following">Followers<br>15</p>
+               </a>
+              </li>
+          </ul>
+          <ul *ngIf="isadmin" class="nav navbar-nav navbar-right sub-clouds">
+              <li >
+                <a class="image"style="margin-right: 30px;" >
+                    <p class="following"(click)="goToNodes()">Nodes</p>
+                </a>
+              </li>
+              <li>
+               <a class="image"style="margin-right: 20px;">
+                 <p class="following"(click)="goToTokens()" style="padding: 15px;">vuuple Tokens</p>
+               </a>
+              </li>
+          </ul>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
