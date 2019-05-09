@@ -58,7 +58,22 @@ p{
     display: block;
   }
 }
-
+.cloud{
+  padding:0px 100px 0px 10px
+}
+.headerIcon{
+  padding:15px 20px 0px 10px
+ }
+@media(min-width : 1085px)and (max-width : 1125px){
+.cloud{
+  padding:0
+}
+}
+@media(max-width : 1084px){
+ .headerIcon{
+  padding:0
+ }
+}
 
 /* Dropdown */
 
