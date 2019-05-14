@@ -119,7 +119,7 @@ export class AddNodeComponent implements OnInit {
       console.log(this.lendercontract, 'lendercontract');
 
       //  get escrow data and save it in db
- 
+
       const approve = await this.lendersRegistrationService.approve(
         this.lendercontract
       );

@@ -142,24 +142,33 @@ const run = async () => {
     global.isLocal = false;
     // global.networkIP = 'http://3.14.2.131:22000';
   } else {
-    // // log.info(`Starting application: ${productName} ${version} (${environment})`);
-    // const dockerfile = path.join(
-    //   networkPath,
-    //   'docker-compose.yml'
-    // );
-    // await node.startNetwork(dockerfile);
-    // // need to check for containers healthy
-    // const child = await node.list_containers();
-    // // const sttus = await node.check_status(child[0]);
-    // const health = await node.check_health(child[0]);
-    // child.pop();
-    // console.log(child, 'child');
-    // // console.log(sttus, 'status');
-    // console.log(health, 'health');
-    // global.networkIP = 'http://127.0.0.1:22000';
+    // check if raft-start.sh is exist
     global.networkPath = networkPath;
-    //  global.networkIP = 'http://3.14.2.131:22000';
-    global.isLocal = true;
+
+    if (
+      !fs.existsSync(
+        path.join(networkPath, 'examples/', '/7nodes', '/raft-start.sh')
+      )
+    ) {
+      global.isLocal = false;
+    } else {
+      // // log.info(`Starting application: ${productName} ${version} (${environment})`);
+      const dockerfile = path.join(networkPath, 'docker-compose.yml');
+      await node.startNetwork(dockerfile);
+      // need to check for containers healthy
+      const child = await node.list_containers();
+      console.log(child, 'child');
+
+      // const sttus = await node.check_status(child[0]);
+      // const health = await node.check_health(child[0]);
+      child.pop();
+      console.log(child, 'child');
+      // console.log(sttus, 'status');
+      //console.log(health, 'health');
+      // global.networkIP = 'http://127.0.0.1:22000';
+      //  global.networkIP = 'http://3.14.2.131:22000';
+      global.isLocal = true;
+    }
   }
   await app.whenReady();
 

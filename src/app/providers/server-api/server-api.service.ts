@@ -42,8 +42,8 @@ export class ServerApiService {
   approve(id, data): Observable<any> {
     return this.dataService.postById('users/approve', id, data);
   }
-  registerAdmin(data): Observable<any>{
-    return this.dataService.post('users/admin',data) ;
+  registerAdmin(data): Observable<any> {
+    return this.dataService.post('users/admin', data);
   }
   // escrow route
   addEscrow(data): Observable<any> {
@@ -51,6 +51,9 @@ export class ServerApiService {
   }
   getAllEscrows(): Observable<any[]> {
     return this.dataService.getList('escrows');
+  }
+  getStaticNodes(): Observable<any[]> {
+    return this.dataService.getList('users/staticNodes');
   }
   getEscrowsByUserId(id): Observable<any[]> {
     return this.dataService.getListWitFilter('escrows/user', id);
