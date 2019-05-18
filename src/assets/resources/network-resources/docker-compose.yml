@@ -382,7 +382,7 @@ services:
     container_name: quorum-node
     ports:
       - '22000:8545'
-      - '21008:21000'
+      - '21000:21000'
       - '50400:50400'
       - '30301:30301'
     volumes:
