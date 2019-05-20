@@ -24,8 +24,16 @@ export class RaftManageComponent implements OnInit {
     private apiService: ServerApiService
   ) {
     this.apiService.getStaticNodes().subscribe(s => {
-      console.log(s, 'static nodes');
-      this.staticNodes = s;
+      this.staticNodes = [];
+      s.forEach(item => {
+        //console.log(item, 'b 4 item');
+        item = JSON.parse(item);
+        // item.toString().replace('/\"', '');
+        // console.log(item, 'item');
+        this.staticNodes.push(item);
+      });
+      // console.log(s, 'static nodes');
+
       this.readPermissionNodeFile();
     });
   }
@@ -107,6 +115,8 @@ export class RaftManageComponent implements OnInit {
       '/7nodes',
       '/permissioned-nodes.json'
     );
+    console.log(this.staticNodes, 'this.staticNodes');
+
     alter_staticNodes(this.staticNodes, input, output);
   }
 }
