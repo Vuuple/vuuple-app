@@ -8,6 +8,8 @@ import { LendersFactoryService } from '../../providers/lenders-factory/lenders-f
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
+const publicIp = require('public-ip');
+
 @Component({
   selector: 'app-lender-register',
   templateUrl: './lender-register.component.html',
@@ -54,9 +56,15 @@ export class LenderRegisterComponent implements OnInit {
       termService: ['', Validators.required],
       privacyPolicy: ['', Validators.required]
     });
+    this.getIp();
   }
   lenderRegister() {
     this.savetocontract();
+  }
+  async getIp() {
+    const ip = await publicIp.v4();
+    console.log(ip, 'ip');
+    this.lenderRegisterForm.patchValue({ staticIP: ip });
   }
   async getEnode() {
     const _enode = await getNodeKey();

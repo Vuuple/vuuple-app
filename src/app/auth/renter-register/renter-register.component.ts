@@ -8,6 +8,8 @@ import { RenterFactoryService } from '../../providers/renter-factory/renter-fact
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
+const publicIp = require('public-ip');
+
 @Component({
   selector: 'app-renter-register',
   templateUrl: './renter-register.component.html',
@@ -48,6 +50,8 @@ export class RenterRegisterComponent implements OnInit {
       termService: ['', Validators.required],
       privacyPolicy: ['', Validators.required]
     });
+    this.getIp();
+
     this.route.queryParams.subscribe(params => {
       const type = params['type'];
       console.log(type, ' type');
@@ -62,6 +66,11 @@ export class RenterRegisterComponent implements OnInit {
         }
       }
     });
+  }
+  async getIp() {
+    const ip = await publicIp.v4();
+    console.log(ip, 'ip');
+    this.renterRegisterForm.patchValue({ staticIP: ip });
   }
   renterRegister() {
     this.savetoContract();
