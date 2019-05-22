@@ -1,16 +1,21 @@
-<p class="pNote"> *Note: you can edit your raft id</p>
+<p class="pNote">*Note: you can edit your raft id</p>
 <form [formGroup]="myForm">
   <div class="form-group row">
     <label for="Name" class="col-md-2">Raft Id:</label>
     <div class="col-md-8">
-    <input type="text" formControlName="raftId" class="form-control"  />
-  </div>
+      <input
+        type="text"
+        formControlName="raftId"
+        disabled
+        class="form-control"
+      />
+    </div>
   </div>
   <button
-  [disabled]="!myForm.valid"
-  class="btn btn-primary"
-  (click)="editRaftId()"
->
-  Update Raft Id
-</button>
+    [disabled]="!myForm.valid"
+    class="btn btn-primary"
+    (click)="editRaftId()"
+  >
+    Update Raft Id
+  </button>
 </form>

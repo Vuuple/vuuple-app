@@ -47,7 +47,7 @@ export class RaftManageComponent implements OnInit {
     if (this.node != undefined && this.node != null) {
       console.log(this.node, 'this.node');
 
-      this.myForm.patchValue({ raftId: this.node.raftId, disabled: true });
+      this.myForm.patchValue({ raftId: this.node.raftId });
       console.log(this.myForm.value, 'form values');
     }
   }
@@ -67,6 +67,7 @@ export class RaftManageComponent implements OnInit {
     fs.copyFile(input, output, err => {
       if (err) throw err;
       console.log('source.txt was copied to destination.txt');
+      this.myForm.patchValue({ raftId: null });
     });
 
     const options = {
