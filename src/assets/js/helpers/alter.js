@@ -68,7 +68,7 @@ function jsonReader(filePath, cb) {
   });
 }
 function jsonWriter(filePath, data, cb) {
-  fs.writeFile(filePath, JSON.stringify(data), err => {
+  fs.writeFile(filePath, JSON.stringify(data, null, 2), err => {
     if (err) {
       return cb && cb(err);
     }
