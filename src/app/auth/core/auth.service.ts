@@ -28,18 +28,23 @@ export class AuthService {
     //   });
 
     return new Promise<any>((resolve, reject) => {
-      this.dataService.post('users/login', credential).subscribe(s => {
-        console.log(s);
-        let user = s.user;
-        user.token = s.token;
-        console.log(user, 'user');
+      this.dataService.post('users/login', credential).subscribe(
+        s => {
+          console.log(s);
+          let user = s.user;
+          user.token = s.token;
+          console.log(user, 'user');
 
-        localStorage.setItem('user', JSON.stringify(user));
-        this.currentUser = JSON.parse(localStorage.getItem('user'));
-        console.log(this.currentUser, ' this.currentUser');
+          localStorage.setItem('user', JSON.stringify(user));
+          this.currentUser = JSON.parse(localStorage.getItem('user'));
+          console.log(this.currentUser, ' this.currentUser');
 
-        resolve(this.currentUser != null && this.currentUser !== undefined);
-      });
+          resolve(this.currentUser != null && this.currentUser !== undefined);
+        },
+        error => {
+          reject(error);
+        }
+      );
     });
   }
   async registerClient(

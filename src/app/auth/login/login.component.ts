@@ -53,6 +53,8 @@ export class LoginComponent {
     this.authService
       .login(this.loginForm.get('email').value, this.loginForm.get('pwd').value)
       .then(isAuth => {
+        console.log('resolve');
+
         if (isAuth == true) {
           const type = this.authService.getUserType();
           const isApproved = this.authService.isApproved();
