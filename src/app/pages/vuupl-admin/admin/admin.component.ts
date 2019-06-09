@@ -11,27 +11,34 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
   admins: any = [];
   adminID: any;
+  errorMessage: any;
 
-  constructor(private serverApiService: ServerApiService,
-             private router : Router ,
-             private VuuplAdminService : VuuplAdminService) {
+  constructor(
+    private serverApiService: ServerApiService,
+    private router: Router,
+    private VuuplAdminService: VuuplAdminService
+  ) {
     this.serverApiService.getAllAdmins().subscribe((data: {}) => {
       this.admins = data;
       console.log(data);
     });
   }
   ngOnInit() {}
-  createAdmin(){
-    this.router.navigate(['/pages/admin/createAdmin'])
+  createAdmin() {
+    this.router.navigate(['/pages/admin/createAdmin']);
   }
-  ban(value , eth){
-    this.adminID = value ;
-    console.log(this.adminID);
-    this.VuuplAdminService.renounceVuupleAdmin(eth).then( (res) => {
-      console.log(res);
-    })
-    this.serverApiService.ban(this.adminID).subscribe((res) => {
-      console.log(res);
-    })
+  ban(value, eth) {
+    try {
+      this.adminID = value;
+      console.log(this.adminID);
+      this.VuuplAdminService.renounceVuupleAdmin(eth).then(res => {
+        console.log(res, 'renounceVuupleAdmin');
+      });
+      this.serverApiService.ban(this.adminID).subscribe(res => {
+        console.log(res);
+      });
+    } catch (error) {
+      this.errorMessage = error;
+    }
   }
 }
