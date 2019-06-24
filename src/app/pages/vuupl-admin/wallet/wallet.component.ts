@@ -11,11 +11,11 @@ import { Web3Service } from '../../../providers/web3/web3.service';
   providers: [TokenService, VuuplAdminService, Web3Service]
 })
 export class WalletComponent implements OnInit {
-  avialableTokens;
+  avialableTokens = '5';
   tokensInUse = 0;
-  tokensRedeemd = '3.3';
+  tokensRedeemd;
   faitCurrencyInAccount = '3.3';
-  cuurentUser;
+  currentUser;
   accountContract;
   constructor(
     private adminService: VuuplAdminService,
@@ -27,18 +27,19 @@ export class WalletComponent implements OnInit {
 
   ngOnInit() {
     this.getBlance();
-    // this.apiService.getEscrowsByUserId(this.cuurentUser.id).subscribe(data => {
+    // this.apiService.getEscrowsByUserId(this.currentUser.id).subscribe(data => {
     //   const escrows = data;
     //   console.log(escrows);
     // });
   }
   async getBlance() {
-    this.cuurentUser = await this.adminService.getCurrentAccount();
+    this.currentUser = await this.adminService.getCurrentAccount();
 
-    this.avialableTokens = await this.tokenService.getBalanceOf(
-      this.cuurentUser
+    this.tokensRedeemd = await this.tokenService.getBalanceOf(
+      this.currentUser
     );
-    const balance = await this.web3Service.getBalanceOf(this.cuurentUser);
+
+    const balance = await this.web3Service.getBalanceOf(this.currentUser);
     console.log(this.avialableTokens, 'this.avialableTokens');
     console.log(balance, 'this.balance');
   }
