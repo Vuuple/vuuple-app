@@ -12,7 +12,7 @@ import { Web3Service } from '../../../providers/web3/web3.service';
 })
 export class WalletComponent implements OnInit {
   avialableTokens = '5';
-  tokensInUse = 0;
+  mintedTokens;
   tokensRedeemd;
   faitCurrencyInAccount = '3.3';
   currentUser;
@@ -38,6 +38,8 @@ export class WalletComponent implements OnInit {
     this.tokensRedeemd = await this.tokenService.getBalanceOf(
       this.currentUser
     );
+
+    this.mintedTokens = await this.tokenService.getTotalSupply();
 
     const balance = await this.web3Service.getBalanceOf(this.currentUser);
     console.log(this.avialableTokens, 'this.avialableTokens');
