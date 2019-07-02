@@ -6,12 +6,13 @@ const Response = require('../utils/response');
 
 const router = express.Router();
 
-const gateway = 'http://3.14.2.131:8500' || 'http://localhost:8500';
+//const gateway = 'http://3.14.2.131:8500' || 'http://localhost:8500';
 // const bzz = new BzzAPI({ url: gateway });
 
 router.post('/ping', function(req, res) {
   const raw = 'test';
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
   swarmModel
     .upload(gateway, raw, option)
     .then(hash => {
@@ -34,7 +35,8 @@ router.post('/ping', function(req, res) {
 /** downloads */
 router.post('/getUrl', function(req, res) {
   const hash = req.body.hash;
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
   swarmModel
     .getUrl(gateway, hash, option)
     .then(contents => {
@@ -46,7 +48,8 @@ router.post('/getUrl', function(req, res) {
 });
 router.post('/getContent', function(req, res) {
   const hash = req.body.hash;
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
   swarmModel
     .getContent(gateway, hash, option)
     .then(contents => {
@@ -59,7 +62,8 @@ router.post('/getContent', function(req, res) {
 
 router.post('/list', function(req, res) {
   const hash = req.body.hash;
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
 
   swarmModel
     .getManifest(gateway, hash, option)
@@ -71,7 +75,8 @@ router.post('/list', function(req, res) {
     });
 });
 router.post('/downloaddirdata', function(req, res) {
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
   const hash = req.body.hash;
   swarmModel
     .downloadDirectoryData(gateway, hash, option)
@@ -84,7 +89,8 @@ router.post('/downloaddirdata', function(req, res) {
 });
 
 router.post('/downloadfileto', function(req, res) {
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
   const hash = req.body.hash;
   const targetpath = req.body.targetpath;
   swarmModel
@@ -110,9 +116,10 @@ router.post('/downloadfileto', function(req, res) {
 //     });
 // });
 //**** uploads  */
-router.post('/uploadraw', function(req, res) {
+router.post('/upload', function(req, res) {
   const raw = req.body.data;
-  const option = { mode: 'raw' };
+  const gateway = req.body.gateway;
+  const option = { mode: req.body.option ? req.body.option : 'raw' };
   swarmModel
     .upload(gateway, raw, option)
     .then(hash => {
@@ -128,8 +135,10 @@ router.post('/uploadfilefrom', function(req, res) {
     contentType: 'File'
   };
   const filepath = req.body.filepath;
+  const gateway = req.body.gateway;
+
   swarmModel
-    .uploadFileFrom(filepath, UploadOptions)
+    .uploadFileFrom(gateway, filepath, UploadOptions)
     .then(hash => {
       res.json(new Response(200, `Uploaded File Successfully`, hash));
     })
@@ -143,8 +152,10 @@ router.post('/uploadfile', function(req, res) {
   const UploadOptions = {
     contentType: 'File'
   };
+  const gateway = req.body.gateway;
+
   swarmModel
-    .uploadFile(file, UploadOptions)
+    .uploadFile(gateway, file, UploadOptions)
     .then(hash => {
       res.json(new Response(200, `Uploaded File Successfully`, hash));
     })
