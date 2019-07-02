@@ -7,6 +7,7 @@ const { getApplicationMenu } = require('./menu');
 const { getIconPath } = require('./utils');
 
 const { BrowserWindow, Menu } = electron;
+require('../../../server.js');
 
 Object.defineProperty(exports, '__esModule', { value: true });
 var path = require('path');
@@ -58,8 +59,6 @@ const createWindow = async () => {
     });
     window.loadURL('http://localhost:4200');
   } else {
-    require('../../../server.js');
-
     window.loadURL('http://localhost:3000');
 
     // window.loadURL(
