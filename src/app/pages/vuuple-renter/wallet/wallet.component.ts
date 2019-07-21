@@ -26,8 +26,8 @@ import { LendersRegistrationService } from '../../../providers/lenders-registrat
 export class WalletComponent implements OnInit {
   avialableTokens;
   tokensInUse = 0;
-  tokensRedeemd = '3.3';
-  faitCurrencyInAccount = '3.3';
+  tokensRedeemd = 0;
+  tokensPurchase = 0;
   cuurentUser;
   accountContract;
   constructor(
@@ -46,6 +46,7 @@ export class WalletComponent implements OnInit {
   ngOnInit() {
     this.cuurentUser = this.authService.getCuurentUser();
     this.getBlance();
+    this.getStatment();
     // this.apiService.getEscrowsByUserId(this.cuurentUser.id).subscribe(data => {
     //   const escrows = data;
     //   console.log(escrows);
@@ -90,5 +91,48 @@ export class WalletComponent implements OnInit {
   }
   async getRenterEscrow(address) {
     this.tokensInUse += await this.renterEscrowService.getTokenAmount(address);
+  }
+
+  getStatment() {
+    this.apiService.getAllTokensUserTransaction().subscribe(data => {
+      console.log(data[0], 'data');
+
+      const statment = data[0]['tokenTransactions'];
+      // this.events = [].concat.apply([], this.allTransaction.filter(e => { return e.eventsEmitted.length > 0 })
+      //   .map(m => m.eventsEmitted));
+      const test = statment
+        .filter(s => {
+          return s.type == 'in';
+        })
+        .map(s => s.tokenAmount)
+        .reduce((item1, item2) => {
+          return item1 + item2;
+        });
+      const redeem = statment
+        .filter(s => {
+          return s.status == 'approved' && s.type == 'in';
+        })
+        .map(s => s.tokenAmount);
+      if (redeem.length > 0) {
+        this.tokensRedeemd = redeem.reduce((item1, item2) => {
+          return item1 + item2;
+        });
+      }
+
+      const purchase = statment.filter(s => {
+        return s.status == 'approved' && s.type == 'out';
+      });
+      if (purchase.length > 0) {
+        this.tokensPurchase = purchase
+          .map(s => s.tokenAmount)
+          .reduce((item1, item2) => {
+            return item1 + item2;
+          });
+      }
+
+      console.log(test, 'test');
+      console.log(this.tokensRedeemd, 'this.tokensRedeemd');
+      console.log(this.tokensPurchase, 'this.tokensPurchase');
+    });
   }
 }

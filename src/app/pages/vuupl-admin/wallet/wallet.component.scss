@@ -1,0 +1,65 @@
+.PurchaseButton {
+  color: white;
+  background-color: #0077b5;
+  border-radius: 10px;
+  width: -webkit-fill-available;
+  height: 45px;
+  -webkit-appearance: button-bevel;
+  line-height: initial;
+  font-size: 30px;
+}
+
+.walletmain {
+  padding-top: 10%;
+}
+
+.tokenColum {
+  border-right: 2px solid #29abe2;
+  margin-top: 5%;
+  padding-bottom: 5%;
+}
+
+.fiatcurrency {
+  margin-top: 5%;
+  padding-bottom: 5%;
+}
+
+h2 {
+  color: #0077b5;
+  margin-bottom: 2%;
+}
+
+img {
+  padding: 5%;
+  width: 40%;
+  margin-left: 25%;
+}
+
+h3 {
+  color: #29abe2;
+  margin-bottom: 2%;
+}
+
+p {
+  text-align: center;
+  color: #0077b5;
+  font-size: 18px;
+  margin-bottom: 3%;
+}
+
+.transferButton {
+  color: white;
+  background-color: #29abe2;
+  border-radius: 10px;
+  width: 70%;
+  height: 40px;
+  -webkit-appearance: button-bevel;
+  line-height: initial;
+  font-size: 30px;
+}
+
+.dollarimage {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 50%;
+}

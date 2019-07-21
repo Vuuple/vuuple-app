@@ -35,14 +35,13 @@ export class WalletComponent implements OnInit {
   async getBlance() {
     this.currentUser = await this.adminService.getCurrentAccount();
 
-    this.tokensRedeemd = await this.tokenService.getBalanceOf(
-      this.currentUser
-    );
+    this.tokensRedeemd = await this.tokenService.getBalanceOf(this.currentUser);
 
     this.mintedTokens = await this.tokenService.getTotalSupply();
 
     const balance = await this.web3Service.getBalanceOf(this.currentUser);
-    console.log(this.avialableTokens, 'this.avialableTokens');
+    console.log(this.tokensRedeemd, 'this.tokensRedeemd');
+    console.log(this.mintedTokens, 'this.mintedTokens totl supply');
     console.log(balance, 'this.balance');
   }
 }
