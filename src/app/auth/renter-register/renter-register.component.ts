@@ -42,6 +42,7 @@ export class RenterRegisterComponent implements OnInit {
   ngOnInit() {
     this.renterRegisterForm = this.formBuilder.group({
       username: ['', Validators.required],
+      bankAccount: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
       staticIP: ['', Validators.required],
@@ -186,6 +187,7 @@ export class RenterRegisterComponent implements OnInit {
     this.authService
       .registerClient(
         this.renterRegisterForm.value.username,
+        this.renterRegisterForm.value.bankAccount,
         this.renterRegisterForm.value.email,
         this.renterRegisterForm.value.password,
         this.renterRegisterForm.value.ethereumAddress,

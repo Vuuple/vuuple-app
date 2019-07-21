@@ -49,6 +49,7 @@ export class AuthService {
   }
   async registerClient(
     username: string,
+    bankAccount: string,
     email: string,
     pwd: string,
     ethAddress: string,
@@ -58,6 +59,7 @@ export class AuthService {
   ) {
     const client = {
       username: username,
+      bankAccount: bankAccount,
       email: email,
       pwd: pwd,
       ethAddress: ethAddress,

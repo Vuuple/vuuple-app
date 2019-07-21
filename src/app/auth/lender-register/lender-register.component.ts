@@ -47,6 +47,7 @@ export class LenderRegisterComponent implements OnInit {
   ngOnInit() {
     this.lenderRegisterForm = this.formBuilder.group({
       username: ['', Validators.required],
+      bankAccount: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
       staticIP: ['', Validators.required],
@@ -186,6 +187,7 @@ export class LenderRegisterComponent implements OnInit {
     this.authService
       .registerClient(
         this.lenderRegisterForm.value.username,
+        this.lenderRegisterForm.value.bankAccount,
         this.lenderRegisterForm.value.email,
         this.lenderRegisterForm.value.password,
         this.lenderRegisterForm.value.ethereumAddress,
