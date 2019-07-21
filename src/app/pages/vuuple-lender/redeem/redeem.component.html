@@ -1,41 +1,59 @@
 <div class="main">
-    <h1>Redeem Vuuple</h1>
-    <div class="fix"></div>
-    <p style="font-size:22px"><img src="../../../../assets/img/TokenDollar.png" style="width:6%"> Vuuple = USD <img src="../../../../assets/img/Dollar.png" style="width:9%"> </p>
-    <div class="fix"></div>
-    <p style="color:#0077b5;">Tokens Available for Redemption:</p>
-    <div class="fix"></div>
-    <p> How many tokens would you like to redeem?</p>
-    <div class="fix"></div>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-8">
-          <div class="col-md-3">
-              <p style="font-size:18px;color:#0077b5;">Vuuple</p>
-              <div class="block" [formGroup]="redForm">
-                    <input type="number" formControlName="tokensToRed" />
-                </div>
-          </div>
-          <div class="col-md-2">
-              <p style="color:#29ABE2;font-size: 23px"><br>:</p>
-          </div>
-          <div class="col-md-3">
-              <p style="font-size:18px;color:#0077b5;">USD</p>
-              <div class="block">
-                    <input  type="number"  />
-                </div>
-          </div>
+  <h1>Redeem Vuuple</h1>
+  <div class="fix"></div>
+  <p style="font-size:22px">
+    <img src="../../../../assets/img/TokenDollar.png" style="width:6%" /> Vuuple
+    = USD <img src="../../../../assets/img/Dollar.png" style="width:9%" />
+  </p>
+  <p>Rate : {{ rate }}</p>
+
+  <div class="fix"></div>
+  <p style="color:#0077b5;">Tokens Available for Redemption:</p>
+  <p>{{ avialableTokens }}</p>
+
+  <div class="fix"></div>
+  <p>How many tokens would you like to redeem?</p>
+  <div class="fix"></div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-8">
+      <div class="col-md-3">
+        <p style="font-size:18px;color:#0077b5;">Vuuple</p>
+        <div class="block" [formGroup]="redForm">
+          <input
+            type="number"
+            formControlName="tokensToRed"
+            (change)="test()"
+          />
         </div>
-        <div class="col-md-1"></div>
+      </div>
+      <div class="col-md-2">
+        <p style="color:#29ABE2;font-size: 23px"><br />:</p>
+      </div>
+      <div class="col-md-3">
+        <p style="font-size:18px;color:#0077b5;">USD</p>
+        <div class="block">
+          <input
+            type="number"
+            disabled
+            value="{{ rate * redForm.value.tokensToRed }}"
+          />
+        </div>
+      </div>
     </div>
-    <div class="fix"></div>
-    <button
+    <div class="col-md-1"></div>
+  </div>
+  <div class="fix"></div>
+  <button
     type="submit"
     class="btn btn-primary"
-    (click)="redeemTokens()" >
+    (click)="redeemTokens()"
+    [disabled]="avialableTokens <= 0"
+  >
     Redeem
   </button>
-    <div class="fix"></div>
-    <p class="pNote">
-        *Note: There is a USD 0.01 fee for redemption.</p>
+  <div class="fix"></div>
+  <p class="pNote">
+    *Note: There is a USD 0.01 fee for redemption.
+  </p>
 </div>
