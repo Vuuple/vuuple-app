@@ -13,7 +13,7 @@ import { AuthService } from '../../../auth/core/auth.service';
 @Component({
   selector: 'app-node-list',
   templateUrl: './node-list.component.html',
-  styleUrls: ['./node-list.component.scss'] ,
+  styleUrls: ['./node-list.component.scss'],
   providers: [
     TokenService,
     LendersFactoryService,
@@ -39,14 +39,12 @@ export class NodeListComponent implements OnInit {
   // pages: { totalItems: number; currentPage: number; pageSize: number; totalPages: number; startPage: number; endPage: number; startIndex: number; endIndex: number; pages: number[]; };
   constructor(
     private serverApiService: ServerApiService,
-    private pagerService: PagerService ,
+    private pagerService: PagerService,
     private lendersFactoryService: LendersFactoryService,
     private rentersFactoryService: RenterFactoryService,
     private lendersRegistrationService: LendersRegistrationService,
-    private rentersRegistrationService: RenterRegisterationService,
-   
+    private rentersRegistrationService: RenterRegisterationService
   ) {
-    this.TotalCompanyRenter;
     this.serverApiService.getAllUsers().subscribe((data: {}) => {
       console.log(data);
       this.nodes = data;
@@ -64,41 +62,37 @@ export class NodeListComponent implements OnInit {
     );
     this.pages = this.pager.pages;
   }
-  ban(category , ethAddress, id){
-    if ( category == "renter" ){
-      console.log("renter");
+  ban(category, ethAddress, id) {
+    if (category == 'renter') {
+      console.log('renter');
       this.renterEthaddress = ethAddress;
-     this.getRenterData();
-     console.log(id);
-     this.renterID = id ;
-    }else if ( category == "lender"){
-      console.log("lender");
+      this.getRenterData();
+      console.log(id);
+      this.renterID = id;
+    } else if (category == 'lender') {
+      console.log('lender');
       this.lenderEthaddress = ethAddress;
       this.getLenderData();
       console.log(id);
-      this.lenderID = id ;
+      this.lenderID = id;
     }
   }
-  async getRenterData(){
-     this.accountContract = await this.rentersFactoryService.getRenterContract(
-       this.renterEthaddress
-     );
-     if (this.accountContract != '0x0000000000000000000000000000000000000000') {
-       await this.rentersRegistrationService.banAccount(
-      this.accountContract
-     );
-       await this.serverApiService.ban(this.renterID);
-   }
+  async getRenterData() {
+    this.accountContract = await this.rentersFactoryService.getRenterContract(
+      this.renterEthaddress
+    );
+    if (this.accountContract != '0x0000000000000000000000000000000000000000') {
+      await this.rentersRegistrationService.banAccount(this.accountContract);
+      await this.serverApiService.ban(this.renterID);
+    }
   }
-  async getLenderData(){
+  async getLenderData() {
     this.accountContract = await this.lendersFactoryService.getLenderContract(
       this.lenderEthaddress
     );
     if (this.accountContract != '0x0000000000000000000000000000000000000000') {
-      await this.lendersRegistrationService.banAccount(
-     this.accountContract
-    );
+      await this.lendersRegistrationService.banAccount(this.accountContract);
       await this.serverApiService.ban(this.lenderID);
-   }
+    }
   }
 }

@@ -104,10 +104,10 @@ export class ServerApiService {
   redeem(data): Observable<any> {
     return this.dataService.post('tokens/redeem', data);
   }
-  managePurchase(data): Observable<any> {
-    return this.dataService.post('tokens/manage-purchase', data);
+  managePurchase(id, data): Observable<any> {
+    return this.dataService.postById('tokens/manage-purchase', id, data);
   }
-  manageRedeem(data): Observable<any> {
-    return this.dataService.post('tokens/manage-redeem', data);
+  manageRedeem(id, data): Observable<any> {
+    return this.dataService.postById('tokens/manage-redeem', id, data);
   }
 }

@@ -19,6 +19,9 @@ import { AddNodeComponent } from './add-node/add-node.component';
 import { EscrowDetailsComponent } from './escrow-details/escrow-details.component';
 import { UserlistInterceptorComponent } from './user-list-Interceptor/user-list-Interceptor.component';
 import { CreatAdminComponent } from './creat-admin/creat-admin.component';
+import { RequestInterceptorComponent } from './request-interceptor/request-interceptor.component';
+import { TokenRequestListComponent } from './token-request-list/token-request-list.component';
+import { TokenRequestDetailsComponent } from './token-request-details/token-request-details.component';
 
 @NgModule({
   imports: [
@@ -58,7 +61,7 @@ import { CreatAdminComponent } from './creat-admin/creat-admin.component';
       },
       {
         path: 'request',
-        component: RequestListComponent
+        component: RequestInterceptorComponent
       },
       {
         path: 'addNode',
@@ -76,10 +79,14 @@ import { CreatAdminComponent } from './creat-admin/creat-admin.component';
         path: 'escrowDetails',
         component: EscrowDetailsComponent
       },
+      {
+        path: 'token-req',
+        component: TokenRequestDetailsComponent
+      },
       //{
-       // path: 'setting',
+      // path: 'setting',
       //  component: SettingComponent
-     // },
+      // },
       {
         path: 'individualRenter',
         component: UserlistInterceptorComponent
@@ -112,7 +119,10 @@ import { CreatAdminComponent } from './creat-admin/creat-admin.component';
     WalletComponent,
     AddNodeComponent,
     EscrowDetailsComponent,
-    CreatAdminComponent
+    CreatAdminComponent,
+    RequestInterceptorComponent,
+    TokenRequestListComponent,
+    TokenRequestDetailsComponent
   ]
 })
 export class VuuplAdminModule {}

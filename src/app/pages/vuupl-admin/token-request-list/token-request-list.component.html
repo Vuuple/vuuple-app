@@ -1,0 +1,103 @@
+<div class="row main">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h2>
+        Token Requests
+      </h2>
+    </div>
+    <div class="col-md-4" style="padding:2%">
+      <form class="navbar-form navbar-right">
+        <input
+          type="text"
+          class="form-control"
+          style="margin-right:15px;width: 250px;"
+          placeholder="Search..."
+        />
+      </form>
+    </div>
+  </div>
+  <div class="row table-container">
+    <table class="table">
+      <!--  /** type
+ *    const ethTxHash = req.body.ethTxHash;
+    // const bankTxId = req.body.bankTxId;
+    const status = req.body.status;
+    // const tokenAmount = req.body.tokenAmount;
+    // const rate = req.body.rate;
+    // const depositAmount = req.body.depositAmount;
+    const comment = req.body.comment;
+ */ -->
+      <thead>
+        <tr style="color:#29ABE2 !important;font-size: 25px;">
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Eth Tx
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Bnak Tx
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Token Amount
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            rate
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Deposit Amount
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            status
+          </th>
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+            Comment
+          </th>
+          <th style="padding: 15px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of pagedItems; let i = index">
+          <td>{{ request?.ethTxHash }}</td>
+          <td>{{ request?.bankTxId }}</td>
+          <td>{{ request?.tokenAmount }}</td>
+          <td>{{ request?.rate }}</td>
+          <td>{{ request?.depositAmount }}</td>
+          <td>{{ request?.status }}</td>
+          <td>{{ request?.comment }}</td>
+          <td style="border-right:none">
+            <button
+              class="action"
+              [routerLink]="['/pages/admin/token-req']"
+              [queryParams]="{ id: request?._id }"
+            >
+              <!--{{request?.add}}-->
+              Manage
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <!-- pager -->
+    <ul *ngIf="pages && pages.length" class="pagination">
+      <li [ngClass]="{ disabled: pager.currentPage === 1 }">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{ disabled: pager.currentPage === 1 }">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li
+        *ngFor="let page of pages"
+        [ngClass]="{ active: pager.currentPage === page }"
+      >
+        <a (click)="setPage(page)">{{ pages }}</a>
+      </li>
+      <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+  </div>
+</div>

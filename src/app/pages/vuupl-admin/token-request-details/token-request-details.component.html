@@ -1,0 +1,139 @@
+<div class="row main">
+  <div class="row">
+    <div class="col-md-4">
+      <button
+        type="submit"
+        [routerLink]="['/pages/admin/request']"
+        class="btn backButton"
+      >
+        back
+      </button>
+    </div>
+    <div class="col-md-4">
+      <h2>
+        Approve request
+      </h2>
+    </div>
+    <div class="col-md-4" style="padding:2%">
+      <input
+        type="number"
+        class="form-control"
+        style="margin-right:15px;width: 250px;"
+        placeholder="Type Number"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div
+      class="col-md-8 container"
+      style="border: 2px dashed #29ABE2;
+      border-radius:5px ;
+      min-height: 400px;
+      padding: 3%;
+      margin-top: 5%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    >
+      <h4 style="margin-bottom:5%">request details:</h4>
+      <form [formGroup]="myForm">
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Request Id:</label>
+          </div>
+          <div class="col-md-9">
+            <p>{{ id }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Request Type:</label>
+          </div>
+          <div class="col-md-9">
+            <p>{{ request?.type }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Bank Tx ID :</label>
+          </div>
+          <div class="col-md-9">
+            <input
+              type="text"
+              formControlName="bankTxId"
+              disabled
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Eth Transaction Hash:</label>
+          </div>
+          <div class="col-md-9">
+            <input
+              type="text"
+              formControlName="ethTxHash"
+              disabled
+              class="form-control"
+            />
+
+            <button>Verify</button>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Status :</label>
+          </div>
+          <div class="col-md-9">
+            <p>{{ request?.status }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Tokens Amount :</label>
+          </div>
+          <div class="col-md-9">
+            <p>{{ request?.tokenAmount }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Rate :</label>
+          </div>
+          <div class="col-md-9">
+            <p>{{ request?.rate }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Deposit Amount :</label>
+          </div>
+          <div class="col-md-9">
+            <p>{{ request?.depositAmount }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:3px">
+          <div class="col-md-3">
+            <label>Comment:</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" formControlName="comment" class="form-control" />
+          </div>
+        </div>
+        <div class="row" style="float:right;margin-right: 0.50%">
+          <button
+            [disabled]="!myForm.valid"
+            class="btn btn-primary"
+            (click)="approve()"
+          >
+            Approve
+          </button>
+          <button class="btn btn-danger" (click)="reject()">
+            Reject
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
