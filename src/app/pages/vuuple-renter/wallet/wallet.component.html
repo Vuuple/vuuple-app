@@ -1,40 +1,56 @@
-      <div class="row walletmain">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <button class="PurchaseButton">
-                Purchase Vuuple
-            </button>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
-      <div class="row">
-       <div class="col-md-6 tokenColum">
-          <h2 style="text-align:center">Vuuuple Tokens</h2>
-          <img src="../../../../assets/img/TokenDollar.png"/>
-          <h3 style="text-align:center">Tokens Available:</h3>
-          <p>{{avialableTokens}}<br>Vuuple</p>
-          <h3 style="text-align:center">Tokens In Use:</h3>
-          <p>{{tokensInUse}}<br>Vuuple</p>
-          <div class="row">
-            <div class="col-md-2"></div>
-          <button class="transferButton">
-                  Transfer Vuuple
-          </button>
-        </div>
-       </div>
-       <div class="col-md-6 fiatcurrency">
-          <h2 style="text-align:center">Fiat Currency </h2>
-          <img  class="dollarimage" src="../../../../assets/img/Dollar.png"/>
-          <h3 style="text-align:center">Tokens Redeemd:</h3>
-          <p>{{ tokensRedeemd}}<br>Vuuple</p>
-          <h3 style="text-align:center">Fait Currency in account:</h3>
-          <p>{{faitCurrencyInAccount}}<br>USD</p>
-          <div class="row">
-            <div class="col-md-2"></div>
-          <button class="transferButton">
-                  Transfer Currency
-          </button>
-        </div>
-       </div>
-      </div>
-   
+<div class="row walletmain">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <button class="PurchaseButton" [routerLink]="['/pages/renter/purchase']">
+      Purchase Vuuple
+    </button>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+  <div class="col-md-6 tokenColum">
+    <h2 style="text-align:center">Vuuuple Tokens</h2>
+    <img src="../../../../assets/img/TokenDollar.png" />
+    <h3 style="text-align:center">Tokens Available:</h3>
+    <p>{{ avialableTokens }}<br />Vuuple</p>
+    <h3 style="text-align:center">Tokens In Use:</h3>
+    <p>{{ tokensInUse }}<br />Vuuple</p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <a [routerLink]="['/pages/lender/redeem']" class="button">
+        <button class="transferButton">
+          Transfer Vuuple
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-6 fiatcurrency">
+    <h2 style="text-align:center">Fiat Currency</h2>
+    <img class="dollarimage" src="../../../../assets/img/Dollar.png" />
+    <h3 style="text-align:center">Tokens Redeemd:</h3>
+    <p>{{ tokensRedeemd }}<br />Vuuple</p>
+    <h3 style="text-align:center">Tokens Purchase:</h3>
+    <p>{{ tokensPurchase }}<br />USD</p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <a
+        [routerLink]="['/pages/renter/purchase']"
+        class="button"
+        *ngIf="cuurentUser.category == 'renter'"
+      >
+        <button class="transferButton">
+          Transfer Currency
+        </button>
+      </a>
+      <a
+        [routerLink]="['/pages/lender/allocate']"
+        class="button"
+        *ngIf="cuurentUser.category == 'lender'"
+      >
+        <button class="transferButton">
+          Allocate
+        </button>
+      </a>
+    </div>
+  </div>
+</div>

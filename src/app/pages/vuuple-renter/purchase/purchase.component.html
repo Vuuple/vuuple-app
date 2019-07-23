@@ -1,6 +1,8 @@
 <div class="main">
   <div class="col-md-6">
     <h2>Purchase Vuuple</h2>
+    <p style="font-size:18px;color:#0077b5;">Rate : {{ rate }}</p>
+
     <div class="fix"></div>
     <div class="block1">
       <div class="fix"></div>
@@ -16,7 +18,11 @@
           <div class="col-md-4">
             <p style="font-size:18px;color:#0077b5;">Vuuple</p>
             <div class="block">
-              <input type="text" formControlName="amount" />
+              <input
+                type="text"
+                disabled
+                value="{{ rate * myForm.value.amount }}"
+              />
             </div>
           </div>
           <div class="col-md-2">
@@ -25,23 +31,31 @@
           <div class="col-md-4">
             <p style="font-size:18px;color:#0077b5;">USD</p>
             <div class="block">
-              <input
-                type="text"
-                disabled
-                value="{{ rate * myForm.value.amount }}"
-              />
+              <input formControlName="amount" type="text" />
             </div>
           </div>
           <div class="col-md-1"></div>
+          <div class="fix"></div>
+          <input
+            type="text"
+            formControlName="bankTxId"
+            class="form-control txbox"
+            placeholder="Bank transaction Id"
+          />
         </form>
       </div>
-      <div class="fix"></div>
-      <button (click)="buyToken()" class="btn btn-primary">
+
+      <button
+        (click)="requestPurchase()"
+        [disabled]="!myForm.valid"
+        class="btn btn-primary"
+      >
         Purchase
       </button>
       <div class="fix"></div>
       <p class="pNote">
-        *Note: VUUPLE will be automatically transfered to your wallet.
+        *Note: VUUPLE will be automatically transfered to your wallet. Any
+        invalid data will lead to reject your request
       </p>
     </div>
   </div>
@@ -56,29 +70,44 @@
       <P style="color:#0077b5;">Price: 0.10 VUUPLE/GB/Month</P>
       <div class="fix"></div>
       <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
-          <p style="font-size:18px;color:#0077b5;">Gigabytes</p>
-          <div class="block">
-            <input type="text" style="width: 60px" />
-            <label>GB</label>
+        <form [formGroup]="storForm">
+          <div class="col-md-1"></div>
+          <div class="col-md-4">
+            <p style="font-size:18px;color:#0077b5;">Gigabytes</p>
+            <div class="block">
+              <input type="text" style="width: 60px" formControlName="amount" />
+              <!-- <label>GB</label> -->
+            </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <p style="color:#29ABE2;font-size: 23px"><br />:</p>
-        </div>
-        <div class="col-md-4">
-          <p style="font-size:18px;color:#0077b5;">Vuuple</p>
-          <div class="block">
-            <input type="text" />
+          <div class="col-md-2">
+            <p style="color:#29ABE2;font-size: 23px"><br />:</p>
           </div>
-        </div>
-        <div class="col-md-1"></div>
+          <div class="col-md-4">
+            <p style="font-size:18px;color:#0077b5;">Vuuple</p>
+            <div class="block">
+              <input
+                type="text"
+                disabled
+                value="{{ 4 * storForm.value.amount }}"
+              />
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </form>
       </div>
       <div class="fix"></div>
-      <button type="submit" class="btn btn-primary">
+      <button
+        type="submit"
+        (click)="renew()"
+        class="btn btn-primary"
+        [disabled]="avialableTokens <= 4"
+      >
         Buy
       </button>
+      <label class="error" *ngIf="avialableTokens <= 4 && !storForm.valid"
+        >you balance is low</label
+      >
+
       <div class="fix"></div>
       <p class="pNote">
         *Note: You can cancel your plan at any time before the next month

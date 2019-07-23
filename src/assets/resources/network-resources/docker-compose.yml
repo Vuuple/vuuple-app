@@ -78,20 +78,30 @@ x-swarm-def: &swarm-def
   restart: 'on-failure'
   image: '${SWARM_DOCKER_IMAGE:-herawy/swarm-base}'
   expose:
-    - '5001'
+    - '8500'
   entrypoint:
     - /bin/sh
     - -c
     - |
       DDIR=/qdata/dd
       NETWORK_ID=$$(cat $${GENESIS_FILE} | grep chainId | awk -F " " '{print $$2}' | awk -F "," '{print $$1}')
-      echo "**************************"
-      echo $${ADDRESS}
-      echo "**************************"
-      echo $${DDIR}
+      echo "*************echo key *************"
+      echo $$( cat $${DDIR}/keystore/key | grep address | sed -e 's/[,]"/'\\\n'/' | sed -e 's/[":"]"/'\\\n'/'| sed -n '2p' |sed 's/"/''/g')
+      ADDRESS=$$( cat $${DDIR}/keystore/key | grep address | sed -e 's/[,]"/'\\\n'/' | sed -e 's/[":"]"/'\\\n'/'| sed -n '2p' |sed 's/"/''/g')
+
+      echo "***********cat key ***************"
+      cat $${DDIR}/keystore/key
+      echo "*********DDIR*** ADDRESS**************"
+      echo $${DDIR}  $${ADDRESS}
+      echo "*********PWD*****************"
+
       echo $${PWD}
+      echo "*************NETWORK_ID*************"
+
       echo $${NETWORK_ID}
-      swarm  --datadir $${DDIR} --bzzaccount $${ADDRESS} --ens-api $${DDIR}/geth.ipc --bzzport 5001 --password /examples/passwords.txt --bzznetworkid 10  --port $${PORT}
+      echo "**************************"
+
+      swarm  --datadir $${DDIR} --bzzaccount $${ADDRESS} --ens-api $${DDIR}/geth.ipc --password /examples/passwords.txt --bzznetworkid 20  --httpaddr=0.0.0.0 --debug --verbosity 4
 x-tx-manager-def: &tx-manager-def
   image: '${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.8}'
   expose:
@@ -364,16 +374,13 @@ services:
     hostname: swarm8
     container_name: swarm-node
     ports:
-      - '23007:5001'
+      - '8500:8500'
     volumes:
       - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro
     depends_on:
       - node
-    environment:
-      - ADDRESS=0xed9d02e382b34818e88b88a309c7fe71e65f419d
-      - PORT=900
-      - PassWord="/examples/passwords.txt"
+
     networks:
       quorum-examples-net:
   node:
@@ -382,7 +389,7 @@ services:
     container_name: quorum-node
     ports:
       - '22000:8545'
-      - '21008:21000'
+      - '21000:21000'
       - '50400:50400'
       - '30301:30301'
     volumes:

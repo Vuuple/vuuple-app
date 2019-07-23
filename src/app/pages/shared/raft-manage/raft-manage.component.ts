@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import {} from '@angular/forms/src/model';
 import { AuthService } from '../../../auth/core/auth.service';
+import { ServerApiService } from '../../../providers/server-api/server-api.service';
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const fs = require('fs');
 const replace = require('replace-in-file');
+
+import { alter_staticNodes } from '../../../../assets/js/helpers/alter.js';
 @Component({
   selector: 'app-raft-manage',
   templateUrl: './raft-manage.component.html',
@@ -14,7 +17,26 @@ const replace = require('replace-in-file');
 export class RaftManageComponent implements OnInit {
   myForm: FormGroup;
   node;
-  constructor(private fb: FormBuilder, public authService: AuthService) {}
+  staticNodes = [];
+  constructor(
+    private fb: FormBuilder,
+    public authService: AuthService,
+    private apiService: ServerApiService
+  ) {
+    this.apiService.getStaticNodes().subscribe(s => {
+      this.staticNodes = [];
+      s.forEach(item => {
+        //console.log(item, 'b 4 item');
+        item = JSON.parse(item);
+        // item.toString().replace('/\"', '');
+        // console.log(item, 'item');
+        this.staticNodes.push(item);
+      });
+      // console.log(s, 'static nodes');
+
+      this.readPermissionNodeFile();
+    });
+  }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -25,7 +47,7 @@ export class RaftManageComponent implements OnInit {
     if (this.node != undefined && this.node != null) {
       console.log(this.node, 'this.node');
 
-      this.myForm.patchValue({ raftId: this.node.raftId, disabled: true });
+      this.myForm.patchValue({ raftId: this.node.raftId });
       console.log(this.myForm.value, 'form values');
     }
   }
@@ -45,6 +67,7 @@ export class RaftManageComponent implements OnInit {
     fs.copyFile(input, output, err => {
       if (err) throw err;
       console.log('source.txt was copied to destination.txt');
+      this.myForm.patchValue({ raftId: null });
     });
 
     const options = {
@@ -72,11 +95,29 @@ export class RaftManageComponent implements OnInit {
     replace(options)
       .then(changedFiles => {
         console.log('Modified files:', changedFiles.join(', '));
+        // this.myForm.value.raftId = null;
+        // update static nodes file
       })
       .catch(error => {
         console.error('Error occurred:', error);
       });
     // const result = await alter.alter_script(id, input, output);
     // console.log(result, 'result');
+  }
+
+  writePermissionedNode() {
+    //  "enode://ac6b1096ca56b9f6d004b779ae3728bf83f8e22453404cc3cef16a3d9b96608bc67c4b30db88e0a5a6c6390213f7acbe1153ff6d23ce57380104288ae19373ef@3.14.2.131:21000?discport=0&raftport=50400",
+  }
+  readPermissionNodeFile() {
+    const input = path.join(networkPath, '/permissioned-nodes.json');
+    const output = path.join(
+      networkPath,
+      'examples/',
+      '/7nodes',
+      '/permissioned-nodes.json'
+    );
+    console.log(this.staticNodes, 'this.staticNodes');
+
+    alter_staticNodes(this.staticNodes, input, output);
   }
 }

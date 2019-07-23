@@ -28,7 +28,7 @@ async function createNodeKey(_path) {
 function readFile(_path) {
   // console.log('_path', _path);
 
-  return fs.readFileSync(_path, { encoding: 'utf8' });
+  return fs.readFileSync(_path, { encoding: 'utf8' }).trim();
 }
 // getNodeKey('lender').then(enode => {
 //   console.log(enode, 'enode');

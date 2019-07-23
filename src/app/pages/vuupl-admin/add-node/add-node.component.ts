@@ -42,6 +42,7 @@ export class AddNodeComponent implements OnInit {
   node: IUser;
   escrow: {
     escrowAddress: string;
+    gb: number;
     issueDate: Date;
     endDate: Date;
     category: string;
@@ -70,7 +71,7 @@ export class AddNodeComponent implements OnInit {
           console.log(data);
           this.node = data;
           console.log(this.node, '  if this.node');
-          this.test();
+          //this.test();
         });
       }
     });
@@ -119,7 +120,7 @@ export class AddNodeComponent implements OnInit {
       console.log(this.lendercontract, 'lendercontract');
 
       //  get escrow data and save it in db
- 
+
       const approve = await this.lendersRegistrationService.approve(
         this.lendercontract
       );
@@ -179,11 +180,15 @@ export class AddNodeComponent implements OnInit {
 }"*/
     this.escrow = {
       escrowAddress: '',
+      gb: null,
       issueDate: null,
       endDate: null,
       category: 'lender',
       userid: null
     };
+    this.escrow.gb = await this.lendersRegistrationService.getRentedStorage(
+      this.lendercontract
+    );
     this.escrow.category = 'lender';
     this.escrow.userid = this.node['_id'];
     console.log(this.node, 'this.node');

@@ -29,8 +29,8 @@ module.exports.curlRaftAddPeer = enode => {
         'Content-Type: application/json',
         '--data',
         `{ "jsonrpc": "2.0", "method": "raft_addPeer", "params": [${enode}], "id": 1 }`,
-        // 'http://3.18.34.201:22000'
-        'http://3.16.57.132:22001'
+        'http://3.18.34.201:22000'
+        // 'http://3.16.57.132:22001'
       ],
       { stdio: 'pipe' }
     )

@@ -21,6 +21,9 @@ export class ServerApiService {
   getAllUsers(): Observable<IUser[]> {
     return this.dataService.getList('users');
   }
+  getCount(): Observable<any> {
+    return this.dataService.getSingle('users/count', '');
+  }
   getAllAdmins(): Observable<IUser[]> {
     return this.dataService.getList('users/admins');
   }
@@ -39,11 +42,12 @@ export class ServerApiService {
   reject(id): Observable<any> {
     return this.dataService.postById('users/reject', id, '');
   }
+
   approve(id, data): Observable<any> {
     return this.dataService.postById('users/approve', id, data);
   }
-  registerAdmin(data): Observable<any>{
-    return this.dataService.post('users/admin',data) ;
+  registerAdmin(data): Observable<any> {
+    return this.dataService.post('users/admin', data);
   }
   // escrow route
   addEscrow(data): Observable<any> {
@@ -52,7 +56,58 @@ export class ServerApiService {
   getAllEscrows(): Observable<any[]> {
     return this.dataService.getList('escrows');
   }
+  getStaticNodes(): Observable<any[]> {
+    return this.dataService.getList('users/staticNodes');
+  }
   getEscrowsByUserId(id): Observable<any[]> {
     return this.dataService.getListWitFilter('escrows/user', id);
+  }
+  getUsedSpace(): Observable<any> {
+    return this.dataService.getSingle('escrows/usedSpace', '');
+  }
+  getFreeSpace(): Observable<any> {
+    return this.dataService.getSingle('escrows/freeSpace', '');
+  }
+  getAllSpace(): Observable<any> {
+    return this.dataService.getSingle('escrows/allSpace', '');
+  }
+
+  // token transaction
+  getAllTokensTrans(): Observable<any[]> {
+    return this.dataService.getList('tokens/all');
+  }
+  getAllTokensReq(): Observable<any[]> {
+    return this.dataService.getList('tokens/');
+  }
+  getAllTokensUserTransaction(): Observable<any[]> {
+    return this.dataService.getList('tokens/user');
+  }
+  getAllTokensApproved(): Observable<any[]> {
+    return this.dataService.getList('tokens/approved');
+  }
+  getAllTokensRejected(): Observable<any[]> {
+    return this.dataService.getList('tokens/rejected');
+  }
+  getAllTokensRedeem(): Observable<any[]> {
+    return this.dataService.getList('tokens/redeem');
+  }
+  getAllTokensPurchase(): Observable<any[]> {
+    return this.dataService.getList('tokens/purchase');
+  }
+  getTokenTransById(id): Observable<any> {
+    return this.dataService.getSingle('tokens/', id);
+  }
+
+  purchase(data): Observable<any> {
+    return this.dataService.post('tokens/purchase', data);
+  }
+  redeem(data): Observable<any> {
+    return this.dataService.post('tokens/redeem', data);
+  }
+  managePurchase(id, data): Observable<any> {
+    return this.dataService.postById('tokens/manage-purchase', id, data);
+  }
+  manageRedeem(id, data): Observable<any> {
+    return this.dataService.postById('tokens/manage-redeem', id, data);
   }
 }

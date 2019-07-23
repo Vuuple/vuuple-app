@@ -20,6 +20,7 @@ import { ServerApiService } from '../../../providers/server-api/server-api.servi
 export class AccountComponent implements OnInit {
   renew: any;
   number: any;
+  statment = [];
   accountContract: any;
   cuurentUser: any;
   tokensInUse: any;
@@ -31,6 +32,8 @@ export class AccountComponent implements OnInit {
     userid: any;
   };
   errorMessage: any;
+  totalRedeem: number;
+  totalPurchase: number;
   constructor(
     private apiService: ServerApiService,
     private rentersFactoryService: RenterFactoryService,
@@ -49,6 +52,7 @@ export class AccountComponent implements OnInit {
     this.cuurentUser = this.authService.currentUser;
 
     this.getContractDate();
+    this.getStatment();
   }
   async getContractDate() {
     this.accountContract = await this.rentersFactoryService.getRenterContract(
@@ -140,5 +144,48 @@ export class AccountComponent implements OnInit {
       this.accountContract,
       this.cuurentUser.ethAddress
     );
+  }
+
+  getStatment() {
+    this.apiService.getAllTokensUserTransaction().subscribe(data => {
+      console.log(data[0], 'data');
+
+      this.statment = data[0]['tokenTransactions'];
+      // this.events = [].concat.apply([], this.allTransaction.filter(e => { return e.eventsEmitted.length > 0 })
+      //   .map(m => m.eventsEmitted));
+      const test = this.statment
+        .filter(s => {
+          return s.type == 'in';
+        })
+        .map(s => s.tokenAmount)
+        .reduce((item1, item2) => {
+          return item1 + item2;
+        });
+      const redeem = this.statment
+        .filter(s => {
+          return s.status == 'approved' && s.type == 'in';
+        })
+        .map(s => s.tokenAmount);
+      if (redeem.length > 0) {
+        this.totalRedeem = redeem.reduce((item1, item2) => {
+          return item1 + item2;
+        });
+      }
+
+      const purchase = this.statment.filter(s => {
+        return s.status == 'approved' && s.type == 'out';
+      });
+      if (purchase.length > 0) {
+        this.totalPurchase = purchase
+          .map(s => s.tokenAmount)
+          .reduce((item1, item2) => {
+            return item1 + item2;
+          });
+      }
+
+      console.log(test, 'test');
+      console.log(this.totalRedeem, 'this.totalRedeem');
+      console.log(this.totalPurchase, 'this.totalPurchase');
+    });
   }
 }

@@ -113,7 +113,7 @@ export class VuuplAdminService {
         console.log('instance', instance);
 
         return instance.renounceVuupleAdmin({
-          from: this.account,
+          from: account,
           gas: '200000'
         });
       })

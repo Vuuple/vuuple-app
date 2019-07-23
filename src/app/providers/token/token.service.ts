@@ -21,6 +21,9 @@ export class TokenService {
   status: string;
 
   constructor() {
+    Web3.providers.HttpProvider.prototype.sendAsync =
+      Web3.providers.HttpProvider.prototype.send;
+    this.web3 = window.web3;
     this.web3 = window.web3;
     console.log(this.web3);
     this.onReady();
@@ -34,6 +37,9 @@ export class TokenService {
     this.token.setProvider(this.web3.currentProvider);
 
     this.getCurrentAccount();
+    this.token.deployed().then(instance => {
+      console.log('instance', instance);
+    });
   }
   // async getCurrentAccount() {
   //   console.log('this.account', this.account);
@@ -48,6 +54,7 @@ export class TokenService {
       );
       return;
     }
+    console.log(this.accounts, 'this.accounts');
 
     this.account = this.accounts[0];
     return this.account;

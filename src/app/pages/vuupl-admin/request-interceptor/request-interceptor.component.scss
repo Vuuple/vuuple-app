@@ -1,0 +1,50 @@
+.main {
+  padding: 5% 5% 5% 5%;
+}
+
+.infoButton {
+  background-image: url('assets/img/Generalinfo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 140%;
+  height: 200px;
+  vertical-align: middle;
+  margin-left: -55%;
+  padding-top: 90%;
+  font-size: 18px;
+  padding-left: 5%;
+}
+
+.tokenButton {
+  background-image: url('assets/img/Tokenscloud.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 140%;
+  height: 200px;
+  vertical-align: middle;
+  margin-left: -55%;
+  padding-top: 90%;
+  font-size: 18px;
+  padding-left: 5%;
+}
+
+ul > li > a:hover {
+  background-color: white;
+}
+
+.active {
+  background-image: url('assets/img/Generalinfocloud.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 140%;
+  height: 200px;
+  vertical-align: middle;
+  margin-left: -60%;
+  padding-top: 90%;
+  font-size: 18px;
+  padding-left: 5%;
+  color: white;
+}

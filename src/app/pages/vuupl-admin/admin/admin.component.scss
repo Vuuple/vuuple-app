@@ -12,10 +12,12 @@ h2 {
   margin-bottom: 2%;
   text-align: center;
 }
-
+.error {
+  color: red !important;
+}
 p {
   text-align: center;
-  color: #29ABE2;
+  color: #29abe2;
   margin-bottom: 3%;
 }
 
@@ -27,10 +29,11 @@ table {
 }
 
 thead > tr {
-  border-bottom: 1px solid #29ABE2;
+  border-bottom: 1px solid #29abe2;
 }
 
-td, th {
+td,
+th {
   padding: 6px;
   text-align: center;
 }
@@ -52,7 +55,7 @@ td, th {
   tbody > tr > td {
     line-height: 1.42857143;
     vertical-align: middle;
-    border-right: 1px solid #29ABE2;
+    border-right: 1px solid #29abe2;
     border-top: none;
     word-break: break-all;
   }
@@ -63,7 +66,11 @@ td, th {
 }
 
 @media all and (max-width: 500px) {
-  table, thead, tbody, th, td {
+  table,
+  thead,
+  tbody,
+  th,
+  td {
     display: block;
   }
   tr {
@@ -77,16 +84,16 @@ td, th {
   margin-left: 0;
 }
 .btn {
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
-	color: white;
-  background-color:#0077b5;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  background-color: #0077b5;
   border-radius: 10px;
   height: 40px;
   -webkit-appearance: button-bevel;
   line-height: initial;
-	font-size: 20px;
-	width: 80%;
-	margin-top: 20px
+  font-size: 20px;
+  width: 80%;
+  margin-top: 20px;
 }

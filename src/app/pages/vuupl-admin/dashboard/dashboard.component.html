@@ -1,37 +1,42 @@
 <!--<app-node-list></app-node-list>-->
-      <div class="row main">
-         <div class="col-md-3" style="margin-top:20%" >
-           <p>
-             individual renter <br>
-             company renter <br>
-             lender
-           </p>
-        
-         </div>   
-         <div class="col-md-6 chart">
-            <p-chart type="pie" [data]="data" [options]="options" width="300" height="300"></p-chart>
-             <p style="margin-top:10%">
-                TOKENS IN CONTRACT (CURRENTLY)<br>
-                TOKENS IN ENVIRONMENT (CURRENTLY)<br>
-                TOKENS USED (ALL TIMEE)<br>
-                TOKENS REDEEMED (ALL TIME)<br>
-                TOKENS PURCHASED(ALL TIME)
-              </p>
-         </div>   
-         <div class="col-md-3" style="margin-top:20%">
-               <p> 
-                individual renter <br>
-                company renter <br>
-                lender
-              </p>
-         </div>   
-      </div>
-    <!--  <div class="row" style="padding:1%">
+<div class="row main">
+  <div class="col-md-3" style="margin-top:20%">
+    <p>
+      individual renter <br />
+      company renter <br />
+      lender
+    </p>
+  </div>
+  <div class="col-md-6 chart">
+    <p-chart
+      type="pie"
+      [data]="data"
+      [options]="options"
+      width="300"
+      height="300"
+    ></p-chart>
+    <p style="margin-top:10%">
+      TOKENS IN CONTRACT (CURRENTLY) {{ tokenCount }}<br />
+      TOKENS IN ENVIRONMENT (CURRENTLY)<br />
+      TOKENS USED (ALL TIMEE)<br />
+      TOKENS REDEEMED (ALL TIME)<br />
+      TOKENS PURCHASED(ALL TIME)
+    </p>
+  </div>
+  <div class="col-md-3" style="margin-top:20%">
+    <p>
+      individual renter <br />
+      company renter <br />
+      lender
+    </p>
+  </div>
+</div>
+<!--  <div class="row" style="padding:1%">
         <table class="table" >
           <thead>
             <tr style="color:#29ABE2 !important;font-size: 25px;">
               <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-                Users 
+                Users
               </th>
               <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
                 Storage
@@ -69,4 +74,4 @@
             </tr>
           </tbody>
         </table>
-      </div>--> 
+      </div>-->

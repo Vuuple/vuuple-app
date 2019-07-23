@@ -1,0 +1,28 @@
+<div class="row main">
+  <div class="col-md-2">
+    <ul class="nav">
+      <li>
+        <a
+          (click)="toggle(true)"
+          id="generalInfo"
+          class="infoButton"
+          [class.active]="show"
+          >Nodes</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="toggle(false)"
+          id="token"
+          class="tokenButton"
+          [class.active]="!show"
+          >Token</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-10">
+    <app-request-list *ngIf="show"></app-request-list>
+    <app-token-request-list *ngIf="!show"></app-token-request-list>
+  </div>
+</div>

@@ -8,6 +8,8 @@ import { RenterFactoryService } from '../../providers/renter-factory/renter-fact
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
+const publicIp = require('public-ip');
+
 @Component({
   selector: 'app-renter-register',
   templateUrl: './renter-register.component.html',
@@ -40,6 +42,7 @@ export class RenterRegisterComponent implements OnInit {
   ngOnInit() {
     this.renterRegisterForm = this.formBuilder.group({
       username: ['', Validators.required],
+      bankAccount: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
       staticIP: ['', Validators.required],
@@ -48,6 +51,8 @@ export class RenterRegisterComponent implements OnInit {
       termService: ['', Validators.required],
       privacyPolicy: ['', Validators.required]
     });
+    this.getIp();
+
     this.route.queryParams.subscribe(params => {
       const type = params['type'];
       console.log(type, ' type');
@@ -63,6 +68,15 @@ export class RenterRegisterComponent implements OnInit {
       }
     });
   }
+  async getIp() {
+    try {
+      const ip = await publicIp.v4();
+      console.log(ip, 'ip');
+      this.renterRegisterForm.patchValue({ staticIP: ip });
+    } catch (error) {
+      this.errorMessage = error;
+    }
+  }
   renterRegister() {
     this.savetoContract();
   }
@@ -70,55 +84,66 @@ export class RenterRegisterComponent implements OnInit {
     this.router.navigate(['/auth/login']);
   }
   async getEnode() {
-    const _enode = await getNodeKey();
-    console.log(_enode, 'enode');
+    try {
+      const _enode = await getNodeKey();
+      console.log(_enode, 'enode');
 
-    if (_enode) {
-      this.enode = _enode;
-      // this.renterRegisterForm.patchValue({ enode: _enode });
-      this.saveToNodeServer();
+      if (_enode) {
+        this.enode = _enode;
+        // this.renterRegisterForm.patchValue({ enode: _enode });
+        this.saveToNodeServer();
+      }
+    } catch (error) {
+      this.errorMessage = error;
     }
   }
 
   createAccount(password) {
     let self = this;
-    this.userWallet.generateKeys(function(_keys) {
-      console.log(_keys, 'keys from home');
+    try {
+      this.userWallet.generateKeys(function(_keys) {
+        console.log(_keys, 'keys from home');
 
-      // export keys
-      self.userWallet.exportKeys(_keys, password, function(exResult) {
-        console.log(exResult, 'exResult');
-        self.accountPublic = '0x'.concat(exResult.address);
-        if (self.web3Service.isVaildAddress(self.accountPublic)) {
-          self.renterRegisterForm.patchValue({
-            ethereumAddress: self.accountPublic
-          });
-        }
-        self.accountData = exResult;
-        // self.recover(exResult);
-        self.recover(exResult, password);
+        // export keys
+        self.userWallet.exportKeys(_keys, password, function(exResult) {
+          console.log(exResult, 'exResult');
+          self.accountPublic = '0x'.concat(exResult.address);
+          if (self.web3Service.isVaildAddress(self.accountPublic)) {
+            self.renterRegisterForm.patchValue({
+              ethereumAddress: self.accountPublic
+            });
+          }
+          self.accountData = exResult;
+          // self.recover(exResult);
+          self.recover(exResult, password);
+        });
+        // try get private key
+        // self.userWallet.recoverKeys()
       });
-      // try get private key
-      // self.userWallet.recoverKeys()
-    });
+    } catch (error) {
+      this.errorMessage = error;
+    }
   }
 
   exportToFile(keyObject) {
     console.log('exporttofile func');
+    try {
+      const keyPath = path.join(
+        networkPath,
 
-    const keyPath = path.join(
-      networkPath,
+        'examples/',
+        '7nodes/',
+        'keys/',
+        'key'
+      );
 
-      'examples/',
-      '7nodes/',
-      'keys/',
-      'key'
-    );
-
-    this.userWallet.exportToFile(keyObject, keyPath, function(exFile) {
-      console.log(exFile, 'exFile');
-      console.log('exported to filestore');
-    });
+      this.userWallet.exportToFile(keyObject, keyPath, function(exFile) {
+        console.log(exFile, 'exFile');
+        console.log('exported to filestore');
+      });
+    } catch (error) {
+      this.errorMessage = error;
+    }
   }
   recover(keyObject, password) {
     console.log(password, 'password');
@@ -162,6 +187,7 @@ export class RenterRegisterComponent implements OnInit {
     this.authService
       .registerClient(
         this.renterRegisterForm.value.username,
+        this.renterRegisterForm.value.bankAccount,
         this.renterRegisterForm.value.email,
         this.renterRegisterForm.value.password,
         this.renterRegisterForm.value.ethereumAddress,
