@@ -7,7 +7,7 @@ module.exports.send_email = (to, from, subject, body, attachements) => {
     secure: false, // true for 465, false for other ports
     auth: {
       user: 'support@vuuple.com', // generated ethereal user
-      pass: 'Vuuple2$$##' // generated ethereal password
+      pass: 'Vuuple3%%$$' // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false
