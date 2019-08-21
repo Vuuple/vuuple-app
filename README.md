@@ -1,3 +1,20 @@
+TODO :
+
+- ** Fix to include in this release **
+  <ul>
+  <li> upload and download issue to swarm  </li>
+  <li> fix smart contract modifer conflect with time in quorum  </li>
+  <li> add spinner to all form  </li>
+  <li> add notification for better user experince  </li>
+  <li> home page icon " vuuple logo" naavigate renter & lender to admin dhashboard , should navigate each to his own dashboard </li>
+  <li> admin dashboard throw errors when data featched from the server get null data " it throw from the backend " </li>
+  <li>add admin addres as static to avoid unexpected bugs from getting it randomely </li>
+  <li>refresh component each time the data updated</li>
+  <li>fix mail auth issu with plilemon</li>
+  <li>fix prograss bare design</li>
+  <li>disable upload button untile renter choose file</li>
+  </ul>
+
 [![Angular Logo](https://www.vectorlogo.zone/logos/angular/angular-icon.svg)](https://angular.io/) [![Electron Logo](https://www.vectorlogo.zone/logos/electronjs/electronjs-icon.svg)](https://electronjs.org/)
 
 [![Travis Build Status][build-badge]][build]
@@ -29,23 +46,22 @@ With this sample, you can :
 
 Clone this repository locally :
 
-``` bash
+```bash
 git clone https://github.com/maximegris/angular-electron.git
 ```
 
 Install dependencies with npm :
 
-``` bash
+```bash
 npm install
 ```
 
 There is an issue with `yarn` and `node_modules` that are only used in electron on the backend when the application is built by the packager. Please use `npm` as dependencies manager.
 
-
 If you want to generate Angular components with Angular-cli , you **MUST** install `@angular/cli` in npm global context.
 Please follow [Angular-cli documentation](https://github.com/angular/angular-cli) if you had installed a previous version of `angular-cli`.
 
-``` bash
+```bash
 npm install -g @angular/cli
 ```
 
@@ -61,15 +77,15 @@ You can disable "Developer Tools" by commenting `win.webContents.openDevTools();
 
 ## Included Commands
 
-|Command|Description|
-|--|--|
-|`npm run ng:serve:web`| Execute the app in the browser |
-|`npm run build`| Build the app. Your built files are in the /dist folder. |
-|`npm run build:prod`| Build the app with Angular aot. Your built files are in the /dist folder. |
-|`npm run electron:local`| Builds your application and start electron
-|`npm run electron:linux`| Builds your application and creates an app consumable on linux system |
-|`npm run electron:windows`| On a Windows OS, builds your application and creates an app consumable in windows 32/64 bit systems |
-|`npm run electron:mac`|  On a MAC OS, builds your application and generates a `.app` file of your application that can be run on Mac |
+| Command                    | Description                                                                                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `npm run ng:serve:web`     | Execute the app in the browser                                                                              |
+| `npm run build`            | Build the app. Your built files are in the /dist folder.                                                    |
+| `npm run build:prod`       | Build the app with Angular aot. Your built files are in the /dist folder.                                   |
+| `npm run electron:local`   | Builds your application and start electron                                                                  |
+| `npm run electron:linux`   | Builds your application and creates an app consumable on linux system                                       |
+| `npm run electron:windows` | On a Windows OS, builds your application and creates an app consumable in windows 32/64 bit systems         |
+| `npm run electron:mac`     | On a MAC OS, builds your application and generates a `.app` file of your application that can be run on Mac |
 
 **Your application is optimised. Only /dist folder and node dependencies are included in the executable.**
 
