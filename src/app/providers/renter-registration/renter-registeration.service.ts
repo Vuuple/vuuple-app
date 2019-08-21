@@ -50,7 +50,8 @@ export class RenterRegisterationService {
     }
 
     this.account = this.accounts[0];
-    return this.account;
+    // return this.account;
+    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
   }
 
   getCurrentProvider() {
@@ -64,11 +65,11 @@ export class RenterRegisterationService {
   /**
    * Setter functions
    */
-  async renewSubscription(renterContract, _renteredStorage) {
+  async renewSubscription(renterContract, account, _renteredStorage) {
     const result = await this.renterRegistration
       .at(renterContract)
       .renewSubscription(_renteredStorage, {
-        from: this.account,
+        from: account,
         gas: 200000
       })
       .then(res => {
@@ -82,31 +83,13 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async addFileToStorage(
-    renterContract,
-    bzzHash,
-    fileName,
-    size,
-    fileType,
-    bzzSchema,
-    isEncrypted,
-    encryptedKey
-  ) {
+  async addFileToStorage(renterContract, account, bzzHash, fileName, size) {
     const result = await this.renterRegistration
       .at(renterContract)
-      .addFileToStorage(
-        bzzHash,
-        fileName,
-        size,
-        fileType,
-        bzzSchema,
-        isEncrypted,
-        encryptedKey,
-        {
-          from: this.account,
-          gas: 4082886
-        }
-      )
+      .addFileToStorage(bzzHash, fileName, size, {
+        from: account,
+        gas: 4082886
+      })
       .then(res => {
         this.setStatus('addFileToStorage complete!');
         return res;
@@ -121,9 +104,18 @@ export class RenterRegisterationService {
   async completeSubscription(renterContract, account) {
     const result = await this.renterRegistration
       .at(renterContract)
-      .completeSubscription({
-        from: account,
-        gas: 4082886
+      .then(instance => {
+        console.log(instance, 'instance');
+
+        return instance.completeSubscription({
+          from: account,
+          gas: 4082886
+        });
+      })
+      .then(rs => {
+        this.setStatus('Transaction complete!');
+
+        return rs;
       })
       .then(res => {
         this.setStatus('completeSubscription complete!');
@@ -136,11 +128,11 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async deactivateAccount(renterContract) {
+  async deactivateAccount(renterContract, account) {
     const result = await this.renterRegistration
       .at(renterContract)
       .setActiveStatus(false, {
-        from: this.account,
+        from: account,
         gas: 200000
       })
       .then(res => {
@@ -154,11 +146,11 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async banAccount(renterContract) {
+  async banAccount(renterContract, account) {
     const result = await this.renterRegistration
       .at(renterContract)
       .setBanStatus(true, {
-        from: this.account,
+        from: account,
         gas: 200000
       })
       .then(res => {
@@ -171,11 +163,11 @@ export class RenterRegisterationService {
       });
     return result;
   }
-  async activateAccount(renterContract) {
+  async activateAccount(renterContract, account) {
     const result = await this.renterRegistration
       .at(renterContract)
       .setActiveStatus(true, {
-        from: this.account,
+        from: account,
         gas: 4082886
       })
       .then(res => {
@@ -189,11 +181,11 @@ export class RenterRegisterationService {
     return result;
   }
 
-  async unbanAccount(renterContract) {
+  async unbanAccount(renterContract, account) {
     const result = await this.renterRegistration
       .at(renterContract)
       .setBanStatus(false, {
-        from: this.account,
+        from: account,
         gas: 4082886
       })
       .then(res => {
@@ -231,7 +223,7 @@ export class RenterRegisterationService {
       .at(renterContract)
       .getBalance.call()
       .then(rs => {
-        // console.log('rs', rs);
+        console.log('rs', rs);
         this.setStatus('getBalance complete!');
 
         return rs.toNumber();
@@ -248,7 +240,7 @@ export class RenterRegisterationService {
       .at(renterContract)
       .getRenterFiles.call()
       .then(rs => {
-        // console.log('rs', rs);
+        console.log('rs getRenterFiles', rs);
         this.setStatus('getRenterFiles complete!');
 
         return rs;
@@ -299,10 +291,13 @@ export class RenterRegisterationService {
       .at(renterContract)
       .renewalDate.call()
       .then(rs => {
-        // console.log('rs', rs);
+        console.log('rs.renew()', rs.toNumber());
         this.setStatus('getRenewalDate complete!');
-
-        return new Date(rs.toNumber() / 1000000);
+        if (rs.toNumber() != 0) {
+          return new Date(rs.toNumber() / 1000000);
+        } else {
+          return rs.toNumber();
+        }
       })
       .catch(e => {
         console.log(e);
@@ -317,6 +312,26 @@ export class RenterRegisterationService {
       .registerDate.call()
       .then(rs => {
         // console.log('rs', rs);
+        console.log('rs.regester()', rs.toNumber());
+
+        this.setStatus('getRegisterDate complete!');
+
+        return new Date(rs.toNumber() / 1000000);
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in getRegisterDate; see log.');
+      });
+    return result;
+  }
+  async getNow(renterContract) {
+    const result = await this.renterRegistration
+      .at(renterContract)
+      .getTimeNow.call()
+      .then(rs => {
+        // console.log('rs', rs);
+        console.log('rs.getTimeNow()', rs.toNumber());
+
         this.setStatus('getRegisterDate complete!');
 
         return new Date(rs.toNumber() / 1000000);

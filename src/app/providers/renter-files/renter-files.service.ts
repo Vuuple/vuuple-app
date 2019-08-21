@@ -52,7 +52,8 @@ export class RenterFilesService {
     }
 
     this.account = this.accounts[0];
-    return this.account;
+    // return this.account;
+    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
   }
 
   getCurrentProvider() {
@@ -66,9 +67,27 @@ export class RenterFilesService {
   /**
    * Getter functions
    */
-  async getFileByName(getRenterFiles, _fileName) {
+  async getFileHashByIndex(contractAddress, index) {
+    console.log(index, 'index');
+
     const result = await this.renterFiles
-      .at(getRenterFiles)
+      .at(contractAddress)
+      .getFileHashByIndex.call(index)
+      .then(rs => {
+        console.log('rs getFileHashByIndex', rs);
+        this.setStatus('getFileByName complete!');
+
+        return rs;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in getFileByName; see log.');
+      });
+    return result;
+  }
+  async getFileByName(contractAddress, _fileName) {
+    const result = await this.renterFiles
+      .at(contractAddress)
       .getFileByName.call(_fileName)
       .then(rs => {
         console.log('rs getFileByName', rs);
@@ -83,15 +102,18 @@ export class RenterFilesService {
     return result;
   }
 
-  async getFileByHash(getRenterFiles, bzzHash) {
+  async getFileByHash(contractAddress, bzzHash) {
     const result = await this.renterFiles
-      .at(getRenterFiles)
+      .at(contractAddress)
       .getFileByHash.call(bzzHash)
       .then(rs => {
         console.log('rs getFileByHash', rs);
         this.setStatus('getFileByHash complete!');
-
-        return rs;
+        let file = {};
+        file['size'] = rs[0].toNumber();
+        file['name'] = rs[1];
+        file['hash'] = bzzHash;
+        return file;
       })
       .catch(e => {
         console.log(e);
@@ -100,9 +122,9 @@ export class RenterFilesService {
     return result;
   }
 
-  async getFileHashByName(getRenterFiles, name) {
+  async getFileHashByName(contractAddress, name) {
     const result = await this.renterFiles
-      .at(getRenterFiles)
+      .at(contractAddress)
       .getFileHashByName.call(name)
       .then(rs => {
         console.log('rs getFileHashByName', rs);
@@ -117,9 +139,9 @@ export class RenterFilesService {
     return result;
   }
 
-  async getFileOwner(getRenterFiles) {
+  async getFileOwner(contractAddress) {
     const result = await this.renterFiles
-      .at(getRenterFiles)
+      .at(contractAddress)
       .fileOwner.call()
       .then(rs => {
         console.log('rs getFileOwner', rs);
@@ -133,10 +155,26 @@ export class RenterFilesService {
       });
     return result;
   }
-
-  async getParentContract(getRenterFiles) {
+  async getIndex(contractAddress) {
     const result = await this.renterFiles
-      .at(getRenterFiles)
+      .at(contractAddress)
+      .index.call()
+      .then(rs => {
+        console.log('rs getFileOwner', rs);
+        this.setStatus('getFileOwner complete!');
+
+        return rs.toNumber();
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error in getFileOwner; see log.');
+      });
+    return result;
+  }
+
+  async getParentContract(contractAddress) {
+    const result = await this.renterFiles
+      .at(contractAddress)
       .parentContract.call()
       .then(rs => {
         console.log('rs getParentContract', rs);

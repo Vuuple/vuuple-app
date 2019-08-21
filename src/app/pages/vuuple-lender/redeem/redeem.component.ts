@@ -33,6 +33,7 @@ export class RedeemComponent implements OnInit {
       tokensToRed: ['', Validators.required]
     });
     this.getRate();
+    this.getBlance();
   }
 
   async redeemTokens() {
@@ -40,6 +41,7 @@ export class RedeemComponent implements OnInit {
       return;
     }
     const transfer = await this.tokenService.transfer(
+      this.cuurentUser.ethAddress,
       this.adminAddress,
       this.redForm.value.tokensToRed
     );

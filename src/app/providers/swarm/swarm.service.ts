@@ -96,11 +96,16 @@ export class SwarmService {
       filepath: _filePath,
       option: option ? option : 'raw'
     };
+    console.log(body, 'body');
+
     const data = await this.post('uploadfile', body).toPromise();
     return data.body;
   }
 
   private post(ns: string, asset: any): Observable<any> {
+    console.log(ns, 'ns');
+    console.log(asset, 'asset');
+
     return this.http
       .post(this.actionUrl + ns, asset)
       .pipe(map(this.extractData));

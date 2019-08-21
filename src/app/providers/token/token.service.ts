@@ -57,7 +57,8 @@ export class TokenService {
     console.log(this.accounts, 'this.accounts');
 
     this.account = this.accounts[0];
-    return this.account;
+    // return this.account;
+    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
   }
   getCurrentProvider() {
     return this.web3.currentProvider;
@@ -98,7 +99,7 @@ export class TokenService {
         console.log('instance', instance);
 
         return instance.transferFrom(from, to, value, {
-          from: this.account,
+          from: from,
           gas: 200000
         });
       })
@@ -238,14 +239,38 @@ export class TokenService {
       });
     return result;
   }
-  async transfer(to, value) {
+  async transfer(account, to, value) {
+    const result = await this.token
+      .deployed()
+      .then(instance => {
+        console.log(account, 'this.account');
+        console.log(to, value, 'to, value');
+
+        console.log('instance', instance);
+
+        return instance.transfer(to, value, {
+          from: account,
+          gas: 200000
+        });
+      })
+      .then(res => {
+        this.setStatus('Transaction complete!');
+        return res;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error sending coin; see log.');
+      });
+    return result;
+  }
+  async transferFromAccount(from, to, value) {
     const result = await this.token
       .deployed()
       .then(instance => {
         console.log('instance', instance);
 
         return instance.transfer(to, value, {
-          from: this.account,
+          from: from,
           gas: 200000
         });
       })

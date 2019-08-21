@@ -50,7 +50,7 @@ export class Web3Service {
     }
     this.account = this.accounts[0];
 
-    return this.account;
+    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
   }
   async getBalanceOf(address) {
     let balance = await this.web3.eth.getBalance(address); //Will give value in.
@@ -67,10 +67,55 @@ export class Web3Service {
 
     return this.web3.utils.isAddress(address);
   }
-  async unLockAccount(address, pasword) {
-    return await this.web3.eth.personal.unlockAccount(address, pasword, 600);
+  async unLockAccount(address, pasword, unlock_duration_sec = 10000) {
+    if (!(await this.isUnlocked(address))) {
+      return await this.web3.eth.personal.unlockAccount(
+        address,
+        pasword,
+        unlock_duration_sec
+      );
+    }
   }
+  // async unLockAccount(address, pasword, unlock_duration_sec = 10000) {
+  //   if (!(await this.isAccountLocked(address))) {
+  //     return await this.web3.eth.personal.unlockAccount(
+  //       address,
+  //       pasword,
+  //       unlock_duration_sec
+  //     );
+  //   }
+  // }
   async getProvider() {
     return await this.web3.currentProvider;
+  }
+
+  async isAccountLocked(account) {
+    try {
+      const tx = await this.web3.eth.sendTransaction({
+        from: account,
+        to: account,
+        value: 0
+      });
+      console.log(tx, 'tx');
+
+      return true;
+    } catch (err) {
+      console.log(err, 'error in lock');
+
+      // return err.message == 'authentication needed: password or unlock';
+      return false;
+    }
+  }
+
+  async isUnlocked(address) {
+    try {
+      const sign = await this.web3.eth.sign('', address);
+      console.log(sign, 'sign');
+    } catch (e) {
+      console.log(e, 'error in sing');
+
+      return false;
+    }
+    return true;
   }
 }

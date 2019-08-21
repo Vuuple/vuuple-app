@@ -34,7 +34,8 @@ export class WalletComponent implements OnInit {
   }
   async getBlance() {
     this.currentUser = await this.adminService.getCurrentAccount();
-
+    const test = await this.web3Service.isAccountLocked(this.currentUser);
+    console.log(test, 'test unlock');
     this.tokensRedeemd = await this.tokenService.getBalanceOf(this.currentUser);
 
     this.mintedTokens = await this.tokenService.getTotalSupply();

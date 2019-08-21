@@ -27,7 +27,8 @@ export class ActivateAccountComponent implements OnInit {
   cuurentUser;
   accountContract: any;
   status: boolean;
-  constructor(private apiService: ServerApiService,
+  constructor(
+    private apiService: ServerApiService,
     private lendersFactoryService: LendersFactoryService,
     private rentersFactoryService: RenterFactoryService,
     private lenderEscrowService: LenderEscrowService,
@@ -37,7 +38,7 @@ export class ActivateAccountComponent implements OnInit {
 
     private tokenService: TokenService,
     private authService: AuthService
-    ) {    }
+  ) {}
 
   ngOnInit() {
     this.cuurentUser = this.authService.getCuurentUser();
@@ -47,18 +48,18 @@ export class ActivateAccountComponent implements OnInit {
       this.getLenderData();
     }
   }
- 
- async getLenderData() {
+
+  async getLenderData() {
     this.accountContract = await this.lendersFactoryService.getLenderContract(
       this.cuurentUser.ethAddress
     );
-     if (this.accountContract != '0x0000000000000000000000000000000000000000') {
-         this.status = await this.lendersRegistrationService.isActive(
-         this.accountContract
+    if (this.accountContract != '0x0000000000000000000000000000000000000000') {
+      this.status = await this.lendersRegistrationService.isActive(
+        this.accountContract
       );
       // await this.getLenderEscrow(escrowAddress);
       console.log(this.status);
-      console.log("renter")
+      console.log('renter');
     }
   }
   async getRenterData() {
@@ -66,37 +67,46 @@ export class ActivateAccountComponent implements OnInit {
       this.cuurentUser.ethAddress
     );
     if (this.accountContract != '0x0000000000000000000000000000000000000000') {
-     this.status = await this.rentersRegistrationService.isActive(
+      this.status = await this.rentersRegistrationService.isActive(
         this.accountContract
-     );
-    //  await this.getRenterEscrow(escrowAddress);
-    console.log(this.status);
-    console.log("lender")
+      );
+      //  await this.getRenterEscrow(escrowAddress);
+      console.log(this.status);
+      console.log('lender');
     }
   }
-  changeActiveStatus(){
-    if(this.status==true){
-        this.deactivate();
-        console.log("deactivate")
-    }else{
+  changeActiveStatus() {
+    if (this.status == true) {
+      this.deactivate();
+      console.log('deactivate');
+    } else {
       this.activate();
-     console.log("activate")
-   }
-  }
- async deactivate(){ 
-    if(this.cuurentUser.category == 'renter'){
-         await this.rentersRegistrationService.deactivateAccount(this.accountContract)
+      console.log('activate');
     }
-    else if(this.cuurentUser.category == 'lender'){
-         await this.lendersRegistrationService.deactivateAccount(this.accountContract)
-     }
   }
-  async activate(){
-    if(this.cuurentUser.category == 'renter'){
-       await this.rentersRegistrationService.activateAccount(this.accountContract)
+  async deactivate() {
+    if (this.cuurentUser.category == 'renter') {
+      await this.rentersRegistrationService.deactivateAccount(
+        this.accountContract,
+        this.cuurentUser.ethAddress
+      );
+    } else if (this.cuurentUser.category == 'lender') {
+      await this.lendersRegistrationService.deactivateAccount(
+        this.accountContract
+      );
+    }
   }
-  else if(this.cuurentUser.category == 'lender'){
-    await this.lendersRegistrationService.activateAccount(this.accountContract)
-   }
+  async activate() {
+    if (this.cuurentUser.category == 'renter') {
+      await this.rentersRegistrationService.activateAccount(
+        this.accountContract,
+        this.cuurentUser.ethAddress
+      );
+    } else if (this.cuurentUser.category == 'lender') {
+      await this.lendersRegistrationService.activateAccount(
+        // this.accountContract,
+        this.cuurentUser.ethAddress
+      );
+    }
   }
 }

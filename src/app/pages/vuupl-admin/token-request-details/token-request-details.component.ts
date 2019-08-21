@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenService } from '../../../providers/token/token.service';
+import { Web3Service } from '../../../providers/web3/web3.service';
 
 @Component({
   selector: 'app-token-request-details',
   templateUrl: './token-request-details.component.html',
   styleUrls: ['./token-request-details.component.scss'],
-  providers: [TokenService]
+  providers: [TokenService, Web3Service]
 })
 export class TokenRequestDetailsComponent implements OnInit {
   request;
@@ -18,6 +19,7 @@ export class TokenRequestDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private tokenService: TokenService,
+    private web3Service: Web3Service,
 
     private router: Router
   ) {}
@@ -37,7 +39,7 @@ export class TokenRequestDetailsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
       console.log(this.id, ' this.id');
-
+      // this.test();
       if (this.id != undefined && this.id != null) {
         this.serverApiService.getTokenTransById(this.id).subscribe(data => {
           console.log(data);
@@ -97,9 +99,11 @@ type: "in" */
       this.transferToken().then(s => {
         console.log(s, 'ssss');
 
-        this.myForm.controls.ethTxHash.setValue(s.tx);
-        console.log(this.myForm.value, 'value');
-        this.savePurchase();
+        if (s.tx) {
+          this.myForm.controls.ethTxHash.setValue(s.tx);
+          console.log(this.myForm.value, 'value');
+          this.savePurchase();
+        }
       });
     } else {
       this.saveRedeem();
@@ -126,8 +130,12 @@ type: "in" */
       this.myForm.value.tokenAmount,
       'check '
     );
-
+    //  TODO , take it from the  this.cuurentUser.ethAddress,
+    const account = await this.web3Service.getCurrentAccount();
+    // const test = await this.web3Service.unLockAccount(account, '');
+    console.log(account, 'test unlock');
     return await this.tokenService.transfer(
+      account,
       this.request['ethAddress'],
       this.myForm.value.tokenAmount
     );
@@ -154,4 +162,12 @@ type: "in" */
       console.log(error, 'error');
     }
   }
+  // async test() {
+  //   const account = await this.tokenService.getCurrentAccount();
+  //   // const test = await this.web3Service.unLockAccount(account, '');
+  //   account.forEach(async element => {
+  //     const test = await this.web3Service.isUnlocked(element);
+  //     console.log(test, element, 'test');
+  //   });
+  // }
 }

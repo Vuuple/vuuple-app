@@ -1,89 +1,145 @@
 <div class="row">
-    <!--<div class="col-md-1"></div>-->
-    <div class="col-md-12 ">
-      <div class="row" style="padding-top:8%">
-        <div class="col-md-1"></div>
-        <div class="col-md-5" style="padding-top:2%">
-            <div class="progress" style="height: 30px;">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-                    <span class="sr-only">50% Complete</span>
-                </div>
-                <span class="progress-type" style="height: 30px;width: 45%;">2GB</span>
-                <span class="progress-completed">4GB</span>
-            </div>
+  <!--<div class="col-md-1"></div>-->
+  <div class="col-md-12 ">
+    <div class="row" style="padding-top:8%">
+      <div class="col-md-1"></div>
+      <div class="col-md-5" style="padding-top:2%">
+        <div class="progress" style="height: 30px;">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuenow="60"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="width: 50%;"
+          >
+            <span class="sr-only"
+              >{{ (usedStorage / rentedStorage) * 100 }}% Complete</span
+            >
+          </div>
+          <span class="progress-type" style="height: 30px;width: 45%;"
+            >{{ usedStorage }}GB</span
+          >
+          <span class="progress-completed">{{ rentedStorage }}GB</span>
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-          <div class="row">
-            <div class="col-md-4">
-                <label for="buyStorage" class="btn"  style="color:#0e76bc;">Buy <br>Storage</label>
-                <input id="buyStorage" style="visibility:hidden;" type="button">
-            </div>
-            <div class="col-md-4">
-                <label for="files" class="btn"  style="color:#0e76bc;"><span class="glyphicon glyphicon-open"></span><br>Upload</label>
-                <input id="files" style="visibility:hidden;" type="button" (click)="uploadFile()">
-            </div>
-            <div class="col-md-4">
-                <label for="share" class="btn" style="color:#0e76bc;"><i class="fas fa-share-alt"></i><br>Share</label>
-                <input id="share" style="visibility:hidden;" type="button">
-            </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="buyStorage" class="btn" style="color:#0e76bc;">
+              <a [routerLink]="['/pages/renter/purchase']"
+                >Buy <br />Storage
+              </a></label
+            >
+            <input id="buyStorage" style="visibility:hidden;" type="button" />
+          </div>
+          <div class="col-md-4">
+            <label for="files" class="btn" style="color:#0e76bc;"
+              ><span class="glyphicon glyphicon-open"></span><br />Upload</label
+            >
+            <input
+              id="files"
+              style="visibility:hidden;"
+              type="button"
+              (click)="uploadFile()"
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="share" class="btn" style="color:#0e76bc;"
+              ><i class="fas fa-share-alt"></i><br />Share</label
+            >
+            <input id="share" style="visibility:hidden;" type="button" />
           </div>
         </div>
       </div>
-       <div class="row"style="padding-top:5%">
-          <table text-align="center" style="min-height:400px">
-              <colgroup>
-                <col width="50%" />
-              </colgroup>
-
-              <!-- Group 1-->
-              <td style="border-right: 2px solid #29ABE2;padding-right: 0;padding-left: 5%" >
-                <table text-align="center">
-                    <thead>
-                        <tr style="border-bottom: 2px solid #29ABE2;">
-                            <th text-align="center" style="color:#0e76bc;font-size: 25px;border-bottom: 2px solid #29ABE2;"colspan="3">My Files</th>
-                        </tr>
-                        <tr style="color:#29ABE2 !important;font-size: 25px;">
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Storage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                         </tr>
-                    </tbody>
-                </table>
-              </td>
-
-              <!-- Group 2-->
-              <td style="padding-left: 0;padding-right: 5%">
-                  <table text-align="center">
-                      <thead>
-                          <tr style="border-bottom: 2px solid #29ABE2;">
-                              <th text-align="center" colspan="3" style="color:#0e76bc;font-size: 25px;"> Files shared with me</th>
-                          </tr>
-                          <tr style="color:#29ABE2 !important;font-size: 25px;">
-                              <th>Name</th>
-                              <th>Date</th>
-                              <th>Owner</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>2</td>
-                              <td>3</td>
-                              <td>4</td>
-                           </tr>
-                      </tbody>
-                  </table>
-              </td>
-
-          </table>
-       </div>
     </div>
-    <!--<div class="col-md-1"></div>-->
+    <div class="row" style="padding-top:5%">
+      <table text-align="center" style="min-height:400px">
+        <colgroup>
+          <col width="50%" />
+        </colgroup>
+
+        <!-- Group 1-->
+        <td
+          style="border-right: 2px solid #29ABE2;padding-right: 0;padding-left: 5%"
+        >
+          <table text-align="center">
+            <thead>
+              <tr style="border-bottom: 2px solid #29ABE2;">
+                <th
+                  text-align="center"
+                  style="color:#0e76bc;font-size: 25px;border-bottom: 2px solid #29ABE2;"
+                  colspan="3"
+                >
+                  My Files
+                </th>
+              </tr>
+              <tr style="color:#29ABE2 !important;font-size: 25px;">
+                <th>Hash</th>
+                <th>Name</th>
+                <th>size</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--  uint _size,
+            string _name,
+
+        string _fileType,
+        uint _bzzSchema,
+        bool _isEncrypted,
+        string _encryptedKey -->
+              <tr *ngFor="let item of files">
+                <td>{{ item?.hash }}</td>
+                <td>{{ item?.name }}</td>
+                <td>{{ item?.size }}</td>
+                <td (click)="download(item?.hash)">
+                  <label for="share" class="btn" style="color:#0e76bc;"
+                    ><i class="fas fa-file-download"></i><br
+                  /></label>
+                  <input
+                    id="share"
+                    style="visibility:hidden;"
+                    type="button"
+                    (click)="download(item?.hash)"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+
+        <!-- Group 2-->
+        <td style="padding-left: 0;padding-right: 5%">
+          <table text-align="center">
+            <thead>
+              <tr style="border-bottom: 2px solid #29ABE2;">
+                <th
+                  text-align="center"
+                  colspan="3"
+                  style="color:#0e76bc;font-size: 25px;"
+                >
+                  Files shared with me
+                </th>
+              </tr>
+              <tr style="color:#29ABE2 !important;font-size: 25px;">
+                <th>Name</th>
+                <th>Date</th>
+                <th>Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </table>
+    </div>
+  </div>
+  <!--<div class="col-md-1"></div>-->
 </div>

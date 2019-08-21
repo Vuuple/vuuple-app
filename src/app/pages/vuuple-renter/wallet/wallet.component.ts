@@ -25,7 +25,8 @@ import { LendersRegistrationService } from '../../../providers/lenders-registrat
 })
 export class WalletComponent implements OnInit {
   avialableTokens;
-  tokensInUse = 0;
+  tokensInContract = 0;
+  tokensInEscrow = 0;
   tokensRedeemd = 0;
   tokensPurchase = 0;
   cuurentUser;
@@ -83,14 +84,21 @@ export class WalletComponent implements OnInit {
       const escrowAddress = await this.rentersRegistrationService.getEscrow(
         this.accountContract
       );
+      this.tokensInContract = await this.tokenService.getBalanceOf(
+        this.accountContract
+      );
       await this.getRenterEscrow(escrowAddress);
     }
   }
   async getLenderEscrow(address) {
-    this.tokensInUse += await this.lenderEscrowService.getTokenAmount(address);
+    this.tokensInEscrow += await this.lenderEscrowService.getTokenAmount(
+      address
+    );
   }
   async getRenterEscrow(address) {
-    this.tokensInUse += await this.renterEscrowService.getTokenAmount(address);
+    this.tokensInEscrow += await this.renterEscrowService.getTokenAmount(
+      address
+    );
   }
 
   getStatment() {
@@ -100,37 +108,38 @@ export class WalletComponent implements OnInit {
       const statment = data[0]['tokenTransactions'];
       // this.events = [].concat.apply([], this.allTransaction.filter(e => { return e.eventsEmitted.length > 0 })
       //   .map(m => m.eventsEmitted));
-      const test = statment
-        .filter(s => {
-          return s.type == 'in';
-        })
-        .map(s => s.tokenAmount)
-        .reduce((item1, item2) => {
-          return item1 + item2;
-        });
-      const redeem = statment
-        .filter(s => {
-          return s.status == 'approved' && s.type == 'in';
-        })
-        .map(s => s.tokenAmount);
-      if (redeem.length > 0) {
-        this.tokensRedeemd = redeem.reduce((item1, item2) => {
-          return item1 + item2;
-        });
-      }
-
-      const purchase = statment.filter(s => {
-        return s.status == 'approved' && s.type == 'out';
-      });
-      if (purchase.length > 0) {
-        this.tokensPurchase = purchase
+      if (statment.length > 0) {
+        const test = statment
+          .filter(s => {
+            return s.type == 'in';
+          })
           .map(s => s.tokenAmount)
           .reduce((item1, item2) => {
             return item1 + item2;
           });
-      }
+        const redeem = statment
+          .filter(s => {
+            return s.status == 'approved' && s.type == 'out';
+          })
+          .map(s => s.tokenAmount);
+        if (redeem.length > 0) {
+          this.tokensRedeemd = redeem.reduce((item1, item2) => {
+            return item1 + item2;
+          });
+        }
 
-      console.log(test, 'test');
+        const purchase = statment.filter(s => {
+          return s.status == 'approved' && s.type == 'in';
+        });
+        if (purchase.length > 0) {
+          this.tokensPurchase = purchase
+            .map(s => s.tokenAmount)
+            .reduce((item1, item2) => {
+              return item1 + item2;
+            });
+        }
+        console.log(test, 'test');
+      }
       console.log(this.tokensRedeemd, 'this.tokensRedeemd');
       console.log(this.tokensPurchase, 'this.tokensPurchase');
     });
