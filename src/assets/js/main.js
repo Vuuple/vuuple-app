@@ -102,6 +102,8 @@ app.on('before-quit', async () => {
   //   'docker-compose.yml'
   // );
   // await node.stop_docker(dockerfile);
+  const swarmserver = path.join(networkPath, 'swarm-server.yml');
+  await node.stop_docker(swarmserver);
   global.isQuitting = true;
 });
 
@@ -140,11 +142,14 @@ const run = async () => {
     );
     global.networkPath = networkPath;
     global.isLocal = false;
+    const swarmserver = path.join(networkPath, 'swarm-server.yml');
+    await node.startNetwork(swarmserver);
     // global.networkIP = 'http://3.14.2.131:22000';
   } else {
     // check if raft-start.sh is exist
     global.networkPath = networkPath;
-
+    const swarmserver = path.join(networkPath, 'swarm-server.yml');
+    await node.startNetwork(swarmserver);
     if (
       !fs.existsSync(
         path.join(networkPath, 'examples/', '/7nodes', '/raft-start.sh')
@@ -154,6 +159,7 @@ const run = async () => {
     } else {
       // // log.info(`Starting application: ${productName} ${version} (${environment})`);
       const dockerfile = path.join(networkPath, 'docker-compose.yml');
+
       // await node.startNetwork(dockerfile);
       // // need to check for containers healthy
       // const child = await node.list_containers();

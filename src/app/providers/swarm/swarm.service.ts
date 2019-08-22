@@ -13,7 +13,7 @@ export class SwarmService {
   private headers: Headers;
 
   constructor(private http: HttpClient) {
-    this.actionUrl = 'http://localhost:3000/api/v1/erebos/';
+    this.actionUrl = 'http://localhost:3001/api/v1/erebos/';
     //this.actionUrl = 'http://18.221.44.174:3000';
     // this.actionUrl = 'http://localhost:3000/';
     this.headers = new Headers();

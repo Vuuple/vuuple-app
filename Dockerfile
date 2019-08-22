@@ -4,6 +4,10 @@ LABEL authors="Eman Herawy"
 WORKDIR /usr/src/app
 COPY ["package.json",  "./"]
 RUN apk add --no-cache git
+RUN apk add --no-cache --virtual .gyp \
+  python \
+  make \
+  g++
 
 RUN npm install
 COPY . .
