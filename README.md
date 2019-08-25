@@ -2,6 +2,7 @@ TODO :
 
 - ** Fix to include in this release **
   <ul>
+  <li> logout doesn't appear in admin view  </li>
   <li> upload and download issue to swarm  </li>
   <li> fix smart contract modifer conflect with time in quorum  </li>
   <li> add spinner to all form  </li>
