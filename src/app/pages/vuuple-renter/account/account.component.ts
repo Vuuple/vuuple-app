@@ -211,6 +211,7 @@ export class AccountComponent implements OnInit {
         this.accountContract,
         this.cuurentUser.ethAddress
       );
+      this.cuurentUser.status = 0;
       console.log(tx, 'tx');
     } catch (error) {
       console.error(error);
@@ -241,6 +242,7 @@ export class AccountComponent implements OnInit {
         this.tokensAmountInContract
       );
       console.log(tx, 'tx');
+      this.tokensInContract = this.tokensAmountInContract;
     } catch (error) {
       console.error(error);
     }

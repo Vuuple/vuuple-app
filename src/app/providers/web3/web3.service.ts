@@ -15,7 +15,7 @@ export class Web3Service {
   private web3: any;
   private accounts: string[];
   account;
-  // net = new Web3Net('ws://3.18.34.201:22000');
+  // net = new Web3Net('ws://172.27.150.7:22000');
   constructor() {
     this.web3 = window.web3;
   }
@@ -48,9 +48,17 @@ export class Web3Service {
       );
       return;
     }
+    console.log(this.accounts, ' this.accounts');
+
     this.account = this.accounts[0];
 
-    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
+    return this.account;
+  }
+  async createAccount(passpword) {
+    const newAccount = await this.web3.eth.personal.newAccount(passpword);
+    console.log(newAccount, 'newAccount');
+
+    return newAccount;
   }
   async getBalanceOf(address) {
     let balance = await this.web3.eth.getBalance(address); //Will give value in.

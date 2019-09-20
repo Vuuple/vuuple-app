@@ -11,7 +11,7 @@ export class NetworkService {
   private headers: Headers;
 
   constructor(private http: HttpClient) {
-    this.actionUrl = 'http://3.18.34.201:22000';
+    this.actionUrl = 'http://172.27.150.7:22000';
     //this.actionUrl = 'http://18.221.44.174:3000';
     // this.actionUrl = 'http://localhost:3000/';
     this.headers = new Headers();

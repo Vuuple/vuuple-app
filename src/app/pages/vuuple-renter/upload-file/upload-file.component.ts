@@ -186,7 +186,7 @@ export class UploadFileComponent implements OnInit {
     this.swarmService.uploadfile(file).then(s => {
       console.log(s, 's upload');
       this.fileHash = s;
-      // this.saveToContract();
+      this.saveToContract();
     });
   }
 }

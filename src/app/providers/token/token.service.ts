@@ -243,10 +243,9 @@ export class TokenService {
     const result = await this.token
       .deployed()
       .then(instance => {
-        console.log(account, 'this.account');
-        console.log(to, value, 'to, value');
+        console.log(account, to, value, '(account, to, value');
 
-        console.log('instance', instance);
+        console.log('instance transfer', instance);
 
         return instance.transfer(to, value, {
           from: account,

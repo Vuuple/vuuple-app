@@ -137,14 +137,14 @@
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleICO.sol",
     "exportedSymbols": {
       "VuupleICO": [
-        2921
+        2932
       ]
     },
-    "id": 2922,
+    "id": 2933,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2863,
+        "id": 2874,
         "literals": [
           "solidity",
           "^",
@@ -157,10 +157,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
         "file": "./VuupleToken.sol",
-        "id": 2864,
+        "id": 2875,
         "nodeType": "ImportDirective",
-        "scope": 2922,
-        "sourceUnit": 2949,
+        "scope": 2933,
+        "sourceUnit": 2960,
         "src": "26:27:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -168,10 +168,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
         "file": "./VuupleAdmins.sol",
-        "id": 2865,
+        "id": 2876,
         "nodeType": "ImportDirective",
-        "scope": 2922,
-        "sourceUnit": 2862,
+        "scope": 2933,
+        "sourceUnit": 2873,
         "src": "54:28:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -179,10 +179,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
         "file": "../../node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
-        "id": 2866,
+        "id": 2877,
         "nodeType": "ImportDirective",
-        "scope": 2922,
-        "sourceUnit": 3443,
+        "scope": 2933,
+        "sourceUnit": 3454,
         "src": "84:99:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -193,61 +193,61 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2867,
+              "id": 2878,
               "name": "MintedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3442,
+              "referencedDeclaration": 3453,
               "src": "208:15:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MintedCrowdsale_$3442",
+                "typeIdentifier": "t_contract$_MintedCrowdsale_$3453",
                 "typeString": "contract MintedCrowdsale"
               }
             },
-            "id": 2868,
+            "id": 2879,
             "nodeType": "InheritanceSpecifier",
             "src": "208:15:11"
           }
         ],
         "contractDependencies": [
-          3410,
-          3442,
-          4375
+          3421,
+          3453,
+          4386
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2921,
+        "id": 2932,
         "linearizedBaseContracts": [
-          2921,
-          3442,
-          3410,
-          4375
+          2932,
+          3453,
+          3421,
+          4386
         ],
         "name": "VuupleICO",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 2870,
+            "id": 2881,
             "name": "vuupleAdmin",
             "nodeType": "VariableDeclaration",
-            "scope": 2921,
+            "scope": 2932,
             "src": "234:32:11",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+              "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
               "typeString": "contract VuupleAdmins"
             },
             "typeName": {
               "contractScope": null,
-              "id": 2869,
+              "id": 2880,
               "name": "VuupleAdmins",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2861,
+              "referencedDeclaration": 2872,
               "src": "234:12:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                 "typeString": "contract VuupleAdmins"
               }
             },
@@ -256,28 +256,28 @@
           },
           {
             "body": {
-              "id": 2890,
+              "id": 2901,
               "nodeType": "Block",
               "src": "519:51:11",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2888,
+                    "id": 2899,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 2886,
+                      "id": 2897,
                       "name": "vuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2870,
+                      "referencedDeclaration": 2881,
                       "src": "529:11:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
@@ -285,31 +285,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2887,
+                      "id": 2898,
                       "name": "_adminAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2878,
+                      "referencedDeclaration": 2889,
                       "src": "543:13:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
                     "src": "529:27:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
-                  "id": 2889,
+                  "id": 2900,
                   "nodeType": "ExpressionStatement",
                   "src": "529:27:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 2891,
+            "id": 2902,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -318,11 +318,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 2881,
+                    "id": 2892,
                     "name": "_rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2872,
+                    "referencedDeclaration": 2883,
                     "src": "486:5:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -331,11 +331,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 2882,
+                    "id": 2893,
                     "name": "_wallet",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2874,
+                    "referencedDeclaration": 2885,
                     "src": "493:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -344,29 +344,29 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 2883,
+                    "id": 2894,
                     "name": "_token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2876,
+                    "referencedDeclaration": 2887,
                     "src": "502:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$2948",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2959",
                       "typeString": "contract VuupleToken"
                     }
                   }
                 ],
-                "id": 2884,
+                "id": 2895,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2880,
+                  "id": 2891,
                   "name": "Crowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3410,
+                  "referencedDeclaration": 3421,
                   "src": "476:9:11",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3410_$",
+                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3421_$",
                     "typeString": "type(contract Crowdsale)"
                   }
                 },
@@ -377,15 +377,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2879,
+              "id": 2890,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2872,
+                  "id": 2883,
                   "name": "_rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "314:13:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -394,7 +394,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2871,
+                    "id": 2882,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "314:7:11",
@@ -408,10 +408,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2874,
+                  "id": 2885,
                   "name": "_wallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "343:15:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -420,7 +420,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2873,
+                    "id": 2884,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "343:7:11",
@@ -434,26 +434,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 2876,
+                  "id": 2887,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "374:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleToken_$2948",
+                    "typeIdentifier": "t_contract$_VuupleToken_$2959",
                     "typeString": "contract VuupleToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 2875,
+                    "id": 2886,
                     "name": "VuupleToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 2948,
+                    "referencedDeclaration": 2959,
                     "src": "374:11:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$2948",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2959",
                       "typeString": "contract VuupleToken"
                     }
                   },
@@ -462,26 +462,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 2878,
+                  "id": 2889,
                   "name": "_adminAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "408:26:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                    "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                     "typeString": "contract VuupleAdmins"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 2877,
+                    "id": 2888,
                     "name": "VuupleAdmins",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 2861,
+                    "referencedDeclaration": 2872,
                     "src": "408:12:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
@@ -493,12 +493,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2885,
+              "id": 2896,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "519:0:11"
             },
-            "scope": 2921,
+            "scope": 2932,
             "src": "275:295:11",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -506,7 +506,7 @@
           },
           {
             "body": {
-              "id": 2902,
+              "id": 2913,
               "nodeType": "Block",
               "src": "600:74:11",
               "statements": [
@@ -521,18 +521,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 2896,
+                              "id": 2907,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4390,
+                              "referencedDeclaration": 4401,
                               "src": "644:3:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 2897,
+                            "id": 2908,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -556,32 +556,32 @@
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 2894,
+                            "id": 2905,
                             "name": "vuupleAdmin",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2870,
+                            "referencedDeclaration": 2881,
                             "src": "618:11:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                              "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                               "typeString": "contract VuupleAdmins"
                             }
                           },
-                          "id": 2895,
+                          "id": 2906,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "isVuupleAdmin",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 2791,
+                          "referencedDeclaration": 2802,
                           "src": "618:25:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
                           }
                         },
-                        "id": 2898,
+                        "id": 2909,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -603,21 +603,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 2893,
+                      "id": 2904,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4393,
-                        4394
+                        4404,
+                        4405
                       ],
-                      "referencedDeclaration": 4393,
+                      "referencedDeclaration": 4404,
                       "src": "610:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 2899,
+                    "id": 2910,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -631,23 +631,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2900,
+                  "id": 2911,
                   "nodeType": "ExpressionStatement",
                   "src": "610:46:11"
                 },
                 {
-                  "id": 2901,
+                  "id": 2912,
                   "nodeType": "PlaceholderStatement",
                   "src": "666:1:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 2903,
+            "id": 2914,
             "name": "onlyVuupleAdmin",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 2892,
+              "id": 2903,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "597:2:11"
@@ -657,7 +657,7 @@
           },
           {
             "body": {
-              "id": 2919,
+              "id": 2930,
               "nodeType": "Block",
               "src": "999:61:11",
               "statements": [
@@ -667,11 +667,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2915,
+                        "id": 2926,
                         "name": "beneficiary",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2905,
+                        "referencedDeclaration": 2916,
                         "src": "1032:11:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -680,11 +680,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 2916,
+                        "id": 2927,
                         "name": "weiAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2907,
+                        "referencedDeclaration": 2918,
                         "src": "1045:9:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -705,32 +705,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2912,
+                        "id": 2923,
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4452,
+                        "referencedDeclaration": 4463,
                         "src": "1005:5:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_super$_VuupleICO_$2921",
+                          "typeIdentifier": "t_super$_VuupleICO_$2932",
                           "typeString": "contract super VuupleICO"
                         }
                       },
-                      "id": 2914,
+                      "id": 2925,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "_preValidatePurchase",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3341,
+                      "referencedDeclaration": 3352,
                       "src": "1005:26:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) view"
                       }
                     },
-                    "id": 2917,
+                    "id": 2928,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -744,28 +744,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2918,
+                  "id": 2929,
                   "nodeType": "ExpressionStatement",
                   "src": "1005:50:11"
                 }
               ]
             },
             "documentation": "@dev Extend parent behavior requiring the msg sender to be vuuple admin account \n@param beneficiary Token purchaser\n@param weiAmount Amount of wei contributed",
-            "id": 2920,
+            "id": 2931,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2910,
+                "id": 2921,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2909,
+                  "id": 2920,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2903,
+                  "referencedDeclaration": 2914,
                   "src": "972:15:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -779,15 +779,15 @@
             "name": "_preValidatePurchase",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2908,
+              "id": 2919,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2905,
+                  "id": 2916,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2920,
+                  "scope": 2931,
                   "src": "908:19:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -796,7 +796,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2904,
+                    "id": 2915,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "908:7:11",
@@ -810,10 +810,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2907,
+                  "id": 2918,
                   "name": "weiAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2920,
+                  "scope": 2931,
                   "src": "933:17:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -822,7 +822,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2906,
+                    "id": 2917,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "933:7:11",
@@ -839,19 +839,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2911,
+              "id": 2922,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "999:0:11"
             },
-            "scope": 2921,
+            "scope": 2932,
             "src": "873:187:11",
             "stateMutability": "view",
-            "superFunction": 3341,
+            "superFunction": 3352,
             "visibility": "internal"
           }
         ],
-        "scope": 2922,
+        "scope": 2933,
         "src": "186:876:11"
       }
     ],
@@ -861,14 +861,14 @@
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleICO.sol",
     "exportedSymbols": {
       "VuupleICO": [
-        2921
+        2932
       ]
     },
-    "id": 2922,
+    "id": 2933,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2863,
+        "id": 2874,
         "literals": [
           "solidity",
           "^",
@@ -881,10 +881,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
         "file": "./VuupleToken.sol",
-        "id": 2864,
+        "id": 2875,
         "nodeType": "ImportDirective",
-        "scope": 2922,
-        "sourceUnit": 2949,
+        "scope": 2933,
+        "sourceUnit": 2960,
         "src": "26:27:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -892,10 +892,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
         "file": "./VuupleAdmins.sol",
-        "id": 2865,
+        "id": 2876,
         "nodeType": "ImportDirective",
-        "scope": 2922,
-        "sourceUnit": 2862,
+        "scope": 2933,
+        "sourceUnit": 2873,
         "src": "54:28:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -903,10 +903,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
         "file": "../../node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
-        "id": 2866,
+        "id": 2877,
         "nodeType": "ImportDirective",
-        "scope": 2922,
-        "sourceUnit": 3443,
+        "scope": 2933,
+        "sourceUnit": 3454,
         "src": "84:99:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -917,61 +917,61 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2867,
+              "id": 2878,
               "name": "MintedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3442,
+              "referencedDeclaration": 3453,
               "src": "208:15:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MintedCrowdsale_$3442",
+                "typeIdentifier": "t_contract$_MintedCrowdsale_$3453",
                 "typeString": "contract MintedCrowdsale"
               }
             },
-            "id": 2868,
+            "id": 2879,
             "nodeType": "InheritanceSpecifier",
             "src": "208:15:11"
           }
         ],
         "contractDependencies": [
-          3410,
-          3442,
-          4375
+          3421,
+          3453,
+          4386
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2921,
+        "id": 2932,
         "linearizedBaseContracts": [
-          2921,
-          3442,
-          3410,
-          4375
+          2932,
+          3453,
+          3421,
+          4386
         ],
         "name": "VuupleICO",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 2870,
+            "id": 2881,
             "name": "vuupleAdmin",
             "nodeType": "VariableDeclaration",
-            "scope": 2921,
+            "scope": 2932,
             "src": "234:32:11",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+              "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
               "typeString": "contract VuupleAdmins"
             },
             "typeName": {
               "contractScope": null,
-              "id": 2869,
+              "id": 2880,
               "name": "VuupleAdmins",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2861,
+              "referencedDeclaration": 2872,
               "src": "234:12:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                 "typeString": "contract VuupleAdmins"
               }
             },
@@ -980,28 +980,28 @@
           },
           {
             "body": {
-              "id": 2890,
+              "id": 2901,
               "nodeType": "Block",
               "src": "519:51:11",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2888,
+                    "id": 2899,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 2886,
+                      "id": 2897,
                       "name": "vuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2870,
+                      "referencedDeclaration": 2881,
                       "src": "529:11:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
@@ -1009,31 +1009,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2887,
+                      "id": 2898,
                       "name": "_adminAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2878,
+                      "referencedDeclaration": 2889,
                       "src": "543:13:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
                     "src": "529:27:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
-                  "id": 2889,
+                  "id": 2900,
                   "nodeType": "ExpressionStatement",
                   "src": "529:27:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 2891,
+            "id": 2902,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1042,11 +1042,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 2881,
+                    "id": 2892,
                     "name": "_rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2872,
+                    "referencedDeclaration": 2883,
                     "src": "486:5:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -1055,11 +1055,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 2882,
+                    "id": 2893,
                     "name": "_wallet",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2874,
+                    "referencedDeclaration": 2885,
                     "src": "493:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1068,29 +1068,29 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 2883,
+                    "id": 2894,
                     "name": "_token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2876,
+                    "referencedDeclaration": 2887,
                     "src": "502:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$2948",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2959",
                       "typeString": "contract VuupleToken"
                     }
                   }
                 ],
-                "id": 2884,
+                "id": 2895,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2880,
+                  "id": 2891,
                   "name": "Crowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3410,
+                  "referencedDeclaration": 3421,
                   "src": "476:9:11",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3410_$",
+                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$3421_$",
                     "typeString": "type(contract Crowdsale)"
                   }
                 },
@@ -1101,15 +1101,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2879,
+              "id": 2890,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2872,
+                  "id": 2883,
                   "name": "_rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "314:13:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1118,7 +1118,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2871,
+                    "id": 2882,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "314:7:11",
@@ -1132,10 +1132,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2874,
+                  "id": 2885,
                   "name": "_wallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "343:15:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1144,7 +1144,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2873,
+                    "id": 2884,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "343:7:11",
@@ -1158,26 +1158,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 2876,
+                  "id": 2887,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "374:18:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleToken_$2948",
+                    "typeIdentifier": "t_contract$_VuupleToken_$2959",
                     "typeString": "contract VuupleToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 2875,
+                    "id": 2886,
                     "name": "VuupleToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 2948,
+                    "referencedDeclaration": 2959,
                     "src": "374:11:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$2948",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2959",
                       "typeString": "contract VuupleToken"
                     }
                   },
@@ -1186,26 +1186,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 2878,
+                  "id": 2889,
                   "name": "_adminAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2891,
+                  "scope": 2902,
                   "src": "408:26:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                    "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                     "typeString": "contract VuupleAdmins"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 2877,
+                    "id": 2888,
                     "name": "VuupleAdmins",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 2861,
+                    "referencedDeclaration": 2872,
                     "src": "408:12:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
@@ -1217,12 +1217,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2885,
+              "id": 2896,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "519:0:11"
             },
-            "scope": 2921,
+            "scope": 2932,
             "src": "275:295:11",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1230,7 +1230,7 @@
           },
           {
             "body": {
-              "id": 2902,
+              "id": 2913,
               "nodeType": "Block",
               "src": "600:74:11",
               "statements": [
@@ -1245,18 +1245,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 2896,
+                              "id": 2907,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4390,
+                              "referencedDeclaration": 4401,
                               "src": "644:3:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 2897,
+                            "id": 2908,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1280,32 +1280,32 @@
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 2894,
+                            "id": 2905,
                             "name": "vuupleAdmin",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2870,
+                            "referencedDeclaration": 2881,
                             "src": "618:11:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VuupleAdmins_$2861",
+                              "typeIdentifier": "t_contract$_VuupleAdmins_$2872",
                               "typeString": "contract VuupleAdmins"
                             }
                           },
-                          "id": 2895,
+                          "id": 2906,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "isVuupleAdmin",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 2791,
+                          "referencedDeclaration": 2802,
                           "src": "618:25:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
                           }
                         },
-                        "id": 2898,
+                        "id": 2909,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1327,21 +1327,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 2893,
+                      "id": 2904,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4393,
-                        4394
+                        4404,
+                        4405
                       ],
-                      "referencedDeclaration": 4393,
+                      "referencedDeclaration": 4404,
                       "src": "610:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 2899,
+                    "id": 2910,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1355,23 +1355,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2900,
+                  "id": 2911,
                   "nodeType": "ExpressionStatement",
                   "src": "610:46:11"
                 },
                 {
-                  "id": 2901,
+                  "id": 2912,
                   "nodeType": "PlaceholderStatement",
                   "src": "666:1:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 2903,
+            "id": 2914,
             "name": "onlyVuupleAdmin",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 2892,
+              "id": 2903,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "597:2:11"
@@ -1381,7 +1381,7 @@
           },
           {
             "body": {
-              "id": 2919,
+              "id": 2930,
               "nodeType": "Block",
               "src": "999:61:11",
               "statements": [
@@ -1391,11 +1391,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2915,
+                        "id": 2926,
                         "name": "beneficiary",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2905,
+                        "referencedDeclaration": 2916,
                         "src": "1032:11:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1404,11 +1404,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 2916,
+                        "id": 2927,
                         "name": "weiAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2907,
+                        "referencedDeclaration": 2918,
                         "src": "1045:9:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1429,32 +1429,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2912,
+                        "id": 2923,
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4452,
+                        "referencedDeclaration": 4463,
                         "src": "1005:5:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_super$_VuupleICO_$2921",
+                          "typeIdentifier": "t_super$_VuupleICO_$2932",
                           "typeString": "contract super VuupleICO"
                         }
                       },
-                      "id": 2914,
+                      "id": 2925,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "_preValidatePurchase",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3341,
+                      "referencedDeclaration": 3352,
                       "src": "1005:26:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) view"
                       }
                     },
-                    "id": 2917,
+                    "id": 2928,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1468,28 +1468,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2918,
+                  "id": 2929,
                   "nodeType": "ExpressionStatement",
                   "src": "1005:50:11"
                 }
               ]
             },
             "documentation": "@dev Extend parent behavior requiring the msg sender to be vuuple admin account \n@param beneficiary Token purchaser\n@param weiAmount Amount of wei contributed",
-            "id": 2920,
+            "id": 2931,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2910,
+                "id": 2921,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2909,
+                  "id": 2920,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2903,
+                  "referencedDeclaration": 2914,
                   "src": "972:15:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1503,15 +1503,15 @@
             "name": "_preValidatePurchase",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2908,
+              "id": 2919,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2905,
+                  "id": 2916,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2920,
+                  "scope": 2931,
                   "src": "908:19:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1520,7 +1520,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2904,
+                    "id": 2915,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "908:7:11",
@@ -1534,10 +1534,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2907,
+                  "id": 2918,
                   "name": "weiAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2920,
+                  "scope": 2931,
                   "src": "933:17:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1546,7 +1546,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2906,
+                    "id": 2917,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "933:7:11",
@@ -1563,19 +1563,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2911,
+              "id": 2922,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "999:0:11"
             },
-            "scope": 2921,
+            "scope": 2932,
             "src": "873:187:11",
             "stateMutability": "view",
-            "superFunction": 3341,
+            "superFunction": 3352,
             "visibility": "internal"
           }
         ],
-        "scope": 2922,
+        "scope": 2933,
         "src": "186:876:11"
       }
     ],
@@ -1617,10 +1617,10 @@
         }
       },
       "links": {},
-      "address": "0xfe0602d820f42800e3ef3f89e1c39cd15f78d283",
-      "transactionHash": "0x1a7a92a4144b521ee344b9a6cc81f5b882dbf6b0ce91acecdacf47058edb04d9"
+      "address": "0x8a5e2a6343108babed07899510fb42297938d41f",
+      "transactionHash": "0x3006cc828e73e997354314c8745e21f9d152e2613c3ebf70332a0587423eec09"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-08-21T11:24:17.877Z"
+  "updatedAt": "2019-09-20T09:33:17.661Z"
 }

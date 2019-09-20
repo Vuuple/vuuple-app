@@ -7,7 +7,7 @@ this repo contain the script for creating and joining  the vuuple network
 this script is for creating the nodekey that is used by the admin to run raft_addPeer command
 #raft_addPeer
 example for adding raft peer command  through node 4 in aws network 
-curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"raft_addPeer","params":[ "enode://736c15ca3536c55f7755c736ed7049257d22c224f032689863aa4288012578bc10775757afe0c93e67f3d6fc1ccef6b6d5e33f455cde180d5c1cf1c13467004f@192.168.0.101:22008?discport=0&raftport=50400" ],"id":1}' http://3.18.34.201:22004
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"raft_addPeer","params":[ "enode://736c15ca3536c55f7755c736ed7049257d22c224f032689863aa4288012578bc10775757afe0c93e67f3d6fc1ccef6b6d5e33f455cde180d5c1cf1c13467004f@192.168.0.101:22008?discport=0&raftport=50400" ],"id":1}' http://172.27.150.7:22004
 
 we can do it from the  geth javascript console  as well
 the returend id value is used with --raftjoinexisting  in raft-start.sh so that the node could join the network 

@@ -162,6 +162,8 @@ export class RenterRegisterComponent implements OnInit {
   }
 
   savetoContract() {
+    console.log('sending to contract');
+
     this.rentersFactoryService
       .renterRegisterSigned(
         this.currentType,

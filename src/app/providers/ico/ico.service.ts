@@ -71,17 +71,17 @@ export class IcoService {
   /**
    * Setter functions
    */
-  async buyTokens(_beneficiary, _value) {
+  async buyTokens(account, _beneficiary, _value) {
     const result = await this.crowdsale
       .deployed()
       .then(instance => {
         console.log('bignumber', _beneficiary);
 
         return instance.buyTokens(
-          this.account,
+          _beneficiary,
 
           {
-            from: this.account,
+            from: account,
             value: _value
           }
         );

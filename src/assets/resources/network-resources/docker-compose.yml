@@ -6,15 +6,15 @@
 # To use Constellation, set QUORUM_TX_MANAGER_DOCKER_IMAGE to Constellation docker image,
 # e.g.: QUORUM_TX_MANAGER_DOCKER_IMAGE=quorumengineering/constellation:0.3.2 docker-compose up -d
 # To use Remix, set QUORUM_GETH_ARGS="--rpccorsdomain https://remix.ethereum.org"
-version: '3.6'
+version: "3.6"
 x-quorum-def: &quorum-def
-  restart: 'on-failure'
-  image: '${QUORUM_DOCKER_IMAGE:-quorumengineering/quorum:2.2.3}'
+  restart: "on-failure"
+  image: "${QUORUM_DOCKER_IMAGE:-quorumengineering/quorum:2.2.3}"
   expose:
-    - '21000'
-    - '50400'
+    - "21000"
+    - "50400"
   healthcheck:
-    test: ['CMD', 'wget', '--spider', '--proxy', 'off', 'http://localhost:8545']
+    test: ["CMD", "wget", "--spider", "--proxy", "off", "http://localhost:8545"]
     interval: 3s
     timeout: 3s
     retries: 10
@@ -75,10 +75,10 @@ x-quorum-def: &quorum-def
         --password /examples/passwords.txt \
         ${QUORUM_GETH_ARGS:-} $${GETH_ARGS_${QUORUM_CONSENSUS:-istanbul}}
 x-swarm-def: &swarm-def
-  restart: 'on-failure'
-  image: '${SWARM_DOCKER_IMAGE:-herawy/swarm-base}'
+  restart: "on-failure"
+  image: "${SWARM_DOCKER_IMAGE:-herawy/swarm-base}"
   expose:
-    - '8500'
+    - "8500"
   entrypoint:
     - /bin/sh
     - -c
@@ -103,13 +103,13 @@ x-swarm-def: &swarm-def
 
       swarm  --datadir $${DDIR} --bzzaccount $${ADDRESS} --ens-api $${DDIR}/geth.ipc --password /examples/passwords.txt --bzznetworkid 20  --httpaddr=0.0.0.0 --debug --verbosity 4
 x-tx-manager-def: &tx-manager-def
-  image: '${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.8}'
+  image: "${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.8}"
   expose:
-    - '9000'
-    - '9080'
-  restart: 'no'
+    - "9000"
+    - "9080"
+  restart: "no"
   healthcheck:
-    test: ['CMD-SHELL', '[ -S /qdata/tm/tm.ipc ] || exit 1']
+    test: ["CMD-SHELL", "[ -S /qdata/tm/tm.ipc ] || exit 1"]
     interval: 3s
     timeout: 3s
     retries: 20
@@ -179,16 +179,16 @@ x-tx-manager-def: &tx-manager-def
               },
               "peer": [
                   {
-                      "url": "http://3.14.2.131:9000"
+                      "url": "http://172.27.150.6:9000"
                   },
                   {
-                      "url": "http://3.18.34.201:9000"
+                      "url": "http://172.27.150.7:9000"
                   },
                   {
-                      "url": "http://3.18.204.171:9000"
+                      "url": "http://172.27.150.8:9000"
                   },
                   {
-                      "url": "http://3.19.116.28:9000"
+                      "url": "http://172.27.150.9:9000"
                   }
               ],
               "keys": {
@@ -263,16 +263,16 @@ x-tx-manager-def: &tx-manager-def
             ],
               "peer": [
                   {
-                      "url": "http://3.14.2.131:9000"
+                      "url": "http://172.27.150.6:9000"
                   },
                   {
-                      "url": "http://3.18.34.201:9000"
+                      "url": "http://172.27.150.7:9000"
                   },
                   {
-                      "url": "http://3.18.204.171:9000"
+                      "url": "http://172.27.150.8:9000"
                   },
                   {
-                      "url": "http://3.19.116.28:9000"
+                      "url": "http://172.27.150.9:9000"
                   }
               ],
             "keys": {
@@ -335,16 +335,16 @@ x-tx-manager-def: &tx-manager-def
             ],
               "peer": [
                   {
-                      "url": "http://3.14.2.131:9000"
+                      "url": "http://172.27.150.6:9000"
                   },
                   {
-                      "url": "http://3.18.34.201:9000"
+                      "url": "http://172.27.150.7:9000"
                   },
                   {
-                      "url": "http://3.18.204.171:9000"
+                      "url": "http://172.27.150.8:9000"
                   },
                   {
-                      "url": "http://3.19.116.28:9000"
+                      "url": "http://172.27.150.9:9000"
                   }
               ],
             "keys": {
@@ -374,7 +374,7 @@ services:
     hostname: swarm8
     container_name: swarm-node
     ports:
-      - '8500:8500'
+      - "8500:8500"
     volumes:
       - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro
@@ -388,10 +388,10 @@ services:
     hostname: node
     container_name: quorum-node
     ports:
-      - '22000:8545'
-      - '21000:21000'
-      - '50400:50400'
-      - '30301:30301'
+      - "22000:8545"
+      - "21000:21000"
+      - "50400:50400"
+      - "30301:30301"
     volumes:
       - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro
@@ -408,7 +408,7 @@ services:
     <<: *tx-manager-def
     container_name: txManger-node
     ports:
-      - '9000:9000'
+      - "9000:9000"
     volumes:
       - ~/.network/node:/qdata:rw
       - ./examples/7nodes:/examples:ro

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SwarmService {
-  gateway = 'http://3.14.2.131:8500' || 'http://localhost:8500';
+  gateway = 'http://172.27.150.6:8500' || 'http://localhost:8500';
 
   private resolveSuffix = '?resolve=true';
   private actionUrl: string;

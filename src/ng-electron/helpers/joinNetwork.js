@@ -6,7 +6,7 @@ const mailer = require('./mail');
 async function getRaftId(ip, endpoint, category) {
   const nodeKey = await getNodeKey();
 
-  // const endpoint = 'http://3.18.34.201:22004';
+  // const endpoint = 'http://172.27.150.7:22004';
   const enode = `enode://${nodeKey}@${ip}:22008?discport=0&raftport=50400`; // from db
   const resObj = await requests.raft_add_peer(endpoint, enode);
   let id;

@@ -89,7 +89,7 @@ describe('LENDER Network', async () => {
 
 describe('Joining the Network', async () => {
   it('adding raft peer', async () => {
-    const endpoint = 'http://3.18.34.201:22004';
+    const endpoint = 'http://172.27.150.7:22004';
     const enode = "enode://c0d5636df2ffb3aa0c16816d3542807700cea39334a016e06479921240f64a30d3a6325c3f0e63e79b905dfb5e2929adef2c289a1c9b2a596935c86b99eae7bf@3.16.255.131:22008?discport=0&raftport=50400"; // from db
     const resObj = await requests.raft_add_peer(endpoint, enode);
     if (resObj.data.result == undefined) {

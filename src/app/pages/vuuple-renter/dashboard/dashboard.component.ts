@@ -47,22 +47,35 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/pages/renter/uploadFile']);
   }
   async getRenterData() {
+    const x = await this.rentersFactoryService.getRenterIndex();
+    console.log(x, 'index');
     this.accountContract = await this.rentersFactoryService.getRenterContract(
       this.cuurentUser.ethAddress
     );
-    this.rentedStorage = await this.rentersRegistrationService.getRenteredStorage(
-      this.accountContract
-    );
-    this.usedStorage = await this.rentersRegistrationService.getUsedStorage(
-      this.accountContract
-    );
-    this.fileContract = await this.rentersRegistrationService.getRenterFiles(
-      this.accountContract
-    );
-    console.log(this.fileContract, '  this.fileContract');
+    console.log(this.cuurentUser.ethAddress, '  this.  address');
+    console.log(this.accountContract, '  this.accountContract');
 
-    this.getFiles();
+    if (
+      this.accountContract != '0x0000000000000000000000000000000000000000' ||
+      this.accountContract != '0x0'
+    ) {
+      this.rentedStorage = await this.rentersRegistrationService.getRenteredStorage(
+        this.accountContract
+      );
+      this.usedStorage = await this.rentersRegistrationService.getUsedStorage(
+        this.accountContract
+      );
+
+      this.fileContract = await this.rentersRegistrationService.getRenterFiles(
+        this.accountContract
+      );
+      console.log(this.fileContract, '  this.fileContract');
+      if (this.fileContract != '0x0000000000000000000000000000000000000000') {
+        this.getFiles();
+      }
+    }
   }
+
   /** uint _size,
             string _name,
 

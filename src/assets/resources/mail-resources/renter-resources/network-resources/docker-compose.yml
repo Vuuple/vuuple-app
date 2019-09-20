@@ -4,15 +4,15 @@
 # * QUORUM_TX_MANAGER_DOCKER_IMAGE: default to quorumengineering/tessera:0.7.3
 # To use Constellation, set QUORUM_TX_MANAGER_DOCKER_IMAGE to Constellation docker image,
 # e.g.: QUORUM_TX_MANAGER_DOCKER_IMAGE=quorumengineering/constellation:0.3.2 docker-compose up -d
-version: '3.7'
+version: "3.7"
 x-quorum-def: &quorum-def
-  restart: 'on-failure'
-  image: '${QUORUM_DOCKER_IMAGE:-quorumengineering/quorum:2.1.1}'
+  restart: "on-failure"
+  image: "${QUORUM_DOCKER_IMAGE:-quorumengineering/quorum:2.1.1}"
   expose:
-    - '21000'
-    - '50400'
+    - "21000"
+    - "50400"
   healthcheck:
-    test: ['CMD', 'wget', '--spider', 'http://localhost:8545']
+    test: ["CMD", "wget", "--spider", "http://localhost:8545"]
     interval: 3s
     timeout: 3s
     retries: 10
@@ -30,7 +30,7 @@ x-quorum-def: &quorum-def
       cp /examples/raft/nodekey8 $${DDIR}/geth/nodekey
       cp /examples/raft/pubkeyhash $${DDIR}/geth/pubkeyhash
       cp /examples/keys/key8 $${DDIR}/keystore/
-      cat /examples/permissioned-nodes.json | sed 's/^\(.*\)@.*\?\(.*\)raftport=5040\([0-9]\)\(.*\)$$/\1@3.18.34.201:2100\3?discport=0\&raftport=5040\3\4/g' > $${DDIR}/static-nodes.json
+      cat /examples/permissioned-nodes.json | sed 's/^\(.*\)@.*\?\(.*\)raftport=5040\([0-9]\)\(.*\)$$/\1@172.27.150.7:2100\3?discport=0\&raftport=5040\3\4/g' > $${DDIR}/static-nodes.json
       echo adding local node to static-nodes.json
       #this is a bit convoluted but all it does is to add the node8 to the static-nodes.json
       #remove the last ']<EOL>' characters in the file static-nodes.json
@@ -77,12 +77,12 @@ x-quorum-def: &quorum-def
         $${GETH_ARGS_${QUORUM_CONSENSUS:-istanbul}}
 
 x-tx-manager-def: &tx-manager-def
-  image: '${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.7.3}'
+  image: "${QUORUM_TX_MANAGER_DOCKER_IMAGE:-quorumengineering/tessera:0.7.3}"
   expose:
-    - '9000'
-  restart: 'no'
+    - "9000"
+  restart: "no"
   healthcheck:
-    test: ['CMD-SHELL', '[ -S /qdata/tm/tm.ipc ] || exit 1']
+    test: ["CMD-SHELL", "[ -S /qdata/tm/tm.ipc ] || exit 1"]
     interval: 3s
     timeout: 3s
     retries: 20
@@ -142,25 +142,25 @@ x-tx-manager-def: &tx-manager-def
          "peer": [
 
                   {
-                      "url": "http://3.18.34.201:24001"
+                      "url": "http://172.27.150.7:24001"
                   },
                   {
-                      "url": "http://3.18.34.201:24002"
+                      "url": "http://172.27.150.7:24002"
                   },
                   {
-                      "url": "http://3.18.34.201:24003"
+                      "url": "http://172.27.150.7:24003"
                   },
                   {
-                      "url": "http://3.18.34.201:24004"
+                      "url": "http://172.27.150.7:24004"
                   },
                   {
-                      "url": "http://3.18.34.201:24005"
+                      "url": "http://172.27.150.7:24005"
                   },
                   {
-                      "url": "http://3.18.34.201:24006"
+                      "url": "http://172.27.150.7:24006"
                   },
                    {
-                      "url": "http://3.18.34.201:24007"
+                      "url": "http://172.27.150.7:24007"
                   }
               ],
               "keys": {
@@ -184,7 +184,7 @@ x-tx-manager-def: &tx-manager-def
             --url=http://$$(hostname -i):9000/ \
             --port=9000 \
             --socket=$${DDIR}/tm.ipc \
-            --othernodes=http://3.18.34.201:24000/,http://3.18.34.201:24001/,http://3.18.34.201:24002/,http://3.18.34.201:24003/,http://3.18.34.201:24004/ \
+            --othernodes=http://172.27.150.7:24000/,http://172.27.150.7:24001/,http://172.27.150.7:24002/,http://172.27.150.7:24003/,http://172.27.150.7:24004/ \
             --publickeys=/examples/keys/tm$${NODE_ID}.pub \
             --privatekeys=/examples/keys/tm$${NODE_ID}.key \
             --storage=$${DDIR} \
@@ -201,9 +201,9 @@ services:
     hostname: node8
     container_name: quorum-node
     ports:
-      - '22008:8545'
-      - '21008:21000'
-      - '50400:50400'
+      - "22008:8545"
+      - "21008:21000"
+      - "50400:50400"
     volumes:
       - ~/.network/node8:/qdata:rw
       - ./examples/7nodes:/examples:ro
@@ -220,7 +220,7 @@ services:
     <<: *tx-manager-def
     container_name: txManger-node
     ports:
-      - '24008:9000'
+      - "24008:9000"
     volumes:
       - ~/.network/node8:/qdata:rw
       - ./examples/7nodes:/examples:ro
@@ -237,4 +237,4 @@ networks:
       config:
         - subnet: 172.16.239.0/24
 volumes:
-  '8':
+  "8":
