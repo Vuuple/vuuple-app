@@ -166,13 +166,13 @@ export class UploadFileComponent implements OnInit {
     isEncrypted,
     encryptedKey */
   async saveToContract() {
-    const test = await this.web3Service.unLockAccount(
-      this.cuurentUser.ethAddress,
-      ''
-    );
+    // const test = await this.web3Service.unLockAccount(
+    //   this.cuurentUser.ethAddress,
+    //   ''
+    // );
     /**usedStorage +_size <= renteredStorage */
     console.log(this.cuurentUser.ethAddress, 'this.cuurentUser.ethAddress');
-    console.log(test, 'test unlock');
+    // console.log(test, 'test unlock');
     const tx = await this.rentersRegistrationService.addFileToStorage(
       this.accountContract,
       this.cuurentUser.ethAddress,

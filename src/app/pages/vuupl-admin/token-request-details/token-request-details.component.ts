@@ -47,7 +47,7 @@ export class TokenRequestDetailsComponent implements OnInit {
 
       if (this.id != undefined && this.id != null) {
         this.serverApiService.getTokenTransById(this.id).subscribe(data => {
-          console.log(data);
+          console.log(data, 'token data');
           this.request = data[0]['tokenTransactions'][0];
           this.request['ethAddress'] = data[0]['ethAddress'];
           console.log(this.request, '  if this.request');
@@ -77,6 +77,9 @@ type: "in" */
             });
           }
           if (this.request['type'] == 'out') {
+            this.myForm.controls.ethTxHash.disable();
+          }
+          if (this.request['type'] == 'in') {
             this.myForm.controls.bankTxId.disable();
           }
 

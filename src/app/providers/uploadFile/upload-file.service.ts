@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType} from '@angular/common/http';
+import {
+  HttpClient,
+  HttpEvent,
+  HttpErrorResponse,
+  HttpEventType
+} from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -7,31 +12,32 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadFileService {
-  
-  SERVER_URL: string = "http://localhost:4200";
+  SERVER_URL: string = 'http://localhost:3001/api/v1/swarm/';
 
   constructor(private httpClient: HttpClient) {}
 
   public upload(data, userId) {
-    let uploadURL = `${this.SERVER_URL}/${userId}/files`;
+    let uploadURL = `${this.SERVER_URL}/uploadraw`;
+    console.log(data, 'data');
 
-    return this.httpClient.post<any>(uploadURL, data, {
-      reportProgress: true,
-      observe: 'events'
-    }).pipe(map((event) => {
+    return this.httpClient
+      .post<any>(uploadURL, data, {
+        reportProgress: true,
+        observe: 'events'
+      })
+      .pipe(
+        map(event => {
+          switch (event.type) {
+            case HttpEventType.UploadProgress:
+              const progress = Math.round((100 * event.loaded) / event.total);
+              return { status: 'progress', message: progress };
 
-      switch (event.type) {
-
-        case HttpEventType.UploadProgress:
-          const progress = Math.round(100 * event.loaded / event.total);
-          return { status: 'progress', message: progress };
-
-        case HttpEventType.Response:
-          return event.body;
-        default:
-          return `Unhandled event: ${event.type}`;
-      }
-    })
-    );
+            case HttpEventType.Response:
+              return event.body;
+            default:
+              return `Unhandled event: ${event.type}`;
+          }
+        })
+      );
   }
 }

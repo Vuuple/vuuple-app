@@ -37,16 +37,20 @@ export class RedeemComponent implements OnInit {
   }
 
   async redeemTokens() {
-    if (this.redForm.invalid) {
-      return;
+    try {
+      if (this.redForm.invalid) {
+        return;
+      }
+      const transfer = await this.tokenService.transfer(
+        this.cuurentUser.ethAddress,
+        this.adminAddress,
+        this.redForm.value.tokensToRed
+      );
+      console.log(transfer.tx, 'tokens redeemed');
+      this.requestRedeem(transfer.tx, this.redForm.value.tokensToRed);
+    } catch (error) {
+      console.log(error, 'error in redeem');
     }
-    const transfer = await this.tokenService.transfer(
-      this.cuurentUser.ethAddress,
-      this.adminAddress,
-      this.redForm.value.tokensToRed
-    );
-    console.log(transfer, 'tokens redeemed');
-    this.requestRedeem(transfer, this.redForm.value.tokensToRed);
   }
   async getRate() {
     this.rate = await this.icoService.getRate();
@@ -62,7 +66,7 @@ export class RedeemComponent implements OnInit {
       depositAmount: this.rate * tokenAmount
     };
     this.serverApiService.redeem(body).subscribe(data => {
-      console.log(data);
+      console.log(data, 'redeem');
     });
   }
   async getBlance() {
