@@ -3499,10 +3499,10 @@
     "20": {
       "events": {},
       "links": {},
-      "address": "0x622aff909c081783613c9d3f5f4c47be78b310ac",
-      "transactionHash": "0x5580d672e9bc9f88b8b158eb3300944b19c50e61a7c73904dbc4cd5279d24892"
+      "address": "0xa501afd7d6432718daf4458cfae8590d88de818e",
+      "transactionHash": "0x58baf002592cf52dfac820c0c51d1e0961fabd62a720b83698a71fb88b9ab1a7"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-11-09T19:46:38.825Z"
+  "updatedAt": "2019-11-09T21:03:59.009Z"
 }
