@@ -6,14 +6,14 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SwarmService {
-  gateway = 'http://3.14.2.131:8500' || 'http://localhost:8500';
+  gateway = 'http://172.27.150.6:8500' || 'http://localhost:8500';
 
   private resolveSuffix = '?resolve=true';
   private actionUrl: string;
   private headers: Headers;
 
   constructor(private http: HttpClient) {
-    this.actionUrl = 'http://localhost:3000/api/v1/erebos/';
+    this.actionUrl = 'http://localhost:3001/api/v1/erebos/';
     //this.actionUrl = 'http://18.221.44.174:3000';
     // this.actionUrl = 'http://localhost:3000/';
     this.headers = new Headers();
@@ -96,11 +96,16 @@ export class SwarmService {
       filepath: _filePath,
       option: option ? option : 'raw'
     };
+    console.log(body, 'body');
+
     const data = await this.post('uploadfile', body).toPromise();
     return data.body;
   }
 
   private post(ns: string, asset: any): Observable<any> {
+    console.log(ns, 'ns');
+    console.log(asset, 'asset');
+
     return this.http
       .post(this.actionUrl + ns, asset)
       .pipe(map(this.extractData));

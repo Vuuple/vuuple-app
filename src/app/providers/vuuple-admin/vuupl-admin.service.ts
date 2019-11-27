@@ -50,7 +50,8 @@ export class VuuplAdminService {
     }
     this.account = this.accounts[0];
 
-    return this.account;
+    // return this.account;
+    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
   }
 
   async getCurrentProvider() {

@@ -100,13 +100,22 @@
         type="submit"
         (click)="renew()"
         class="btn btn-primary"
-        [disabled]="avialableTokens <= 4"
+        [disabled]="!(avialableTokens >= 4 && renewalDate <= currentDate)"
       >
         Buy
       </button>
-      <label class="error" *ngIf="avialableTokens <= 4 && !storForm.valid"
+      <label class="error" *ngIf="avialableTokens <= 4"
         >you balance is low</label
       >
+      <label class="error" *ngIf="renewalDate >= currentDate"
+        >You have not reached the renewal date</label
+      >
+      <label class="error" *ngIf="renewalDate == 0"
+        >you need to
+        <a [routerLink]="['/pages/renter/account']">
+          <span>complete the subscription</span>
+        </a>
+      </label>
 
       <div class="fix"></div>
       <p class="pNote">

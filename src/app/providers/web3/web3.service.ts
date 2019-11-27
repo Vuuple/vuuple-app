@@ -15,7 +15,7 @@ export class Web3Service {
   private web3: any;
   private accounts: string[];
   account;
-  // net = new Web3Net('ws://3.18.34.201:22000');
+  // net = new Web3Net('ws://172.27.150.7:22000');
   constructor() {
     this.web3 = window.web3;
   }
@@ -48,9 +48,17 @@ export class Web3Service {
       );
       return;
     }
+    console.log(this.accounts, ' this.accounts');
+
     this.account = this.accounts[0];
 
     return this.account;
+  }
+  async createAccount(passpword) {
+    const newAccount = await this.web3.eth.personal.newAccount(passpword);
+    console.log(newAccount, 'newAccount');
+
+    return newAccount;
   }
   async getBalanceOf(address) {
     let balance = await this.web3.eth.getBalance(address); //Will give value in.
@@ -67,10 +75,55 @@ export class Web3Service {
 
     return this.web3.utils.isAddress(address);
   }
-  async unLockAccount(address, pasword) {
-    return await this.web3.eth.personal.unlockAccount(address, pasword, 600);
+  async unLockAccount(address, pasword, unlock_duration_sec = 10000) {
+    if (!(await this.isUnlocked(address))) {
+      return await this.web3.eth.personal.unlockAccount(
+        address,
+        pasword,
+        unlock_duration_sec
+      );
+    }
   }
+  // async unLockAccount(address, pasword, unlock_duration_sec = 10000) {
+  //   if (!(await this.isAccountLocked(address))) {
+  //     return await this.web3.eth.personal.unlockAccount(
+  //       address,
+  //       pasword,
+  //       unlock_duration_sec
+  //     );
+  //   }
+  // }
   async getProvider() {
     return await this.web3.currentProvider;
+  }
+
+  async isAccountLocked(account) {
+    try {
+      const tx = await this.web3.eth.sendTransaction({
+        from: account,
+        to: account,
+        value: 0
+      });
+      console.log(tx, 'tx');
+
+      return true;
+    } catch (err) {
+      console.log(err, 'error in lock');
+
+      // return err.message == 'authentication needed: password or unlock';
+      return false;
+    }
+  }
+
+  async isUnlocked(address) {
+    try {
+      const sign = await this.web3.eth.sign('', address);
+      console.log(sign, 'sign');
+    } catch (e) {
+      console.log(e, 'error in sing');
+
+      return false;
+    }
+    return true;
   }
 }

@@ -27,6 +27,7 @@ export class PurchaseComponent implements OnInit {
   storForm: FormGroup;
   cuurentUser: any;
   rate = 0;
+  renewalDate;
   avialableTokens = 0;
   renterContract;
   escrow: {
@@ -37,6 +38,7 @@ export class PurchaseComponent implements OnInit {
     category: string;
     userid: string;
   };
+  currentDate = new Date();
   sorageRate = 4; // 4 for inddividuals 3 for org   Todo:// store it in a varibale in contract and manage changing rate from the dapp
   errorMessage: any;
   constructor(
@@ -101,15 +103,24 @@ export class PurchaseComponent implements OnInit {
     this.renterContract = await this.rentersFactoryService.getRenterContract(
       this.cuurentUser.ethAddress
     );
-
-    console.log(this.renterContract, ' this.renterContract');
+    this.renewalDate = await this.renterRegistrationService.getRenewalDate(
+      this.renterContract
+    );
+    if (this.renewalDate != 0) {
+      this.renewalDate.setMonth(this.renewalDate.getMonth() + 1);
+      console.log(this.renterContract, ' this.renterContract');
+    }
   }
 
   renew() {
     if (this.avialableTokens >= this.storForm.value.amount * 4) {
       // wen renew , add the released escrow contract to db
       this.renterRegistrationService
-        .renewSubscription(this.renterContract, this.storForm.value.amount)
+        .renewSubscription(
+          this.renterContract,
+          this.cuurentUser.ethAddress,
+          this.storForm.value.amount
+        )
         .then(async s => {
           await this.addEscrowData();
           this.goBack();

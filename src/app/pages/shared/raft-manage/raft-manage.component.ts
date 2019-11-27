@@ -106,7 +106,7 @@ export class RaftManageComponent implements OnInit {
   }
 
   writePermissionedNode() {
-    //  "enode://ac6b1096ca56b9f6d004b779ae3728bf83f8e22453404cc3cef16a3d9b96608bc67c4b30db88e0a5a6c6390213f7acbe1153ff6d23ce57380104288ae19373ef@3.14.2.131:21000?discport=0&raftport=50400",
+    //  "enode://ac6b1096ca56b9f6d004b779ae3728bf83f8e22453404cc3cef16a3d9b96608bc67c4b30db88e0a5a6c6390213f7acbe1153ff6d23ce57380104288ae19373ef@172.27.150.6:21000?discport=0&raftport=50400",
   }
   readPermissionNodeFile() {
     const input = path.join(networkPath, '/permissioned-nodes.json');

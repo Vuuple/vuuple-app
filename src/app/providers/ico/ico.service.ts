@@ -56,7 +56,8 @@ export class IcoService {
     }
 
     this.account = this.accounts[0];
-    return this.account;
+    // return this.account;
+    return '0xed9d02e382b34818e88b88a309c7fe71e65f419d';
   }
 
   getCurrentProvider() {
@@ -70,17 +71,17 @@ export class IcoService {
   /**
    * Setter functions
    */
-  async buyTokens(_beneficiary, _value) {
+  async buyTokens(account, _beneficiary, _value) {
     const result = await this.crowdsale
       .deployed()
       .then(instance => {
         console.log('bignumber', _beneficiary);
 
         return instance.buyTokens(
-          this.account,
+          _beneficiary,
 
           {
-            from: this.account,
+            from: account,
             value: _value
           }
         );

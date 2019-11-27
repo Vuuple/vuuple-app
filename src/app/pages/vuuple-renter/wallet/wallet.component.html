@@ -14,7 +14,12 @@
     <h3 style="text-align:center">Tokens Available:</h3>
     <p>{{ avialableTokens }}<br />Vuuple</p>
     <h3 style="text-align:center">Tokens In Use:</h3>
-    <p>{{ tokensInUse }}<br />Vuuple</p>
+    <p>{{ tokensInEscrow }}<br />Vuuple</p>
+    <div *ngIf="cuurentUser.category == 'renter'">
+      <h3 style="text-align:center">Tokens In Contract:</h3>
+      <p>{{ tokensInContract }}<br />Vuuple</p>
+    </div>
+
     <div class="row">
       <div class="col-md-2"></div>
       <a [routerLink]="['/pages/lender/redeem']" class="button">

@@ -179,14 +179,14 @@
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterEscrow.sol",
     "exportedSymbols": {
       "RenterEscrow": [
-        887
+        911
       ]
     },
-    "id": 888,
+    "id": 912,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 704,
+        "id": 728,
         "literals": [
           "solidity",
           "^",
@@ -199,10 +199,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
         "file": "../SharedContracts/VuupleToken.sol",
-        "id": 705,
+        "id": 729,
         "nodeType": "ImportDirective",
-        "scope": 888,
-        "sourceUnit": 3099,
+        "scope": 912,
+        "sourceUnit": 2974,
         "src": "25:44:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -210,10 +210,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
         "file": "../SharedContracts/VuupleAdmins.sol",
-        "id": 706,
+        "id": 730,
         "nodeType": "ImportDirective",
-        "scope": 888,
-        "sourceUnit": 3012,
+        "scope": 912,
+        "sourceUnit": 2887,
         "src": "70:45:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -224,31 +224,31 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 887,
+        "id": 911,
         "linearizedBaseContracts": [
-          887
+          911
         ],
         "name": "RenterEscrow",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "RenterEscrow.EscrowStatus",
-            "id": 710,
+            "id": 734,
             "members": [
               {
-                "id": 707,
+                "id": 731,
                 "name": "Active",
                 "nodeType": "EnumValue",
                 "src": "415:6:4"
               },
               {
-                "id": 708,
+                "id": 732,
                 "name": "Completed",
                 "nodeType": "EnumValue",
                 "src": "422:9:4"
               },
               {
-                "id": 709,
+                "id": 733,
                 "name": "Closed",
                 "nodeType": "EnumValue",
                 "src": "433:6:4"
@@ -260,26 +260,26 @@
           },
           {
             "constant": false,
-            "id": 712,
+            "id": 736,
             "name": "vuupleToken",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "445:30:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VuupleToken_$3098",
+              "typeIdentifier": "t_contract$_VuupleToken_$2973",
               "typeString": "contract VuupleToken"
             },
             "typeName": {
               "contractScope": null,
-              "id": 711,
+              "id": 735,
               "name": "VuupleToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3098,
+              "referencedDeclaration": 2973,
               "src": "445:11:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                "typeIdentifier": "t_contract$_VuupleToken_$2973",
                 "typeString": "contract VuupleToken"
               }
             },
@@ -288,26 +288,26 @@
           },
           {
             "constant": false,
-            "id": 714,
+            "id": 738,
             "name": "escrowStatus",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "481:32:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_enum$_EscrowStatus_$710",
+              "typeIdentifier": "t_enum$_EscrowStatus_$734",
               "typeString": "enum RenterEscrow.EscrowStatus"
             },
             "typeName": {
               "contractScope": null,
-              "id": 713,
+              "id": 737,
               "name": "EscrowStatus",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 710,
+              "referencedDeclaration": 734,
               "src": "481:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                "typeIdentifier": "t_enum$_EscrowStatus_$734",
                 "typeString": "enum RenterEscrow.EscrowStatus"
               }
             },
@@ -316,10 +316,10 @@
           },
           {
             "constant": false,
-            "id": 716,
+            "id": 740,
             "name": "closeTime",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "520:24:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -328,7 +328,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 715,
+              "id": 739,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "520:7:4",
@@ -342,10 +342,10 @@
           },
           {
             "constant": false,
-            "id": 718,
+            "id": 742,
             "name": "renterAccountContract",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "550:36:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -354,7 +354,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 717,
+              "id": 741,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "550:7:4",
@@ -368,10 +368,10 @@
           },
           {
             "constant": false,
-            "id": 720,
+            "id": 744,
             "name": "renter",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "592:21:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -380,7 +380,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 719,
+              "id": 743,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "592:7:4",
@@ -394,10 +394,10 @@
           },
           {
             "constant": false,
-            "id": 722,
+            "id": 746,
             "name": "tokenAmount",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "619:26:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -406,7 +406,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 721,
+              "id": 745,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "619:7:4",
@@ -420,26 +420,26 @@
           },
           {
             "constant": false,
-            "id": 724,
+            "id": 748,
             "name": "vuupleAdmin",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "651:31:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+              "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
               "typeString": "contract VuupleAdmins"
             },
             "typeName": {
               "contractScope": null,
-              "id": 723,
+              "id": 747,
               "name": "VuupleAdmins",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3011,
+              "referencedDeclaration": 2886,
               "src": "651:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                 "typeString": "contract VuupleAdmins"
               }
             },
@@ -448,28 +448,28 @@
           },
           {
             "body": {
-              "id": 767,
+              "id": 791,
               "nodeType": "Block",
               "src": "836:258:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 739,
+                    "id": 763,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 737,
+                      "id": 761,
                       "name": "vuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 724,
+                      "referencedDeclaration": 748,
                       "src": "846:11:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
@@ -477,45 +477,45 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 738,
+                      "id": 762,
                       "name": "_adminAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 726,
+                      "referencedDeclaration": 750,
                       "src": "860:13:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
                     "src": "846:27:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
-                  "id": 740,
+                  "id": 764,
                   "nodeType": "ExpressionStatement",
                   "src": "846:27:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 743,
+                    "id": 767,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 741,
+                      "id": 765,
                       "name": "vuupleToken",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 712,
+                      "referencedDeclaration": 736,
                       "src": "883:11:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                        "typeIdentifier": "t_contract$_VuupleToken_$2973",
                         "typeString": "contract VuupleToken"
                       }
                     },
@@ -523,42 +523,42 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 742,
+                      "id": 766,
                       "name": "_vuupleToken",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 728,
+                      "referencedDeclaration": 752,
                       "src": "896:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                        "typeIdentifier": "t_contract$_VuupleToken_$2973",
                         "typeString": "contract VuupleToken"
                       }
                     },
                     "src": "883:25:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2973",
                       "typeString": "contract VuupleToken"
                     }
                   },
-                  "id": 744,
+                  "id": 768,
                   "nodeType": "ExpressionStatement",
                   "src": "883:25:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 747,
+                    "id": 771,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 745,
+                      "id": 769,
                       "name": "closeTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 716,
+                      "referencedDeclaration": 740,
                       "src": "918:9:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -569,11 +569,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 746,
+                      "id": 770,
                       "name": "_closeTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 730,
+                      "referencedDeclaration": 754,
                       "src": "929:10:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -586,25 +586,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 748,
+                  "id": 772,
                   "nodeType": "ExpressionStatement",
                   "src": "918:21:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 751,
+                    "id": 775,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 749,
+                      "id": 773,
                       "name": "tokenAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 722,
+                      "referencedDeclaration": 746,
                       "src": "949:11:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -615,11 +615,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 750,
+                      "id": 774,
                       "name": "_tokenAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 732,
+                      "referencedDeclaration": 756,
                       "src": "962:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -632,25 +632,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 752,
+                  "id": 776,
                   "nodeType": "ExpressionStatement",
                   "src": "949:25:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 755,
+                    "id": 779,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 753,
+                      "id": 777,
                       "name": "renter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 720,
+                      "referencedDeclaration": 744,
                       "src": "984:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -661,11 +661,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 754,
+                      "id": 778,
                       "name": "_renter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 734,
+                      "referencedDeclaration": 758,
                       "src": "992:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -678,28 +678,28 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 756,
+                  "id": 780,
                   "nodeType": "ExpressionStatement",
                   "src": "984:15:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 760,
+                    "id": 784,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 757,
+                      "id": 781,
                       "name": "escrowStatus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 714,
+                      "referencedDeclaration": 738,
                       "src": "1009:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
@@ -709,18 +709,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 758,
+                        "id": 782,
                         "name": "EscrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
+                        "referencedDeclaration": 734,
                         "src": "1024:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                           "typeString": "type(enum RenterEscrow.EscrowStatus)"
                         }
                       },
-                      "id": 759,
+                      "id": 783,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -730,35 +730,35 @@
                       "referencedDeclaration": null,
                       "src": "1024:19:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
                     "src": "1009:34:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                      "typeIdentifier": "t_enum$_EscrowStatus_$734",
                       "typeString": "enum RenterEscrow.EscrowStatus"
                     }
                   },
-                  "id": 761,
+                  "id": 785,
                   "nodeType": "ExpressionStatement",
                   "src": "1009:34:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 765,
+                    "id": 789,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 762,
+                      "id": 786,
                       "name": "renterAccountContract",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 718,
+                      "referencedDeclaration": 742,
                       "src": "1053:21:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -771,18 +771,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 763,
+                        "id": 787,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4540,
+                        "referencedDeclaration": 4415,
                         "src": "1077:3:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 764,
+                      "id": 788,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -802,14 +802,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 766,
+                  "id": 790,
                   "nodeType": "ExpressionStatement",
                   "src": "1053:34:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 768,
+            "id": 792,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -817,31 +817,31 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 735,
+              "id": 759,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 726,
+                  "id": 750,
                   "name": "_adminAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "701:26:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                    "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                     "typeString": "contract VuupleAdmins"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 725,
+                    "id": 749,
                     "name": "VuupleAdmins",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3011,
+                    "referencedDeclaration": 2886,
                     "src": "701:12:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
@@ -850,26 +850,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 728,
+                  "id": 752,
                   "name": "_vuupleToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "728:24:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                    "typeIdentifier": "t_contract$_VuupleToken_$2973",
                     "typeString": "contract VuupleToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 727,
+                    "id": 751,
                     "name": "VuupleToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3098,
+                    "referencedDeclaration": 2973,
                     "src": "728:11:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2973",
                       "typeString": "contract VuupleToken"
                     }
                   },
@@ -878,10 +878,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 730,
+                  "id": 754,
                   "name": "_closeTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "762:18:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -890,7 +890,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 729,
+                    "id": 753,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "762:7:4",
@@ -904,10 +904,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 732,
+                  "id": 756,
                   "name": "_tokenAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "790:20:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -916,7 +916,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 731,
+                    "id": 755,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "790:7:4",
@@ -930,10 +930,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 734,
+                  "id": 758,
                   "name": "_renter",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "820:15:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -942,7 +942,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 733,
+                    "id": 757,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "820:7:4",
@@ -959,12 +959,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 736,
+              "id": 760,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "836:0:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "689:405:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -972,7 +972,7 @@
           },
           {
             "body": {
-              "id": 779,
+              "id": 803,
               "nodeType": "Block",
               "src": "1126:74:4",
               "statements": [
@@ -987,18 +987,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 773,
+                              "id": 797,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4540,
+                              "referencedDeclaration": 4415,
                               "src": "1170:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 774,
+                            "id": 798,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1022,32 +1022,32 @@
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 771,
+                            "id": 795,
                             "name": "vuupleAdmin",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 724,
+                            "referencedDeclaration": 748,
                             "src": "1144:11:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                              "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                               "typeString": "contract VuupleAdmins"
                             }
                           },
-                          "id": 772,
+                          "id": 796,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "isVuupleAdmin",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 2941,
+                          "referencedDeclaration": 2816,
                           "src": "1144:25:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
                           }
                         },
-                        "id": 775,
+                        "id": 799,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1069,21 +1069,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 770,
+                      "id": 794,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1136:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 776,
+                    "id": 800,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1097,23 +1097,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 777,
+                  "id": 801,
                   "nodeType": "ExpressionStatement",
                   "src": "1136:46:4"
                 },
                 {
-                  "id": 778,
+                  "id": 802,
                   "nodeType": "PlaceholderStatement",
                   "src": "1192:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 780,
+            "id": 804,
             "name": "onlyVuupleAdmin",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 769,
+              "id": 793,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1123:2:4"
@@ -1123,7 +1123,7 @@
           },
           {
             "body": {
-              "id": 790,
+              "id": 814,
               "nodeType": "Block",
               "src": "1239:70:4",
               "statements": [
@@ -1137,18 +1137,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 786,
+                        "id": 810,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 783,
+                          "id": 807,
                           "name": "renterAccountContract",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 718,
+                          "referencedDeclaration": 742,
                           "src": "1257:21:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1161,18 +1161,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 784,
+                            "id": 808,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4540,
+                            "referencedDeclaration": 4415,
                             "src": "1280:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 785,
+                          "id": 809,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1200,21 +1200,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 782,
+                      "id": 806,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1249:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 787,
+                    "id": 811,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1228,23 +1228,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 788,
+                  "id": 812,
                   "nodeType": "ExpressionStatement",
                   "src": "1249:42:4"
                 },
                 {
-                  "id": 789,
+                  "id": 813,
                   "nodeType": "PlaceholderStatement",
                   "src": "1301:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 791,
+            "id": 815,
             "name": "isrenterAccountContract",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 781,
+              "id": 805,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1237:2:4"
@@ -1254,7 +1254,7 @@
           },
           {
             "body": {
-              "id": 800,
+              "id": 824,
               "nodeType": "Block",
               "src": "1343:54:4",
               "statements": [
@@ -1268,18 +1268,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 796,
+                        "id": 820,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 794,
+                          "id": 818,
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4542,
+                          "referencedDeclaration": 4417,
                           "src": "1362:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1290,11 +1290,11 @@
                         "operator": ">=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 795,
+                          "id": 819,
                           "name": "closeTime",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 716,
+                          "referencedDeclaration": 740,
                           "src": "1369:9:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1315,21 +1315,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 793,
+                      "id": 817,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1353:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 797,
+                    "id": 821,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1343,23 +1343,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 798,
+                  "id": 822,
                   "nodeType": "ExpressionStatement",
                   "src": "1353:26:4"
                 },
                 {
-                  "id": 799,
+                  "id": 823,
                   "nodeType": "PlaceholderStatement",
                   "src": "1389:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 801,
+            "id": 825,
             "name": "subscriptionEnded",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 792,
+              "id": 816,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1340:2:4"
@@ -1369,7 +1369,7 @@
           },
           {
             "body": {
-              "id": 811,
+              "id": 835,
               "nodeType": "Block",
               "src": "1426:73:4",
               "statements": [
@@ -1380,24 +1380,24 @@
                       {
                         "argumentTypes": null,
                         "commonType": {
-                          "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                          "typeIdentifier": "t_enum$_EscrowStatus_$734",
                           "typeString": "enum RenterEscrow.EscrowStatus"
                         },
-                        "id": 807,
+                        "id": 831,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 804,
+                          "id": 828,
                           "name": "escrowStatus",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 714,
+                          "referencedDeclaration": 738,
                           "src": "1445:12:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                            "typeIdentifier": "t_enum$_EscrowStatus_$734",
                             "typeString": "enum RenterEscrow.EscrowStatus"
                           }
                         },
@@ -1407,18 +1407,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 805,
+                            "id": 829,
                             "name": "EscrowStatus",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 710,
+                            "referencedDeclaration": 734,
                             "src": "1461:12:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                              "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                               "typeString": "type(enum RenterEscrow.EscrowStatus)"
                             }
                           },
-                          "id": 806,
+                          "id": 830,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1428,7 +1428,7 @@
                           "referencedDeclaration": null,
                           "src": "1461:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                            "typeIdentifier": "t_enum$_EscrowStatus_$734",
                             "typeString": "enum RenterEscrow.EscrowStatus"
                           }
                         },
@@ -1446,21 +1446,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 803,
+                      "id": 827,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1436:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 808,
+                    "id": 832,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1474,23 +1474,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 809,
+                  "id": 833,
                   "nodeType": "ExpressionStatement",
                   "src": "1436:45:4"
                 },
                 {
-                  "id": 810,
+                  "id": 834,
                   "nodeType": "PlaceholderStatement",
                   "src": "1491:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 812,
+            "id": 836,
             "name": "escrowActive",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 802,
+              "id": 826,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1423:2:4"
@@ -1500,7 +1500,7 @@
           },
           {
             "body": {
-              "id": 825,
+              "id": 849,
               "nodeType": "Block",
               "src": "1553:73:4",
               "statements": [
@@ -1510,24 +1510,24 @@
                     "condition": {
                       "argumentTypes": null,
                       "commonType": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       },
-                      "id": 820,
+                      "id": 844,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "argumentTypes": null,
-                        "id": 817,
+                        "id": 841,
                         "name": "escrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 714,
+                        "referencedDeclaration": 738,
                         "src": "1570:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                          "typeIdentifier": "t_enum$_EscrowStatus_$734",
                           "typeString": "enum RenterEscrow.EscrowStatus"
                         }
                       },
@@ -1537,18 +1537,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 818,
+                          "id": 842,
                           "name": "EscrowStatus",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 710,
+                          "referencedDeclaration": 734,
                           "src": "1586:12:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                            "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                             "typeString": "type(enum RenterEscrow.EscrowStatus)"
                           }
                         },
-                        "id": 819,
+                        "id": 843,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1558,7 +1558,7 @@
                         "referencedDeclaration": null,
                         "src": "1586:19:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                          "typeIdentifier": "t_enum$_EscrowStatus_$734",
                           "typeString": "enum RenterEscrow.EscrowStatus"
                         }
                       },
@@ -1571,7 +1571,7 @@
                     "falseExpression": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 822,
+                      "id": 846,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1586,7 +1586,7 @@
                       },
                       "value": "false"
                     },
-                    "id": 823,
+                    "id": 847,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1596,7 +1596,7 @@
                     "trueExpression": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 821,
+                      "id": 845,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1616,15 +1616,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 816,
-                  "id": 824,
+                  "functionReturnParameters": 840,
+                  "id": 848,
                   "nodeType": "Return",
                   "src": "1563:56:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 826,
+            "id": 850,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1632,22 +1632,22 @@
             "name": "isActive",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 813,
+              "id": 837,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1523:3:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 816,
+              "id": 840,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 815,
+                  "id": 839,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 826,
+                  "scope": 850,
                   "src": "1547:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1656,7 +1656,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 814,
+                    "id": 838,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1547:4:4",
@@ -1671,7 +1671,7 @@
               ],
               "src": "1546:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "1506:120:4",
             "stateMutability": "view",
             "superFunction": null,
@@ -1679,7 +1679,7 @@
           },
           {
             "body": {
-              "id": 848,
+              "id": 872,
               "nodeType": "Block",
               "src": "1769:129:4",
               "statements": [
@@ -1689,11 +1689,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 838,
+                        "id": 862,
                         "name": "tokenAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 722,
+                        "referencedDeclaration": 746,
                         "src": "1785:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1708,18 +1708,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 837,
+                      "id": 861,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 886,
+                      "referencedDeclaration": 910,
                       "src": "1779:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_bool_$",
                         "typeString": "function (uint256) returns (bool)"
                       }
                     },
-                    "id": 839,
+                    "id": 863,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1733,28 +1733,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 840,
+                  "id": 864,
                   "nodeType": "ExpressionStatement",
                   "src": "1779:18:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 844,
+                    "id": 868,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 841,
+                      "id": 865,
                       "name": "escrowStatus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 714,
+                      "referencedDeclaration": 738,
                       "src": "1833:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
@@ -1764,18 +1764,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 842,
+                        "id": 866,
                         "name": "EscrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
+                        "referencedDeclaration": 734,
                         "src": "1848:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                           "typeString": "type(enum RenterEscrow.EscrowStatus)"
                         }
                       },
-                      "id": 843,
+                      "id": 867,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1785,17 +1785,17 @@
                       "referencedDeclaration": null,
                       "src": "1848:22:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
                     "src": "1833:37:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                      "typeIdentifier": "t_enum$_EscrowStatus_$734",
                       "typeString": "enum RenterEscrow.EscrowStatus"
                     }
                   },
-                  "id": 845,
+                  "id": 869,
                   "nodeType": "ExpressionStatement",
                   "src": "1833:37:4"
                 },
@@ -1803,7 +1803,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 846,
+                    "id": 870,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -1818,29 +1818,29 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 836,
-                  "id": 847,
+                  "functionReturnParameters": 860,
+                  "id": 871,
                   "nodeType": "Return",
                   "src": "1880:11:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 849,
+            "id": 873,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 829,
+                "id": 853,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 828,
+                  "id": 852,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 780,
+                  "referencedDeclaration": 804,
                   "src": "1707:15:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1852,14 +1852,14 @@
               },
               {
                 "arguments": null,
-                "id": 831,
+                "id": 855,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 830,
+                  "id": 854,
                   "name": "subscriptionEnded",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 801,
+                  "referencedDeclaration": 825,
                   "src": "1723:17:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1871,14 +1871,14 @@
               },
               {
                 "arguments": null,
-                "id": 833,
+                "id": 857,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 832,
+                  "id": 856,
                   "name": "escrowActive",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 812,
+                  "referencedDeclaration": 836,
                   "src": "1741:12:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1892,22 +1892,22 @@
             "name": "withdraw",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 827,
+              "id": 851,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1703:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 836,
+              "id": 860,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 835,
+                  "id": 859,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 849,
+                  "scope": 873,
                   "src": "1763:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1916,7 +1916,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 834,
+                    "id": 858,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1763:4:4",
@@ -1931,7 +1931,7 @@
               ],
               "src": "1762:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "1686:212:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1939,7 +1939,7 @@
           },
           {
             "body": {
-              "id": 869,
+              "id": 893,
               "nodeType": "Block",
               "src": "1989:126:4",
               "statements": [
@@ -1949,11 +1949,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 859,
+                        "id": 883,
                         "name": "tokenAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 722,
+                        "referencedDeclaration": 746,
                         "src": "2005:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1968,18 +1968,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 858,
+                      "id": 882,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 886,
+                      "referencedDeclaration": 910,
                       "src": "1999:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_bool_$",
                         "typeString": "function (uint256) returns (bool)"
                       }
                     },
-                    "id": 860,
+                    "id": 884,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1993,28 +1993,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 861,
+                  "id": 885,
                   "nodeType": "ExpressionStatement",
                   "src": "1999:18:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 865,
+                    "id": 889,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 862,
+                      "id": 886,
                       "name": "escrowStatus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 714,
+                      "referencedDeclaration": 738,
                       "src": "2053:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
@@ -2024,18 +2024,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 863,
+                        "id": 887,
                         "name": "EscrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
+                        "referencedDeclaration": 734,
                         "src": "2068:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                           "typeString": "type(enum RenterEscrow.EscrowStatus)"
                         }
                       },
-                      "id": 864,
+                      "id": 888,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2045,17 +2045,17 @@
                       "referencedDeclaration": null,
                       "src": "2068:19:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
                     "src": "2053:34:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                      "typeIdentifier": "t_enum$_EscrowStatus_$734",
                       "typeString": "enum RenterEscrow.EscrowStatus"
                     }
                   },
-                  "id": 866,
+                  "id": 890,
                   "nodeType": "ExpressionStatement",
                   "src": "2053:34:4"
                 },
@@ -2063,7 +2063,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 867,
+                    "id": 891,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -2078,29 +2078,29 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 857,
-                  "id": 868,
+                  "functionReturnParameters": 881,
+                  "id": 892,
                   "nodeType": "Return",
                   "src": "2097:11:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 870,
+            "id": 894,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 852,
+                "id": 876,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 851,
+                  "id": 875,
                   "name": "isrenterAccountContract",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 791,
+                  "referencedDeclaration": 815,
                   "src": "1935:23:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2112,14 +2112,14 @@
               },
               {
                 "arguments": null,
-                "id": 854,
+                "id": 878,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 853,
+                  "id": 877,
                   "name": "escrowActive",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 812,
+                  "referencedDeclaration": 836,
                   "src": "1960:12:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2133,22 +2133,22 @@
             "name": "closeEscrow",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 850,
+              "id": 874,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1923:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 857,
+              "id": 881,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 856,
+                  "id": 880,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 870,
+                  "scope": 894,
                   "src": "1982:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2157,7 +2157,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 855,
+                    "id": 879,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1982:4:4",
@@ -2172,7 +2172,7 @@
               ],
               "src": "1981:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "1903:212:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2180,7 +2180,7 @@
           },
           {
             "body": {
-              "id": 885,
+              "id": 909,
               "nodeType": "Block",
               "src": "2181:68:4",
               "statements": [
@@ -2190,11 +2190,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 880,
+                        "id": 904,
                         "name": "_tokenAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 872,
+                        "referencedDeclaration": 896,
                         "src": "2208:12:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2211,32 +2211,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 877,
+                        "id": 901,
                         "name": "vuupleToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 712,
+                        "referencedDeclaration": 736,
                         "src": "2191:11:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                          "typeIdentifier": "t_contract$_VuupleToken_$2973",
                           "typeString": "contract VuupleToken"
                         }
                       },
-                      "id": 879,
+                      "id": 903,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "burn",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4181,
+                      "referencedDeclaration": 4056,
                       "src": "2191:16:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256) external"
                       }
                     },
-                    "id": 881,
+                    "id": 905,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2250,7 +2250,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 882,
+                  "id": 906,
                   "nodeType": "ExpressionStatement",
                   "src": "2191:30:4"
                 },
@@ -2258,7 +2258,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 883,
+                    "id": 907,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -2273,15 +2273,15 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 876,
-                  "id": 884,
+                  "functionReturnParameters": 900,
+                  "id": 908,
                   "nodeType": "Return",
                   "src": "2231:11:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 886,
+            "id": 910,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2289,15 +2289,15 @@
             "name": "_burn",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 873,
+              "id": 897,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 872,
+                  "id": 896,
                   "name": "_tokenAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 886,
+                  "scope": 910,
                   "src": "2135:20:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2306,7 +2306,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 871,
+                    "id": 895,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2135:7:4",
@@ -2323,15 +2323,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 876,
+              "id": 900,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 875,
+                  "id": 899,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 886,
+                  "scope": 910,
                   "src": "2175:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2340,7 +2340,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 874,
+                    "id": 898,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2175:4:4",
@@ -2355,14 +2355,14 @@
               ],
               "src": "2174:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "2120:129:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 888,
+        "scope": 912,
         "src": "368:2050:4"
       }
     ],
@@ -2372,14 +2372,14 @@
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/RentersContracts/RenterEscrow.sol",
     "exportedSymbols": {
       "RenterEscrow": [
-        887
+        911
       ]
     },
-    "id": 888,
+    "id": 912,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 704,
+        "id": 728,
         "literals": [
           "solidity",
           "^",
@@ -2392,10 +2392,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleToken.sol",
         "file": "../SharedContracts/VuupleToken.sol",
-        "id": 705,
+        "id": 729,
         "nodeType": "ImportDirective",
-        "scope": 888,
-        "sourceUnit": 3099,
+        "scope": 912,
+        "sourceUnit": 2974,
         "src": "25:44:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2403,10 +2403,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
         "file": "../SharedContracts/VuupleAdmins.sol",
-        "id": 706,
+        "id": 730,
         "nodeType": "ImportDirective",
-        "scope": 888,
-        "sourceUnit": 3012,
+        "scope": 912,
+        "sourceUnit": 2887,
         "src": "70:45:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2417,31 +2417,31 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 887,
+        "id": 911,
         "linearizedBaseContracts": [
-          887
+          911
         ],
         "name": "RenterEscrow",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "RenterEscrow.EscrowStatus",
-            "id": 710,
+            "id": 734,
             "members": [
               {
-                "id": 707,
+                "id": 731,
                 "name": "Active",
                 "nodeType": "EnumValue",
                 "src": "415:6:4"
               },
               {
-                "id": 708,
+                "id": 732,
                 "name": "Completed",
                 "nodeType": "EnumValue",
                 "src": "422:9:4"
               },
               {
-                "id": 709,
+                "id": 733,
                 "name": "Closed",
                 "nodeType": "EnumValue",
                 "src": "433:6:4"
@@ -2453,26 +2453,26 @@
           },
           {
             "constant": false,
-            "id": 712,
+            "id": 736,
             "name": "vuupleToken",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "445:30:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VuupleToken_$3098",
+              "typeIdentifier": "t_contract$_VuupleToken_$2973",
               "typeString": "contract VuupleToken"
             },
             "typeName": {
               "contractScope": null,
-              "id": 711,
+              "id": 735,
               "name": "VuupleToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3098,
+              "referencedDeclaration": 2973,
               "src": "445:11:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                "typeIdentifier": "t_contract$_VuupleToken_$2973",
                 "typeString": "contract VuupleToken"
               }
             },
@@ -2481,26 +2481,26 @@
           },
           {
             "constant": false,
-            "id": 714,
+            "id": 738,
             "name": "escrowStatus",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "481:32:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_enum$_EscrowStatus_$710",
+              "typeIdentifier": "t_enum$_EscrowStatus_$734",
               "typeString": "enum RenterEscrow.EscrowStatus"
             },
             "typeName": {
               "contractScope": null,
-              "id": 713,
+              "id": 737,
               "name": "EscrowStatus",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 710,
+              "referencedDeclaration": 734,
               "src": "481:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                "typeIdentifier": "t_enum$_EscrowStatus_$734",
                 "typeString": "enum RenterEscrow.EscrowStatus"
               }
             },
@@ -2509,10 +2509,10 @@
           },
           {
             "constant": false,
-            "id": 716,
+            "id": 740,
             "name": "closeTime",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "520:24:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2521,7 +2521,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 715,
+              "id": 739,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "520:7:4",
@@ -2535,10 +2535,10 @@
           },
           {
             "constant": false,
-            "id": 718,
+            "id": 742,
             "name": "renterAccountContract",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "550:36:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2547,7 +2547,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 717,
+              "id": 741,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "550:7:4",
@@ -2561,10 +2561,10 @@
           },
           {
             "constant": false,
-            "id": 720,
+            "id": 744,
             "name": "renter",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "592:21:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2573,7 +2573,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 719,
+              "id": 743,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "592:7:4",
@@ -2587,10 +2587,10 @@
           },
           {
             "constant": false,
-            "id": 722,
+            "id": 746,
             "name": "tokenAmount",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "619:26:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2599,7 +2599,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 721,
+              "id": 745,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "619:7:4",
@@ -2613,26 +2613,26 @@
           },
           {
             "constant": false,
-            "id": 724,
+            "id": 748,
             "name": "vuupleAdmin",
             "nodeType": "VariableDeclaration",
-            "scope": 887,
+            "scope": 911,
             "src": "651:31:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+              "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
               "typeString": "contract VuupleAdmins"
             },
             "typeName": {
               "contractScope": null,
-              "id": 723,
+              "id": 747,
               "name": "VuupleAdmins",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3011,
+              "referencedDeclaration": 2886,
               "src": "651:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                 "typeString": "contract VuupleAdmins"
               }
             },
@@ -2641,28 +2641,28 @@
           },
           {
             "body": {
-              "id": 767,
+              "id": 791,
               "nodeType": "Block",
               "src": "836:258:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 739,
+                    "id": 763,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 737,
+                      "id": 761,
                       "name": "vuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 724,
+                      "referencedDeclaration": 748,
                       "src": "846:11:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
@@ -2670,45 +2670,45 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 738,
+                      "id": 762,
                       "name": "_adminAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 726,
+                      "referencedDeclaration": 750,
                       "src": "860:13:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                        "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                         "typeString": "contract VuupleAdmins"
                       }
                     },
                     "src": "846:27:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
-                  "id": 740,
+                  "id": 764,
                   "nodeType": "ExpressionStatement",
                   "src": "846:27:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 743,
+                    "id": 767,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 741,
+                      "id": 765,
                       "name": "vuupleToken",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 712,
+                      "referencedDeclaration": 736,
                       "src": "883:11:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                        "typeIdentifier": "t_contract$_VuupleToken_$2973",
                         "typeString": "contract VuupleToken"
                       }
                     },
@@ -2716,42 +2716,42 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 742,
+                      "id": 766,
                       "name": "_vuupleToken",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 728,
+                      "referencedDeclaration": 752,
                       "src": "896:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                        "typeIdentifier": "t_contract$_VuupleToken_$2973",
                         "typeString": "contract VuupleToken"
                       }
                     },
                     "src": "883:25:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2973",
                       "typeString": "contract VuupleToken"
                     }
                   },
-                  "id": 744,
+                  "id": 768,
                   "nodeType": "ExpressionStatement",
                   "src": "883:25:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 747,
+                    "id": 771,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 745,
+                      "id": 769,
                       "name": "closeTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 716,
+                      "referencedDeclaration": 740,
                       "src": "918:9:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2762,11 +2762,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 746,
+                      "id": 770,
                       "name": "_closeTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 730,
+                      "referencedDeclaration": 754,
                       "src": "929:10:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2779,25 +2779,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 748,
+                  "id": 772,
                   "nodeType": "ExpressionStatement",
                   "src": "918:21:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 751,
+                    "id": 775,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 749,
+                      "id": 773,
                       "name": "tokenAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 722,
+                      "referencedDeclaration": 746,
                       "src": "949:11:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2808,11 +2808,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 750,
+                      "id": 774,
                       "name": "_tokenAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 732,
+                      "referencedDeclaration": 756,
                       "src": "962:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2825,25 +2825,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 752,
+                  "id": 776,
                   "nodeType": "ExpressionStatement",
                   "src": "949:25:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 755,
+                    "id": 779,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 753,
+                      "id": 777,
                       "name": "renter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 720,
+                      "referencedDeclaration": 744,
                       "src": "984:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2854,11 +2854,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 754,
+                      "id": 778,
                       "name": "_renter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 734,
+                      "referencedDeclaration": 758,
                       "src": "992:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2871,28 +2871,28 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 756,
+                  "id": 780,
                   "nodeType": "ExpressionStatement",
                   "src": "984:15:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 760,
+                    "id": 784,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 757,
+                      "id": 781,
                       "name": "escrowStatus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 714,
+                      "referencedDeclaration": 738,
                       "src": "1009:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
@@ -2902,18 +2902,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 758,
+                        "id": 782,
                         "name": "EscrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
+                        "referencedDeclaration": 734,
                         "src": "1024:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                           "typeString": "type(enum RenterEscrow.EscrowStatus)"
                         }
                       },
-                      "id": 759,
+                      "id": 783,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2923,35 +2923,35 @@
                       "referencedDeclaration": null,
                       "src": "1024:19:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
                     "src": "1009:34:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                      "typeIdentifier": "t_enum$_EscrowStatus_$734",
                       "typeString": "enum RenterEscrow.EscrowStatus"
                     }
                   },
-                  "id": 761,
+                  "id": 785,
                   "nodeType": "ExpressionStatement",
                   "src": "1009:34:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 765,
+                    "id": 789,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 762,
+                      "id": 786,
                       "name": "renterAccountContract",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 718,
+                      "referencedDeclaration": 742,
                       "src": "1053:21:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2964,18 +2964,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 763,
+                        "id": 787,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4540,
+                        "referencedDeclaration": 4415,
                         "src": "1077:3:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 764,
+                      "id": 788,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2995,14 +2995,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 766,
+                  "id": 790,
                   "nodeType": "ExpressionStatement",
                   "src": "1053:34:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 768,
+            "id": 792,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -3010,31 +3010,31 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 735,
+              "id": 759,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 726,
+                  "id": 750,
                   "name": "_adminAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "701:26:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                    "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                     "typeString": "contract VuupleAdmins"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 725,
+                    "id": 749,
                     "name": "VuupleAdmins",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3011,
+                    "referencedDeclaration": 2886,
                     "src": "701:12:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                      "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                       "typeString": "contract VuupleAdmins"
                     }
                   },
@@ -3043,26 +3043,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 728,
+                  "id": 752,
                   "name": "_vuupleToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "728:24:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                    "typeIdentifier": "t_contract$_VuupleToken_$2973",
                     "typeString": "contract VuupleToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 727,
+                    "id": 751,
                     "name": "VuupleToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3098,
+                    "referencedDeclaration": 2973,
                     "src": "728:11:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                      "typeIdentifier": "t_contract$_VuupleToken_$2973",
                       "typeString": "contract VuupleToken"
                     }
                   },
@@ -3071,10 +3071,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 730,
+                  "id": 754,
                   "name": "_closeTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "762:18:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3083,7 +3083,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 729,
+                    "id": 753,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "762:7:4",
@@ -3097,10 +3097,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 732,
+                  "id": 756,
                   "name": "_tokenAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "790:20:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3109,7 +3109,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 731,
+                    "id": 755,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "790:7:4",
@@ -3123,10 +3123,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 734,
+                  "id": 758,
                   "name": "_renter",
                   "nodeType": "VariableDeclaration",
-                  "scope": 768,
+                  "scope": 792,
                   "src": "820:15:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3135,7 +3135,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 733,
+                    "id": 757,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "820:7:4",
@@ -3152,12 +3152,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 736,
+              "id": 760,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "836:0:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "689:405:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3165,7 +3165,7 @@
           },
           {
             "body": {
-              "id": 779,
+              "id": 803,
               "nodeType": "Block",
               "src": "1126:74:4",
               "statements": [
@@ -3180,18 +3180,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 773,
+                              "id": 797,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4540,
+                              "referencedDeclaration": 4415,
                               "src": "1170:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 774,
+                            "id": 798,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -3215,32 +3215,32 @@
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 771,
+                            "id": 795,
                             "name": "vuupleAdmin",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 724,
+                            "referencedDeclaration": 748,
                             "src": "1144:11:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VuupleAdmins_$3011",
+                              "typeIdentifier": "t_contract$_VuupleAdmins_$2886",
                               "typeString": "contract VuupleAdmins"
                             }
                           },
-                          "id": 772,
+                          "id": 796,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "isVuupleAdmin",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 2941,
+                          "referencedDeclaration": 2816,
                           "src": "1144:25:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
                           }
                         },
-                        "id": 775,
+                        "id": 799,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3262,21 +3262,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 770,
+                      "id": 794,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1136:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 776,
+                    "id": 800,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3290,23 +3290,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 777,
+                  "id": 801,
                   "nodeType": "ExpressionStatement",
                   "src": "1136:46:4"
                 },
                 {
-                  "id": 778,
+                  "id": 802,
                   "nodeType": "PlaceholderStatement",
                   "src": "1192:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 780,
+            "id": 804,
             "name": "onlyVuupleAdmin",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 769,
+              "id": 793,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1123:2:4"
@@ -3316,7 +3316,7 @@
           },
           {
             "body": {
-              "id": 790,
+              "id": 814,
               "nodeType": "Block",
               "src": "1239:70:4",
               "statements": [
@@ -3330,18 +3330,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 786,
+                        "id": 810,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 783,
+                          "id": 807,
                           "name": "renterAccountContract",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 718,
+                          "referencedDeclaration": 742,
                           "src": "1257:21:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3354,18 +3354,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 784,
+                            "id": 808,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4540,
+                            "referencedDeclaration": 4415,
                             "src": "1280:3:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 785,
+                          "id": 809,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3393,21 +3393,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 782,
+                      "id": 806,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1249:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 787,
+                    "id": 811,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3421,23 +3421,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 788,
+                  "id": 812,
                   "nodeType": "ExpressionStatement",
                   "src": "1249:42:4"
                 },
                 {
-                  "id": 789,
+                  "id": 813,
                   "nodeType": "PlaceholderStatement",
                   "src": "1301:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 791,
+            "id": 815,
             "name": "isrenterAccountContract",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 781,
+              "id": 805,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1237:2:4"
@@ -3447,7 +3447,7 @@
           },
           {
             "body": {
-              "id": 800,
+              "id": 824,
               "nodeType": "Block",
               "src": "1343:54:4",
               "statements": [
@@ -3461,18 +3461,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 796,
+                        "id": 820,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 794,
+                          "id": 818,
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4542,
+                          "referencedDeclaration": 4417,
                           "src": "1362:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -3483,11 +3483,11 @@
                         "operator": ">=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 795,
+                          "id": 819,
                           "name": "closeTime",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 716,
+                          "referencedDeclaration": 740,
                           "src": "1369:9:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -3508,21 +3508,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 793,
+                      "id": 817,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1353:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 797,
+                    "id": 821,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3536,23 +3536,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 798,
+                  "id": 822,
                   "nodeType": "ExpressionStatement",
                   "src": "1353:26:4"
                 },
                 {
-                  "id": 799,
+                  "id": 823,
                   "nodeType": "PlaceholderStatement",
                   "src": "1389:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 801,
+            "id": 825,
             "name": "subscriptionEnded",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 792,
+              "id": 816,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1340:2:4"
@@ -3562,7 +3562,7 @@
           },
           {
             "body": {
-              "id": 811,
+              "id": 835,
               "nodeType": "Block",
               "src": "1426:73:4",
               "statements": [
@@ -3573,24 +3573,24 @@
                       {
                         "argumentTypes": null,
                         "commonType": {
-                          "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                          "typeIdentifier": "t_enum$_EscrowStatus_$734",
                           "typeString": "enum RenterEscrow.EscrowStatus"
                         },
-                        "id": 807,
+                        "id": 831,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 804,
+                          "id": 828,
                           "name": "escrowStatus",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 714,
+                          "referencedDeclaration": 738,
                           "src": "1445:12:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                            "typeIdentifier": "t_enum$_EscrowStatus_$734",
                             "typeString": "enum RenterEscrow.EscrowStatus"
                           }
                         },
@@ -3600,18 +3600,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 805,
+                            "id": 829,
                             "name": "EscrowStatus",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 710,
+                            "referencedDeclaration": 734,
                             "src": "1461:12:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                              "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                               "typeString": "type(enum RenterEscrow.EscrowStatus)"
                             }
                           },
-                          "id": 806,
+                          "id": 830,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3621,7 +3621,7 @@
                           "referencedDeclaration": null,
                           "src": "1461:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                            "typeIdentifier": "t_enum$_EscrowStatus_$734",
                             "typeString": "enum RenterEscrow.EscrowStatus"
                           }
                         },
@@ -3639,21 +3639,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 803,
+                      "id": 827,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "1436:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 808,
+                    "id": 832,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3667,23 +3667,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 809,
+                  "id": 833,
                   "nodeType": "ExpressionStatement",
                   "src": "1436:45:4"
                 },
                 {
-                  "id": 810,
+                  "id": 834,
                   "nodeType": "PlaceholderStatement",
                   "src": "1491:1:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 812,
+            "id": 836,
             "name": "escrowActive",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 802,
+              "id": 826,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1423:2:4"
@@ -3693,7 +3693,7 @@
           },
           {
             "body": {
-              "id": 825,
+              "id": 849,
               "nodeType": "Block",
               "src": "1553:73:4",
               "statements": [
@@ -3703,24 +3703,24 @@
                     "condition": {
                       "argumentTypes": null,
                       "commonType": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       },
-                      "id": 820,
+                      "id": 844,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "argumentTypes": null,
-                        "id": 817,
+                        "id": 841,
                         "name": "escrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 714,
+                        "referencedDeclaration": 738,
                         "src": "1570:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                          "typeIdentifier": "t_enum$_EscrowStatus_$734",
                           "typeString": "enum RenterEscrow.EscrowStatus"
                         }
                       },
@@ -3730,18 +3730,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 818,
+                          "id": 842,
                           "name": "EscrowStatus",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 710,
+                          "referencedDeclaration": 734,
                           "src": "1586:12:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                            "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                             "typeString": "type(enum RenterEscrow.EscrowStatus)"
                           }
                         },
-                        "id": 819,
+                        "id": 843,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3751,7 +3751,7 @@
                         "referencedDeclaration": null,
                         "src": "1586:19:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                          "typeIdentifier": "t_enum$_EscrowStatus_$734",
                           "typeString": "enum RenterEscrow.EscrowStatus"
                         }
                       },
@@ -3764,7 +3764,7 @@
                     "falseExpression": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 822,
+                      "id": 846,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3779,7 +3779,7 @@
                       },
                       "value": "false"
                     },
-                    "id": 823,
+                    "id": 847,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3789,7 +3789,7 @@
                     "trueExpression": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 821,
+                      "id": 845,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3809,15 +3809,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 816,
-                  "id": 824,
+                  "functionReturnParameters": 840,
+                  "id": 848,
                   "nodeType": "Return",
                   "src": "1563:56:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 826,
+            "id": 850,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3825,22 +3825,22 @@
             "name": "isActive",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 813,
+              "id": 837,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1523:3:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 816,
+              "id": 840,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 815,
+                  "id": 839,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 826,
+                  "scope": 850,
                   "src": "1547:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3849,7 +3849,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 814,
+                    "id": 838,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1547:4:4",
@@ -3864,7 +3864,7 @@
               ],
               "src": "1546:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "1506:120:4",
             "stateMutability": "view",
             "superFunction": null,
@@ -3872,7 +3872,7 @@
           },
           {
             "body": {
-              "id": 848,
+              "id": 872,
               "nodeType": "Block",
               "src": "1769:129:4",
               "statements": [
@@ -3882,11 +3882,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 838,
+                        "id": 862,
                         "name": "tokenAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 722,
+                        "referencedDeclaration": 746,
                         "src": "1785:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3901,18 +3901,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 837,
+                      "id": 861,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 886,
+                      "referencedDeclaration": 910,
                       "src": "1779:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_bool_$",
                         "typeString": "function (uint256) returns (bool)"
                       }
                     },
-                    "id": 839,
+                    "id": 863,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3926,28 +3926,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 840,
+                  "id": 864,
                   "nodeType": "ExpressionStatement",
                   "src": "1779:18:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 844,
+                    "id": 868,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 841,
+                      "id": 865,
                       "name": "escrowStatus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 714,
+                      "referencedDeclaration": 738,
                       "src": "1833:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
@@ -3957,18 +3957,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 842,
+                        "id": 866,
                         "name": "EscrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
+                        "referencedDeclaration": 734,
                         "src": "1848:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                           "typeString": "type(enum RenterEscrow.EscrowStatus)"
                         }
                       },
-                      "id": 843,
+                      "id": 867,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3978,17 +3978,17 @@
                       "referencedDeclaration": null,
                       "src": "1848:22:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
                     "src": "1833:37:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                      "typeIdentifier": "t_enum$_EscrowStatus_$734",
                       "typeString": "enum RenterEscrow.EscrowStatus"
                     }
                   },
-                  "id": 845,
+                  "id": 869,
                   "nodeType": "ExpressionStatement",
                   "src": "1833:37:4"
                 },
@@ -3996,7 +3996,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 846,
+                    "id": 870,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -4011,29 +4011,29 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 836,
-                  "id": 847,
+                  "functionReturnParameters": 860,
+                  "id": 871,
                   "nodeType": "Return",
                   "src": "1880:11:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 849,
+            "id": 873,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 829,
+                "id": 853,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 828,
+                  "id": 852,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 780,
+                  "referencedDeclaration": 804,
                   "src": "1707:15:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4045,14 +4045,14 @@
               },
               {
                 "arguments": null,
-                "id": 831,
+                "id": 855,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 830,
+                  "id": 854,
                   "name": "subscriptionEnded",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 801,
+                  "referencedDeclaration": 825,
                   "src": "1723:17:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4064,14 +4064,14 @@
               },
               {
                 "arguments": null,
-                "id": 833,
+                "id": 857,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 832,
+                  "id": 856,
                   "name": "escrowActive",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 812,
+                  "referencedDeclaration": 836,
                   "src": "1741:12:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4085,22 +4085,22 @@
             "name": "withdraw",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 827,
+              "id": 851,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1703:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 836,
+              "id": 860,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 835,
+                  "id": 859,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 849,
+                  "scope": 873,
                   "src": "1763:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4109,7 +4109,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 834,
+                    "id": 858,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1763:4:4",
@@ -4124,7 +4124,7 @@
               ],
               "src": "1762:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "1686:212:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -4132,7 +4132,7 @@
           },
           {
             "body": {
-              "id": 869,
+              "id": 893,
               "nodeType": "Block",
               "src": "1989:126:4",
               "statements": [
@@ -4142,11 +4142,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 859,
+                        "id": 883,
                         "name": "tokenAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 722,
+                        "referencedDeclaration": 746,
                         "src": "2005:11:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4161,18 +4161,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 858,
+                      "id": 882,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 886,
+                      "referencedDeclaration": 910,
                       "src": "1999:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_bool_$",
                         "typeString": "function (uint256) returns (bool)"
                       }
                     },
-                    "id": 860,
+                    "id": 884,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4186,28 +4186,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 861,
+                  "id": 885,
                   "nodeType": "ExpressionStatement",
                   "src": "1999:18:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 865,
+                    "id": 889,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 862,
+                      "id": 886,
                       "name": "escrowStatus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 714,
+                      "referencedDeclaration": 738,
                       "src": "2053:12:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
@@ -4217,18 +4217,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 863,
+                        "id": 887,
                         "name": "EscrowStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
+                        "referencedDeclaration": 734,
                         "src": "2068:12:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$710_$",
+                          "typeIdentifier": "t_type$_t_enum$_EscrowStatus_$734_$",
                           "typeString": "type(enum RenterEscrow.EscrowStatus)"
                         }
                       },
-                      "id": 864,
+                      "id": 888,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -4238,17 +4238,17 @@
                       "referencedDeclaration": null,
                       "src": "2068:19:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                        "typeIdentifier": "t_enum$_EscrowStatus_$734",
                         "typeString": "enum RenterEscrow.EscrowStatus"
                       }
                     },
                     "src": "2053:34:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_EscrowStatus_$710",
+                      "typeIdentifier": "t_enum$_EscrowStatus_$734",
                       "typeString": "enum RenterEscrow.EscrowStatus"
                     }
                   },
-                  "id": 866,
+                  "id": 890,
                   "nodeType": "ExpressionStatement",
                   "src": "2053:34:4"
                 },
@@ -4256,7 +4256,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 867,
+                    "id": 891,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -4271,29 +4271,29 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 857,
-                  "id": 868,
+                  "functionReturnParameters": 881,
+                  "id": 892,
                   "nodeType": "Return",
                   "src": "2097:11:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 870,
+            "id": 894,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 852,
+                "id": 876,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 851,
+                  "id": 875,
                   "name": "isrenterAccountContract",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 791,
+                  "referencedDeclaration": 815,
                   "src": "1935:23:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4305,14 +4305,14 @@
               },
               {
                 "arguments": null,
-                "id": 854,
+                "id": 878,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 853,
+                  "id": 877,
                   "name": "escrowActive",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 812,
+                  "referencedDeclaration": 836,
                   "src": "1960:12:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4326,22 +4326,22 @@
             "name": "closeEscrow",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 850,
+              "id": 874,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1923:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 857,
+              "id": 881,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 856,
+                  "id": 880,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 870,
+                  "scope": 894,
                   "src": "1982:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4350,7 +4350,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 855,
+                    "id": 879,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1982:4:4",
@@ -4365,7 +4365,7 @@
               ],
               "src": "1981:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "1903:212:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -4373,7 +4373,7 @@
           },
           {
             "body": {
-              "id": 885,
+              "id": 909,
               "nodeType": "Block",
               "src": "2181:68:4",
               "statements": [
@@ -4383,11 +4383,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 880,
+                        "id": 904,
                         "name": "_tokenAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 872,
+                        "referencedDeclaration": 896,
                         "src": "2208:12:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4404,32 +4404,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 877,
+                        "id": 901,
                         "name": "vuupleToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 712,
+                        "referencedDeclaration": 736,
                         "src": "2191:11:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VuupleToken_$3098",
+                          "typeIdentifier": "t_contract$_VuupleToken_$2973",
                           "typeString": "contract VuupleToken"
                         }
                       },
-                      "id": 879,
+                      "id": 903,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "burn",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4181,
+                      "referencedDeclaration": 4056,
                       "src": "2191:16:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256) external"
                       }
                     },
-                    "id": 881,
+                    "id": 905,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4443,7 +4443,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 882,
+                  "id": 906,
                   "nodeType": "ExpressionStatement",
                   "src": "2191:30:4"
                 },
@@ -4451,7 +4451,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 883,
+                    "id": 907,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -4466,15 +4466,15 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 876,
-                  "id": 884,
+                  "functionReturnParameters": 900,
+                  "id": 908,
                   "nodeType": "Return",
                   "src": "2231:11:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 886,
+            "id": 910,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -4482,15 +4482,15 @@
             "name": "_burn",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 873,
+              "id": 897,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 872,
+                  "id": 896,
                   "name": "_tokenAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 886,
+                  "scope": 910,
                   "src": "2135:20:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4499,7 +4499,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 871,
+                    "id": 895,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2135:7:4",
@@ -4516,15 +4516,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 876,
+              "id": 900,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 875,
+                  "id": 899,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 886,
+                  "scope": 910,
                   "src": "2175:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4533,7 +4533,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 874,
+                    "id": 898,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2175:4:4",
@@ -4548,14 +4548,14 @@
               ],
               "src": "2174:6:4"
             },
-            "scope": 887,
+            "scope": 911,
             "src": "2120:129:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 888,
+        "scope": 912,
         "src": "368:2050:4"
       }
     ],
@@ -4567,5 +4567,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-06-27T12:47:13.219Z"
+  "updatedAt": "2019-11-09T21:03:50.026Z"
 }

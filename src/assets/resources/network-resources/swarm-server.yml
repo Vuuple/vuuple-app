@@ -1,0 +1,8 @@
+version: "3.6"
+services:
+  swarmApi:
+    image: herawy/swarm-server
+    hostname: swarmApi
+    container_name: swarm-api
+    ports:
+      - "3001:3000"

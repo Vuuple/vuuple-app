@@ -103,14 +103,14 @@
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
     "exportedSymbols": {
       "VuupleAdmins": [
-        3011
+        2886
       ]
     },
-    "id": 3012,
+    "id": 2887,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2894,
+        "id": 2769,
         "literals": [
           "solidity",
           "^",
@@ -123,10 +123,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
         "file": "../../node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
-        "id": 2895,
+        "id": 2770,
         "nodeType": "ImportDirective",
-        "scope": 3012,
-        "sourceUnit": 3193,
+        "scope": 2887,
+        "sourceUnit": 3068,
         "src": "26:77:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -137,24 +137,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3011,
+        "id": 2886,
         "linearizedBaseContracts": [
-          3011
+          2886
         ],
         "name": "VuupleAdmins",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 2898,
+            "id": 2773,
             "libraryName": {
               "contractScope": null,
-              "id": 2896,
+              "id": 2771,
               "name": "Roles",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3192,
+              "referencedDeclaration": 3067,
               "src": "137:5:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Roles_$3192",
+                "typeIdentifier": "t_contract$_Roles_$3067",
                 "typeString": "library Roles"
               }
             },
@@ -162,13 +162,13 @@
             "src": "131:27:10",
             "typeName": {
               "contractScope": null,
-              "id": 2897,
+              "id": 2772,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3105,
+              "referencedDeclaration": 2980,
               "src": "147:10:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$3105_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$2980_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             }
@@ -176,20 +176,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2902,
+            "id": 2777,
             "name": "VuupleAdminAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2901,
+              "id": 2776,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2900,
+                  "id": 2775,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2902,
+                  "scope": 2777,
                   "src": "185:23:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -198,7 +198,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2899,
+                    "id": 2774,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "185:7:10",
@@ -218,20 +218,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2906,
+            "id": 2781,
             "name": "VuupleAdminRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2905,
+              "id": 2780,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2904,
+                  "id": 2779,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2906,
+                  "scope": 2781,
                   "src": "238:23:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -240,7 +240,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2903,
+                    "id": 2778,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "238:7:10",
@@ -259,26 +259,26 @@
           },
           {
             "constant": false,
-            "id": 2908,
+            "id": 2783,
             "name": "VuupleAdmins",
             "nodeType": "VariableDeclaration",
-            "scope": 3011,
+            "scope": 2886,
             "src": "267:31:10",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Role_$3105_storage",
+              "typeIdentifier": "t_struct$_Role_$2980_storage",
               "typeString": "struct Roles.Role"
             },
             "typeName": {
               "contractScope": null,
-              "id": 2907,
+              "id": 2782,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3105,
+              "referencedDeclaration": 2980,
               "src": "267:10:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$3105_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$2980_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             },
@@ -287,7 +287,7 @@
           },
           {
             "body": {
-              "id": 2916,
+              "id": 2791,
               "nodeType": "Block",
               "src": "318:39:10",
               "statements": [
@@ -299,18 +299,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2912,
+                          "id": 2787,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4540,
+                          "referencedDeclaration": 4415,
                           "src": "341:3:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2913,
+                        "id": 2788,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -332,18 +332,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2911,
+                      "id": 2786,
                       "name": "_addVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2994,
+                      "referencedDeclaration": 2869,
                       "src": "325:15:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2914,
+                    "id": 2789,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -357,14 +357,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2915,
+                  "id": 2790,
                   "nodeType": "ExpressionStatement",
                   "src": "325:27:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2917,
+            "id": 2792,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -372,19 +372,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2909,
+              "id": 2784,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "314:2:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2910,
+              "id": 2785,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "318:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "303:54:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -392,7 +392,7 @@
           },
           {
             "body": {
-              "id": 2927,
+              "id": 2802,
               "nodeType": "Block",
               "src": "388:52:10",
               "statements": [
@@ -407,18 +407,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 2921,
+                              "id": 2796,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4540,
+                              "referencedDeclaration": 4415,
                               "src": "416:3:10",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 2922,
+                            "id": 2797,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -440,18 +440,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2920,
+                          "id": 2795,
                           "name": "isVuupleAdmin",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2941,
+                          "referencedDeclaration": 2816,
                           "src": "402:13:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view returns (bool)"
                           }
                         },
-                        "id": 2923,
+                        "id": 2798,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -473,21 +473,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 2919,
+                      "id": 2794,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "394:7:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 2924,
+                    "id": 2799,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -501,23 +501,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2925,
+                  "id": 2800,
                   "nodeType": "ExpressionStatement",
                   "src": "394:34:10"
                 },
                 {
-                  "id": 2926,
+                  "id": 2801,
                   "nodeType": "PlaceholderStatement",
                   "src": "434:1:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2928,
+            "id": 2803,
             "name": "onlyVuupleAdmin",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 2918,
+              "id": 2793,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "385:2:10"
@@ -527,7 +527,7 @@
           },
           {
             "body": {
-              "id": 2940,
+              "id": 2815,
               "nodeType": "Block",
               "src": "511:43:10",
               "statements": [
@@ -537,11 +537,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2937,
+                        "id": 2812,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2930,
+                        "referencedDeclaration": 2805,
                         "src": "541:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -558,32 +558,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2935,
+                        "id": 2810,
                         "name": "VuupleAdmins",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2908,
+                        "referencedDeclaration": 2783,
                         "src": "524:12:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$3105_storage",
+                          "typeIdentifier": "t_struct$_Role_$2980_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 2936,
+                      "id": 2811,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "has",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3191,
+                      "referencedDeclaration": 3066,
                       "src": "524:16:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$3105_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$3105_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$2980_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$2980_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
                       }
                     },
-                    "id": 2938,
+                    "id": 2813,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -597,15 +597,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2934,
-                  "id": 2939,
+                  "functionReturnParameters": 2809,
+                  "id": 2814,
                   "nodeType": "Return",
                   "src": "517:32:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2941,
+            "id": 2816,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -613,15 +613,15 @@
             "name": "isVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2931,
+              "id": 2806,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2930,
+                  "id": 2805,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2941,
+                  "scope": 2816,
                   "src": "467:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -630,7 +630,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2929,
+                    "id": 2804,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "467:7:10",
@@ -647,15 +647,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2934,
+              "id": 2809,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2933,
+                  "id": 2808,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2941,
+                  "scope": 2816,
                   "src": "505:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -664,7 +664,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2932,
+                    "id": 2807,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "505:4:10",
@@ -679,7 +679,7 @@
               ],
               "src": "504:6:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "444:110:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -687,7 +687,7 @@
           },
           {
             "body": {
-              "id": 2956,
+              "id": 2831,
               "nodeType": "Block",
               "src": "638:52:10",
               "statements": [
@@ -697,11 +697,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2951,
+                        "id": 2826,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2943,
+                        "referencedDeclaration": 2818,
                         "src": "660:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -716,18 +716,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2950,
+                      "id": 2825,
                       "name": "_addVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2994,
+                      "referencedDeclaration": 2869,
                       "src": "644:15:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2952,
+                    "id": 2827,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -741,7 +741,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2953,
+                  "id": 2828,
                   "nodeType": "ExpressionStatement",
                   "src": "644:24:10"
                 },
@@ -749,7 +749,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 2954,
+                    "id": 2829,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -764,29 +764,29 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 2949,
-                  "id": 2955,
+                  "functionReturnParameters": 2824,
+                  "id": 2830,
                   "nodeType": "Return",
                   "src": "674:11:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2957,
+            "id": 2832,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2946,
+                "id": 2821,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2945,
+                  "id": 2820,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2928,
+                  "referencedDeclaration": 2803,
                   "src": "606:15:10",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -800,15 +800,15 @@
             "name": "addVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2944,
+              "id": 2819,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2943,
+                  "id": 2818,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2957,
+                  "scope": 2832,
                   "src": "582:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -817,7 +817,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2942,
+                    "id": 2817,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "582:7:10",
@@ -834,15 +834,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2949,
+              "id": 2824,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2948,
+                  "id": 2823,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2957,
+                  "scope": 2832,
                   "src": "633:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -851,7 +851,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2947,
+                    "id": 2822,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "633:4:10",
@@ -866,7 +866,7 @@
               ],
               "src": "632:6:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "558:132:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -874,7 +874,7 @@
           },
           {
             "body": {
-              "id": 2965,
+              "id": 2840,
               "nodeType": "Block",
               "src": "732:41:10",
               "statements": [
@@ -886,18 +886,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2961,
+                          "id": 2836,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4540,
+                          "referencedDeclaration": 4415,
                           "src": "757:3:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2962,
+                        "id": 2837,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -919,18 +919,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2960,
+                      "id": 2835,
                       "name": "_removeVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3010,
+                      "referencedDeclaration": 2885,
                       "src": "738:18:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2963,
+                    "id": 2838,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -944,14 +944,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2964,
+                  "id": 2839,
                   "nodeType": "ExpressionStatement",
                   "src": "738:30:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2966,
+            "id": 2841,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -959,19 +959,19 @@
             "name": "renounceVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2958,
+              "id": 2833,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "722:2:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2959,
+              "id": 2834,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "732:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "694:79:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -979,7 +979,7 @@
           },
           {
             "body": {
-              "id": 2977,
+              "id": 2852,
               "nodeType": "Block",
               "src": "842:38:10",
               "statements": [
@@ -989,11 +989,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2974,
+                        "id": 2849,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2968,
+                        "referencedDeclaration": 2843,
                         "src": "867:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1008,18 +1008,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2973,
+                      "id": 2848,
                       "name": "_removeVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3010,
+                      "referencedDeclaration": 2885,
                       "src": "848:18:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2975,
+                    "id": 2850,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1033,28 +1033,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2976,
+                  "id": 2851,
                   "nodeType": "ExpressionStatement",
                   "src": "848:27:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2978,
+            "id": 2853,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2971,
+                "id": 2846,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2970,
+                  "id": 2845,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2928,
+                  "referencedDeclaration": 2803,
                   "src": "827:15:10",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1068,15 +1068,15 @@
             "name": "removeVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2969,
+              "id": 2844,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2968,
+                  "id": 2843,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2978,
+                  "scope": 2853,
                   "src": "803:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1085,7 +1085,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2967,
+                    "id": 2842,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "803:7:10",
@@ -1102,12 +1102,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2972,
+              "id": 2847,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "842:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "776:104:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1115,7 +1115,7 @@
           },
           {
             "body": {
-              "id": 2993,
+              "id": 2868,
               "nodeType": "Block",
               "src": "935:72:10",
               "statements": [
@@ -1125,11 +1125,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2986,
+                        "id": 2861,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2980,
+                        "referencedDeclaration": 2855,
                         "src": "958:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1146,32 +1146,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2983,
+                        "id": 2858,
                         "name": "VuupleAdmins",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2908,
+                        "referencedDeclaration": 2783,
                         "src": "941:12:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$3105_storage",
+                          "typeIdentifier": "t_struct$_Role_$2980_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 2985,
+                      "id": 2860,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3137,
+                      "referencedDeclaration": 3012,
                       "src": "941:16:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$3105_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$3105_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$2980_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$2980_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 2987,
+                    "id": 2862,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1185,7 +1185,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2988,
+                  "id": 2863,
                   "nodeType": "ExpressionStatement",
                   "src": "941:25:10"
                 },
@@ -1195,11 +1195,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2990,
+                        "id": 2865,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2980,
+                        "referencedDeclaration": 2855,
                         "src": "994:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1214,18 +1214,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2989,
+                      "id": 2864,
                       "name": "VuupleAdminAdded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2902,
+                      "referencedDeclaration": 2777,
                       "src": "977:16:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2991,
+                    "id": 2866,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1239,14 +1239,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2992,
+                  "id": 2867,
                   "nodeType": "EmitStatement",
                   "src": "972:30:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2994,
+            "id": 2869,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1254,15 +1254,15 @@
             "name": "_addVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2981,
+              "id": 2856,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2980,
+                  "id": 2855,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2994,
+                  "scope": 2869,
                   "src": "909:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1271,7 +1271,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2979,
+                    "id": 2854,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "909:7:10",
@@ -1288,12 +1288,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2982,
+              "id": 2857,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "935:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "884:123:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1301,7 +1301,7 @@
           },
           {
             "body": {
-              "id": 3009,
+              "id": 2884,
               "nodeType": "Block",
               "src": "1065:77:10",
               "statements": [
@@ -1311,11 +1311,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3002,
+                        "id": 2877,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2996,
+                        "referencedDeclaration": 2871,
                         "src": "1091:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1332,32 +1332,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2999,
+                        "id": 2874,
                         "name": "VuupleAdmins",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2908,
+                        "referencedDeclaration": 2783,
                         "src": "1071:12:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$3105_storage",
+                          "typeIdentifier": "t_struct$_Role_$2980_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 3001,
+                      "id": 2876,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3168,
+                      "referencedDeclaration": 3043,
                       "src": "1071:19:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$3105_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$3105_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$2980_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$2980_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 3003,
+                    "id": 2878,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1371,7 +1371,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3004,
+                  "id": 2879,
                   "nodeType": "ExpressionStatement",
                   "src": "1071:28:10"
                 },
@@ -1381,11 +1381,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3006,
+                        "id": 2881,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2996,
+                        "referencedDeclaration": 2871,
                         "src": "1129:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1400,18 +1400,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 3005,
+                      "id": 2880,
                       "name": "VuupleAdminRemoved",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2906,
+                      "referencedDeclaration": 2781,
                       "src": "1110:18:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 3007,
+                    "id": 2882,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1425,14 +1425,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3008,
+                  "id": 2883,
                   "nodeType": "EmitStatement",
                   "src": "1105:32:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 3010,
+            "id": 2885,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1440,15 +1440,15 @@
             "name": "_removeVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2997,
+              "id": 2872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2996,
+                  "id": 2871,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3010,
+                  "scope": 2885,
                   "src": "1039:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1457,7 +1457,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2995,
+                    "id": 2870,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1039:7:10",
@@ -1474,19 +1474,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2998,
+              "id": 2873,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1065:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "1011:131:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 3012,
+        "scope": 2887,
         "src": "105:1039:10"
       }
     ],
@@ -1496,14 +1496,14 @@
     "absolutePath": "/home/ubuntu/Smart-Contracts/contracts/SharedContracts/VuupleAdmins.sol",
     "exportedSymbols": {
       "VuupleAdmins": [
-        3011
+        2886
       ]
     },
-    "id": 3012,
+    "id": 2887,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2894,
+        "id": 2769,
         "literals": [
           "solidity",
           "^",
@@ -1516,10 +1516,10 @@
       {
         "absolutePath": "/home/ubuntu/Smart-Contracts/node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
         "file": "../../node_modules/openzeppelin-solidity/contracts/access/Roles.sol",
-        "id": 2895,
+        "id": 2770,
         "nodeType": "ImportDirective",
-        "scope": 3012,
-        "sourceUnit": 3193,
+        "scope": 2887,
+        "sourceUnit": 3068,
         "src": "26:77:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1530,24 +1530,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3011,
+        "id": 2886,
         "linearizedBaseContracts": [
-          3011
+          2886
         ],
         "name": "VuupleAdmins",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 2898,
+            "id": 2773,
             "libraryName": {
               "contractScope": null,
-              "id": 2896,
+              "id": 2771,
               "name": "Roles",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3192,
+              "referencedDeclaration": 3067,
               "src": "137:5:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Roles_$3192",
+                "typeIdentifier": "t_contract$_Roles_$3067",
                 "typeString": "library Roles"
               }
             },
@@ -1555,13 +1555,13 @@
             "src": "131:27:10",
             "typeName": {
               "contractScope": null,
-              "id": 2897,
+              "id": 2772,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3105,
+              "referencedDeclaration": 2980,
               "src": "147:10:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$3105_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$2980_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             }
@@ -1569,20 +1569,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2902,
+            "id": 2777,
             "name": "VuupleAdminAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2901,
+              "id": 2776,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2900,
+                  "id": 2775,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2902,
+                  "scope": 2777,
                   "src": "185:23:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1591,7 +1591,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2899,
+                    "id": 2774,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "185:7:10",
@@ -1611,20 +1611,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2906,
+            "id": 2781,
             "name": "VuupleAdminRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2905,
+              "id": 2780,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2904,
+                  "id": 2779,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2906,
+                  "scope": 2781,
                   "src": "238:23:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1633,7 +1633,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2903,
+                    "id": 2778,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "238:7:10",
@@ -1652,26 +1652,26 @@
           },
           {
             "constant": false,
-            "id": 2908,
+            "id": 2783,
             "name": "VuupleAdmins",
             "nodeType": "VariableDeclaration",
-            "scope": 3011,
+            "scope": 2886,
             "src": "267:31:10",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Role_$3105_storage",
+              "typeIdentifier": "t_struct$_Role_$2980_storage",
               "typeString": "struct Roles.Role"
             },
             "typeName": {
               "contractScope": null,
-              "id": 2907,
+              "id": 2782,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3105,
+              "referencedDeclaration": 2980,
               "src": "267:10:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$3105_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$2980_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             },
@@ -1680,7 +1680,7 @@
           },
           {
             "body": {
-              "id": 2916,
+              "id": 2791,
               "nodeType": "Block",
               "src": "318:39:10",
               "statements": [
@@ -1692,18 +1692,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2912,
+                          "id": 2787,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4540,
+                          "referencedDeclaration": 4415,
                           "src": "341:3:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2913,
+                        "id": 2788,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1725,18 +1725,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2911,
+                      "id": 2786,
                       "name": "_addVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2994,
+                      "referencedDeclaration": 2869,
                       "src": "325:15:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2914,
+                    "id": 2789,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1750,14 +1750,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2915,
+                  "id": 2790,
                   "nodeType": "ExpressionStatement",
                   "src": "325:27:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2917,
+            "id": 2792,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1765,19 +1765,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2909,
+              "id": 2784,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "314:2:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2910,
+              "id": 2785,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "318:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "303:54:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1785,7 +1785,7 @@
           },
           {
             "body": {
-              "id": 2927,
+              "id": 2802,
               "nodeType": "Block",
               "src": "388:52:10",
               "statements": [
@@ -1800,18 +1800,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 2921,
+                              "id": 2796,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4540,
+                              "referencedDeclaration": 4415,
                               "src": "416:3:10",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 2922,
+                            "id": 2797,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1833,18 +1833,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2920,
+                          "id": 2795,
                           "name": "isVuupleAdmin",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2941,
+                          "referencedDeclaration": 2816,
                           "src": "402:13:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view returns (bool)"
                           }
                         },
-                        "id": 2923,
+                        "id": 2798,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1866,21 +1866,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 2919,
+                      "id": 2794,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        4543,
-                        4544
+                        4418,
+                        4419
                       ],
-                      "referencedDeclaration": 4543,
+                      "referencedDeclaration": 4418,
                       "src": "394:7:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 2924,
+                    "id": 2799,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1894,23 +1894,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2925,
+                  "id": 2800,
                   "nodeType": "ExpressionStatement",
                   "src": "394:34:10"
                 },
                 {
-                  "id": 2926,
+                  "id": 2801,
                   "nodeType": "PlaceholderStatement",
                   "src": "434:1:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2928,
+            "id": 2803,
             "name": "onlyVuupleAdmin",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 2918,
+              "id": 2793,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "385:2:10"
@@ -1920,7 +1920,7 @@
           },
           {
             "body": {
-              "id": 2940,
+              "id": 2815,
               "nodeType": "Block",
               "src": "511:43:10",
               "statements": [
@@ -1930,11 +1930,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2937,
+                        "id": 2812,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2930,
+                        "referencedDeclaration": 2805,
                         "src": "541:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1951,32 +1951,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2935,
+                        "id": 2810,
                         "name": "VuupleAdmins",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2908,
+                        "referencedDeclaration": 2783,
                         "src": "524:12:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$3105_storage",
+                          "typeIdentifier": "t_struct$_Role_$2980_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 2936,
+                      "id": 2811,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "has",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3191,
+                      "referencedDeclaration": 3066,
                       "src": "524:16:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$3105_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$3105_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$2980_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$2980_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
                       }
                     },
-                    "id": 2938,
+                    "id": 2813,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1990,15 +1990,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2934,
-                  "id": 2939,
+                  "functionReturnParameters": 2809,
+                  "id": 2814,
                   "nodeType": "Return",
                   "src": "517:32:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2941,
+            "id": 2816,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2006,15 +2006,15 @@
             "name": "isVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2931,
+              "id": 2806,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2930,
+                  "id": 2805,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2941,
+                  "scope": 2816,
                   "src": "467:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2023,7 +2023,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2929,
+                    "id": 2804,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "467:7:10",
@@ -2040,15 +2040,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2934,
+              "id": 2809,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2933,
+                  "id": 2808,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2941,
+                  "scope": 2816,
                   "src": "505:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2057,7 +2057,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2932,
+                    "id": 2807,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "505:4:10",
@@ -2072,7 +2072,7 @@
               ],
               "src": "504:6:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "444:110:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -2080,7 +2080,7 @@
           },
           {
             "body": {
-              "id": 2956,
+              "id": 2831,
               "nodeType": "Block",
               "src": "638:52:10",
               "statements": [
@@ -2090,11 +2090,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2951,
+                        "id": 2826,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2943,
+                        "referencedDeclaration": 2818,
                         "src": "660:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2109,18 +2109,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2950,
+                      "id": 2825,
                       "name": "_addVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2994,
+                      "referencedDeclaration": 2869,
                       "src": "644:15:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2952,
+                    "id": 2827,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2134,7 +2134,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2953,
+                  "id": 2828,
                   "nodeType": "ExpressionStatement",
                   "src": "644:24:10"
                 },
@@ -2142,7 +2142,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 2954,
+                    "id": 2829,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -2157,29 +2157,29 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 2949,
-                  "id": 2955,
+                  "functionReturnParameters": 2824,
+                  "id": 2830,
                   "nodeType": "Return",
                   "src": "674:11:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2957,
+            "id": 2832,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2946,
+                "id": 2821,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2945,
+                  "id": 2820,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2928,
+                  "referencedDeclaration": 2803,
                   "src": "606:15:10",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2193,15 +2193,15 @@
             "name": "addVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2944,
+              "id": 2819,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2943,
+                  "id": 2818,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2957,
+                  "scope": 2832,
                   "src": "582:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2210,7 +2210,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2942,
+                    "id": 2817,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "582:7:10",
@@ -2227,15 +2227,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2949,
+              "id": 2824,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2948,
+                  "id": 2823,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2957,
+                  "scope": 2832,
                   "src": "633:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2244,7 +2244,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2947,
+                    "id": 2822,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "633:4:10",
@@ -2259,7 +2259,7 @@
               ],
               "src": "632:6:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "558:132:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2267,7 +2267,7 @@
           },
           {
             "body": {
-              "id": 2965,
+              "id": 2840,
               "nodeType": "Block",
               "src": "732:41:10",
               "statements": [
@@ -2279,18 +2279,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2961,
+                          "id": 2836,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4540,
+                          "referencedDeclaration": 4415,
                           "src": "757:3:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2962,
+                        "id": 2837,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2312,18 +2312,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2960,
+                      "id": 2835,
                       "name": "_removeVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3010,
+                      "referencedDeclaration": 2885,
                       "src": "738:18:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2963,
+                    "id": 2838,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2337,14 +2337,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2964,
+                  "id": 2839,
                   "nodeType": "ExpressionStatement",
                   "src": "738:30:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2966,
+            "id": 2841,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2352,19 +2352,19 @@
             "name": "renounceVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2958,
+              "id": 2833,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "722:2:10"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2959,
+              "id": 2834,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "732:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "694:79:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2372,7 +2372,7 @@
           },
           {
             "body": {
-              "id": 2977,
+              "id": 2852,
               "nodeType": "Block",
               "src": "842:38:10",
               "statements": [
@@ -2382,11 +2382,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2974,
+                        "id": 2849,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2968,
+                        "referencedDeclaration": 2843,
                         "src": "867:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2401,18 +2401,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2973,
+                      "id": 2848,
                       "name": "_removeVuupleAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3010,
+                      "referencedDeclaration": 2885,
                       "src": "848:18:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2975,
+                    "id": 2850,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2426,28 +2426,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2976,
+                  "id": 2851,
                   "nodeType": "ExpressionStatement",
                   "src": "848:27:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2978,
+            "id": 2853,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2971,
+                "id": 2846,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2970,
+                  "id": 2845,
                   "name": "onlyVuupleAdmin",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2928,
+                  "referencedDeclaration": 2803,
                   "src": "827:15:10",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2461,15 +2461,15 @@
             "name": "removeVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2969,
+              "id": 2844,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2968,
+                  "id": 2843,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2978,
+                  "scope": 2853,
                   "src": "803:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2478,7 +2478,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2967,
+                    "id": 2842,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "803:7:10",
@@ -2495,12 +2495,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2972,
+              "id": 2847,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "842:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "776:104:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2508,7 +2508,7 @@
           },
           {
             "body": {
-              "id": 2993,
+              "id": 2868,
               "nodeType": "Block",
               "src": "935:72:10",
               "statements": [
@@ -2518,11 +2518,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2986,
+                        "id": 2861,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2980,
+                        "referencedDeclaration": 2855,
                         "src": "958:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2539,32 +2539,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2983,
+                        "id": 2858,
                         "name": "VuupleAdmins",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2908,
+                        "referencedDeclaration": 2783,
                         "src": "941:12:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$3105_storage",
+                          "typeIdentifier": "t_struct$_Role_$2980_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 2985,
+                      "id": 2860,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3137,
+                      "referencedDeclaration": 3012,
                       "src": "941:16:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$3105_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$3105_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$2980_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$2980_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 2987,
+                    "id": 2862,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2578,7 +2578,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2988,
+                  "id": 2863,
                   "nodeType": "ExpressionStatement",
                   "src": "941:25:10"
                 },
@@ -2588,11 +2588,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2990,
+                        "id": 2865,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2980,
+                        "referencedDeclaration": 2855,
                         "src": "994:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2607,18 +2607,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2989,
+                      "id": 2864,
                       "name": "VuupleAdminAdded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2902,
+                      "referencedDeclaration": 2777,
                       "src": "977:16:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 2991,
+                    "id": 2866,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2632,14 +2632,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2992,
+                  "id": 2867,
                   "nodeType": "EmitStatement",
                   "src": "972:30:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2994,
+            "id": 2869,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2647,15 +2647,15 @@
             "name": "_addVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2981,
+              "id": 2856,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2980,
+                  "id": 2855,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2994,
+                  "scope": 2869,
                   "src": "909:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2664,7 +2664,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2979,
+                    "id": 2854,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "909:7:10",
@@ -2681,12 +2681,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2982,
+              "id": 2857,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "935:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "884:123:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2694,7 +2694,7 @@
           },
           {
             "body": {
-              "id": 3009,
+              "id": 2884,
               "nodeType": "Block",
               "src": "1065:77:10",
               "statements": [
@@ -2704,11 +2704,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3002,
+                        "id": 2877,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2996,
+                        "referencedDeclaration": 2871,
                         "src": "1091:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2725,32 +2725,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2999,
+                        "id": 2874,
                         "name": "VuupleAdmins",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2908,
+                        "referencedDeclaration": 2783,
                         "src": "1071:12:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$3105_storage",
+                          "typeIdentifier": "t_struct$_Role_$2980_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 3001,
+                      "id": 2876,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3168,
+                      "referencedDeclaration": 3043,
                       "src": "1071:19:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$3105_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$3105_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$2980_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$2980_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 3003,
+                    "id": 2878,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2764,7 +2764,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3004,
+                  "id": 2879,
                   "nodeType": "ExpressionStatement",
                   "src": "1071:28:10"
                 },
@@ -2774,11 +2774,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3006,
+                        "id": 2881,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2996,
+                        "referencedDeclaration": 2871,
                         "src": "1129:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2793,18 +2793,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 3005,
+                      "id": 2880,
                       "name": "VuupleAdminRemoved",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2906,
+                      "referencedDeclaration": 2781,
                       "src": "1110:18:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 3007,
+                    "id": 2882,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2818,14 +2818,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3008,
+                  "id": 2883,
                   "nodeType": "EmitStatement",
                   "src": "1105:32:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 3010,
+            "id": 2885,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2833,15 +2833,15 @@
             "name": "_removeVuupleAdmin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2997,
+              "id": 2872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2996,
+                  "id": 2871,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3010,
+                  "scope": 2885,
                   "src": "1039:15:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2850,7 +2850,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2995,
+                    "id": 2870,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1039:7:10",
@@ -2867,19 +2867,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2998,
+              "id": 2873,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1065:0:10"
             },
-            "scope": 3011,
+            "scope": 2886,
             "src": "1011:131:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 3012,
+        "scope": 2887,
         "src": "105:1039:10"
       }
     ],
@@ -2893,10 +2893,10 @@
     "20": {
       "events": {},
       "links": {},
-      "address": "0xd9d64b7dc034fafdba5dc2902875a67b5d586420",
-      "transactionHash": "0x731f2b029889bc632f2235737de483de06b405810e2bcec3185c34741c13fbdc"
+      "address": "0x9d13c6d3afe1721beef56b55d303b09e021e27ab",
+      "transactionHash": "0x9e38718cacf1979dc8d6a695fd8034634b32b7f327144328b34e94b8c1872fac"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-06-27T12:51:58.033Z"
+  "updatedAt": "2019-11-09T21:03:58.970Z"
 }

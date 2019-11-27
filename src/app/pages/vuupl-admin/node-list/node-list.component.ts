@@ -82,7 +82,10 @@ export class NodeListComponent implements OnInit {
       this.renterEthaddress
     );
     if (this.accountContract != '0x0000000000000000000000000000000000000000') {
-      await this.rentersRegistrationService.banAccount(this.accountContract);
+      await this.rentersRegistrationService.banAccount(
+        this.accountContract,
+        this.renterEthaddress
+      );
       await this.serverApiService.ban(this.renterID);
     }
   }

@@ -97,11 +97,10 @@ global.authorizationToken = null;
 
 app.on('before-quit', async () => {
   // // // set docker-compose down
-  // const dockerfile = path.join(
-  //   networkPath,
-  //   'docker-compose.yml'
-  // );
+  // const dockerfile = path.join(networkPath, 'docker-compose.yml');
   // await node.stop_docker(dockerfile);
+  // const swarmserver = path.join(networkPath, 'swarm-server.yml');
+  // await node.stop_docker(swarmserver);
   global.isQuitting = true;
 });
 
@@ -140,11 +139,14 @@ const run = async () => {
     );
     global.networkPath = networkPath;
     global.isLocal = false;
-    // global.networkIP = 'http://3.14.2.131:22000';
+    const swarmserver = path.join(networkPath, 'swarm-server.yml');
+    await node.startNetwork(swarmserver);
+    // global.networkIP = 'http://172.27.150.7:22000';
   } else {
     // check if raft-start.sh is exist
     global.networkPath = networkPath;
-
+    const swarmserver = path.join(networkPath, 'swarm-server.yml');
+    await node.startNetwork(swarmserver);
     if (
       !fs.existsSync(
         path.join(networkPath, 'examples/', '/7nodes', '/raft-start.sh')
@@ -153,21 +155,18 @@ const run = async () => {
       global.isLocal = false;
     } else {
       // // log.info(`Starting application: ${productName} ${version} (${environment})`);
-      const dockerfile = path.join(networkPath, 'docker-compose.yml');
+      // const dockerfile = path.join(networkPath, 'docker-compose.yml');
       // await node.startNetwork(dockerfile);
       // // need to check for containers healthy
       // const child = await node.list_containers();
       // console.log(child, 'child');
-
       // const sttus = await node.check_status(child[0]);
-      // const health = await node.check_health(child[0]);
       // child.pop();
       // console.log(child, 'child');
       // console.log(sttus, 'status');
-      //console.log(health, 'health');
       // global.networkIP = 'http://127.0.0.1:22000';
-      //  global.networkIP = 'http://3.14.2.131:22000';
-      global.isLocal = true;
+      // //  global.networkIP = 'http://172.27.150.7:22000';
+      // global.isLocal = true;
     }
   }
   await app.whenReady();
