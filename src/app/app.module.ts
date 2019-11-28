@@ -5,7 +5,8 @@ import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { ToastrModule } from 'ngx-toastr';
 import {
   HttpClientModule,
   HttpClient,
@@ -43,6 +44,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     AppRoutingModule,      
     AuthModule,
+    // BrowserAnimationsModule, // required animations module
+    // ToastrModule.forRoot() ,// ToastrModule added
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -8,6 +8,7 @@ import { RenterRegisterComponent } from './renter-register/renter-register.compo
 import { LenderRegisterComponent } from './lender-register/lender-register.component';
 import { RegisterationCompletedComponent } from './registeration-completed/registeration-completed.component';
 import { ChooseCategoryComponent } from './choose-category/choose-category.component';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 
 @NgModule({
   imports: [
@@ -29,9 +30,11 @@ import { ChooseCategoryComponent } from './choose-category/choose-category.compo
         { path: 'lenderRegister', component: LenderRegisterComponent },
         { path: 'registerCompleted' , component :RegisterationCompletedComponent},
         { path: 'chooseCategory' , component :ChooseCategoryComponent},
+        { path: 'forgotPassword' , component :ForgotPassComponent},
+
       ])
   ],
-  declarations: [LoginComponent, RenterRegisterComponent, LenderRegisterComponent, RegisterationCompletedComponent, ChooseCategoryComponent],
+  declarations: [LoginComponent, RenterRegisterComponent, LenderRegisterComponent, RegisterationCompletedComponent, ChooseCategoryComponent, ForgotPassComponent],
   exports: [LoginComponent],
   providers: [AuthService]
 })

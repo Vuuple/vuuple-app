@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+// import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
@@ -14,11 +14,13 @@ export class LoginComponent {
   cate: any;
 
   constructor(
-    public authService: AuthService,
-    private router: Router,
+    public authService: AuthService ,
+    private router: Router ,
+    // private toastr: ToastrService ,
     private fb: FormBuilder
   ) {
     this.createForm();
+    // this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   createForm() {
@@ -89,5 +91,8 @@ export class LoginComponent {
     //   this.router.navigate(['/auth/renterRegister']);
     // this.router.navigate(['/auth/lenderRegister']);
     this.router.navigate(['/auth/chooseCategory']);
+  }
+ forgotPassword(){
+     this.router.navigate(['/auth/forgotPassword']);
   }
 }

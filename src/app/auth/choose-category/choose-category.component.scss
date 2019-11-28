@@ -67,3 +67,10 @@ button {
     width: 25%;
     margin-left: 40%;
   }
+  
+@media screen and (max-width: 768px){
+    .closeButton{
+         text-align:  center !important;
+         margin-left:  0 !important;
+    }
+  }
