@@ -49,6 +49,7 @@
             [disabled]="!loginForm.valid"
             class="btn btn-primary"
           >
+          <img *ngIf="Loading" src="../../../assets/img/loading-white.gif" style="width:15px"/>
             Log in
           </button>
           <p style="margin-top: 10px;">

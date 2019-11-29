@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Web3Service } from '../../providers/web3/web3.service';
 import { UserWalletService } from '../../providers/user-wallet/user-wallet.service';
 import { RenterFactoryService } from '../../providers/renter-factory/renter-factory.service';
+import { ToastrService } from 'ngx-toastr';
+import { MustMatch } from '../../providers/helpers/MustMatch';
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
@@ -27,6 +29,8 @@ export class RenterRegisterComponent implements OnInit {
   errorMessage;
   type = { Org: 0, Individual: 1 };
   currentType;
+  submitted = false;
+  Loading = false ;
   constructor(
     private rentersFactoryService: RenterFactoryService,
     private web3Service: Web3Service,
@@ -34,6 +38,7 @@ export class RenterRegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private route: ActivatedRoute,
+    private toastr: ToastrService ,
     private router: Router
   ) {
     this.createAccount('');
@@ -43,16 +48,19 @@ export class RenterRegisterComponent implements OnInit {
     this.renterRegisterForm = this.formBuilder.group({
       username: ['', Validators.required],
       bankAccount: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(7)]],
+      confirmPassword : ['', Validators.required],
       staticIP: ['', Validators.required],
       ethereumAddress: ['', Validators.required],
       // enode : ['' , Validators.required ],
       termService: ['', Validators.required],
       privacyPolicy: ['', Validators.required]
-    });
-    this.getIp();
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
+  });
 
+    this.getIp();
     this.route.queryParams.subscribe(params => {
       const type = params['type'];
       console.log(type, ' type');
@@ -68,6 +76,8 @@ export class RenterRegisterComponent implements OnInit {
       }
     });
   }
+  get f() { return this.renterRegisterForm.controls; }
+
   async getIp() {
     try {
       const ip = await publicIp.v4();
@@ -78,6 +88,7 @@ export class RenterRegisterComponent implements OnInit {
     }
   }
   renterRegister() {
+    this.submitted = true;
     this.savetoContract();
   }
   returnToLogin() {
@@ -163,7 +174,7 @@ export class RenterRegisterComponent implements OnInit {
 
   savetoContract() {
     console.log('sending to contract');
-
+    this.Loading = true ;
     this.rentersFactoryService
       .renterRegisterSigned(
         this.currentType,
@@ -173,6 +184,7 @@ export class RenterRegisterComponent implements OnInit {
       )
       .then(s => {
         console.log(s, 'save to contract');
+        this.Loading = false ;
         if (s) {
           this.exportToFile(this.accountData);
           this.getEnode();
@@ -185,7 +197,6 @@ export class RenterRegisterComponent implements OnInit {
   }
   saveToNodeServer() {
     console.log(this.enode, 'this.enode');
-
     this.authService
       .registerClient(
         this.renterRegisterForm.value.username,
