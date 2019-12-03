@@ -26,11 +26,12 @@ module.exports.send_email = (
     to: to, // list of receivers separated with comma
     subject: subject, // Subject line
     text: body, // plain text body
-    html: body, // html body
-    attachments: {
-      // use URL as an attachment
-      path: attachements
-    } ///attachements
+    html: body
+    // , // html body
+    // attachments: {
+    //   // use URL as an attachment
+    //   path: attachements
+    // } ///attachements
   };
 
   // send mail with defined transport object

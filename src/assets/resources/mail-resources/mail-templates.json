@@ -1,6 +1,6 @@
 {
   "resetPassword": {
-    "subject": "4-Digit Code",
+    "subject": "Vuuple Password Reset",
     "body": [
       "Hello,",
       "",
@@ -23,7 +23,7 @@
       "",
       "You have been approved to join the Vuuple Network as a ",
       "{category}",
-      " . Please log in to your desktop application and update your raft id in setting.",
+      " . Please log in to your desktop application and update your Raft ID in the settings tab.",
       "Your Raft Id is ",
       "{raftID}",
       "If you did not create a Vuuple account, please email support@vuuple.com.",

@@ -34,7 +34,7 @@ async function sendConfirmationMail(to, userName, category, raftId) {
 
   return await mailer.send_email(
     to,
-    '"Vuuple App" <support@vuuple.com>',
+    '"Vuuple Team" <support@vuuple.com>',
     template.networkConfirmation.subject,
     template.networkConfirmation.body.join('<br/>')
   );
