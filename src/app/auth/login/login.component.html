@@ -24,7 +24,7 @@
               formControlName="pwd"
               placeholder="Password"
             />
-            <a style="color:white">Forgot Password?</a>
+            <a (click)="forgotPassword()" style="color:white">Forgot Password?</a>
             <!--Popup-->
             <!--  <label for="modal-toggle" class="btn btn-link" >
               Show Details
@@ -49,6 +49,7 @@
             [disabled]="!loginForm.valid"
             class="btn btn-primary"
           >
+          <img *ngIf="Loading" src="../../../assets/img/loading-white.gif" style="width:15px"/>
             Log in
           </button>
           <p style="margin-top: 10px;">

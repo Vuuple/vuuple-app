@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
@@ -12,13 +12,16 @@ export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
   cate: any;
+  Loading =  false ;
 
   constructor(
-    public authService: AuthService,
-    private router: Router,
+    public authService: AuthService ,
+    private router: Router ,
+    private toastr: ToastrService ,
     private fb: FormBuilder
   ) {
     this.createForm();
+    // this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   createForm() {
@@ -50,6 +53,7 @@ export class LoginComponent {
   // }
 
   login() {
+    this.Loading = true ;
     this.authService
       .login(this.loginForm.get('email').value, this.loginForm.get('pwd').value)
       .then(isAuth => {
@@ -72,22 +76,27 @@ export class LoginComponent {
           } else {
             this.errorMessage =
               'Incorrect credentials, please use the correct one';
+            this.toastr.error('Incorrect credentials, please use the correct one', 'Error!');    
           }
-        } else {
-          this.errorMessage =
-            'Incorrect credentials, please use the correct one';
-        }
+          this.Loading = false ;      
+        } 
       })
       .catch(err => {
-        this.errorMessage = err;
+        this.errorMessage = err; 
+        this.toastr.error('Wrong email or password!', 'Error!');       
         console.error(err);
+        this.Loading = false ;      
       });
 
     // this.authService.login(value)
   }
   createAccount() {
-    //   this.router.navigate(['/auth/renterRegister']);
+      // this.router.navigate(['/auth/renterRegister']);
+      this.router.navigate(['/auth/registerCompleted'])
     // this.router.navigate(['/auth/lenderRegister']);
-    this.router.navigate(['/auth/chooseCategory']);
+    // this.router.navigate(['/auth/chooseCategory']);
+  }
+ forgotPassword(){
+     this.router.navigate(['/auth/forgotPassword']);
   }
 }
