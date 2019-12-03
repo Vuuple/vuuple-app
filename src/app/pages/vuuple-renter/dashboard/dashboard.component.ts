@@ -111,8 +111,11 @@ export class DashboardComponent implements OnInit {
     console.log('download');
     console.log(hash, 'hash');
 
-    this.swarmService.downloadfileto(hash, networkPath + hash).then(s => {
+    this.swarmService.getUrl(hash).then(s => {
       console.log(s, 'swarm file');
     });
+    // this.swarmService.downloadfileto(hash, networkPath + hash).then(s => {
+    //   console.log(s, 'swarm file');
+    // });
   }
 }

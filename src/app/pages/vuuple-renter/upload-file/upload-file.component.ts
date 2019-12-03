@@ -48,7 +48,7 @@ export class UploadFileComponent implements OnInit {
   ngOnInit() {
     this.cuurentUser = this.authService.currentUser;
     this.fileSize = 1;
-    this.getRenterData();
+   // this.getRenterData();
 
     this.uplaodForm = this.formBuilder.group({
       files: ['']
@@ -58,22 +58,27 @@ export class UploadFileComponent implements OnInit {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.fileName = file.name;
-      // todo: need to conver byte to GB
-      this.fileSize = 1;
+      //TODO: calculate size based on giga
+      // this.fileSize = file.size;
+      this.uplaodForm.get('files').setValue(file.path);
+      // console.log(file.path, 'path');
+
+      // // todo: need to conver byte to GB
+      // this.fileSize = 1;
       console.log(file, 'file');
 
-      const reader = new FileReader();
+      // const reader = new FileReader();
 
-      reader.readAsArrayBuffer(file);
+      // reader.readAsArrayBuffer(file);
 
-      reader.onload = () => {
-        // const typedarray = new Uint8Array(reader.result as ArrayBuffer);
-        // console.log(typedarray, 'new Uint8Array(');
-        // this.uplaodForm.get('files').setValue(typedarray);
-        this.uplaodForm.get('files').setValue(reader.result);
+      // reader.onload = () => {
+      //   // const typedarray = new Uint8Array(reader.result as ArrayBuffer);
+      //   // console.log(typedarray, 'new Uint8Array(');
+      //   // this.uplaodForm.get('files').setValue(typedarray);
+      //   this.uplaodForm.get('files').setValue(reader.result);
 
-        // this.spinner.hide();
-      };
+      //   // this.spinner.hide();
+      // };
     }
   }
 
@@ -183,10 +188,11 @@ export class UploadFileComponent implements OnInit {
     console.log(tx, 'tx');
   }
   upload(file) {
-    this.swarmService.uploadfile(file).then(s => {
+    this.swarmService.uploadFileFrom(file,null,"file").then(s => {
+      // this.swarmService.swarmUploadraw(file).then(s => {
       console.log(s, 's upload');
       this.fileHash = s;
-      this.saveToContract();
+     // this.saveToContract();
     });
   }
 }
