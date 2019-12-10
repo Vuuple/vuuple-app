@@ -1,8 +1,12 @@
 <div clas="row main"style="margin-top:5%"> 
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h2 class="btn btn-primary" routerLink="/pages/renter/main" style="color: white">
+            <i class="fas fa-arrow-left"></i>
+        </h2>
+    </div>
     <div class="col-md-6">
-       <h2>Upload your File!</h2>
-        <div style="height:350px;margin-top: 20%">
+       <h2 style="font-size: 35px;">Upload your File!</h2>
+        <div style="height:350px;margin-top: 10%">
             <div *ngIf="error" style="margin-bottom:5%">
         {{ error.message }}
             </div>
@@ -20,7 +24,7 @@
     
              <form  [formGroup]="uplaodForm" (ngSubmit)="onSubmit()">
                 <input type="file"class="choose" name="files" (change)="onFileChange($event)" style="margin-bottom:5%"/>
-                <button type="submit" class="upload">Upload</button>
+                <button type="submit" class="upload btn btn-primary">Upload</button>
      
              </form>
         </div>

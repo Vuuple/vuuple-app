@@ -11,11 +11,11 @@
   .upload {
     background-color: #0077b5;
     color: white;
-    border-radius: 10px;
+    border-radius: 4px;
     border: 1px solid white;
     -webkit-appearance: button-bevel;
     width: 50%;
-    height: 30px;
+    letter-spacing: 1px;
   }
   
   .choose {
@@ -29,9 +29,12 @@
   ::-webkit-file-upload-button {
     background-color: #0077b5;
     color: white;
-    border-radius: 10px;
+    border-radius: 4px;
     border: 1px solid white;
     -webkit-appearance: button-bevel;
     width: 30%;
     height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
   }

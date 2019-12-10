@@ -40,22 +40,22 @@
       <div class="row headerIcon">
       <ul class="nav navbar-nav navbar-right icon">
         <li>
-          <a (click)="ShowProfile()" class="t-bottom t-md bordered" data-tooltip="Click To Profile!">  
+          <a (click)="ShowProfile()" class="t-bottom t-md bordered" data-tooltip="Profile">  
           <i class="fas fa-user-cog fa-2x"></i>
           </a>
         </li>
         <li>
-        <a *ngIf="conn" class="t-bottom t-md bordered" data-tooltip="connected" >
+        <a *ngIf="conn" class="t-bottom t-md bordered" data-tooltip="Connected" >
           <img src={{srcImage}} (click)="toggle()" style="width:40px;" />    
         </a>         
         </li>
         <li>
-            <a *ngIf="!conn" class="t-bottom t-md bordered" data-tooltip="disconnected" >
+            <a *ngIf="!conn" class="t-bottom t-md bordered" data-tooltip="DisConnected" >
               <img src={{srcImage}} (click)="toggle()" style="width:40px;" />    
             </a>         
             </li>
          <li>
-          <a (click)="Logout()" class="t-bottom t-md bordered" data-tooltip="Logout!">  
+          <a (click)="Logout()" class="t-bottom t-md bordered" data-tooltip="Logout">  
               <i class="fas fa-sign-out-alt fa-2x"></i>
           </a>
          </li>
