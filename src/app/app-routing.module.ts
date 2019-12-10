@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'pages',
     loadChildren: './pages/pages.module#PagesModule',
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   // { path: 'dashboard', component: AppComponent},
 

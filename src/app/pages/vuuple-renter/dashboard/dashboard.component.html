@@ -3,7 +3,7 @@
   <div class="col-md-12 ">
     <div class="row" style="padding-top:8%">
       <div class="col-md-1"></div>
-      <div class="col-md-5" style="padding-top:2%">
+      <div class="col-md-5">
         <div class="progress" style="height: 30px;">
           <div
             class="progress-bar"
@@ -26,17 +26,18 @@
       <div class="col-md-1"></div>
       <div class="col-md-5">
         <div class="row">
-          <div class="col-md-4">
-            <label for="buyStorage" class="btn" style="color:#0e76bc;">
+          <div class="col-md-6">
+            <label for="buyStorage" class="btn btn btn-primary" style="width: 90%;">
               <a [routerLink]="['/pages/renter/purchase']"
-                >Buy <br />Storage
+                 style="color:white !important ; text-decoration: none !important;">
+              Buy Storage
               </a></label
             >
             <input id="buyStorage" style="visibility:hidden;" type="button" />
           </div>
-          <div class="col-md-4">
-            <label for="files" class="btn" style="color:#0e76bc;"
-              ><span class="glyphicon glyphicon-open"></span><br />Upload</label
+          <div class="col-md-6">
+            <label for="files" class="btn btn btn-primary" style="color: white !important;width: 90%;"
+              ><span class="glyphicon glyphicon-open" style="margin-right: 5px;"></span>Upload</label
             >
             <input
               id="files"
@@ -45,40 +46,36 @@
               (click)="uploadFile()"
             />
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <label for="share" class="btn" style="color:#0e76bc;"
               ><i class="fas fa-share-alt"></i><br />Share</label
             >
             <input id="share" style="visibility:hidden;" type="button" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="row" style="padding-top:5%">
       <table text-align="center" style="min-height:400px">
-        <colgroup>
-          <col width="50%" />
-        </colgroup>
-
         <!-- Group 1-->
         <td
-          style="border-right: 2px solid #29ABE2;padding-right: 0;padding-left: 5%"
+          style="padding-right: 5%;padding-left: 5%"
         >
           <table text-align="center">
             <thead>
-              <tr style="border-bottom: 2px solid #29ABE2;">
+              <tr style="border-bottom: 2px solid #29ABE2;margin-bottom: 10px;">
                 <th
                   text-align="center"
-                  style="color:#0e76bc;font-size: 25px;border-bottom: 2px solid #29ABE2;"
-                  colspan="3"
+                  style="color:#0e76bc;font-size: 25px;border-bottom: 2px solid #29ABE2"
+                  colspan="4"
                 >
                   My Files
                 </th>
               </tr>
-              <tr style="color:#29ABE2 !important;font-size: 25px;">
-                <th>Hash</th>
-                <th>Name</th>
-                <th>size</th>
+              <tr style="color:#29ABE2 !important;font-size: 25px;border-bottom: 2px solid #29ABE2;">
+                <th style="border-right: 2px solid #29ABE2;">Hash</th>
+                <th style="border-right: 2px solid #29ABE2;">Name</th>
+                <th style="border-right: 2px solid #29ABE2;">size</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -91,9 +88,9 @@
         bool _isEncrypted,
         string _encryptedKey -->
               <tr *ngFor="let item of files">
-                <td>{{ item?.hash }}</td>
-                <td>{{ item?.name }}</td>
-                <td>{{ item?.size }}</td>
+                <td style="border-right: 2px solid #29ABE2;">{{ item?.hash }}</td>
+                <td style="border-right: 2px solid #29ABE2;">{{ item?.name }}</td>
+                <td style="border-right: 2px solid #29ABE2;">{{ item?.size }}</td>
                 <td (click)="download(item?.hash)">
                   <label for="share" class="btn" style="color:#0e76bc;"
                     ><i class="fas fa-file-download"></i><br
@@ -111,7 +108,7 @@
         </td>
 
         <!-- Group 2-->
-        <td style="padding-left: 0;padding-right: 5%">
+        <!-- <td style="padding-left: 0;padding-right: 5%">
           <table text-align="center">
             <thead>
               <tr style="border-bottom: 2px solid #29ABE2;">
@@ -137,7 +134,7 @@
               </tr>
             </tbody>
           </table>
-        </td>
+        </td> -->
       </table>
     </div>
   </div>

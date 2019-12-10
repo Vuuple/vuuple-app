@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
        this.isRenter = false; 
     } else if (type === 2) {
       this.userTitle = 'RENTER';
-      this.userImage = "assets/img/Renter(2).png" ;
+      this.userImage = "assets/img/renter3.png" ;
       this.isadmin = false;
       this.isRenter =  true ; 
     } else if (type === 3) {

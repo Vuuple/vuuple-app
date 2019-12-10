@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
     { name: 'PURCHASE', link: '/pages/renter/purchase' },
     { name: 'REDEEM', link: '/pages/lender/redeem' },
     { name: 'ACCOUNT', link: '/pages/renter/account' },
-    { name: 'SETTING', link: '/pages/setting' }
+    { name: 'SETTINGS', link: '/pages/setting' }
   ];
 
   LenderItem = [
@@ -38,7 +38,7 @@ export class NavComponent implements OnInit {
     { name: 'ALLOCATE', link: '/pages/lender/allocate' },
     { name: 'REDEEM', link: '/pages/lender/redeem' },
     { name: 'ACCOUNT', link: '/pages/lender/account' },
-    { name: 'SETTING', link: '/pages/setting' }
+    { name: 'SETTINGS', link: '/pages/setting' }
   ];
   adminItem = [
     { name: 'Dashboard', link: '/pages/admin/main' },
@@ -53,7 +53,7 @@ export class NavComponent implements OnInit {
     { name: 'COMAPNY', link: '/pages/admin/companyRenter', type: 'renter' },
     { name: 'LENDERS', link: '/pages/admin/lender', type: 'lender' },
     { name: 'admins',  link: '/pages/admin/admin'},
-    { name: 'SETTING', link: '/pages/setting' }
+    { name: 'SETTINGS', link: '/pages/setting' }
     
   ];
   items = [];

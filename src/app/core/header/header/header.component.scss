@@ -4,11 +4,11 @@
   top: 0;
   border-width: 0 0 1px;
   background-color: transparent;
-  background-image: Url("assets/img/2560.png");
+  background-image: Url("assets/img/Header.png");
   background-size: cover;
   z-index: 5;
   border-bottom: none;
-  height: 200px;
+  height: 150px;
 }
 .image {
   background-image: url('assets/img/Cloud.png');
@@ -40,7 +40,7 @@ p{
    padding: 40px 15px
 }
 .header-image{
-  width:500px;
+   width:500px;
    padding:0.4px 20px;
    margin-left:80px
 }
@@ -340,3 +340,7 @@ p{
 [data-tooltip].t-left:hover:before, [data-tooltip].t-left:hover:after {
 	transform: translateX(-5px) translateY(-50%);
 }
+@media (min-width: 768px){
+.navbar-right {
+    margin-right: 0px;
+}}

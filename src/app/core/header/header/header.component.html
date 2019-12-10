@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" (click)="goToHome()">
-          <img alt="Brand" class="brandImage" src="assets/img/Logo.png">
+          <img alt="Brand" class="brandImage" src="assets/img/Logo.png" style="width:80%">
       </a>
       <a > 
            <img 
@@ -39,23 +39,6 @@
       </ul>-->
       <div class="row headerIcon">
       <ul class="nav navbar-nav navbar-right icon">
-          <li class="searchIcon">
-              <label class="dropdown">
-      
-                  <div class="dd-button">
-                      <i class="fas fa-search"></i>          
-                  </div>
-                
-                  <input type="checkbox" class="dd-input" id="test">
-                
-                  <ul class="dd-menu">
-                    <li>
-                      <input type="text"  placeholder="Search">
-                    </li>
-                  </ul>
-                  
-                </label>
-          </li>
         <li>
           <a (click)="ShowProfile()" class="t-bottom t-md bordered" data-tooltip="Click To Profile!">  
           <i class="fas fa-user-cog fa-2x"></i>
@@ -95,7 +78,7 @@
       </form>
       </div>
       <div class="row cloud" >
-          <ul *ngIf="isRenter" class="nav navbar-nav navbar-right sub-clouds">
+          <!-- <ul *ngIf="isRenter" class="nav navbar-nav navbar-right sub-clouds">
               <li >
                 <a class="image following"  style="margin-right: 30px;" >
                     <p >Following<br>15</p>
@@ -106,7 +89,7 @@
                  <p >Followers<br>15</p>
                </a>
               </li>
-          </ul>
+          </ul> -->
           <ul *ngIf="isadmin" class="nav navbar-nav navbar-right sub-clouds">
               <li >
                 <a class="image following"style="margin-right: 30px;" >
