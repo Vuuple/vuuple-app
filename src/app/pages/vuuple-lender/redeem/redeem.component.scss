@@ -1,5 +1,5 @@
 .main{
-    padding: 7% 5% 5% 5%;
+    padding: 5%;
 }
 h1{
     color:#0077b5;
@@ -20,9 +20,6 @@ P{
     font-weight: 500;
     text-align: center;
 }
-.fix{
-  height: 25px;
-}
 input{
     width: 120px;
     margin-bottom: 5px;
@@ -34,9 +31,25 @@ input{
     height: 30px;
     padding: 5px;
 }
+.txbox {
+    width: 43%;
+    border-radius: 5px;
+    background-color: #29abe2;
+    color: white;
+    border: 1px solid #29abe2;
+    height: 35px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align : left !important;
+    padding-left: 10px;
+  }
+.fix{
+  height: 0px;/*25px*/
+}
+
 .pNote{
     margin-top: 25px;
-    font-size: 18px;
+    font-size: 14px;
     font-family: serif;
     font-weight: bold;
 }
@@ -55,3 +68,20 @@ button {
 	margin-left: 40%;
 	margin-top: 20px
 }
+::-webkit-input-placeholder { /* Edge */
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  ::placeholder {
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+  }

@@ -1,5 +1,5 @@
 .main {
-  padding: 7% 5% 5% 5%;
+  padding: 5% ;
 }
 .error {
   color: red;
@@ -26,10 +26,10 @@ p {
   text-align: center;
 }
 .fix {
-  height: 25px;
+  height: 20px;
 }
 input {
-  width: 100px;
+  width: 90px;
   margin-bottom: 5px;
   margin-right: 5px;
   border-radius: 5px;
@@ -38,23 +38,26 @@ input {
   border: 1px solid #29abe2;
   height: 30px;
   padding: 5px;
+  text-align: center;
 }
 .txbox {
-  width: 90%;
-  margin-bottom: 5px;
-  //margin-right: 5px;
+  width: 77%;
   border-radius: 5px;
   background-color: #29abe2;
   color: white;
   border: 1px solid #29abe2;
-  height: 30px;
+  height: 35px;
   padding: 5px;
+  margin: 0 auto;
+  text-align : left !important;
+  padding-left: 10px;
 }
 .pNote {
   margin-top: 25px;
   font-size: 12px;
   font-family: serif;
   font-weight: bold;
+  padding-bottom : 40px;
 }
 button {
   cursor: pointer;
@@ -66,11 +69,29 @@ button {
   height: 40px;
   -webkit-appearance: button-bevel;
   line-height: initial;
-  font-size: 20px;
+  font-size: 25px;
   width: 80%;
   margin-top: 20px;
   margin-left: 10%;
+  padding: 4px 12px;
 }
 .block1 {
   border-right: 1px solid #29abe2;
+}
+::-webkit-input-placeholder { /* Edge */
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+}
+
+::placeholder {
+  color: white;
+  text-align: left;
+  padding-left: 10px;
 }

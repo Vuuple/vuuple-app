@@ -1,22 +1,21 @@
 <div class="main">
   <div class="col-md-6">
     <h2>Purchase Vuuple</h2>
-    <p style="font-size:18px;color:#0077b5;">Rate : {{ rate }}</p>
-
+    <!-- <p style="font-size:18px;color:#0077b5;">Rate : {{ rate }}</p> -->
     <div class="fix"></div>
     <div class="block1">
       <div class="fix"></div>
-      <p style="font-size:22px">
-        <img src="../../../../assets/img/TokenDollar.png" style="width:10%" />
-        Vuuple = USD
-        <img src="../../../../assets/img/Dollar.png" style="width:15%" />
+      <p style="font-size:25px">
+        <!-- <img src="../../../../assets/img/TokenDollar.png" style="width:10%" /> -->
+        1 VUUPLE = 1 USD
+        <!-- <img src="../../../../assets/img/Dollar.png" style="width:15%" /> -->
       </p>
-      <div class="fix" style="height: 45px;"></div>
+      <div class="fix"></div>
       <div class="row">
         <form [formGroup]="myForm">
           <div class="col-md-1"></div>
           <div class="col-md-4">
-            <p style="font-size:18px;color:#0077b5;">Vuuple</p>
+            <p style="font-size:18px;color:#0077b5;text-align: left;">Vuuple</p>
             <div class="block">
               <input
                 type="text"
@@ -29,18 +28,19 @@
             <p style="color:#29ABE2;font-size: 23px"><br />:</p>
           </div>
           <div class="col-md-4">
-            <p style="font-size:18px;color:#0077b5;">USD</p>
+            <p style="font-size:18px;color:#0077b5;text-align: left;">USD</p>
             <div class="block">
               <input formControlName="amount" type="text" />
             </div>
           </div>
           <div class="col-md-1"></div>
           <div class="fix"></div>
+          <!-- we need to edit this function -->
           <input
             type="text"
             formControlName="bankTxId"
             class="form-control txbox"
-            placeholder="Bank transaction Id"
+            placeholder="Enter Password"
           />
         </form>
       </div>
@@ -54,28 +54,27 @@
       </button>
       <div class="fix"></div>
       <p class="pNote">
-        *Note: VUUPLE will be automatically transfered to your wallet. Any
-        invalid data will lead to reject your request
+        *Note: VUUPLE will be automatically transferred to your wallet <br/> upon approval.
       </p>
     </div>
   </div>
   <div class="col-md-6">
     <h2>Buy Storage</h2>
-    <div class="fix"></div>
+    <div class="fix" style="height: 15px !important;"></div>
+
     <div class="block">
       <p style="font-size:15px">
-        Storage is bought on a monthly basis<br />
-        plan automatically renews
+        Storage is bought on a monthly basis.<br/>
+        Your plan will automatically renew.
       </p>
-      <P style="color:#0077b5;">Price: 0.10 VUUPLE/GB/Month</P>
-      <div class="fix"></div>
+      <P style="color:#0077b5;">Price: 0.05 VUUPLE/GB/MONTH</P>
       <div class="row">
         <form [formGroup]="storForm">
           <div class="col-md-1"></div>
           <div class="col-md-4">
-            <p style="font-size:18px;color:#0077b5;">Gigabytes</p>
+            <p style="font-size:18px;color:#0077b5;text-align: left;">Gigabytes</p>
             <div class="block">
-              <input type="text" style="width: 60px" formControlName="amount" />
+              <input type="text" formControlName="amount" />
               <!-- <label>GB</label> -->
             </div>
           </div>
@@ -83,7 +82,7 @@
             <p style="color:#29ABE2;font-size: 23px"><br />:</p>
           </div>
           <div class="col-md-4">
-            <p style="font-size:18px;color:#0077b5;">Vuuple</p>
+            <p style="font-size:18px;color:#0077b5;text-align: left;">Vuuple</p>
             <div class="block">
               <input
                 type="text"
@@ -93,20 +92,26 @@
             </div>
           </div>
           <div class="col-md-1"></div>
+          <input
+          type="text"
+          formControlName="bankTxId"
+          class="form-control txbox"
+          placeholder="Enter Password"
+        />
         </form>
       </div>
-      <div class="fix"></div>
       <button
         type="submit"
         (click)="renew()"
         class="btn btn-primary"
         [disabled]="!(avialableTokens >= 4 && renewalDate <= currentDate)"
+        style="margin-top: 15px !important;"
       >
         Buy
       </button>
-      <label class="error" *ngIf="avialableTokens <= 4"
+      <!-- <label class="error" *ngIf="avialableTokens <= 4"
         >you balance is low</label
-      >
+      > -->
       <label class="error" *ngIf="renewalDate >= currentDate"
         >You have not reached the renewal date</label
       >
@@ -119,9 +124,7 @@
 
       <div class="fix"></div>
       <p class="pNote">
-        *Note: You can cancel your plan at any time before the next month
-        starts. You will not be charged for any data not used during a monthly
-        contrac
+        *Note: You can cancel your plan at any time before the next month starts to end automatic renewal. You will only be charged for the GB’s that were purchased at the start of each monthly contract.
       </p>
     </div>
   </div>

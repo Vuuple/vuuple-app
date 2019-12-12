@@ -1,12 +1,11 @@
 <div class="main">
   <h1>Redeem Vuuple</h1>
   <div class="fix"></div>
-  <p style="font-size:22px">
-    <img src="../../../../assets/img/TokenDollar.png" style="width:6%" /> Vuuple
-    = USD <img src="../../../../assets/img/Dollar.png" style="width:9%" />
-  </p>
   <p>Rate : {{ rate }}</p>
+  <p style="font-size:25px">
+   1 Vuuple = 1 USD 
 
+  </p>
   <div class="fix"></div>
   <p style="color:#0077b5;">Tokens Available for Redemption:</p>
   <p>{{ avialableTokens }}</p>
@@ -20,7 +19,7 @@
       <div class="col-md-3">
         <p style="font-size:18px;color:#0077b5;">Vuuple</p>
         <div class="block" [formGroup]="redForm">
-          <input type="number" formControlName="tokensToRed" />
+          <input type="number" formControlName="tokensToRed"  />
         </div>
       </div>
       <div class="col-md-2">
@@ -38,6 +37,12 @@
       </div>
     </div>
     <div class="col-md-1"></div>
+    <input
+    type="text"
+    formControlName="bankTxId"
+    class="form-control txbox"
+    placeholder="Enter Password"
+  />
   </div>
   <div class="fix"></div>
   <button
@@ -50,6 +55,9 @@
   </button>
   <div class="fix"></div>
   <p class="pNote">
-    *Note: There is a USD 0.01 fee for redemption.
+    *Note: There is a 1.00% USD Fee for redemption. <br/>
+     Min Fee: $0.01<br/>
+     Max Fee: $20.00
+
   </p>
 </div>

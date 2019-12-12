@@ -9,17 +9,17 @@
 </div>
 <div class="row">
   <div class="col-md-6 tokenColum">
-    <h2 style="text-align:center">Vuuuple Tokens</h2>
-    <img src="../../../../assets/img/TokenDollar.png" />
+    <h2 style="text-align:center">Vuuple Tokens</h2>
+    <img src="../../../../assets/img/TokenDollar.png"  style="margin-left: 30%;"/>
     <h3 style="text-align:center">Tokens Available:</h3>
     <p>{{ avialableTokens }}<br />Vuuple</p>
-    <h3 style="text-align:center">Tokens In Use:</h3>
-    <p>{{ tokensInEscrow }}<br />Vuuple</p>
     <div *ngIf="cuurentUser.category == 'renter'">
       <h3 style="text-align:center">Tokens In Contract:</h3>
       <p>{{ tokensInContract }}<br />Vuuple</p>
     </div>
-
+    <h3 style="text-align:center">Tokens Used:</h3>
+    <p>{{ tokensInEscrow }}<br />Vuuple</p>
+  
     <div class="row">
       <div class="col-md-2"></div>
       <a [routerLink]="['/pages/lender/redeem']" class="button">
@@ -34,7 +34,7 @@
     <img class="dollarimage" src="../../../../assets/img/Dollar.png" />
     <h3 style="text-align:center">Tokens Redeemd:</h3>
     <p>{{ tokensRedeemd }}<br />Vuuple</p>
-    <h3 style="text-align:center">Tokens Purchase:</h3>
+    <h3 style="text-align:center">Tokens Purchased:</h3>
     <p>{{ tokensPurchase }}<br />USD</p>
     <div class="row">
       <div class="col-md-2"></div>

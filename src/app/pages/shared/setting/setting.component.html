@@ -1,88 +1,94 @@
 <div class="main">
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <h2>Credentials</h2>
-    </div>
-    <div class="col-md-3"></div>
-  </div>
-  <div class="row" style="margin-top:5%;">
-     <div class="col-md-2"></div>
-     <div class="col-md-8" style="border:2px dashed #0077b5;padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-      <form [formGroup]="EditForm">
-        <div class="form-group row">
-          <label for="Name" class="col-md-2">Name:</label>
-          <div class="col-md-8">
-            <input
-              type="text"
-              id="Name"
-              class="form-control"
-              formControlName="name"
-            />
-            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-              <div *ngIf="f.name.errors.required">Name is required</div>
-            </div>
-          </div>
-        </div>
+    <h2 style="padding-bottom: 40px;">Credentials</h2>
+  <div class="col-md-6" style="padding-top: 20px;">
+    <div class="block1">
+        <form [formGroup]="EditForm">
+            <div class="form-group row">
+              <label for="Name" class="col-md-2">Name:</label>
+              <div class="col-md-8">
+                <input
+                  type="text"
 
-        <div class="form-group row">
-          <label for="emails" class="col-md-2">Email:</label>
-          <div class="col-md-8">
-            <input
-              type="email"
-              id="email"
-              class="form-control"
-              formControlName="email"
-            />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
+                  id="Name"
+                  class="form-control"
+                  formControlName="name"
+                />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">Name is required</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="password" class="col-md-2">Password:</label>
-          <div class="col-md-8">
-            <input
-              type="password"
-              id="password"
-              class="form-control"
-              formControlName="password"
-            />
-            <div
-              *ngIf="submitted && f.password.errors"
-              class="invalid-feedback"
-            >
-              <div *ngIf="f.password.errors.required">Password is required</div>
+    
+            <div class="form-group row">
+              <label for="emails" class="col-md-2">Email:</label>
+              <div class="col-md-8">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  formControlName="email"
+                />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <button
-            class="Editbutton"
-            type="submit"
-            class="btn btn-primary"
-            (click)="EditFunction()"
-          >
-            Edit
-          </button>
-        </div>
-      </form>
-     </div>
-     <div class="col-md-2"></div>
-  </div>
-  <div class="row"style="margin-top:5%;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8"style="border:2px dashed #0077b5;padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-      <app-raft-manage></app-raft-manage>
+    
+            <div class="form-group row">
+              <label for="password" class="col-md-2">Password:</label>
+              <div class="col-md-8">
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  formControlName="password"
+                />
+                <div
+                  *ngIf="submitted && f.password.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="cpassword" class="col-md-2">Confirm Password:</label>
+                <div class="col-md-8">
+                  <input
+                    type="password"
+                    id="cpassword"
+                    class="form-control"
+                    formControlName="cpassword"
+                  />
+                  <div
+                    *ngIf="submitted && f.cpassword.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.cpassword.errors.required">Password is required</div>
+                  </div>
+                </div>
+              </div>
+            <div class="form-group row">
+              <button
+                class="Editbutton"
+                type="submit"
+                class="btn btn-primary"
+                (click)="EditFunction()"
+              >
+                Save
+              </button>
+            </div>
+        </form>
     </div>
-    <div class="col-md-2"></div>
   </div>
-  <div *ngIf="activeAccount" class="row"style="margin-top:5%;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8"style="border:2px dashed #0077b5;padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-    <app-activate-account></app-activate-account>
+  <div class="col-md-6"style="padding-bottom:40px">
+    <div class="block">
+      <div class="row" style="padding-left: 25px; padding-bottom: 20px; border-bottom: 1px dashed #29abe2;">
+          <app-raft-manage></app-raft-manage>
+      </div>
+      <div class="row">
+         <app-activate-account></app-activate-account>
+      </div>
     </div>
-    <div class="col-md-2"></div>
   </div>
 </div>

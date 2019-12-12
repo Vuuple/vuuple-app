@@ -26,7 +26,8 @@ export class SettingComponent implements OnInit {
     this.EditForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required] ,
+      cpassword : ['',Validators.required]      
     });
   }
   ngOnInit() {}

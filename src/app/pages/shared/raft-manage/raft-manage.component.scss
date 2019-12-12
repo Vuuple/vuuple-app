@@ -5,7 +5,7 @@
 input{
     border: 1px solid #29ABE2;
   }
-  button {
+button {
     cursor: pointer;
     overflow: hidden;
     outline: none;
@@ -16,11 +16,11 @@ input{
       -webkit-appearance: button-bevel;
       line-height: initial;
     font-size: 20px;
-    width: 50%;
+    width: 55%;
     margin-top: 20px;
-    float: right;
-    margin-right: 5%;
-  }
+   float: left;  
+   margin-left: 20%;
+}
   label {
     color: #0077b5;
     vertical-align: middle;

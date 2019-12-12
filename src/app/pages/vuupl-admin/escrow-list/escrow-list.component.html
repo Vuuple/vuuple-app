@@ -38,8 +38,8 @@
           <td>{{ i }}</td>
           <td>{{ item?.escrowAddress }}</td>
           <!-- <td>{{ item?.renterLenderAddress }}</td> -->
-          <td>{{ item?.issueDate }}</td>
-          <td>{{ item?.endDate }}</td>
+          <td>{{ item?.issueDate | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ item?.endDate | date: 'dd/MM/yyyy' }}</td>
           <td>{{ item?.status }}</td>
           <td style="border-right:none">
             <button
