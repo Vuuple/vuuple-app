@@ -1,10 +1,7 @@
 .main {
-    padding: 5%;
+    padding: 5% ;
 }
-.main {
-    padding: 5% 5% 5% 5%;
-  }
-  
+
   .action {
     background-image: url('assets/img/Deletecloud.png');
     background-size: cover;
@@ -22,30 +19,13 @@
   
   .table-container {
     padding-top: 5%;
-    padding-bottom: 5%;
   }
   
   h4, h2 {
     color: #0077b5;
     margin-bottom: 2%;
   }
-  
-  label {
-    text-align: center;
-    color: #29ABE2;
-    margin-bottom: 3%;
-    font-family: initial;
-    font-size: 15px;
-    font-weight: bolder;
-  }
-  
-  p {
-    margin-bottom: 3%;
-    font-family: initial;
-    font-size: 15px;
-    font-weight: bolder;
-  }
-  
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -89,3 +69,32 @@
     margin-right: 0;
     margin-left: 0;
   }
+ p,label {
+    color: #0077b5;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    font-family: inherit;
+    font-weight: 400;
+  }
+  button {
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+      background-color:#0077b5;
+      border-radius: 10px;
+      height: 40px;
+      -webkit-appearance: button-bevel;
+      line-height: initial;
+    font-size: 23px;
+    margin-top: 10px;
+    width: 40%;
+    float: right;
+    padding: 6px 12px;
+  }
+  p{
+   font-size: 14px;
+  }
+  

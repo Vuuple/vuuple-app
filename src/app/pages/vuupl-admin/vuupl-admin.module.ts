@@ -22,6 +22,7 @@ import { CreatAdminComponent } from './creat-admin/creat-admin.component';
 import { RequestInterceptorComponent } from './request-interceptor/request-interceptor.component';
 import { TokenRequestListComponent } from './token-request-list/token-request-list.component';
 import { TokenRequestDetailsComponent } from './token-request-details/token-request-details.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { TokenRequestDetailsComponent } from './token-request-details/token-requ
     FormsModule,
     ChartModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
     SharedModule,
     RouterModule.forChild([
       {

@@ -1,39 +1,36 @@
 <div class="main">
-    <form [formGroup]="sendMailForm">
-      <h4>Report Issue</h4>
-        <div class="">
-        <label class="">
-          <p class="label-txt">Title</p>
-          <input type="text" class="input" formControlName="title">
-          <div class="line-box">
-            <div class="line"></div>
+    <h2 class="btn btn-primary" routerLink="/pages/profile" style="color: white;background-color: #0077b5;border: #0077b5;text-align: left;">
+      <i class="fas fa-arrow-left"></i>
+  </h2>
+    <h2>Report Issue</h2>
+    <form [formGroup]="sendMailForm" style="margin: 0 auto ; width: 70%; padding-top: 40px;">
+      <div class="form-group row">
+          <label for="Name" class="col-md-2">Title:</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="title">
           </div>
-        </label>
         </div>
-        <div class="">
-        <label class="">
-            <p class="label-txt">Description</p>
-            <textarea rows = "4" cols = "50" name = "description" formControlName="description" class="input">   
-             </textarea>          
-             <div class="line-box">
-              <div class="line"></div>
-            </div>
-        </label> 
-        </div>
-        <div class="">
-        <label class="">
-          <p class="label-txt">Email</p>
-          <input type="text" class="input"formControlName="email">
-          <div class="line-box">
-            <div class="line"></div>
+
+        <div class="form-group row">
+          <label for="emails" class="col-md-2">Description:</label>
+          <div class="col-md-8">
+            <textarea rows = "4" cols = "50" name = "description" class="textarea" formControlName="description">   
+              </textarea>          
           </div>
-        </label> 
-        </div>    
-        <div class="">
-            <label class="">
-              <input type="file" class="input"  formControlName="attachFile"(change)="showPreviewFile($event)">
-            </label> 
-        </div>  
-        <button type="submit" (click)="sendEmail()">submit</button> 
-      </form>
-</div>
+        </div>
+
+        <div class="form-group row">
+          <label for="password" class="col-md-2">Email:</label>
+          <div class="col-md-8">
+              <input type="text"  class="form-control" formControlName="email">
+          </div>
+        </div>
+        <div class="form-group row">
+            <input type="file"  formControlName="attachFile"(change)="showPreviewFile($event)" style="border: none;">
+        </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary" (click)="sendEmail()" >submit</button> 
+        </div>
+    </form>
+  </div>
+  

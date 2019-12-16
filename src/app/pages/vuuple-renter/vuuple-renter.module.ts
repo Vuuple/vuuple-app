@@ -10,12 +10,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import { AccountComponent } from './account/account.component';
 import { PurchaseComponent } from './purchase/purchase.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     FormsModule,
+    NgxSpinnerModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       {

@@ -6,6 +6,7 @@ import { RenterRegisterationService } from '../../../providers/renter-registrati
 import { RenterEscrowService } from '../../../providers/renter-escrow/renter-escrow.service';
 import { AuthService } from '../../../auth/core/auth.service';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-account',
@@ -42,7 +43,7 @@ export class AccountComponent implements OnInit {
   constructor(
     private apiService: ServerApiService,
     private rentersFactoryService: RenterFactoryService,
-
+    private spinner: NgxSpinnerService,
     private renterEscrowService: RenterEscrowService,
     private rentersRegistrationService: RenterRegisterationService,
 
@@ -53,7 +54,7 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.cuurentUser = this.authService.currentUser;
-
+    this.spinner.show();
     this.getContractDate();
     this.getStatment();
   }
@@ -112,6 +113,7 @@ export class AccountComponent implements OnInit {
       const owner = await this.rentersRegistrationService.getContractOwner(
         this.accountContract
       );
+      this.spinner.hide();
       console.log(owner, 'this.cuurentUser.tokenAmount');
 
       console.log(this.cuurentUser, 'node');
@@ -257,7 +259,7 @@ export class AccountComponent implements OnInit {
   getStatment() {
     this.apiService.getAllTokensUserTransaction().subscribe(data => {
       console.log(data[0], 'data');
-
+      // this.spinner.hide();
       this.statment = data[0]['tokenTransactions'];
       // this.events = [].concat.apply([], this.allTransaction.filter(e => { return e.eventsEmitted.length > 0 })
       //   .map(m => m.eventsEmitted));

@@ -1,103 +1,99 @@
 <div class="main">
-  <div class="panel panel-default">
-    <div class="panel-heading"><h4>User Profile</h4></div>
-    <div class="panel-body">
-      <div class="box box-info">
-        <div class="box-body">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-4">
-            <div text-align="center">
-              <img
-                alt="User Pic"
-                for="files"
-                class="btn"
-                src="assets/img/vuupleIcone.png"
-                id="profile-image1"
-                class="img-circle img-responsive"
-              />
-              <label for="files" style="color:#999;" class="btn"
-                ><i class="fas fa-plus"></i
-              ></label>
-              <input id="files" style="visibility:hidden;" type="file" />
+  <h2 style="padding-bottom: 40px;text-align: center;">User Profile</h2>
+<div class="col-md-6" style="padding-top: 20px; padding-bottom: 5%;">
+  <div class="block1">
+          <div class="form-group row">
+            <label  class="col-md-4">Username:</label>
+            <div class="col-md-8">
+              <input type="text" class="form-control" placeholder="Username" value="{{ node?.username }}" >
             </div>
           </div>
-          <div class="col-sm-6">
-            <span>
-              <h4 style="color:#29ABE2;">{{ username }}</h4></span
-            >
-            <span
-              ><p>{{ category }}</p></span
-            >
+  
+          <div class="form-group row">
+            <label class="col-md-4">Email:</label>
+            <div class="col-md-8">
+              <input type="text" class="form-control" placeholder="Email" value="{{ node?.email }}" >
+            </div>
           </div>
-          <div class="clearfix"></div>
-          <hr style="margin:5px 0 5px 0;" />
-          <div class="clearfix"></div>
-          <div class="col-sm-5 col-xs-6 tital ">Username:</div>
-          <div class="col-sm-7 col-xs-6 ">{{ node?.username }}</div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-5 col-xs-6 tital ">Email:</div>
-          <div class="col-sm-7 col-xs-6 ">{{ node?.email }}</div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-5 col-xs-6 tital ">EthAddress:</div>
-          <div class="col-sm-7 col-xs-6 ">{{ node?.ethAddress }}</div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-5 col-xs-6 tital ">Category:</div>
-          <div class="col-sm-7 col-xs-6 ">{{ node?.category }}</div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-5 col-xs-6 tital ">Status:</div>
-          <div class="col-sm-7 col-xs-6 ">{{ node?.status }}</div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-5 col-xs-6 tital ">Ip:</div>
-          <div class="col-sm-7 col-xs-6 ">{{ node?.ip }}</div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-5 col-xs-6 tital ">Enod:</div>
-          <div class="col-sm-7 col-xs-6 ">
-            <span>{{ node?.enode }}</span>
+  
+          <div class="form-group row">
+            <label  class="col-md-4">Eth Address:</label>
+            <div class="col-md-8">
+              <input type="text" class="form-control" placeholder="Eth Address" value="{{ node?.ethAddress }}" >
+            </div>
           </div>
-          <div class="clearfix"></div>
-          <div class="bot-border"></div>
-          <div class="col-sm-8 col-xs-6 tital">
-            <button class="btn btn-link">
-              <a
-                [routerLink]="['/pages/admin/escrow']"
-                [queryParams]="{ id: node?._id }"
-                >View Escrows</a
-              >
-            </button>
-            <button
-              class="btn btn-link"
-              *ngIf="
-                (currentUser?.role == 'admin' ||
-                  currentUser?.role == 'superAdmin') &&
-                node?.category == 'lender'
-              "
+          <div class="form-group row">
+              <label  class="col-md-4">Category:</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="Category" value="{{ node?.category }}" >
+              </div>
+            </div>
+          <div class="form-group row">
+              <label  class="col-md-4">Status:</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="Status" value="{{ node?.status }}" >
+              </div>
+          </div>
+          <div class="form-group row">
+              <label  class="col-md-4">Ip Address:</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="Ip" value="{{ node?.ip }}" >
+              </div>
+          </div>
+          <div class="form-group row">
+              <label  class="col-md-4">Enode:</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="Enod" value="{{ node?.enode }}" >
+              </div>
+          </div>
+  </div>
+</div>
+<div class="col-md-6"style="padding-bottom:5%;padding-top: 20px; ">
+  <div class="block">
+    <div class="row" style="padding-left: 25px; padding-bottom: 20px;">
+        <img
+        alt="User Pic"
+        for="files"
+        class="btn"
+        src="assets/img/vuupleIcone.png"
+        id="profile-image1"
+        style="width: 200px;height: 150px;margin: 0 auto;"
+      />
+      <input type="file" name="choosePhotoFile" id="choosePhotoFile" (change)="onFileChange($event)" style="margin-top:20px;border: none !important;">
+    </div>
+    <div class="row">
+        <button class="btn" style="padding: 2px 12px !important;">
+            <a
+              [routerLink]="['/pages/admin/escrow']"
+              [queryParams]="{ id: node?._id }"
+              style="color: white !important; text-decoration: none !important;font-size: 18px;padding-bottom: 2px;"
+              >View Escrows</a
             >
-              <a
-                [routerLink]="['/pages/admin/addPoint']"
-                [queryParams]="{ id: node?._id }"
-                >Add Points</a
-              >
-            </button>
-          </div>
-          <div class="col-sm-4 col-xs-6">
-            <button
-              type="button"
-              class="btn btn-info btn-lg"
-              (click)="reportIssue()"
+          </button>
+          <button
+            class="btn"
+            *ngIf="
+              (currentUser?.role == 'admin' ||
+                currentUser?.role == 'superAdmin') &&
+              node?.category == 'lender'
+            "
+          >
+            <a
+              [routerLink]="['/pages/admin/addPoint']"
+              [queryParams]="{ id: node?._id }"
+              style="color: white !important; text-decoration: none !important;font-size: 18px;"
+              >Add Points</a
             >
-              Report Issue
-            </button>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
+          </button>
+        <button
+        type="button"
+        class="btn btn-info btn-lg"
+        (click)="reportIssue()"
+        style="margin-top:15px !important;"
+      >
+        Report Issue
+      </button>
     </div>
   </div>
+</div>
 </div>

@@ -1,8 +1,13 @@
+
 <div class="row main">
   <div class="row">
-    <div class="col-md-4"></div>
     <div class="col-md-4">
-      <h2>
+        <h2 class="btn btn-primary" routerLink="/pages/profile" style="color: white;background-color: #0077b5;border: #0077b5;">
+          <i class="fas fa-arrow-left"></i>
+      </h2>
+    </div>
+    <div class="col-md-4">
+      <h2 style="text-align: center;">
         escrows
       </h2>
     </div>
@@ -15,35 +20,35 @@
       <thead>
         <tr style="color:#29ABE2 !important;font-size: 25px;">
           <th style=" border-right: 1px solid #29ABE2; padding: 15px;">ID</th>
-          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;width: 40%;">
             Address
           </th>
           <!-- <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
             Renter/Lender Address
           </th> -->
-          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-            Issue Date
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;width: 15%;">
+            Start Date
           </th>
-          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;width: 15%;">
             End Date
           </th>
-          <th style=" border-right: 1px solid #29ABE2; padding: 15px;">
-            Status
+          <th style=" border-right: 1px solid #29ABE2; padding: 15px;width: 15%;">
+            Token Status
           </th>
-          <th style="padding-top:15px ; padding-bottom:15px">Action</th>
+          <th style="padding-top:15px ; padding-bottom:15px;width: 15%;">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of escrows; let i = index">
           <td>{{ i }}</td>
-          <td>{{ item?.escrowAddress }}</td>
+          <td style="word-break: break-all;">{{ item?.escrowAddress }}</td>
           <!-- <td>{{ item?.renterLenderAddress }}</td> -->
           <td>{{ item?.issueDate | date: 'dd/MM/yyyy' }}</td>
           <td>{{ item?.endDate | date: 'dd/MM/yyyy' }}</td>
           <td>{{ item?.status }}</td>
           <td style="border-right:none">
             <button
-              class="action"
+              class="btn btn-primary"
               (click)="goToDetails(item?.escrowAddress, item?.category)"
             >
               VIEW
@@ -60,6 +65,15 @@
               </a> -->
           </td>
         </tr>
+        <ngx-spinner
+        bdOpacity = 0.9
+        bdColor = "transparent"
+        size = "medium"
+        color = "#0077b5"
+        type = "ball-spin"
+        [fullScreen] = "false"
+        >
+        </ngx-spinner>
       </tbody>
     </table>
   </div>

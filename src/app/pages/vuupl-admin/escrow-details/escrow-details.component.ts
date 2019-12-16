@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { LenderEscrowService } from '../../../providers/lenders-escrow/lenders-escrow.service';
 import { RenterEscrowService } from '../../../providers/renter-escrow/renter-escrow.service';
 import { AuthService } from '../../../auth/core/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-escrow-details',
@@ -26,10 +27,12 @@ export class EscrowDetailsComponent implements OnInit {
     private renterEscrowService: RenterEscrowService,
     private route: ActivatedRoute,
     private authservics: AuthService,
-
+    private spinner: NgxSpinnerService,
     private router: Router
   ) {}
   ngOnInit() {
+    this.spinner.show();
+
     this.currentUser = this.authservics.currentUser;
 
     this.route.queryParams.subscribe(params => {
@@ -39,6 +42,7 @@ export class EscrowDetailsComponent implements OnInit {
       this.category = params['category'];
       console.log(this.category, 'category');
       console.log(this.address, 'address');
+      
 
       if (this.address != null && this.address != undefined) {
         if (this.category == 'lender') {
@@ -74,6 +78,7 @@ export class EscrowDetailsComponent implements OnInit {
     this.escrow.closeTime = await this.lenderEscrowService.getCloseTime(
       this.address
     );
+    this.spinner.hide();
     let end = new Date(this.escrow.closeTime);
     end.setMonth(this.escrow.closeTime.getMonth() - 1);
     console.log(this.escrow.closeTime, ' this.escrow.closeTime');
@@ -108,6 +113,7 @@ export class EscrowDetailsComponent implements OnInit {
     this.escrow.closeTime = await this.renterEscrowService.getCloseTime(
       this.address
     );
+    this.spinner.hide();
     let end = new Date(this.escrow.closeTime);
     end.setMonth(this.escrow.closeTime.getMonth() - 1);
     console.log(this.escrow.closeTime, ' this.escrow.closeTime');

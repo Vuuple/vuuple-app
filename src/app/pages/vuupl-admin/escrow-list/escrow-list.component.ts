@@ -2,6 +2,7 @@ import { ServerApiService } from './../../../providers/server-api/server-api.ser
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PagerService } from '../../../providers/pagesService/pager.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-escrow-list',
@@ -18,7 +19,7 @@ export class EscrowListComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-
+    private spinner: NgxSpinnerService,
     private apiService: ServerApiService,
     private pagerService: PagerService
   ) {}
@@ -29,7 +30,9 @@ export class EscrowListComponent implements OnInit {
 
       if (this.id != undefined && this.id != null) {
         console.log(this.id);
+        this.spinner.show();
         this.apiService.getEscrowsByUserId(this.id).subscribe((data: any[]) => {
+          this.spinner.hide();
           this.escrows = data
             .map(s => s.escrows)
             .map(sub => {

@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   id: any;
   node;
   currentUser;
+  file: string | ArrayBuffer;
   constructor(
     private serverApiService: ServerApiService,
     private authservics: AuthService,
@@ -47,6 +48,14 @@ export class ProfileComponent implements OnInit {
   }
   reportIssue() {
     this.router.navigate(['/pages/report']);
+  }
+
+  onFileChange(e){
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+         this.file = reader.result ;
+    }
   }
   ngOnInit() {}
 }

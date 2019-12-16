@@ -1,9 +1,16 @@
+
 <div class="row main">
   <div class="row">
-    <div class="col-md-4"></div>
     <div class="col-md-4">
-      <h2>
-        escrows
+        <h2 class="btn btn-primary"
+        routerLink="/pages/profile"
+         style="color: white;background-color:#0077b5;border: #0077b5;">
+          <i class="fas fa-arrow-left"></i>
+      </h2>
+    </div>
+    <div class="col-md-4">
+      <h2 style="text-align: center;">
+          Contract Details
       </h2>
     </div>
     <div class="col-md-4" style="padding:2%">
@@ -19,66 +26,75 @@
     <div class="col-md-2"></div>
     <div
       class="col-md-8"
-      style="border: 1px solid #29ABE2;border-radius:5px ;height: 350px;padding: 2%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
     >
-      <h4 style="margin-bottom:5%">escrow details:</h4>
-      <div class="row" style="margin-bottom:3px">
-        <div class="col-md-3">
-          <label>Address:</label>
+    <ngx-spinner
+    bdOpacity = 0.9
+    bdColor = "white"
+    size = "medium"
+    color = "#0077b5"
+    type = "ball-spin"
+    [fullScreen] = "false"
+    >
+    </ngx-spinner>
+      <!-- <h4 style="margin-bottom:5%">escrow details:</h4> -->    
+      <div class="row" >
+        
+        <div class="col-md-4">
+          <label>Escrow Address:</label>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
           <p>{{ address }}</p>
         </div>
       </div>
-      <div class="row" style="margin-bottom:3px">
-        <div class="col-md-3">
-          <label> Address:</label>
+      <div class="row" >
+          <div class="col-md-4">
+            <label>Contract Address:</label>
+          </div>
+          <div class="col-md-8">
+            <p>
+              {{ escrow?.account }}
+            </p>
+          </div>
         </div>
-        <div class="col-md-7">
+      <div class="row" >
+        <div class="col-md-4">
+          <label> Ethereum Address:</label>
+        </div>
+        <div class="col-md-8">
           <p>
             {{ escrow?.userAddress }}
           </p>
         </div>
       </div>
-      <div class="row" style="margin-bottom:3px">
-        <div class="col-md-3">
+      <div class="row" >
+        <div class="col-md-4">
           <label>Token Amount:</label>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
           <p>
             {{ escrow?.tokenAmount }}
           </p>
         </div>
       </div>
-      <div class="row" style="margin-bottom:3px">
-        <div class="col-md-3">
-          <label>Issue Date:</label>
-        </div>
-        <div class="col-md-9">
-          <p>
-            {{ escrow?.issueDate | date }}
-          </p>
-        </div>
-      </div>
-      <div class="row" style="margin-bottom:3px">
-        <div class="col-md-3">
-          <label>End Date:</label>
-        </div>
-        <div class="col-md-9">
-          <p>{{ escrow?.closeTime | date }}</p>
-        </div>
-      </div>
-      <div class="row" style="margin-bottom:3px">
+      <div class="row" >
         <div class="col-md-4">
-          <label>Account address :</label>
+          <label>Start Date: </label>
         </div>
         <div class="col-md-8">
           <p>
-            {{ escrow?.account }}
+            {{ escrow?.issueDate | date : 'dd/MM/yyyy' }}
           </p>
         </div>
       </div>
-      <div class="row" style="margin-bottom:3px">
+      <div class="row" >
+        <div class="col-md-4">
+          <label>End Date:</label>
+        </div>
+        <div class="col-md-8">
+          <p>{{ escrow?.closeTime | date : 'dd/MM/yyyy'}}</p>
+        </div>
+      </div>
+      <div class="row" >
         <div class="col-md-4">
           <label> Status :</label>
         </div>
@@ -88,23 +104,23 @@
           </p>
         </div>
       </div>
-      <div class="row" style="margin-bottom:3px">
+      <!-- <div class="row" >
         <div class="col-md-4">
           <label> Is Active :</label>
         </div>
         <div class="col-md-8">
           <input type="checkbox" checked="!escrow?.isActive" />
         </div>
-      </div>
-      <div class="row" style="padding-top:4%;float:right;margin-right: 0.50%">
-        <div class="col-md-6">
-          <button class="action" [disabled]="!ready" (click)="withdraw()">
+      </div> -->
+      <div class="row" >
+        <!-- <div class="col-md-6"> -->
+          <!-- <button class="btn btn-primary" [disabled]="!ready" (click)="withdraw()">
             withdraw
-          </button>
-        </div>
-        <div class="col-md-6">
+          </button> -->
+        <!-- </div> -->
+        <!-- <div class="col-md-6">
           <button class="action" (click)="gotToback()">back</button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="col-md-2"></div>
