@@ -16,16 +16,18 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <form [formGroup]="forgotPass" style="padding-top:50px">
-  
+      <form [formGroup]="forgotPass" style="padding-top:50px;margin: 0 auto" *ngIf = "!checkToken && !newPass">
+        <p>Please enter your email.</p>  
         <div class="form-group">
           <input
             type="email"
             formControlName="email"
             class="form-control"
             placeholder="Email"
+            required
           />
         </div>
+        <label *ngIf=" f.email.errors && f.email.errors.email" class="error" style="margin-left: 50px;">Please enter a valid email.</label>
         <button
           type="submit"
           [disabled]="!forgotPass.valid"
@@ -35,10 +37,69 @@
           continue
         </button>
       </form>
+      <form [formGroup]="checkTokenValidation" style="padding-top:50px;margin: 0 auto" *ngIf = "checkToken && !newPass">
+        <p>Please enter the token sent to your email.</p>  
+        <div class="form-group">
+          <input
+            type="text"
+            formControlName="token"
+            class="form-control"
+            placeholder="Token"
+            required
+          />
+        </div>
+        <label *ngIf=" f1.token.errors && f1.token.errors.token" class="error" style="margin-left: 50px;">This filed is required </label>
+        <button
+          type="submit"
+          [disabled]="!checkTokenValidation.valid"
+          (click)="checkTokenValidationSubmit()"
+          class="btn btn-primary"
+        >
+          continue
+        </button>
+      </form>
+      <form [formGroup]="resetPass" style="padding-top:50px;margin: 0 auto" *ngIf = "!checkToken && newPass">
+        <p>Create a new Password.</p>  
+        <div class="form-group">
+          <input
+            type="password"
+            formControlName="pass"
+            class="form-control"
+            placeholder="Password"
+            required
+          />
+          <label *ngIf="f2.pass.errors && f2.pass.errors.minlength" class="error" style="margin-left: 50px;">Password must be at least 7 characters</label>
+          <input
+          type="password"
+          formControlName="cpass"
+          class="form-control"
+          placeholder="Confirm Password"
+          required
+        />
+        </div>
+        <label *ngIf="f2.cpass.errors && f2.cpass.errors.mustMatch" class="error" style="margin-left: 40px;">Passwords must match</label>
+        <button
+          type="submit"
+          [disabled]="!resetPass.valid"
+          (click)="setNewPassword()"
+          class="btn btn-primary"
+        >
+          submit
+        </button>
+      </form>
     </div>
     <div class="col-md-4">
       <label class="error">{{ errorMessage }}</label>
     </div>
   </div>
+  <ngx-spinner
+  bdOpacity = 0.9
+  bdColor = "transparent"
+  size = "medium"
+  color = "white"
+  type = "ball-spin"
+  [fullScreen] = "false"
+  >
+  </ngx-spinner>
 </div>
 

@@ -9,10 +9,11 @@ import { LenderRegisterComponent } from './lender-register/lender-register.compo
 import { RegisterationCompletedComponent } from './registeration-completed/registeration-completed.component';
 import { ChooseCategoryComponent } from './choose-category/choose-category.component';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
-    CommonModule, ReactiveFormsModule, RouterModule.
+    CommonModule, ReactiveFormsModule,NgxSpinnerModule, RouterModule.
       forChild(
 
         [{

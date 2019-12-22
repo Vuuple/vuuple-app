@@ -110,4 +110,18 @@ export class ServerApiService {
   manageRedeem(id, data): Observable<any> {
     return this.dataService.postById('tokens/manage-redeem', id, data);
   }
+ 
+  ///reset pass 
+  checkEmail(data) : Observable<any> {
+    return this.dataService.post( 'users/checkEmail' , data);
+  }
+  resetPassword(data) : Observable<any> {
+    return this.dataService.post( 'users/restPassword' , data);
+  }
+  validateToken(data) : Observable<any> {
+    return this.dataService.post( 'users/validateToken' , data);
+  }
+  setNewPassword(data) : Observable<any> {
+    return this.dataService.post( 'users/setNewPassword' , data);
+  }
 }

@@ -181,3 +181,15 @@ a{
   color:#0077b5;
 }
 */
+  .form-control {
+	font-size: 16px !important;
+	line-height: 18px !important;
+	color: #222 !important;
+	box-shadow: none !important;
+	outline: 0 !important;
+	padding: 16px 30px 15px;
+	transition: all 0.3s ease !important;
+	box-sizing: border-box !important;
+	display: block !important;
+	font-family: sans-serif;
+  }  

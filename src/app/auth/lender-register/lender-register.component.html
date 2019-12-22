@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <img src="../../../assets/img/lenderTitle.png" class="title" />
+      <img src="../../../assets/img/Lender.png" class="title" />
     </div>
     <div class="col-md-4">
       <p style="text-align:center;margin-top:60px;cursor: pointer;" (click)="returnToLogin()">
@@ -29,6 +29,7 @@
             class="form-control"
             placeholder="Email"
           />
+          <label *ngIf=" f.email.errors && f.email.errors.email" class="error" style="margin-left: 50px;">Please enter a valid email.</label>
         </div>
         <div class="form-group">
           <input
@@ -37,6 +38,16 @@
             class="form-control"
             placeholder="Password"
           />
+          <label *ngIf="f.password.errors && f.password.errors.minlength" class="error" style="margin-left: 50px;">Password must be at least 7 characters</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            class="form-control"
+            placeholder="Confirm Password"
+          />
+          <label *ngIf="f.confirmPassword.errors && f.confirmPassword.errors.mustMatch" class="error" style="margin-left: 40px;">Passwords must match</label>
         </div>
         <div class="form-group">
           <input
@@ -54,14 +65,14 @@
             placeholder="Ethereum Address"
           />
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input
             type="text"
             formControlName="bankAccount"
             class="form-control"
             placeholder="Bank Account"
           />
-        </div>
+        </div> -->
         <!-- <div class="form-group">
                     <input
                       type="text"
@@ -70,18 +81,18 @@
                       placeholder="Enode Address"
                     />
                   </div> -->
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input
             type="number"
             formControlName="storage"
             class="form-control"
             placeholder="How many GB’s do you plan to lend?"
           />
-        </div>
+        </div> -->
         <div class="form-group checkbox">
           <label class="form-control-checkbox">
             <input type="checkbox" value="true" formControlName="termService" />
-            Terms of Service
+             I agree to the Terms of Service
           </label>
         </div>
         <div class="form-group checkbox">
@@ -91,7 +102,7 @@
               value="true"
               formControlName="privacyPolicy"
             />
-            Privacy Policy
+            I agree to the Privacy Policy
           </label>
         </div>
         <button
@@ -100,6 +111,7 @@
           (click)="lenderRegister()"
           class="btn btn-primary"
         >
+        <img *ngIf="Loading" src="../../../assets/img/loading-white.gif" style="width:15px"/>
           Sign Up
         </button>
       </form>

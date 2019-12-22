@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserWalletService } from '../../providers/user-wallet/user-wallet.service';
 import { Web3Service } from '../../providers/web3/web3.service';
 import { LendersFactoryService } from '../../providers/lenders-factory/lenders-factory.service';
+import { MustMatch } from '../../providers/helpers/MustMatch';
 const networkPath = require('electron').remote.getGlobal('networkPath');
 const path = require('path');
 const getNodeKey = require('../../../assets/js/helpers/getNodeKey.js');
@@ -31,6 +32,7 @@ export class LenderRegisterComponent implements OnInit {
   accountPublic: string;
   enode: any;
   errorMessage;
+  Loading: boolean;
   constructor(
     private lendersFactoryService: LendersFactoryService,
     private web3Service: Web3Service,
@@ -47,18 +49,22 @@ export class LenderRegisterComponent implements OnInit {
   ngOnInit() {
     this.lenderRegisterForm = this.formBuilder.group({
       username: ['', Validators.required],
-      bankAccount: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      // bankAccount: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(7)]],
+      confirmPassword : ['', Validators.required],
       staticIP: ['', Validators.required],
       ethereumAddress: ['', Validators.required],
-      // enode: ['', Validators.required],
-      storage: ['', Validators.required],
+      // enode : ['' , Validators.required ],
       termService: ['', Validators.required],
       privacyPolicy: ['', Validators.required]
-    });
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
+  });
     this.getIp();
   }
+  get f() { return this.lenderRegisterForm.controls; }
+
   lenderRegister() {
     this.savetocontract();
   }
@@ -162,6 +168,7 @@ export class LenderRegisterComponent implements OnInit {
   //   });
   // }
   savetocontract() {
+    this.Loading = true ;
     this.lendersFactoryService
       .lenderRegisterSigned(
         10,
@@ -171,6 +178,7 @@ export class LenderRegisterComponent implements OnInit {
       )
       .then(s => {
         console.log(s, 'save to contract');
+        this.Loading = false ;
         if (s) {
           this.exportToFile(this.accountData);
           this.getEnode();
