@@ -8,30 +8,29 @@
     line-height: initial;
     font-size: 30px;
   }
-  
+  h1 {
+    color: #0077b5;
+    margin-bottom: 25px;
+  }
   .walletmain {
-    padding-top: 5%;
+    padding: 5%;
   }
   
   .tokenColum {
-    border-right: 2px solid #29ABE2;
+    border-right: 1px solid #29ABE2;
     margin-top: 5%;
-    padding-bottom: 5%;
+    // margin-bottom: 1%;
   }
   
-  .fiatcurrency {
-    margin-top: 5%;
-    padding-bottom: 5%;
-  }
+  // .fiatcurrency {
+  //   margin-top: 5%;
+  //   padding-bottom: 5%;
+  // }
   
-  h2 {
-    color: #0077b5;
-    margin-bottom: 2%;
-  }
   
   img {
-    padding: 5%;
-    width: 40%;
+    // padding: 5%;
+    width: 20%;
     margin-left: 25%;
   }
   
@@ -59,8 +58,9 @@
   }
 
   .dollarimage {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 50%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    width: 30%;
+    margin-left: 35%;
     
   }

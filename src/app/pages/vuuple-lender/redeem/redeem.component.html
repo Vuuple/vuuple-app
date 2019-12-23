@@ -1,7 +1,7 @@
 <div class="main">
   <h1>Redeem Vuuple</h1>
-  <div class="fix"></div>
-  <p>Rate : {{ rate }}</p>
+  <div class="fix" style="height: 15px;"></div>
+  <!-- <p>Rate : {{ rate }}</p> -->
   <p style="font-size:25px">
    1 Vuuple = 1 USD 
 
@@ -32,6 +32,7 @@
             type="number"
             disabled
             value="{{ rate * redForm.value.tokensToRed }}"
+            style="padding-left: 10px;"
           />
         </div>
       </div>

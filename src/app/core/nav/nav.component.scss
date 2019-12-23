@@ -39,6 +39,30 @@
   .nav {
     padding-top: 50%;
   }
+  @media only screen and (min-width: 1450px) and (max-width: 1479px)  {
+    .nav{
+      padding-top: 45% !important;
+    }
+  }
+   //1480px
+  @media only screen and (min-width: 1451px) {
+    .nav{
+      padding-top: 43% !important;
+    }
+  }
+
+  @media only screen and (min-width : 1420px) and (max-width: 1451px) {
+    .nav{
+      padding-top: 46% !important;
+    }
+  }
+
+  @media only screen and (min-width : 1290px) and (max-width: 1331px) {
+    .nav{
+      padding-top: 52% !important;
+    }
+  }
+
   .item {
     left: -50px;
   }

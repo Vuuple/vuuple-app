@@ -11,9 +11,15 @@ export class SettingComponent implements OnInit {
   EditForm: FormGroup;
   submitted = false;
   activeAccount : boolean = false; 
+  currentUser : any;
 
   constructor(private fb: FormBuilder,private authservice : AuthService) {
+    this.currentUser = this.authservice.getCuurentUser();
+    console.log(this.currentUser)
     this.createForm();
+    // this.EditForm.value.name = this.currentUser.username
+    // this.EditForm.value.email = this.currentUser.email
+    console.log(this.currentUser.username,this.currentUser.email)
     const type = this.authservice.getUserType();
     if(type == 1 ){
       this.activeAccount = false ;
@@ -24,13 +30,15 @@ export class SettingComponent implements OnInit {
   }
   createForm() {
     this.EditForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
+      name: this.currentUser.username,
+      email: this.currentUser.email,
       password: ['', Validators.required] ,
       cpassword : ['',Validators.required]      
     });
   }
-  ngOnInit() {}
+  ngOnInit() {
+   
+  }
   get f() {
     return this.EditForm.controls;
   }

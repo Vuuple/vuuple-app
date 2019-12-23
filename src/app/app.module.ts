@@ -25,7 +25,7 @@ import { ElectronService } from './providers/electron.service';
 import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+// import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth/core/auth.guard';
 import { AuthModule } from './auth/auth.module';
 import { UploadFileService } from './providers/uploadFile/upload-file.service';
@@ -38,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WebviewDirective],
+  declarations: [AppComponent, WebviewDirective],//, HomeComponent
   imports: [
     BrowserModule,
     FormsModule,

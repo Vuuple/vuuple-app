@@ -1,4 +1,4 @@
-<div class="row walletmain">
+<!-- <div class="row walletmain">
   <div class="col-md-4"></div>
   <div class="col-md-4">
     <button class="PurchaseButton" [routerLink]="['/pages/renter/purchase']">
@@ -6,31 +6,36 @@
     </button>
   </div>
   <div class="col-md-4"></div>
-</div>
-<div class="row">
-  <div class="col-md-6 tokenColum">
-    <h2 style="text-align:center">Vuuple Tokens</h2>
-    <img src="../../../../assets/img/TokenDollar.png"  style="margin-left: 30%;"/>
-    <h3 style="text-align:center">Tokens Available:</h3>
-    <p>{{ avialableTokens }}<br />Vuuple</p>
-    <div *ngIf="cuurentUser.category == 'renter'">
-      <h3 style="text-align:center">Tokens In Contract:</h3>
-      <p>{{ tokensInContract }}<br />Vuuple</p>
-    </div>
-    <h3 style="text-align:center">Tokens Used:</h3>
-    <p>{{ tokensInEscrow }}<br />Vuuple</p>
+</div> -->
+<div class="row walletmain">
+  <div class="col-md-6">
+    <h1 style="text-align:center">Vuuple Tokens</h1>
+    <div class="fix" style="height: 5px !important;"></div>
+    <div class = "tokenColum">
+      <img src="../../../../assets/img/TokenDollar.png"  style="margin-left: 40%;"/>
+      <h3 style="text-align:center">Tokens Available:</h3>
+      <p>{{ avialableTokens }}<br />Vuuple</p>
+      <div *ngIf="cuurentUser.category == 'renter'">
+        <h3 style="text-align:center">Tokens In Contract:</h3>
+         <p>{{ tokensInContract }}<br />Vuuple</p>
+      </div>
+      <h3 style="text-align:center">Tokens Used:</h3>
+      <p>{{ tokensInEscrow }}<br />Vuuple</p>
   
-    <div class="row">
+      <div class="row">
       <div class="col-md-2"></div>
       <a [routerLink]="['/pages/lender/redeem']" class="button">
         <button class="transferButton">
           Transfer Vuuple
         </button>
       </a>
+      </div>
     </div>
   </div>
-  <div class="col-md-6 fiatcurrency">
-    <h2 style="text-align:center">Fiat Currency</h2>
+  <div class="col-md-6">
+    <h1 style="text-align:center">Fiat Currency</h1>
+    <div class="fix" style="height: 40px !important;"></div>
+    <div class="block">
     <img class="dollarimage" src="../../../../assets/img/Dollar.png" />
     <h3 style="text-align:center">Tokens Redeemd:</h3>
     <p>{{ tokensRedeemd }}<br />Vuuple</p>
@@ -56,6 +61,7 @@
           Allocate
         </button>
       </a>
+    </div>
     </div>
   </div>
 </div>

@@ -3,6 +3,7 @@
 }
 .error {
   color: red;
+  text-align: center;
   font-size: 15px !important;
   display: block;
 }
@@ -77,6 +78,7 @@ button {
 }
 .block1 {
   border-right: 1px solid #29abe2;
+  margin-bottom: 5%;
 }
 ::-webkit-input-placeholder { /* Edge */
   color: white;

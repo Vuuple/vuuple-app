@@ -67,9 +67,9 @@ export class LoginComponent {
           if (type === 1 && isApproved === true) {
             this.router.navigate(['/pages/admin']);
           } else if (type === 2 && isApproved === true) {
-            this.router.navigate(['/pages/renter']);
+            this.router.navigate(['/pages/renter/main']);
           } else if (type === 3 && isApproved === true) {
-            this.router.navigate(['/pages/lender']);
+            this.router.navigate(['/pages/lender/main']);
           } else if (isApproved === false) {
             // this.router.navigate(['/auth/registerCompleted']);
             this.router.navigate(['/pages']); //just now
@@ -83,7 +83,12 @@ export class LoginComponent {
       })
       .catch(err => {
         this.errorMessage = err; 
-        this.toastr.error('Wrong email or password!', 'Error!');       
+        if (this.errorMessage === "Bad Request"){
+        this.toastr.error('Wrong email or password!', 'Error!')
+        }else {
+          this.toastr.error('something went wrong' , 'Error!')
+        }
+        // this.toastr.error('Wrong email or password!', 'Error!');       
         console.error(err);
         this.Loading = false ;      
       });

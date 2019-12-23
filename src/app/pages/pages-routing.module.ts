@@ -13,7 +13,8 @@ const routes: Routes = [{
     path: 'admin',
     loadChildren: './vuupl-admin/vuupl-admin.module#VuuplAdminModule'/*, canActivate: [AdminGuard]*/
 
-  }, {
+    },
+   {
       path: 'renter',
 
       loadChildren: './vuuple-renter/vuuple-renter.module#VuupleRenterModule'/*, canActivate: [RenterGuard]*/
