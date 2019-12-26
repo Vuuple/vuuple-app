@@ -31,6 +31,7 @@ export class RenterRegisterComponent implements OnInit {
   currentType;
   submitted = false;
   Loading = false ;
+  bankAccount: string;
   constructor(
     private rentersFactoryService: RenterFactoryService,
     private web3Service: Web3Service,
@@ -47,7 +48,7 @@ export class RenterRegisterComponent implements OnInit {
   ngOnInit() {
     this.renterRegisterForm = this.formBuilder.group({
       username: ['', Validators.required],
-      bankAccount: ['', Validators.required],
+      // bankAccount: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(7)]],
       confirmPassword : ['', Validators.required],
@@ -59,7 +60,7 @@ export class RenterRegisterComponent implements OnInit {
     }, {
       validator: MustMatch('password', 'confirmPassword')
   });
-
+    this.bankAccount = '1234567';
     this.getIp();
     this.route.queryParams.subscribe(params => {
       const type = params['type'];
@@ -200,7 +201,8 @@ export class RenterRegisterComponent implements OnInit {
     this.authService
       .registerClient(
         this.renterRegisterForm.value.username,
-        this.renterRegisterForm.value.bankAccount,
+        // this.renterRegisterForm.value.bankAccount,
+        this.bankAccount,
         this.renterRegisterForm.value.email,
         this.renterRegisterForm.value.password,
         this.renterRegisterForm.value.ethereumAddress,

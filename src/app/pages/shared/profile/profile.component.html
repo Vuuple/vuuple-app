@@ -62,27 +62,23 @@
       <input type="file" name="choosePhotoFile" id="choosePhotoFile" (change)="onFileChange($event)" style="margin-top:20px;border: none !important;">
     </div>
     <div class="row">
-        <button class="btn" style="padding: 2px 12px !important;">
-            <a
+        <button class="btn" style="padding: 2px 12px !important;"
               [routerLink]="['/pages/admin/escrow']"
               [queryParams]="{ id: node?._id }"
-              style="color: white !important; text-decoration: none !important;font-size: 18px;padding-bottom: 2px;"
-              >View Escrows</a
-            >
+              style="color: white !important; text-decoration: none !important;font-size: 18px;padding-bottom: 2px;">
+             View Escrows  
           </button>
           <button
             class="btn"
             *ngIf="
               (currentUser?.role == 'admin' ||
                 currentUser?.role == 'superAdmin') &&
-              node?.category == 'lender'
-            "
-          >
-            <a
+               node?.category == 'lender'
+              "
               [routerLink]="['/pages/admin/addPoint']"
               [queryParams]="{ id: node?._id }"
               style="color: white !important; text-decoration: none !important;font-size: 18px;"
-              >Add Points</a
+              >Add Points
             >
           </button>
         <button

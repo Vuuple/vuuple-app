@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   constructor(public authService: AuthService, private router: Router) {
     this.srcImage = "../../../assets/img/networkDisconnected.png"
     const type = this.authService.getUserType();
+    // console.log(type)
     if (type === 1) {
       this.userTitle = 'ADMIN';
       this.userImage = "assets/img/Admin.png" ;

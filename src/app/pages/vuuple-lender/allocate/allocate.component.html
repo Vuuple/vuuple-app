@@ -4,33 +4,38 @@
   <p>Payment to Lenders : 0.02 VUUPLE/GB/Month</p>
   <div class="fix"></div>
   <p>
-    How much storage would you like to <br />allocate to the vuuple network?
+    How much storage would you like to allocate to the vuuple network?
   </p>
   <div class="fix"></div>
   <div class="row">
-    <div class="col-md-3"></div>
-    <form [formGroup]="myForm">
-      <div class="col-md-8">
-        <div class="col-md-3">
-          <p style="font-size:18px;color:#0077b5;">GigaByte</p>
-          <div class="block">
-            <input type="text" formControlName="storage" />
-            <label>GB</label>
+    <!-- <div class="col-md-3"></div> -->
+    <form [formGroup]="myForm" style="margin: '0 auto';">
+      <!-- <div class="col-md-8"> -->
+        <div class="row">
+        <div class="col-md-6">
+          <p style="font-size:25px;color:#0077b5;text-align: right;margin-right: 50px;">GigaByte</p>
+          <div class="block" style="float: right;">
+            <input type="text" formControlName="storage"/>
+            <label>GB &nbsp;&nbsp;&nbsp;&nbsp;:</label>
           </div>
         </div>
 
-        <div class="col-md-1">
+        <!-- <div class="col-md-1">
           <p style="color:#0077b5;font-size: 23px"><br />:</p>
-        </div>
+        </div> -->
         <div class="col-md-6">
-          <p style="font-size:18px;color:#0077b5;">Estimated</p>
-          <div class="block">
-            <input type="text" disabled value="{{ node.rentedStorage * 2 }}" />
-            <label style="font-size: 15px">VUUPLE/Month</label>
+          <p style="font-size:25px;color:#0077b5;text-align: left;">Estimated</p>
+          <div class="block" style="float: left;">
+            &nbsp;
+            <input type="text" disabled value="{{ node.rentedStorage * 0.02 }}" style="width:120px" />
+            <label ><br>VUUPLE/Month</label>
           </div>
         </div>
       </div>
-      <div class="row col-md-offset-5">
+      <div class="fix"></div>
+      <div class="row" >
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
         <button
           class="btn btn-primary"
           [disabled]="!canRenew"
@@ -38,15 +43,17 @@
         >
           Allocate storage
         </button>
+        </div>
+        <div class="col-md-4"></div>
       </div>
     </form>
 
-    <div class="col-md-1"></div>
+    <!-- <div class="col-md-1"></div> -->
   </div>
 
   <div class="fix"></div>
   <p class="pNote">
-    *Note: VUUPLE is paid at the end of the month, if the system remains in good
-    standing. VUUPLE is only paid for GB stored on your devic
+    *Note: VUUPLE is paid at the end of the month, if the system remains in good<br>
+    standing. VUUPLE is only paid for GB stored on your device.
   </p>
 </div>

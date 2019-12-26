@@ -1,9 +1,10 @@
 <div class="row main">
   <div class="col-md-6">
-    <h3 class="title">storage allocation</h3>
+    <h2 class="title">storage allocation</h2>
     <div class="row"></div>
-    <div class="row" style="border-right:2px solid #29ABE2">
-      <label>Current Month: {{ node?.renewalDate }}</label>
+    <div class="block">
+    <div class="row">
+      <label>Current Month: {{ node?.renewalDate | date: 'dd/MM/yyyy'}}</label>
       <!-- should be based on this.node.renewalDate value compared with Date.now() -->
       <div class="progress">
         <div
@@ -18,13 +19,13 @@
         </div>
       </div>
     </div>
-    <div class="row" style="border-right:2px solid #29ABE2">
-      <label>Amount Allocated: {{ node?.rentedStorage }}</label>
+    <div class="row" >
+      <label>Amount Allocated: {{ node?.rentedStorage }} GB</label>
     </div>
-    <div class="row" style="border-right:2px solid #29ABE2">
+    <div class="row" >
       <label>Currency Earned: {{ node?.balance }}</label>
     </div>
-    <div class="row" style="border-right:2px solid #29ABE2">
+    <div class="row" >
       <p>
         *All contracts are engaged on a monthly basis. A lender cannot decrease
         the amount of storage allocated until the contract expires.
@@ -39,8 +40,9 @@
       </button>
     </div> -->
   </div>
+  </div>
   <div class="col-md-6">
-    <h3 class="title">System checks</h3>
+    <h2 class="title">System checks</h2>
     <div class="row"></div>
     <div class="row" style="padding-left:50px">
       <label class="form-control-checkbox">
