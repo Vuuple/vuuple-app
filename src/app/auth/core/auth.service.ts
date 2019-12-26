@@ -103,6 +103,7 @@ export class AuthService {
     } else {
       return null;
     }
+   }
   }
   isApproved(): boolean {
     if (this.getCuurentUser().status == 'approved') {
