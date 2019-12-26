@@ -90,12 +90,12 @@ export class AuthService {
   }
 
   getUserType(): Number {
-    // if (
-    //   this.getCuurentUser().role == 'admin' ||
-    //   this.getCuurentUser().role == 'superAdmin'
-    // ) {
-    //   return 1;
-    // } else if (this.getCuurentUser().category == 'renter') {
+    if (
+      this.getCuurentUser().role == 'admin' ||
+      this.getCuurentUser().role == 'superAdmin'
+    ) {
+      return 1;
+    } else if (this.getCuurentUser().category == 'renter') {
       if (this.getCuurentUser().category == 'renter') {
       return 2;
     } else if (this.getCuurentUser().category == 'lender') {
