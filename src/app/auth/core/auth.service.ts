@@ -96,14 +96,12 @@ export class AuthService {
     ) {
       return 1;
     } else if (this.getCuurentUser().category == 'renter') {
-      if (this.getCuurentUser().category == 'renter') {
       return 2;
     } else if (this.getCuurentUser().category == 'lender') {
       return 3;
     } else {
       return null;
     }
-   }
   }
   isApproved(): boolean {
     if (this.getCuurentUser().status == 'approved') {

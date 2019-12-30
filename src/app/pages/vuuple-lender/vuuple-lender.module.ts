@@ -8,12 +8,14 @@ import { AllocateComponent } from './allocate/allocate.component';
 import { RedeemComponent } from './redeem/redeem.component';
 import { AccountComponent } from './account/account.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
+    NgxSpinnerModule,
     RouterModule.forChild([
       {
         path: '',

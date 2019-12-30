@@ -13,47 +13,45 @@
   <div class="fix"></div>
   <p>How many tokens would you like to redeem?</p>
   <div class="fix"></div>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-8">
-      <div class="col-md-3">
-        <p style="font-size:18px;color:#0077b5;">Vuuple</p>
-        <div class="block" [formGroup]="redForm">
+  <div class="row" style="margin-left: 20px;">
+      <div class="col-md-6">
+        <p style="font-size:25px;color:#0077b5;text-align: right;margin-right: 55px;">Vuuple</p>
+        <div class="block" style="float: right;" [formGroup]="redForm">
           <input type="number" formControlName="tokensToRed"  />
+          <label>&nbsp;&nbsp;&nbsp;:</label>
         </div>
       </div>
-      <div class="col-md-2">
-        <p style="color:#29ABE2;font-size: 23px"><br />:</p>
-      </div>
-      <div class="col-md-3">
-        <p style="font-size:18px;color:#0077b5;">USD</p>
-        <div class="block">
+      <div class="col-md-6">
+        <p style="font-size:25px;color:#0077b5;text-align: left;margin-left: 10px;" >&nbsp;&nbsp;&nbsp;USD</p>
+        <div class="block" style="float: left;">
           <input
             type="number"
             disabled
             value="{{ rate * redForm.value.tokensToRed }}"
-            style="padding-left: 10px;"
           />
         </div>
       </div>
-    </div>
-    <div class="col-md-1"></div>
-    <input
-    type="text"
-    formControlName="bankTxId"
-    class="form-control txbox"
-    placeholder="Enter Password"
-  />
   </div>
-  <div class="fix"></div>
-  <button
-    type="submit"
-    class="btn btn-primary"
-    (click)="redeemTokens()"
-    [disabled]="avialableTokens <= 0"
-  >
-    Redeem
-  </button>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <input
+      type="text"
+      class="form-control txbox"
+     placeholder="Enter Password"
+      />
+      <div class="fix"></div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="redeemTokens()"
+        [disabled]="avialableTokens <= 0"
+      >
+        Redeem
+      </button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
   <div class="fix"></div>
   <p class="pNote">
     *Note: There is a 1.00% USD Fee for redemption. <br/>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../../auth/core/auth.service';
+import { MustMatch } from '../../../providers/helpers/MustMatch';
 
 @Component({
   selector: 'app-setting',
@@ -34,6 +35,8 @@ export class SettingComponent implements OnInit {
       email: this.currentUser.email,
       password: ['', Validators.required] ,
       cpassword : ['',Validators.required]      
+    },{
+      validator: MustMatch('password', 'cpassword')
     });
   }
   ngOnInit() {
