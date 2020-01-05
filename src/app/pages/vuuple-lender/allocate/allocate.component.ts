@@ -3,6 +3,7 @@ import { AuthService } from '../../../auth/core/auth.service';
 import { LendersRegistrationService } from '../../../providers/lenders-registration/lenders-registration.service';
 import { LendersFactoryService } from '../../../providers/lenders-factory/lenders-factory.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-allocate',
@@ -19,7 +20,8 @@ export class AllocateComponent implements OnInit {
     private fb: FormBuilder,
     private lenderService: LendersRegistrationService,
     private lendersFactoryService: LendersFactoryService,
-    private authservics: AuthService
+    private authservics: AuthService ,
+    private spinner: NgxSpinnerService,
   ) {
     this.myForm = this.fb.group({
       storage: ['', [Validators.required]]
@@ -28,6 +30,7 @@ export class AllocateComponent implements OnInit {
 
   ngOnInit() {
     this.node = this.authservics.currentUser;
+    this.spinner.show();
     this.getContractDate();
   }
 
@@ -57,6 +60,7 @@ export class AllocateComponent implements OnInit {
         this.canRenew = true;
       }
     }
+    this.spinner.hide();
   }
   async renewAndReallocate() {
     await this.lenderService.renewSubscription(

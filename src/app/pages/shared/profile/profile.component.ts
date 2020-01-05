@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/core/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
-
+import { UploadService } from '../../../providers/upload/upload.service';
+import { ToastrService } from 'ngx-toastr';
+import { CostExplorer } from 'aws-sdk/clients/all';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -22,11 +24,16 @@ export class ProfileComponent implements OnInit {
   node;
   currentUser;
   file: string | ArrayBuffer;
+  hashFile: any;
+  selectedFiles: FileList;
+  Image: any;
   constructor(
     private serverApiService: ServerApiService,
     private authservics: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute ,
+    private UploadService : UploadService ,
+    private tostr : ToastrService
   ) {
     // check query param 'id' if it's null , get the current user profile , if not get the user profile from the id passed through the queryparam
     this.route.queryParams.subscribe(params => {
@@ -46,16 +53,29 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+  async getImage(){
+    if(this.node.image === ""){
+      this.Image = "assets/img/vuupleIcone.png"
+    }else {
+      this.Image = `https://s3.amazonaws.com/vuuple.com/images/${this.node.image}`
+      console.log(this.Image)
+    }
+  }
+
   reportIssue() {
     this.router.navigate(['/pages/report']);
   }
-
-  onFileChange(e){
-    const reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () => {
-         this.file = reader.result ;
-    }
+  upload() {
+    const file = this.selectedFiles.item(0);
+    this.UploadService.uploadFile(file);
   }
-  ngOnInit() {}
+ 
+  onFileChange(e) {
+    this.selectedFiles = e.target.files;
+    this.upload();
+  }
+
+  ngOnInit() {
+    this.getImage();
+  }
 }

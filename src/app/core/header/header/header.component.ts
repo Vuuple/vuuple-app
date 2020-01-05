@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       this.isRenter =  true ; 
     } else if (type === 3) {
       this.userTitle = 'LENDER';
-      this.userImage = "assets/img/Lender1.png" ;
+      this.userImage = "assets/img/Lender.png" ;
       this.isadmin = false;
       this.isRenter = false; 
     } else {

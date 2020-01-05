@@ -62,7 +62,6 @@ export class LenderRegisterComponent implements OnInit {
     }, {
       validator: MustMatch('password', 'confirmPassword')
   });
-   this.bankAccount = '1234567'
     this.getIp();
   }
   get f() { return this.lenderRegisterForm.controls; }
@@ -198,7 +197,6 @@ export class LenderRegisterComponent implements OnInit {
       .registerClient(
         this.lenderRegisterForm.value.username,
         // this.lenderRegisterForm.value.bankAccount,
-        this.bankAccount,
         this.lenderRegisterForm.value.email,
         this.lenderRegisterForm.value.password,
         this.lenderRegisterForm.value.ethereumAddress,

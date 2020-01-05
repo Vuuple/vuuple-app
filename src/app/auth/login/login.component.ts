@@ -3,6 +3,8 @@ import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { ServerApiService } from '../../providers/server-api/server-api.service';
+import { ThrowStmt } from '@angular/compiler';
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
@@ -18,7 +20,8 @@ export class LoginComponent {
     public authService: AuthService ,
     private router: Router ,
     private toastr: ToastrService ,
-    private fb: FormBuilder
+    private fb: FormBuilder ,
+    private api : ServerApiService
   ) {
     this.createForm();
     // this.toastr.success('Hello world!', 'Toastr fun!');
@@ -96,9 +99,9 @@ export class LoginComponent {
     // this.authService.login(value)
   }
   createAccount() {
-      // this.router.navigate(['/auth/renterRegister']);
+      this.router.navigate(['/auth/renterRegister']);
       // this.router.navigate(['/auth/registerCompleted'])
-    this.router.navigate(['/auth/lenderRegister']);
+    // this.router.navigate(['/auth/lenderRegister']);
     // this.router.navigate(['/auth/chooseCategory']);
   }
  forgotPassword(){

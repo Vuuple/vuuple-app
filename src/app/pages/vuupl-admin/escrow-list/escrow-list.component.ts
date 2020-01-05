@@ -60,7 +60,7 @@ export class EscrowListComponent implements OnInit {
   }
   setPage(page: number) {
     // get pager object from service
-    this.pager = this.pagerService.getPager(this.escrows.length, page);
+    this.pager = this.pagerService.getPager(1, page);
     // get current page of items
     this.pagedItems = this.escrows.slice(
       this.pager.startIndex,

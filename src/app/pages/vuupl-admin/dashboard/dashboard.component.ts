@@ -19,8 +19,12 @@ export class DashboardComponent implements OnInit {
   tokenCount;
   constructor(
     private apiService: ServerApiService,
-    private tokenService: TokenService
+    private tokenService: TokenService ,
+    private api : ServerApiService
   ) {
+    // this.api.getAllUsers().subscribe(
+    //   res => console.log(res)
+    // )
     this.data = {
       labels: ['Storage', 'Tokens', 'Users'],
       datasets: [

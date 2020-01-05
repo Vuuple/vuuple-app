@@ -15,30 +15,31 @@
         <form [formGroup]="myForm">
           <div class="col-md-1"></div>
           <div class="col-md-4">
-            <p style="font-size:18px;color:#0077b5;text-align: left;">Vuuple</p>
+            <p style="font-size:18px;color:#0077b5;text-align: left;">USD</p>
             <div class="block">
-              <input
-                type="text"
-                disabled
-                value="{{ rate * myForm.value.amount }}"
-              />
+              <input formControlName="amount" type="text" />
             </div>
           </div>
           <div class="col-md-2">
             <p style="color:#29ABE2;font-size: 23px"><br />:</p>
           </div>
           <div class="col-md-4">
-            <p style="font-size:18px;color:#0077b5;text-align: left;">USD</p>
+            <p style="font-size:18px;color:#0077b5;text-align: left;">Vuuple</p>
             <div class="block">
-              <input formControlName="amount" type="text" />
+              <input
+                type="text"
+                disabled
+                value="{{ rate * myForm.value.amount }}"
+                style="cursor: not-allowed;"
+              />
             </div>
           </div>
           <div class="col-md-1"></div>
           <div class="fix"></div>
           <!-- we need to edit this function -->
           <input
-            type="text"
-            formControlName="bankTxId"
+            type="password"
+            formControlName="pwd"
             class="form-control txbox"
             placeholder="Enter Password"
           />
@@ -87,14 +88,15 @@
               <input
                 type="text"
                 disabled
-                value="{{ 4 * storForm.value.amount }}"
+                value="{{ 0.05 * storForm.value.amount }}"
+                style="cursor: not-allowed;"
               />
             </div>
           </div>
           <div class="col-md-1"></div>
           <input
-          type="text"
-          formControlName="bankTxId"
+          type="password"
+          formControlName="pwd"
           class="form-control txbox"
           placeholder="Enter Password"
         />

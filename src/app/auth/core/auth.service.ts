@@ -49,7 +49,7 @@ export class AuthService {
   }
   async registerClient(
     username: string,
-    bankAccount: string,
+    // bankAccount: string,
     email: string,
     pwd: string,
     ethAddress: string,
@@ -59,7 +59,7 @@ export class AuthService {
   ) {
     const client = {
       username: username,
-      bankAccount: bankAccount,
+      // bankAccount: bankAccount,
       email: email,
       pwd: pwd,
       ethAddress: ethAddress,
@@ -94,7 +94,6 @@ export class AuthService {
       this.getCuurentUser().role == 'admin' ||
       this.getCuurentUser().role == 'superAdmin'
     ) {
-      return 1;
     } else if (this.getCuurentUser().category == 'renter') {
       return 2;
     } else if (this.getCuurentUser().category == 'lender') {

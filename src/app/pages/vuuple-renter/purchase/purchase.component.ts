@@ -8,6 +8,7 @@ import { ServerApiService } from '../../../providers/server-api/server-api.servi
 import { TokenService } from '../../../providers/token/token.service';
 import { RenterFactoryService } from '../../../providers/renter-factory/renter-factory.service';
 import { Router } from '@angular/router';
+import { Web3Service } from '../../../providers/web3/web3.service';
 
 @Component({
   selector: 'app-purchase',
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./purchase.component.scss'],
   providers: [
     IcoService,
+    Web3Service,
     ServerApiService,
     TokenService,
     RenterFactoryService,
@@ -50,7 +52,8 @@ export class PurchaseComponent implements OnInit {
     private renterEscrowService: RenterEscrowService,
     private renterRegistrationService: RenterRegisterationService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private web3Service: Web3Service
   ) {}
 
   ngOnInit() {
@@ -60,10 +63,12 @@ export class PurchaseComponent implements OnInit {
     this.getRenterDate();
     this.myForm = this.fb.group({
       amount: [0, [Validators.required]],
-      bankTxId: [null, [Validators.required]]
+      // bankTxId: [0, [Validators.required]] ,
+      pwd : ['', [Validators.required]]
     });
     this.storForm = this.fb.group({
-      amount: [0, [Validators.required]]
+      amount: [0, [Validators.required]] ,
+      pwd : ['', [Validators.required]]
     });
   }
   // async buyToken() {
@@ -73,19 +78,24 @@ export class PurchaseComponent implements OnInit {
   //   );
   // }
 
-  requestPurchase() {
+  async requestPurchase() {
     const body = {
       //   ethTxHash: ethTxHash,
-      bankTxId: this.myForm.value.bankTxId,
-
+      // bankTxId: this.myForm.value.bankTxId,
       tokenAmount: this.rate * this.myForm.value.amount,
       rate: this.rate,
       depositAmount: this.myForm.value.amount
     };
-    this.serverApiService.purchase(body).subscribe(data => {
+    // console.log(this.myForm.value.pwd, 'test unlock');
+    const test = await this.web3Service.unLockAccount(
+      this.cuurentUser.ethAddress,
+      this.myForm.value.pwd
+    );
+    await this.serverApiService.purchase(body).subscribe(data => {
       console.log(data);
     });
   }
+  
   async getRate() {
     this.rate = await this.icoService.getRate();
   }
@@ -112,10 +122,14 @@ export class PurchaseComponent implements OnInit {
     }
   }
 
-  renew() {
-    if (this.avialableTokens >= this.storForm.value.amount * 4) {
+  async renew() {
+    if (this.avialableTokens >= this.storForm.value.amount * 0.05) {
       // wen renew , add the released escrow contract to db
-      this.renterRegistrationService
+      const test = await this.web3Service.unLockAccount(
+        this.cuurentUser.ethAddress,
+        this.storForm.value.pwd
+      );
+      await this.renterRegistrationService
         .renewSubscription(
           this.renterContract,
           this.cuurentUser.ethAddress,

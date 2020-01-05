@@ -60,7 +60,6 @@ export class RenterRegisterComponent implements OnInit {
     }, {
       validator: MustMatch('password', 'confirmPassword')
   });
-    this.bankAccount = '1234567';
     this.getIp();
     this.route.queryParams.subscribe(params => {
       const type = params['type'];
@@ -202,7 +201,7 @@ export class RenterRegisterComponent implements OnInit {
       .registerClient(
         this.renterRegisterForm.value.username,
         // this.renterRegisterForm.value.bankAccount,
-        this.bankAccount,
+        // this.bankAccount,
         this.renterRegisterForm.value.email,
         this.renterRegisterForm.value.password,
         this.renterRegisterForm.value.ethereumAddress,

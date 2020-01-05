@@ -4,8 +4,8 @@
     <div class="block1">
         <form [formGroup]="EditForm" style="padding-right: 20px;padding-top: 20px;">
             <div class="form-group row">
-              <label for="Name" class="col-md-4">Username:</label>
-              <div class="col-md-8">
+              <label for="Name" class="col-md-5">Username:</label>
+              <div class="col-md-7">
                 <input
                   type="text"
                   id="Name"
@@ -19,8 +19,8 @@
             </div>
     
             <div class="form-group row">
-              <label for="emails" class="col-md-4">Email:</label>
-              <div class="col-md-8">
+              <label for="emails" class="col-md-5">Email:</label>
+              <div class="col-md-7">
                 <input
                   type="email"
                   id="email"
@@ -34,8 +34,8 @@
             </div>
     
             <div class="form-group row">
-              <label for="password" class="col-md-4">Password:</label>
-              <div class="col-md-8">
+              <label for="password" class="col-md-5">Password:</label>
+              <div class="col-md-7">
                 <input
                   type="password"
                   id="password"
@@ -51,8 +51,8 @@
               </div>
             </div>
             <div class="form-group row">
-                <label for="cpassword" class="col-md-4">Confirm Password:</label>
-                <div class="col-md-8">
+                <label for="cpassword" class="col-md-5">Confirm Password:</label>
+                <div class="col-md-7">
                   <input
                     type="password"
                     id="cpassword"
@@ -72,8 +72,10 @@
                 class="Editbutton"
                 type="submit"
                 class="btn btn-primary"
+                [disabled] = "!EditForm.valid"
                 (click)="EditFunction()"
               >
+               <img *ngIf="Loading" src="../../../assets/img/loading-white.gif" style="width:15px"/>
                 Save
               </button>
             </div>

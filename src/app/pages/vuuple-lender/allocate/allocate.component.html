@@ -7,6 +7,16 @@
     How much storage would you like to allocate to the vuuple network?
   </p>
   <div class="fix"></div>
+<ngx-spinner
+bdOpacity = 0.9
+bdColor = "transparent"
+size = "medium"
+color = "#0077b5"
+type = "ball-spin"
+[fullScreen] = "false"
+>
+</ngx-spinner>
+  
   <div class="row">
     <!-- <div class="col-md-3"></div> -->
     <form [formGroup]="myForm" style="margin: '0 auto';">
@@ -24,7 +34,7 @@
           <p style="color:#0077b5;font-size: 23px"><br />:</p>
         </div> -->
         <div class="col-md-6">
-          <p style="font-size:25px;color:#0077b5;text-align: left;">Estimated</p>
+          <p style="font-size:25px;color:#0077b5;text-align: left;cursor: not-allowed;">Estimated</p>
           <div class="block" style="float: left;">
             &nbsp;
             <input type="text" disabled value="{{ node.rentedStorage * 0.02 }}" style="width:120px" />

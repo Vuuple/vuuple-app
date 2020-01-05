@@ -49,6 +49,12 @@ export class ServerApiService {
   registerAdmin(data): Observable<any> {
     return this.dataService.post('users/admin', data);
   }
+  updateUserDate(data) : Observable<any> {
+    return this.dataService.post('users/update' ,data);
+  }
+  updateImage(data) : Observable<any> {
+    return this.dataService.post('users/updateImage' ,data);
+  }
   // escrow route
   addEscrow(data): Observable<any> {
     return this.dataService.post('escrows', data);

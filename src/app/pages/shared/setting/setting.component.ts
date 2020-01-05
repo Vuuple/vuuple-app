@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../../auth/core/auth.service';
 import { MustMatch } from '../../../providers/helpers/MustMatch';
+import { ServerApiService } from '../../../providers/server-api/server-api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-setting',
@@ -13,8 +15,12 @@ export class SettingComponent implements OnInit {
   submitted = false;
   activeAccount : boolean = false; 
   currentUser : any;
+  loading = false;
 
-  constructor(private fb: FormBuilder,private authservice : AuthService) {
+  constructor(private fb: FormBuilder,
+              private authservice : AuthService ,
+              private toastr: ToastrService ,
+              private apiService : ServerApiService) {
     this.currentUser = this.authservice.getCuurentUser();
     console.log(this.currentUser)
     this.createForm();
@@ -45,11 +51,28 @@ export class SettingComponent implements OnInit {
   get f() {
     return this.EditForm.controls;
   }
-  EditFunction() {
+  async EditFunction() {
+    this.loading = true
     this.submitted = true;
-
+     
     if (this.EditForm.invalid) {
       return;
     }
+    const data = {
+       email : this.EditForm.value.email ,
+       username : this.EditForm.value.name ,
+       pwd : this.EditForm.value.password
+     }
+    await this.apiService.updateUserDate(data).subscribe(
+      res => {
+           this.loading = false ;
+           this.toastr.success("The data was successfully updated,Please logout firstly ") ;
+           console.log(res) ;
+         },
+      err => {
+          this.loading = false ;
+          this.toastr.error ("Something went wrong");
+          console.log(err) ;
+      })
   }
 }

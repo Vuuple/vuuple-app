@@ -4,12 +4,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TokenService } from './../../../providers/token/token.service';
 import { IcoService } from '../../../providers/ico/ico.service';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
+import { Web3Service } from '../../../providers/web3/web3.service';
 
 @Component({
   selector: 'app-redeem',
   templateUrl: './redeem.component.html',
   styleUrls: ['./redeem.component.scss'],
-  providers: [TokenService, IcoService, ServerApiService]
+  providers: [TokenService, IcoService, ServerApiService ,Web3Service]
 })
 export class RedeemComponent implements OnInit {
   rate = 0;
@@ -22,7 +23,7 @@ export class RedeemComponent implements OnInit {
     private icoService: IcoService,
     private serverApiService: ServerApiService,
     private authService: AuthService,
-
+    private web3Service: Web3Service ,
     private tokenService: TokenService
   ) {}
 
@@ -30,7 +31,8 @@ export class RedeemComponent implements OnInit {
     this.cuurentUser = this.authService.getCuurentUser();
 
     this.redForm = this.formBuilder.group({
-      tokensToRed: ['', Validators.required]
+      tokensToRed: [0, Validators.required] ,
+      pwd : ['', Validators.required]
     });
     this.getRate();
     this.getBlance();
@@ -41,6 +43,10 @@ export class RedeemComponent implements OnInit {
       if (this.redForm.invalid) {
         return;
       }
+      const test = await this.web3Service.unLockAccount(
+        this.cuurentUser.ethAddress,
+        this.redForm.value.pwd
+      );
       const transfer = await this.tokenService.transfer(
         this.cuurentUser.ethAddress,
         this.adminAddress,

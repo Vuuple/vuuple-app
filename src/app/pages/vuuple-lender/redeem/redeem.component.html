@@ -13,10 +13,11 @@
   <div class="fix"></div>
   <p>How many tokens would you like to redeem?</p>
   <div class="fix"></div>
+  <form [formGroup]="redForm">
   <div class="row" style="margin-left: 20px;">
       <div class="col-md-6">
         <p style="font-size:25px;color:#0077b5;text-align: right;margin-right: 55px;">Vuuple</p>
-        <div class="block" style="float: right;" [formGroup]="redForm">
+        <div class="block" style="float: right;" >
           <input type="number" formControlName="tokensToRed"  />
           <label>&nbsp;&nbsp;&nbsp;:</label>
         </div>
@@ -27,6 +28,7 @@
           <input
             type="number"
             disabled
+            style="cursor: not-allowed;"
             value="{{ rate * redForm.value.tokensToRed }}"
           />
         </div>
@@ -36,9 +38,10 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <input
-      type="text"
+      type="password"
+      formControlName = "pwd"
       class="form-control txbox"
-     placeholder="Enter Password"
+      placeholder="Enter Password"
       />
       <div class="fix"></div>
       <button
@@ -52,6 +55,7 @@
     </div>
     <div class="col-md-4"></div>
   </div>
+  </form>
   <div class="fix"></div>
   <p class="pNote">
     *Note: There is a 1.00% USD Fee for redemption. <br/>
