@@ -54,28 +54,34 @@ export class ProfileComponent implements OnInit {
     });
   }
   async getImage(){
-    if(this.node.image === ""){
-      this.Image = "assets/img/vuupleIcone.png"
-    }else {
-      this.Image = `https://s3.amazonaws.com/vuuple.com/images/${this.node.image}`;
-      console.log(this.Image)
-    }
+    return !this.node.image ? this.Image = "assets/img/vuupleIcone.png" : this.Image = `https://s3.amazonaws.com/vuuple.com/images/${this.node.image}`;
+
   }
 
   reportIssue() {
     this.router.navigate(['/pages/report']);
   }
-  upload() {
+  async upload() {
     const file = this.selectedFiles.item(0);
-    this.UploadService.uploadFile(file);
+    const image = await this.UploadService.uploadFile(file);
+    this.Image = `https://s3.amazonaws.com/vuuple.com/images/${image}`;
+    this.updateLocalStorage(image);
+
   }
- 
+  updateLocalStorage(image){
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    user.image = image;
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
   onFileChange(e) {
     this.selectedFiles = e.target.files;
     this.upload();
   }
 
   ngOnInit() {
-    this.getImage();
+    console.log(this.getImage());
+
   }
 }
