@@ -22,7 +22,7 @@ type = "ball-spin"
     <form [formGroup]="myForm" style="margin: '0 auto';">
       <!-- <div class="col-md-8"> -->
         <div class="row" style="margin-left: 20px;">
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6 col-xs-6">
           <p style="font-size:25px;color:#0077b5;text-align: right;margin-right: 50px;">GigaByte</p>
           <div class="block" style="float: right;">
             <input type="text" formControlName="storage"/>
@@ -33,7 +33,7 @@ type = "ball-spin"
         <!-- <div class="col-md-1">
           <p style="color:#0077b5;font-size: 23px"><br />:</p>
         </div> -->
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6 col-xs-6">
           <p style="font-size:25px;color:#0077b5;text-align: left;cursor: not-allowed;">Estimated</p>
           <div class="block" style="float: left;">
             &nbsp;
@@ -44,8 +44,8 @@ type = "ball-spin"
       </div>
       <div class="fix"></div>
       <div class="row" >
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-4"></div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
         <button
           class="btn btn-primary"
           [disabled]="!canRenew"
@@ -54,7 +54,7 @@ type = "ball-spin"
           Allocate storage
         </button>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4 col-sm-4 col-xs-4"></div>
       </div>
     </form>
 
