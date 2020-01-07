@@ -27,11 +27,11 @@ html, body {
   // overflow: auto !important;
 }
 
-@media screen and (max-height: 650px) {
-  body {
-    overflow-y: auto !important;
-  }
-}
+// @media screen and (max-height: 650px) {
+//   body {
+//     overflow-y: auto !important;
+//   }
+// }
 @media screen and(min-width : 1200px) {
   body {
     overflow-x: auto !important;
