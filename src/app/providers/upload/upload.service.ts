@@ -9,55 +9,71 @@ const s3bucket = require('../../../aws.json');
   providedIn: 'root'
 })
 export class UploadService {
-  
-  
+
+
   constructor( private serverApiService : ServerApiService ,
                private tostr : ToastrService ) { }
 
   async uploadFile(file) {
 
-  const bucket = new S3(
-    {
-      accessKeyId: s3bucket.Access_key_ID,
-      secretAccessKey: s3bucket.Secret_access_key,
-      region: 'us-east-1'
-    }
-  );
-  const fileName = file.name ;
 
-  const newFileName = sha256(fileName) ;
 
-  const params = {
-    Bucket: 'vuuple.com',
-    Key: 'images/' + newFileName ,
-    Body: file
-  };
- 
- const loading = await bucket.upload(params, function (err, data) {
-    if (err) {
-      console.log('There was an error uploading your file: ', err);
-      this.toastr.error('There was an error uploading your file ')
+
+
+    const newFileName = await this.saveToAws(file);
+    console.log(newFileName,'newFileName')
+ await this.saveToAPI(newFileName)
+
+    return newFileName;
+
+}
+  async saveToAws(file){
+    const bucket = new S3(
+      {
+        accessKeyId: s3bucket.Access_key_ID,
+        secretAccessKey: s3bucket.Secret_access_key,
+        region: 'us-east-1'
+      }
+    );
+    const fileName = file.name;
+
+    const newFileName = sha256(fileName);
+
+    const params = {
+      Bucket: 'vuuple.com',
+      Key: 'images/' + newFileName,
+      Body: file
+    };
+    /**      if (err) {
+
+      }
+     */
+    try {
+    const data=   await bucket.upload(params)
+      this.tostr.success('Successfully uploaded file.')
+      console.log('Successfully uploaded file.', data);
+      return newFileName;
+    } catch (error) {
+      console.log('There was an error uploading your file: ', error);
+      this.tostr.error('There was an error uploading your file ')
       return false;
     }
-    this.toastr.success('Successfully uploaded file.')
-    console.log('Successfully uploaded file.', data);  
-    return true;
-  });  
-  console.log(loading)
-  if(loading){
+
+  }
+  async saveToAPI(fileName){
     const data = {
-      "image" : newFileName 
+      "image": fileName
     }
     this.serverApiService.updateImage(data).subscribe(
       res => {
-        console.log(res) ;
-        window.location.reload();
-    })
-     err => {
-      this.tostr.error("something went wrong") ;
+        console.log(res);
+        //  window.location.reload();
+        return fileName;
+      })
+    err => {
+      this.tostr.error("something went wrong");
       console.log(err)
+      return err;
     }
   }
-}
-
 }
