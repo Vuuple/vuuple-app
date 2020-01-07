@@ -36,8 +36,10 @@ export class UploadService {
  const loading = await bucket.upload(params, function (err, data) {
     if (err) {
       console.log('There was an error uploading your file: ', err);
+      this.toastr.error('There was an error uploading your file ')
       return false;
     }
+    this.toastr.success('Successfully uploaded file.')
     console.log('Successfully uploaded file.', data);  
     return true;
   });  
