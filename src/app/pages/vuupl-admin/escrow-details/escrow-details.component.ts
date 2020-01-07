@@ -22,6 +22,7 @@ export class EscrowDetailsComponent implements OnInit {
   EscrowStatus = ['Active', 'Completed', 'Closed'];
   ready = false;
   currentUser: any;
+  lender = false;
   constructor(
     private lenderEscrowService: LenderEscrowService,
     private renterEscrowService: RenterEscrowService,
@@ -47,8 +48,10 @@ export class EscrowDetailsComponent implements OnInit {
       if (this.address != null && this.address != undefined) {
         if (this.category == 'lender') {
           this.getLenderScrowDetails();
+          this.lender = true;
         } else if (this.category == 'renter') {
           this.getRenterScrowDetails();
+          this.lender = false
         }
       }
     });

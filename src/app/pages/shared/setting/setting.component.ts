@@ -75,4 +75,6 @@ export class SettingComponent implements OnInit {
           console.log(err) ;
       })
   }
+
 }
+
