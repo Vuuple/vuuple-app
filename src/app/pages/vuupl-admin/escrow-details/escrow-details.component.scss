@@ -1,7 +1,10 @@
 .main {
     padding: 5% ;
 }
-
+input{
+  border: 1px solid #29ABE2;
+  color : #0077b5 !important;
+}
   .action {
     background-image: url('assets/img/Deletecloud.png');
     background-size: cover;
@@ -93,6 +96,7 @@
     width: 40%;
     float: right;
     padding: 6px 12px;
+    margin-right: 12px !important;
   }
   p{
    font-size: 14px;

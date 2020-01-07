@@ -15,8 +15,8 @@ type = "ball-spin"
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Token Amount</th>
-                <th>Purchase Amount</th>
+                <th>Reedem Amount</th>
+                <th>Fait Amount</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -32,6 +32,12 @@ type = "ball-spin"
                   {{ item?.depositAmount }}
                 </td>
                 <td >{{ item?.status }}</td>
+              </tr>
+              <tr *ngIf="statment.length === 0"style="height:100px" >
+                <td style="border-right:1px solid #0077b5"></td>
+                <td style="border-right:1px solid #0077b5"></td>
+                <td style="border-right:1px solid #0077b5"></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -56,40 +62,27 @@ type = "ball-spin"
               <th style="border-right:1px solid #0077b5; color:#0077b5 ">
                 Status :
               </th>
-              <td *ngIf="cuurentUser?.status == 0">
-                Active
-              </td>
-              <td *ngIf="cuurentUser?.status == 1">
-                Pending
+              <td >
+                {{cuurentUser?.status}}
               </td>
             </tr>
             <tr>
               <th style="border-right:1px solid #0077b5; color: #0077b5">
                 Membership :
               </th>
-              <td *ngIf="cuurentUser?.membershipType == 0">
-                Org
-              </td>
-              <td *ngIf="cuurentUser?.membershipType == 1">
-                Individual
+              <td>
+                Lender
               </td>
             </tr>
           </table>
-          <!-- <button
+          <button
           type="submit"
           class="btn btn-primary"
-          style="margin-top: 15px !important;"
-        >
-        Cancel Plan 
-        </button>-->
-        <button
-        type="submit"
-        class="btn btn-primary"
-        style="margin-top: 15px !important"
-        disabled
-      >
-      Add Bank Account
-      </button>
+          style="margin-top: 15px !important"
+          disabled
+          >
+          Add Bank Account
+         </button>
     </div>
   </div>
 </div>

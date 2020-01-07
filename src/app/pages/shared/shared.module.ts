@@ -8,9 +8,10 @@ import { SettingComponent } from './setting/setting.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 import { RaftManageComponent } from './raft-manage/raft-manage.component';
 import { RouterModule } from '@angular/router';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule,RouterModule.forChild([])],
+  imports: [CommonModule, ReactiveFormsModule,NgxSpinnerModule,RouterModule.forChild([])],
   declarations: [
     NotFoundComponent,
     ProfileComponent,

@@ -4,12 +4,13 @@ import * as sha256 from 'sha256' ;
 import { ServerApiService } from '../server-api/server-api.service';
 import { ToastrService } from 'ngx-toastr';
 
+const s3bucket = require('../../../aws.json');
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
   
-
+  
   constructor( private serverApiService : ServerApiService ,
                private tostr : ToastrService ) { }
 
@@ -17,8 +18,8 @@ export class UploadService {
 
   const bucket = new S3(
     {
-      accessKeyId: 'AKIAWQGPZEMXOKJPVAOY',
-      secretAccessKey: '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',
+      accessKeyId: s3bucket.Access_key_ID,
+      secretAccessKey: s3bucket.Secret_access_key,
       region: 'us-east-1'
     }
   );

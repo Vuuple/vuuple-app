@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ServerApiService } from '../../../providers/server-api/server-api.service';
 import { UploadService } from '../../../providers/upload/upload.service';
 import { ToastrService } from 'ngx-toastr';
-import { CostExplorer } from 'aws-sdk/clients/all';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute ,
     private UploadService : UploadService ,
+    private spinner: NgxSpinnerService,
     private tostr : ToastrService
   ) {
     // check query param 'id' if it's null , get the current user profile , if not get the user profile from the id passed through the queryparam
@@ -57,7 +58,8 @@ export class ProfileComponent implements OnInit {
     if(this.node.image === ""){
       this.Image = "assets/img/vuupleIcone.png"
     }else {
-      this.Image = `https://s3.amazonaws.com/vuuple.com/images/${this.node.image}`
+      this.Image = `https://s3.amazonaws.com/vuuple.com/images/${this.node.image}`;
+      this.spinner.hide();
       console.log(this.Image)
     }
   }
@@ -76,6 +78,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.spinner.show();
     this.getImage();
   }
 }
