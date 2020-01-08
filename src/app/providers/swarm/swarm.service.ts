@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({
@@ -10,12 +10,15 @@ export class SwarmService {
 
   private resolveSuffix = '?resolve=true';
   private actionUrl: string;
+  private headers: Headers;
 
   constructor(private http: HttpClient) {
-    // this.actionUrl = 'http://localhost:3001/api/v1/swarm/';
     this.actionUrl = 'http://localhost:3001/api/v1/erebos/';
     //this.actionUrl = 'http://18.221.44.174:3000';
     // this.actionUrl = 'http://localhost:3000/';
+    this.headers = new Headers();
+    this.headers.append('Content-any', 'application/json');
+    this.headers.append('Accept', 'application/json');
   }
 
   async ping(gateway?, option?) {
@@ -95,33 +98,16 @@ export class SwarmService {
     };
     console.log(body, 'body');
 
-    const data = await this.post('uploadfilefrom', body).toPromise();
-    return data.body;
-  }
-
-  // swarm route
-  async swarmUploadraw(_file) {
-    const body = {
-      data: _file
-    };
-    console.log(body, 'body');
-
-    const data = await this.post('uploadraw', body).toPromise();
+    const data = await this.post('uploadfile', body).toPromise();
     return data.body;
   }
 
   private post(ns: string, asset: any): Observable<any> {
     console.log(ns, 'ns');
     console.log(asset, 'asset');
-    // const headers: HttpHeaders = new HttpHeaders()
-    //   .set('Content-Type', 'application/x-www-formurlencoded')
-    //   .set('Content-Type', 'application/octet-stream')
-    //   .set('Content-Type', 'multipart/form-data');
-    // headers.append('Content-any', 'application/json');
 
-    // headers.append('Accept', 'application/json');
     return this.http
-      .post(this.actionUrl + ns, asset /*, { headers: headers }*/)
+      .post(this.actionUrl + ns, asset)
       .pipe(map(this.extractData));
   }
   private extractData(res: Response): any {
