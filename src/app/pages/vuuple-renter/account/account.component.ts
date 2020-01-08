@@ -195,7 +195,7 @@ export class AccountComponent implements OnInit {
       const tx = await this.rentersRegistrationService.renewSubscription(
         this.accountContract,
         this.cuurentUser.ethAddress,
-        this.cuurentUser.ethAddress
+        this.rentedStorage
       );
       console.log(tx, 'tx');
     } catch (error) {
