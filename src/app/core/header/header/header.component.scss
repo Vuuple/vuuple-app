@@ -9,6 +9,7 @@
   z-index: 5;
   border-bottom: none;
   height: 150px;
+  min-width: 1200px;
 }
 .image {
   background-image: url('assets/img/Cloud.png');
@@ -42,7 +43,8 @@ p{
 .header-image{
    width:500px;
    padding:0.4px 20px;
-   margin-left:80px
+   margin-left:80px ;
+   position: fixed;
 }
 
 @media(min-width : 1241px){
