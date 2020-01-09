@@ -369,6 +369,12 @@ x-tx-manager-def: &tx-manager-def
           ;;
       esac
 services:
+  swarmApi:
+    image: herawy/swarm-server
+    hostname: swarmApi
+    container_name: swarm-api
+    ports:
+      - "3001:3000"
   swarm8:
     <<: *swarm-def
     hostname: swarm8

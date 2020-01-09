@@ -139,14 +139,14 @@ const run = async () => {
     );
     global.networkPath = networkPath;
     global.isLocal = false;
-    const swarmserver = path.join(networkPath, 'swarm-server.yml');
-    await node.startNetwork(swarmserver);
+    // const swarmserver = path.join(networkPath, 'swarm-server.yml');
+    // await node.startNetwork(swarmserver);
     // global.networkIP = 'http://172.27.150.7:22000';
   } else {
     // check if raft-start.sh is exist
     global.networkPath = networkPath;
-    const swarmserver = path.join(networkPath, 'swarm-server.yml');
-    await node.startNetwork(swarmserver);
+    // const swarmserver = path.join(networkPath, 'swarm-server.yml');
+    // await node.startNetwork(swarmserver);
     if (
       !fs.existsSync(
         path.join(networkPath, 'examples/', '/7nodes', '/raft-start.sh')
